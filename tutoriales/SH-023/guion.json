@@ -1,0 +1,225 @@
+{
+ "id": "SH-023",
+ "series": "lifehacks",
+ "numero": 1,
+ "categoria": "python",
+ "gancho_tecnica": "promesa de resultado rápido",
+ "title": "Encuentra archivos repetidos en tu ordenador con Python (gratis)",
+ "voice": "sharvard_m",
+ "music_seed": 1,
+ "categoryId": "28",
+ "herramienta": {
+  "carpeta": ".",
+  "preparar_demo": "preparar_demo.py",
+  "permisos": []
+ },
+ "codigo_en_descripcion": "duplicados.py",
+ "requisito": "Python 3.11 o posterior, gratis en python.org",
+ "capturas": [
+  {
+   "id": "carpeta",
+   "tipo": "web",
+   "url": "Descargas_demo/",
+   "viewport": [
+    496,
+    425
+   ],
+   "acciones": [
+    {
+     "hacer": "esperar",
+     "ms": 3200
+    },
+    {
+     "hacer": "pulsar",
+     "sel": "text=movil/"
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1300
+    }
+   ]
+  },
+  {
+   "id": "run",
+   "tipo": "terminal",
+   "comandos": [
+    {
+     "cmd": "python3 duplicados.py Descargas_demo"
+    }
+   ]
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "Caza tus archivos repetidos con Python.",
+   "rotulo": "CAZA TUS ARCHIVOS\nREPETIDOS",
+   "visual": {
+    "tipo": "resultado",
+    "clip": "run",
+    "progreso": [
+     0.55,
+     1
+    ],
+    "ritmo": 2.2,
+    "foco_linea": "liberar",
+    "zoom": 1.25,
+    "avance": true,
+    "titulo": "Terminal · ~/demo"
+   }
+  },
+  {
+   "beat": "problema",
+   "say": "Fotos descargadas dos veces, copias con otro nombre... Y buscarlas a mano es un rollo.",
+   "visual": {
+    "tipo": "web",
+    "clip": "carpeta",
+    "recorte": [
+     0,
+     100,
+     400,
+     330
+    ],
+    "titulo": "Chrome · carpeta de prueba"
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "Crea duplicados.py y pega esto",
+   "say": "Paso uno: crea un archivo llamado duplicados y pega este código.",
+   "visual": {
+    "tipo": "codigo",
+    "archivo": "duplicados.py",
+    "progreso": [
+     0,
+     0.55
+    ]
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "La clave: la huella SHA-256",
+   "say": "Calcula la huella digital de cada archivo. Si dos huellas coinciden, el contenido es idéntico, aunque cambie el nombre.",
+   "visual": {
+    "tipo": "codigo",
+    "archivo": "duplicados.py",
+    "progreso": [
+     0.55,
+     1
+    ],
+    "resaltar": [
+     10,
+     11,
+     12
+    ],
+    "destacado": {
+     "texto": "MISMA HUELLA",
+     "sub": "= mismo contenido, aunque cambie el nombre",
+     "desde": 2.6,
+     "tam": 150
+    }
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "titulo_paso": "Ejecútalo con tu carpeta",
+   "say": "Paso dos: ejecútalo en la terminal con el nombre de tu carpeta.",
+   "visual": {
+    "tipo": "terminal",
+    "clip": "run",
+    "progreso": [
+     0,
+     1
+    ],
+    "titulo": "Terminal · ~/demo",
+    "ritmo": 1.7
+   }
+  },
+  {
+   "beat": "resultado",
+   "titulo_paso": "No borra nada: tú decides",
+   "say": "Y listo: cuatro copias encontradas y once coma siete megas para liberar. No borra nada: tú decides.",
+   "visual": {
+    "tipo": "resultado",
+    "clip": "run",
+    "progreso": [
+     1,
+     1
+    ],
+    "foco_linea": "liberar",
+    "zoom": 1.0,
+    "titulo": "Terminal · ~/demo",
+    "destacado": {
+     "texto": "11,7 MB",
+     "sub": "que puedes liberar"
+    }
+   }
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para cuando tengas el disco lleno, y sígueme: un truco útil cada día.",
+   "visual": {
+    "tipo": "cta"
+   }
+  }
+ ],
+ "cta_linea": "para cuando tengas el disco lleno",
+ "description": "Busca archivos repetidos en una carpeta y en todas sus subcarpetas con 20 líneas de Python. Compara la huella SHA-256 de cada archivo: si dos huellas coinciden, el contenido es idéntico aunque se llamen distinto. No borra nada: solo te dice cuáles son y cuánto espacio ocupan las copias. La demo usa una carpeta con archivos de prueba.",
+ "como_usar": "guarda el código como duplicados.py y en la terminal escribe: python duplicados.py RUTA_DE_TU_CARPETA (en Mac y Linux, python3). El total sale en MB de 1.048.576 bytes, como los muestra Windows.",
+ "sources": [
+  "https://docs.python.org/3/library/hashlib.html",
+  "https://docs.python.org/3/library/pathlib.html",
+  "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf"
+ ],
+ "facts": [
+  {
+   "claim": "hashlib.file_digest (añadida en Python 3.11) calcula la huella de un archivo abierto en modo binario.",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "SHA-256 es uno de los algoritmos que hashlib incluye siempre (algorithms_guaranteed).",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "Path.rglob busca de forma recursiva (carpeta y subcarpetas) y devuelve las rutas sin un orden concreto: hay que ordenarlas.",
+   "source": [
+    1
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "SHA-256 es un algoritmo seguro según la FIPS 180-4: es computacionalmente inviable encontrar dos mensajes distintos con la misma huella; en la práctica, misma huella = mismo contenido.",
+   "source": [
+    2
+   ],
+   "tipo": "confirmado"
+  }
+ ],
+ "tags": [
+  "archivos duplicados",
+  "archivos repetidos",
+  "python",
+  "liberar espacio",
+  "trucos ordenador",
+  "tutorial python",
+  "sha256",
+  "automatizar",
+  "lifehacks",
+  "programación fácil"
+ ],
+ "hashtags": [
+  "#Shorts",
+  "#Python",
+  "#TrucosPC",
+  "#Tutorial"
+ ]
+}

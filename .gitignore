@@ -1,12 +1,4 @@
-# nunca vídeos, audio ni secretos en el repositorio
-*.mp4
-*.mov
-*.mkv
-*.wav
-*.part
-.env*
-client_secret*.json
-*token*
-*.db
+out/
 __pycache__/
 .pytest_cache/
+*.pyc
