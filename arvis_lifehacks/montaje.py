@@ -545,7 +545,8 @@ class Montaje:
     def _cabecera(self, lienzo, t, e):
         d = ImageDraw.Draw(lienzo)
         f = fuente("Inter.ttf", 34, 800)
-        chip = "%s · Nº %03d" % (MARCA, int(self.g.get("numero", 1)))
+        n = self.g.get("numero")  # None = reserva sin número (se numera al programarlo)
+        chip = "%s · Nº %03d" % (MARCA, int(n)) if n is not None else MARCA
         w = d.textlength(chip, font=f)
         d.rounded_rectangle([VX0, CABECERA_Y, VX0 + w + 56, CABECERA_Y + 60], 30, fill=(16, 30, 46), outline=C["cian"], width=3)
         d.ellipse([VX0 + 20, CABECERA_Y + 23, VX0 + 34, CABECERA_Y + 37], fill=C["lima"])

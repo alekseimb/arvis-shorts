@@ -1,10 +1,10 @@
 {
  "id": "SH-023",
  "series": "lifehacks",
- "numero": 1,
+ "numero": null,
  "categoria": "python",
- "gancho_tecnica": "promesa de resultado rápido",
- "title": "Encuentra archivos repetidos en tu ordenador con Python (gratis)",
+ "gancho_tecnica": "pregunta de problema cotidiano",
+ "title": "¿Tienes archivos repetidos? Encuéntralos con Python (gratis)",
  "voice": "sharvard_m",
  "music_seed": 1,
  "categoryId": "28",
@@ -52,8 +52,8 @@
  "escenas": [
   {
    "beat": "gancho",
-   "say": "Caza tus archivos repetidos con Python.",
-   "rotulo": "CAZA TUS ARCHIVOS\nREPETIDOS",
+   "say": "¿Tienes archivos repetidos?",
+   "rotulo": "¿TIENES ARCHIVOS\nREPETIDOS?",
    "visual": {
     "tipo": "resultado",
     "clip": "run",
@@ -221,5 +221,6 @@
   "#Python",
   "#TrucosPC",
   "#Tutorial"
- ]
+ ],
+ "nota_reserva": "Reserva (tema de programación): sin Nº de serie; al programarlo se pone el Nº que toque y se vuelve a montar."
 }

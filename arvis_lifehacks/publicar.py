@@ -53,7 +53,8 @@ def descripcion(g, codigo=None):
         partes += ["Cómo usarlo: " + g["como_usar"].strip(), ""]
     if g.get("sources"):
         partes += ["Fuentes:"] + ["• " + u for u in g["sources"]] + [""]
-    partes += ["LIFEHACKS AI · Nº %03d · Pequeñas soluciones inteligentes para problemas de todos los días." % int(g.get("numero", 1)),
+    num = "LIFEHACKS AI · Nº %03d" % int(g["numero"]) if g.get("numero") is not None else "LIFEHACKS AI"
+    partes += [num + " · Pequeñas soluciones inteligentes para problemas de todos los días.",
                "Grabación de pantalla real de la demostración. Narración con voz sintética. Música creada por el canal."]
     credito = CREDITO_VOZ.get(g.get("voice", VOZ), "")
     if credito:
