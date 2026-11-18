@@ -352,3 +352,36 @@ def test_servicio_flujo_completo_sin_motor(tmp_path):
     assert t["estado"] == "espera_manual" and "Make" in t["error"]
     listo = base / "listos" / "SH-900"
     assert (listo / "SH-900.mp4").exists() and json.loads((listo / "metadatos.json").read_text())["title"] == "Truco"
+
+
+# ------------------------------------------------------------------ MacBook Pro Intel 2019 (corrección del 18/11/2026)
+def _servicio(env, *args):
+    return subprocess.run([sys.executable, "-m", "arvis_estudio.servicio", *args], env=env, capture_output=True, text=True, cwd=str(RAIZ))
+
+
+def test_sin_motor_de_imagen_no_se_genera_ni_se_simula(tmp_path):
+    """En el Mac Intel (motor_imagen = ninguno) un guion con imágenes IA se detiene con un motivo claro; nunca se inventan."""
+    env = dict(os.environ, ARVIS_HOME=str(tmp_path / "ARVIS"), PYTHONPATH=str(RAIZ))
+    base = tmp_path / "ARVIS" / "estudio"
+    base.mkdir(parents=True)
+    (base / "ajustes.json").write_text(json.dumps({"comfy_url": "http://127.0.0.1:9", "disco_min_gb": 0.001}))
+    g = tmp_path / "SH-901.json"
+    g.write_text(json.dumps({"id": "SH-901", "formato": "9:16", "pilar": "curiosidades", "title": "Dato",
+                             "scenes": [{"say": "hola", "visual": {"type": "image", "prompt": "un faro"}}]}))
+    assert _servicio(env, "encolar", str(g), "--tipo", "short").returncode == 0
+    r = json.loads(_servicio(env, "tick").stdout.strip().splitlines()[-1])
+    assert "no genera imágenes" in r["error"]
+    est = {t["clave"]: t for t in json.loads(_servicio(env, "estado").stdout)["trabajos"]}
+    assert est["SH-901"]["estado"] == "generando"                     # no avanza a «editando»
+    assert not list((base / "trabajo").rglob("*.png"))                  # ninguna imagen inventada
+    c = json.loads(_servicio(env, "comprobar").stdout)
+    assert c["motor_imagen"] == "ninguno" and "pausa" in c["comfyui"]
+
+
+def test_disco_externo_desconectado_no_crea_nada():
+    falso = "/Volumes/ARVIS_PRUEBA_NO_MONTADO"
+    env = dict(os.environ, ARVIS_HOME=falso + "/arvis", PYTHONPATH=str(RAIZ))
+    r = _servicio(env, "tick")
+    assert r.returncode == 0 and json.loads(r.stdout.strip().splitlines()[-1])["pausa"] == "volumen"
+    assert not os.path.exists(falso)
+    assert _servicio(env, "estado").returncode == 2

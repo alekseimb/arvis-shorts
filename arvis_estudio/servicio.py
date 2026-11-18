@@ -40,7 +40,8 @@ QUIEN = "mac-" + (os.uname().nodename if hasattr(os, "uname") else "local")
 # ------------------------------------------------------------------ latido
 def estado_actual(cola, aj, trabajando=None):
     return {"momento": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "equipo": QUIEN, "version": "1.0.0",
-            "comfyui": comfy.Comfy(aj["comfy_url"]).disponible(), "disco_libre_gb": round(disco.libre_gb(K.ESTUDIO), 1),
+            "motor_imagen": aj.get("motor_imagen", "ninguno"),
+            "comfyui": aj.get("motor_imagen") == "comfyui" and comfy.Comfy(aj["comfy_url"]).disponible(), "disco_libre_gb": round(disco.libre_gb(K.ESTUDIO), 1),
             "trabajando_en": trabajando, "cola": cola.resumen(),
             "integracion_youtube_auditada": aj["integracion_youtube_auditada"]}
 
@@ -102,6 +103,9 @@ def paso_generar(cola, t, aj):
     S = json.load(open(t["guion"], encoding="utf-8"))
     cf = comfy.Comfy(aj["comfy_url"])
     necesita = any(sc.get("visual", {}).get("type") == "image" for sc in S["scenes"])
+    if necesita and aj.get("motor_imagen", "ninguno") != "comfyui":
+        raise RuntimeError("este equipo no genera imágenes (motor_imagen = %s): el guion debe usar escenarios del motor "
+                           "(plate, document, slate, board, map, timeline) en lugar de visual.type «image»" % aj.get("motor_imagen"))
     if necesita and not cf.disponible():
         raise RuntimeError("ComfyUI no responde en %s" % aj["comfy_url"])
     usadas = [f["variante"] for f in cola.firmas_recientes(S.get("pilar"))]
@@ -303,9 +307,12 @@ def tick():
 
 def comprobar():
     aj = K.ajustes()
-    res = {}
-    cf = comfy.Comfy(aj["comfy_url"])
-    res["comfyui"] = cf.estado().get("devices", [{}])[0].get("type") if cf.disponible() else "no responde"
+    res = {"motor_imagen": aj.get("motor_imagen", "ninguno")}
+    if res["motor_imagen"] == "comfyui":
+        cf = comfy.Comfy(aj["comfy_url"])
+        res["comfyui"] = cf.estado().get("devices", [{}])[0].get("type") if cf.disponible() else "no responde"
+    else:
+        res["comfyui"] = "en pausa (este equipo no genera imágenes)"
     res["disco_libre_gb"] = round(disco.libre_gb(K.BASE), 1)
     res["motor_v4"] = (K.MOTOR / "arvis_expedientes" / "render.py").exists()
     res["parche_v42"] = (K.MOTOR / "arvis_expedientes" / "render_largo.py").exists()
@@ -342,6 +349,10 @@ def main():
     lm = sub.add_parser("limpiar")
     lm.add_argument("--simular", action="store_true")
     a = ap.parse_args()
+    if not K.base_disponible():
+        # disco externo desconectado: no se crea nada ni se toca la cola; launchd lo reintentará
+        print(json.dumps({"pausa": "volumen", "base": str(K.BASE)}, ensure_ascii=False))
+        sys.exit(0 if a.cmd == "tick" else 2)
     K.preparar_carpetas()
     cola = Cola(K.DB)
     if a.cmd == "tick":

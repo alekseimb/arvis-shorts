@@ -1,5 +1,8 @@
 #!/bin/bash
-# ARVIS · Instalación del estudio audiovisual en el MacBook Pro M1 Max (64 GB) · v1.0 (18/11/2026)
+# ARVIS · Instalación del estudio audiovisual con ComfyUI · SOLO para un Mac Apple Silicon verificado · v1.0 (18/11/2026)
+#
+# ¡NO USAR en el MacBook Pro 13" 2019 Intel (i5 1,4 GHz, 8 GB) conectado a ARVIS! Corrección de hardware del 18/11/2026:
+# en ese equipo no se instalan ComfyUI, Z-Image ni modelos de generación. El paso 1 se detiene si el Mac no es Apple Silicon.
 #
 #   bash instalar_mac.sh --comprobar      solo comprueba (no cambia nada)
 #   bash instalar_mac.sh                  instala lo que falte (pregunta antes de cada descarga grande)
