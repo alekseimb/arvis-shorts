@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.arvis.estudio</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string><string>-i</string>
+    <string>__HOME__/ARVIS/venv-comfy/bin/python</string>
+    <string>-m</string><string>arvis_estudio.servicio</string><string>tick</string>
+  </array>
+  <key>WorkingDirectory</key><string>__HOME__/ARVIS/estudio_codigo</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PYTHONPATH</key><string>__HOME__/ARVIS/estudio_codigo:__HOME__/ARVIS/motor</string>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartInterval</key><integer>300</integer>
+  <key>RunAtLoad</key><true/>
+  <key>Nice</key><integer>5</integer>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__HOME__/ARVIS/estudio/logs/servicio.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/ARVIS/estudio/logs/servicio.log</string>
+</dict>
+</plist>

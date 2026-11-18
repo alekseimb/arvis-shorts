@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.arvis.limpieza</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__HOME__/ARVIS/venv-comfy/bin/python</string>
+    <string>-m</string><string>arvis_estudio.servicio</string><string>limpiar</string>
+  </array>
+  <key>WorkingDirectory</key><string>__HOME__/ARVIS/estudio_codigo</string>
+  <key>EnvironmentVariables</key>
+  <dict><key>PYTHONPATH</key><string>__HOME__/ARVIS/estudio_codigo</string></dict>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>4</integer><key>Minute</key><integer>37</integer></dict>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__HOME__/ARVIS/estudio/logs/limpieza.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/ARVIS/estudio/logs/limpieza.log</string>
+</dict>
+</plist>
