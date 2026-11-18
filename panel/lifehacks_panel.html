@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARVIS · LIFEHACKS AI</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#080c18;--bg2:#0e182e;--panel:#121a2c;--line:#24304a;--cian:#00e0ff;--lima:#b0ff2e;--txt:#eef3fa;--gris:#94a0b6;--aviso:#ffc828;--rojo:#ff5c5c}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 85% -10%,#0b3a4a55,transparent),linear-gradient(var(--bg),var(--bg2));color:var(--txt);font:15px/1.45 Inter,system-ui,sans-serif;min-height:100vh}
+header{display:flex;align-items:center;gap:14px;padding:18px 22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.chip{border:2px solid var(--cian);border-radius:999px;padding:6px 14px;font-weight:800;letter-spacing:.3px}
+.chip i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--lima);margin-right:8px}
+header .lema{color:var(--gris)}
+header .est{margin-left:auto;color:var(--gris);font-size:13px}
+main{padding:18px 22px 40px;display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;position:relative}
+.kpi{grid-column:span 3}
+@media (max-width:900px){.kpi{grid-column:span 6}.ancho{grid-column:span 12!important}}
+.kpi .n{font-size:34px;font-weight:800}
+.kpi .l{color:var(--gris);font-size:13px}
+.kpi .s{font-size:12px;color:var(--gris);margin-top:4px}
+h2{margin:0 0 10px;font-size:15px;letter-spacing:.3px;color:var(--cian)}
+.ancho{grid-column:span 6}.todo{grid-column:span 12}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--gris);font-weight:600}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;background:#1d2a44}
+.ok{color:var(--lima)}.warn{color:var(--aviso)}.err{color:var(--rojo)}
+.vacio{color:var(--gris);font-style:italic}
+.stale{position:absolute;top:14px;right:14px;font-size:11px;color:var(--gris)}
+a{color:var(--cian)}
+svg text{fill:var(--gris);font-size:11px}
+.aviso{grid-column:span 12;border-color:var(--aviso)}
+.tabs button{background:#1a2440;color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin-left:6px;cursor:pointer}
+.tabs button.on{border-color:var(--cian);color:var(--cian)}
+code{font-family:"JetBrains Mono",monospace;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <span class="chip"><i></i>LIFEHACKS AI</span>
+  <span class="lema">Pequeñas soluciones inteligentes para problemas de todos los días · 3 al día (12:00, 17:00, 21:00)</span>
+  <span class="est" id="estado">Conectando con la hoja videos…</span>
+</header>
+<main id="main">
+  <div class="card kpi"><div class="l">Vídeos creados hoy</div><div class="n" id="k_creados">—</div><div class="s">Montajes evaluados (CALIDAD)</div></div>
+  <div class="card kpi"><div class="l">Publicados hoy</div><div class="n" id="k_publicados">—</div><div class="s">Confirmados por la API</div></div>
+  <div class="card kpi"><div class="l">Visualizaciones acumuladas</div><div class="n" id="k_vistas">—</div><div class="s" id="k_vistas_s">Suma de los LIFEHACKS</div></div>
+  <div class="card kpi"><div class="l">Retención media</div><div class="n" id="k_ret">—</div><div class="s" id="k_ret_s">% visto medio</div></div>
+  <div class="card kpi"><div class="l">Ideas pendientes</div><div class="n" id="k_ideas">—</div><div class="s">Propuestas y elegidas</div></div>
+  <div class="card kpi"><div class="l">En producción</div><div class="n" id="k_prod">—</div><div class="s">Fases 1–7</div></div>
+  <div class="card kpi"><div class="l">Errores de generación</div><div class="n" id="k_err">—</div><div class="s">Fases 11–12 y errores de hoy</div></div>
+  <div class="card kpi"><div class="l">Nota media</div><div class="n" id="k_nota">—</div><div class="s">Umbral 85/100</div></div>
+
+  <div class="card ancho"><h2>Próximas publicaciones</h2><div id="proximas" class="vacio">Cargando…</div></div>
+  <div class="card ancho"><h2>Mejores vídeos</h2><div id="mejores" class="vacio">Cargando…</div></div>
+  <div class="card todo"><h2>Evolución de visualizaciones <span class="tabs"><button data-d="7" class="on">7 días</button><button data-d="30">30 días</button></span></h2><div id="grafica" class="vacio">Cargando…</div></div>
+  <div class="card ancho"><h2>Ideas pendientes</h2><div id="ideas" class="vacio">Cargando…</div></div>
+  <div class="card ancho"><h2>Vídeos en producción y errores</h2><div id="produccion" class="vacio">Cargando…</div></div>
+  <div class="card todo"><h2>Salud del circuito</h2><div id="salud" class="vacio">Cargando…</div></div>
+</main>
+<script>
+const HOJA = "10jcTixYo7toV-AyFyOKasHGY8zm-RbRT3Oqm77MsVWA";
+const SERVER = "Google Sheets";
+const RANGOS = {shorts: "SHORTS!A1:U400", ideas: "IDEAS_LH!A1:R500", calidad: "CALIDAD!A1:T800", metricas: "METRICAS!A1:M2000", ops: "OPERACIONES!A1:K3000", salud: "SALUD!A1:E80"};
+const D = {};
+let dias = 7;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hoy = () => { const d = new Date(); return [d.getDate(), d.getMonth() + 1, d.getFullYear()].map((n, i) => i < 2 ? String(n).padStart(2, "0") : n).join("/"); };
+const num = v => { let s = String(v ?? "").trim(); if (s.includes(",")) s = s.replace(/\./g, "").replace(",", "."); const n = parseFloat(s); return isNaN(n) ? null : n; };
+const filas = k => (D[k] && D[k].slice(1)) || [];
+const col = (k, nombre) => (D[k] && D[k][0] || []).findIndex(h => String(h).toLowerCase().startsWith(nombre.toLowerCase()));
+const fase = r => parseInt(String(r[20] || "").split(".")[0]) || 0;
+const franja = r => (String(r[15] || "").match(/Franja: (\d\d\/\d\d\/\d{4} \d\d:\d\d)/) || [])[1] || "";
+const lh = () => filas("shorts").filter(r => /SERIE lifehacks/i.test(r[15] || ""));
+const lhIds = () => new Set(lh().map(r => r[0]));
+
+function pintar() {
+  const L = lh(), H = hoy();
+  const cal = filas("calidad").filter(r => /lifehacks/i.test(r[3] || ""));
+  $("k_creados").textContent = new Set(cal.filter(r => r[1] === H).map(r => r[0])).size;
+  $("k_publicados").textContent = L.filter(r => fase(r) === 10 && r[7] === H).length;
+  const vistas = L.reduce((a, r) => a + (num(r[10]) || 0), 0);
+  $("k_vistas").textContent = vistas.toLocaleString("es-ES");
+  $("k_vistas_s").textContent = L.filter(r => fase(r) === 10).length + " publicados";
+  const ids = lhIds();
+  const iPct = col("metricas", "% visto"), iId = col("metricas", "ID Short");
+  const pcts = filas("metricas").filter(r => ids.has(r[iId])).map(r => num(r[iPct])).filter(v => v !== null);
+  if (pcts.length) { $("k_ret").textContent = (pcts.reduce((a, b) => a + b, 0) / pcts.length).toFixed(1) + " %"; }
+  else { $("k_ret").textContent = "—"; $("k_ret_s").textContent = "Falta el script ARVIS_ANALITICA (T-045)"; }
+  const ideas = filas("ideas").filter(r => /Propuesta|Elegida/.test(r[15] || ""));
+  $("k_ideas").textContent = ideas.length;
+  const prod = L.filter(r => fase(r) >= 1 && fase(r) <= 7);
+  $("k_prod").textContent = prod.length;
+  const errOps = filas("ops").filter(r => r[0] === H && /LIFEHACKS/i.test(r[3] || "") && r[5] === "Error");
+  const errF = L.filter(r => fase(r) === 11 || fase(r) === 12);
+  $("k_err").textContent = errF.length + errOps.length;
+  const notas = cal.map(r => num(r[4])).filter(v => v !== null);
+  $("k_nota").textContent = notas.length ? (notas.reduce((a, b) => a + b, 0) / notas.length).toFixed(1) : "—";
+
+  const prox = L.filter(r => fase(r) === 9).sort((a, b) => franja(a).split(" ")[0].split("/").reverse().join() + franja(a).slice(11) > franja(b).split(" ")[0].split("/").reverse().join() + franja(b).slice(11) ? 1 : -1);
+  $("proximas").className = prox.length ? "" : "vacio";
+  $("proximas").innerHTML = prox.length ? "<table><tr><th>Franja</th><th>Short</th><th>Título</th></tr>" + prox.map(r => `<tr><td>${esc(franja(r))}</td><td>${esc(r[0])}</td><td>${r[8] ? `<a href="${esc(r[8])}">${esc(r[5])}</a>` : esc(r[5])}</td></tr>`).join("") + "</table>" : "Nada programado.";
+
+  const pub = L.filter(r => fase(r) === 10).sort((a, b) => (num(b[10]) || 0) - (num(a[10]) || 0)).slice(0, 5);
+  $("mejores").className = pub.length ? "" : "vacio";
+  $("mejores").innerHTML = pub.length ? "<table><tr><th>Short</th><th>Título</th><th>Vistas</th><th>Me gusta</th></tr>" + pub.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[5])}</td><td>${esc(r[10] || "—")}</td><td>${esc(r[12] || "—")}</td></tr>`).join("") + "</table>" : "Aún no hay LIFEHACKS publicados con métricas.";
+
+  $("ideas").className = ideas.length ? "" : "vacio";
+  $("ideas").innerHTML = ideas.length ? "<table><tr><th>Idea</th><th>Título</th><th>Categoría</th><th>Puntos</th><th>Estado</th></tr>" + ideas.sort((a, b) => (num(b[13]) || 0) - (num(a[13]) || 0)).slice(0, 12).map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[2])}</td><td>${esc(r[5])}</td><td>${esc(r[13] || "—")}</td><td><span class="tag">${esc(r[15])}</span></td></tr>`).join("") + "</table>" : "No hay ideas pendientes: el LIFEHACKS RESEARCHER investiga en la próxima ejecución.";
+
+  const pe = prod.concat(errF);
+  const txt = pe.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[5])}</td><td class="${fase(r) >= 11 ? "err" : "warn"}">${esc(r[20])}</td></tr>`).join("") +
+    errOps.map(r => `<tr><td>${esc(r[2])}</td><td>${esc(r[4])}: ${esc((r[7] || "").slice(0, 120))}</td><td class="err">Error ${esc(r[1])}</td></tr>`).join("");
+  $("produccion").className = txt ? "" : "vacio";
+  $("produccion").innerHTML = txt ? "<table><tr><th>Short</th><th>Detalle</th><th>Fase</th></tr>" + txt + "</table>" : "Nada en producción ni errores ahora mismo.";
+
+  const sal = filas("salud").filter(r => /LIFEHACKS|Make|GitHub|YouTube/i.test(r[0] || ""));
+  $("salud").className = sal.length ? "" : "vacio";
+  $("salud").innerHTML = sal.length ? "<table><tr><th>Componente</th><th>Estado</th><th>Comprobado</th><th>Detalle</th></tr>" + sal.map(r => `<tr><td>${esc(r[0])}</td><td class="${r[1] === "OK" ? "ok" : r[1] === "Error" ? "err" : "warn"}">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc((r[3] || "").slice(0, 160))}</td></tr>`).join("") + "</table>" : "Sin datos de salud todavía.";
+  grafica();
+}
+
+function grafica() {
+  const ids = lhIds(), iId = col("metricas", "ID Short"), iF = col("metricas", "Fecha métricas"), iV = col("metricas", "Visualizaciones");
+  const porDia = {};
+  for (const r of filas("metricas")) {
+    if (!ids.has(r[iId])) continue;
+    const f = String(r[iF] || "").slice(0, 10), v = num(r[iV]);
+    if (!/\d\d\/\d\d\/\d{4}/.test(f) || v === null) continue;
+    (porDia[f] = porDia[f] || {})[r[iId]] = v;      // última medición del día por vídeo
+  }
+  const hoyD = new Date(); const puntos = [];
+  for (let i = dias - 1; i >= 0; i--) {
+    const d = new Date(hoyD); d.setDate(d.getDate() - i);
+    const k = [String(d.getDate()).padStart(2, "0"), String(d.getMonth() + 1).padStart(2, "0"), d.getFullYear()].join("/");
+    puntos.push([k, porDia[k] ? Object.values(porDia[k]).reduce((a, b) => a + b, 0) : null]);
+  }
+  const vals = puntos.map(p => p[1]).filter(v => v !== null);
+  if (!vals.length) { $("grafica").className = "vacio"; $("grafica").textContent = "Sin mediciones de LIFEHACKS en este periodo (la medición diaria se hace a las 01:47)."; return; }
+  const W = 900, Hh = 200, max = Math.max(...vals, 1), x = i => 40 + i * (W - 60) / Math.max(1, puntos.length - 1), y = v => Hh - 24 - (v / max) * (Hh - 44);
+  let path = "", dots = "";
+  puntos.forEach((p, i) => { if (p[1] === null) return; path += (path ? "L" : "M") + x(i) + " " + y(p[1]); dots += `<circle cx="${x(i)}" cy="${y(p[1])}" r="3.5" fill="#00e0ff"><title>${p[0]}: ${p[1]}</title></circle>`; });
+  const etiquetas = puntos.map((p, i) => (i % Math.ceil(puntos.length / 7) === 0 || i === puntos.length - 1) ? `<text x="${x(i)}" y="${Hh - 6}" text-anchor="middle">${p[0].slice(0, 5)}</text>` : "").join("");
+  $("grafica").className = "";
+  $("grafica").innerHTML = `<svg viewBox="0 0 ${W} ${Hh}" width="100%" role="img" aria-label="Visualizaciones acumuladas de LIFEHACKS por día"><line x1="40" x2="${W - 20}" y1="${Hh - 24}" y2="${Hh - 24}" stroke="#24304a"/><text x="4" y="${y(max) + 4}">${max.toLocaleString("es-ES")}</text><path d="${path}" fill="none" stroke="#00e0ff" stroke-width="2.5"/>${dots}${etiquetas}</svg>`;
+}
+
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { dias = +b.dataset.d; document.querySelectorAll(".tabs button").forEach(x => x.classList.toggle("on", x === b)); grafica(); });
+
+const MSG = {
+  needs_reauth: "Vuelve a conectar Google Sheets en claude.ai › Ajustes › Conectores.",
+  server_not_connected: "Añade el conector Google Sheets en claude.ai › Ajustes › Conectores (cuenta vagary.escala@gmail.com).",
+  selection_required: "Elige qué conector de Google Sheets usar cuando claude.ai lo pregunte.",
+  not_in_manifest: "Este panel no tiene permiso para leer Google Sheets en esta vista.",
+  approval_required: "Falta tu permiso para que el panel lea la hoja videos.",
+  server_unavailable: "Google Sheets no responde ahora mismo; se reintentará.",
+};
+(async () => {
+  const mcp = window.claude ? await window.claude.use("mcp") : null;
+  if (!mcp) { $("estado").textContent = "Ábrelo en claude.ai para leer la hoja videos en vivo."; return; }
+  let pendientes = Object.keys(RANGOS).length, ultimo = 0;
+  for (const [k, rango] of Object.entries(RANGOS)) {
+    mcp.watchTool(SERVER, "get_values", {spreadsheetId: HOJA, range: rango}, ev => {
+      if (ev.type === "data") {
+        const p = ev.result.payload || {};
+        D[k] = p.values || (p.content && p.content.values) || [];
+        ultimo = Math.max(ultimo, ev.result.cache ? ev.result.cache.storedAt : Date.now());
+        if (pendientes > 0) pendientes--;
+        $("estado").textContent = (pendientes ? "Leyendo… " : "") + "Datos de " + new Date(ultimo).toLocaleTimeString("es-ES", {hour: "2-digit", minute: "2-digit"});
+        pintar();
+      } else {
+        const c = ev.error.code;
+        if (["needs_reauth", "server_not_connected", "blocked_by_policy", "approval_required", "not_in_manifest"].includes(c)) delete D[k];
+        $("estado").innerHTML = '<span class="warn">' + esc(MSG[c] || ("No se pudo leer " + rango + " (" + c + ").")) + "</span>";
+        pintar();
+      }
+    }, {refetchInterval: 180000, cache: {staleTime: 60000, gcTime: 3600000}});
+  }
+})();
+</script>
+</body>
+</html>
