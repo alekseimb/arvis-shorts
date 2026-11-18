@@ -1,0 +1,233 @@
+{
+ "id": "SH-024",
+ "series": "lifehacks",
+ "numero": 1,
+ "categoria": "navegador",
+ "gancho_tecnica": "pregunta de experiencia común",
+ "title": "¿Cerraste una pestaña sin querer? Este atajo la recupera",
+ "voice": "sharvard_m",
+ "music_seed": 2,
+ "categoryId": "28",
+ "herramienta": {
+  "tipo": "truco",
+  "carpeta": "."
+ },
+ "capturas": [
+  {
+   "id": "pestanas",
+   "tipo": "escritorio",
+   "paginas": [
+    "receta.html",
+    "compra.html",
+    "finde.html"
+   ],
+   "pantalla": [
+    992,
+    942
+   ],
+   "escala": 1.6,
+   "acciones": [
+    {
+     "hacer": "esperar",
+     "ms": 1500
+    },
+    {
+     "hacer": "marca",
+     "nombre": "inicio"
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+w",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1700
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+w",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 2200
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+shift+t",
+     "rotulo": "Ctrl + Mayús + T"
+    },
+    {
+     "hacer": "esperar",
+     "ms": 2000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+shift+t",
+     "rotulo": "Ctrl + Mayús + T"
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1800
+    },
+    {
+     "hacer": "marca",
+     "nombre": "final"
+    }
+   ],
+   "verificar": [
+    [
+     "inicio",
+     "final"
+    ]
+   ]
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Has cerrado una pestaña sin querer?",
+   "rotulo": "¿CERRASTE UNA PESTAÑA\nSIN QUERER?",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "pestanas",
+    "zoom": 1.35,
+    "foco": [
+     0,
+     0
+    ],
+    "titulo": "Chrome · páginas de ejemplo",
+    "evento": 0,
+    "antes": 1.0,
+    "despues": 0.9
+   }
+  },
+  {
+   "beat": "problema",
+   "say": "Pasa a todos: un despiste, y la receta o la lista que estabas mirando desaparece.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "pestanas",
+    "zoom": 1.25,
+    "foco": [
+     0,
+     0
+    ],
+    "titulo": "Chrome · páginas de ejemplo",
+    "evento": 1,
+    "antes": 1.3,
+    "despues": 1.5
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "El atajo",
+   "say": "Pulsa a la vez Control, Mayúsculas y la letra T.",
+   "visual": {
+    "tipo": "teclas",
+    "teclas": [
+     "Ctrl",
+     "Mayús",
+     "T"
+    ],
+    "nota": "En Mac: Cmd + Mayús + T",
+    "encima": "Windows y Linux",
+    "titulo": "El atajo"
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "La última pestaña vuelve",
+   "say": "Y la última pestaña que cerraste vuelve al momento.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "pestanas",
+    "titulo": "Chrome · páginas de ejemplo",
+    "evento": 2,
+    "antes": 0.7,
+    "despues": 1.6
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "titulo_paso": "Repite para recuperar más",
+   "say": "¿Has cerrado varias? Repite el atajo y vuelven en el orden en que se cerraron.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "pestanas",
+    "titulo": "Chrome · páginas de ejemplo",
+    "evento": 3,
+    "antes": 0.9,
+    "despues": 1.6
+   }
+  },
+  {
+   "beat": "resultado",
+   "titulo_paso": "Sin buscar en el historial",
+   "say": "Así recuperas tus pestañas sin buscar en el historial. Y funciona en Chrome.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "pestanas",
+    "titulo": "Chrome · páginas de ejemplo",
+    "destacado": {
+     "texto": "CTRL + MAYÚS + T",
+     "sub": "En Mac: Cmd + Mayús + T",
+     "tam": 120,
+     "desde": 0.2
+    },
+    "final": 0.3
+   }
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para la próxima vez que se te escape una pestaña. Y sígueme: un truco cotidiano cada día.",
+   "visual": {
+    "tipo": "cta"
+   }
+  }
+ ],
+ "cta_linea": "para la próxima pestaña perdida",
+ "description": "Si cierras una pestaña de Chrome sin querer, pulsa Ctrl + Mayús + T (en Mac, Cmd + Mayús + T) y vuelve a abrirse. Si repites el atajo, Chrome reabre las pestañas que cerraste antes, en el orden en que se cerraron. Demostración grabada en Chrome con páginas de ejemplo.",
+ "como_usar": "con Chrome abierto, pulsa a la vez Ctrl, Mayús y T. Cada vez que lo repitas vuelve una pestaña cerrada más.",
+ "sources": [
+  "https://support.google.com/chrome/answer/157179?hl=es"
+ ],
+ "facts": [
+  {
+   "claim": "En Chrome, Ctrl + Mayús + T (⌘ + Mayús + T en Mac) vuelve a abrir las pestañas cerradas anteriormente en el orden en que se cerraron.",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "En Chrome, Ctrl + W cierra la pestaña actual (es lo que se usa en la demostración para cerrarlas).",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  }
+ ],
+ "tags": [
+  "atajos de teclado",
+  "chrome",
+  "pestaña cerrada",
+  "recuperar pestaña",
+  "trucos navegador",
+  "trucos pc",
+  "productividad",
+  "lifehacks",
+  "ctrl shift t",
+  "trucos informática"
+ ],
+ "hashtags": [
+  "#Shorts",
+  "#TrucosPC",
+  "#Chrome",
+  "#Lifehacks"
+ ]
+}

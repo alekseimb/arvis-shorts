@@ -126,3 +126,150 @@ def frame_en(info, t):
         else:
             break
     return ruta
+
+
+# ----------------------------------------------------------------------------- escritorio (Chrome real con su interfaz)
+def capturar_escritorio(cap, carpeta_trabajo, salida):
+    """Graba la pantalla completa de un Chrome real (pestañas, barra de direcciones) en un escritorio virtual (Xvfb)
+    con FFmpeg x11grab. Las teclas se pulsan como un usuario (XTest), así funcionan los atajos del propio navegador.
+
+    cap = {"id", "tipo": "escritorio", "paginas": ["receta.html", …], "pantalla": [992, 850], "escala": 1.6,
+           "acciones": [{"hacer": "esperar", "ms": 1200}, {"hacer": "teclas", "combo": "ctrl+shift+t", "rotulo": "Ctrl + Mayús + T"},
+                        {"hacer": "marca", "nombre": "inicio"}],
+           "verificar": [["inicio", "final"]]}   # pares de marcas cuya pantalla debe coincidir (el truco funcionó)
+    """
+    import shutil
+    import signal
+    import subprocess
+    import tempfile
+
+    import numpy as np
+    from Xlib import X, XK, display as xdisplay
+    from Xlib.ext import xtest
+
+    W, H = cap.get("pantalla", [992, 850])
+    esc = cap.get("escala", 1.6)
+    d = os.path.join(salida, "cap_" + cap["id"])
+    os.makedirs(d, exist_ok=True)
+    num = 70 + (os.getpid() % 20)
+    disp = ":%d" % num
+    xv = subprocess.Popen(["Xvfb", disp, "-screen", "0", "%dx%dx24" % (W, H), "-nolisten", "tcp"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    for _ in range(50):
+        if os.path.exists("/tmp/.X11-unix/X%d" % num):
+            break
+        time.sleep(0.1)
+    perfil = tempfile.mkdtemp(prefix="lh_chrome_")
+    urls = []
+    for p in cap["paginas"]:
+        u = p if "://" in p else "file://" + os.path.abspath(os.path.join(carpeta_trabajo, p))
+        if not _permitida(u):
+            raise ValueError("Solo se graban páginas locales: %s" % u)
+        urls.append(u)
+    env = dict(os.environ, DISPLAY=disp, LANGUAGE="es", LANG="es_ES.UTF-8", LC_ALL="es_ES.UTF-8", TZ="Europe/Madrid", HOME=perfil)
+    ch = subprocess.Popen([CHROME, "--no-sandbox", "--test-type", "--user-data-dir=" + perfil, "--no-first-run", "--no-default-browser-check",
+                           "--disable-gpu", "--disable-sync", "--disable-background-networking", "--disable-component-update",
+                           "--disable-features=Translate,MediaRouter,OptimizationHints,PrivacySandboxSettings4", "--password-store=basic",
+                           "--hide-crash-restore-bubble", "--lang=es-ES", "--force-device-scale-factor=%s" % esc,
+                           "--window-position=0,0", "--window-size=%d,%d" % (int(W / esc), int(H / esc))] + urls,
+                          env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(cap.get("arranque_s", 4.0))
+    try:   # el puntero, a una esquina (no tapa nada)
+        _xd = xdisplay.Display(disp)
+        xtest.fake_input(_xd, X.MotionNotify, x=W - 2, y=H - 2)
+        _xd.sync()
+    except Exception:
+        pass
+    video = os.path.join(d, "pantalla.mp4")
+    ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "x11grab", "-video_size", "%dx%d" % (W, H), "-framerate", "30",
+                           "-i", disp, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "12", "-pix_fmt", "yuv444p", video],
+                          stdin=subprocess.PIPE, env=env)
+    inicio = time.time() + 0.25          # arranque aproximado de x11grab
+    time.sleep(0.6)
+    xd = xdisplay.Display(disp)
+    eventos, marcas = [], {}
+
+    def reloj():
+        return round(time.time() - inicio, 3)
+
+    def tecla(nombre, abajo):
+        ks = XK.string_to_keysym({"ctrl": "Control_L", "shift": "Shift_L", "alt": "Alt_L"}.get(nombre, nombre))
+        xtest.fake_input(xd, X.KeyPress if abajo else X.KeyRelease, xd.keysym_to_keycode(ks))
+        xd.sync()
+
+    def captura_ahora(nombre):
+        ruta = os.path.join(d, "marca_%s.png" % nombre)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "x11grab", "-video_size", "%dx%d" % (W, H), "-i", disp,
+                        "-frames:v", "1", ruta], env=env)
+        marcas[nombre] = ruta
+
+    for a in cap.get("acciones", []):
+        h = a["hacer"]
+        if h == "esperar":
+            time.sleep(a.get("ms", 500) / 1000.0)
+        elif h == "teclas":
+            partes = a["combo"].lower().split("+")
+            eventos.append([reloj(), "teclas", None, a.get("rotulo", a["combo"])])
+            for k in partes:
+                tecla(k, True)
+                time.sleep(0.06)
+            for k in reversed(partes):
+                tecla(k, False)
+                time.sleep(0.03)
+        elif h == "marca":
+            captura_ahora(a["nombre"])
+    time.sleep(cap.get("final_ms", 800) / 1000.0)
+    ff.stdin.write(b"q")
+    ff.stdin.flush()
+    ff.wait(timeout=30)
+    for p in (ch, xv):
+        try:
+            p.send_signal(signal.SIGTERM)
+            p.wait(timeout=10)
+        except Exception:
+            p.kill()
+    shutil.rmtree(perfil, ignore_errors=True)
+    # fotogramas a 15 fps para el montaje
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-vf", "fps=15", os.path.join(d, "f%05d.png")], check=True)
+    fr = sorted(f for f in os.listdir(d) if f.startswith("f") and f.endswith(".png"))
+    frames = [[round(i / 15.0, 3), os.path.join(d, f)] for i, f in enumerate(fr)]
+    # La compilación «Chrome for Testing» del entorno muestra una barra propia bajo la barra de direcciones que el
+    # Chrome normal del espectador no tiene: se recorta esa franja (edición, no se añade nada a la interfaz).
+    banda = cap.get("quitar_banda", [138, 230] if (W == 992 and abs(esc - 1.6) < 0.01) else None)
+    if banda:
+        for _, ruta in frames:
+            im = np.asarray(Image.open(ruta).convert("RGB"))
+            Image.fromarray(np.concatenate([im[: banda[0]], im[banda[1]:]], axis=0)).save(ruta)
+    # Calibración: x11grab arranca con retraso; se mide cuándo cambia de verdad la pantalla tras cada pulsación
+    # y se corrige la hora de los eventos (así las teclas en pantalla coinciden con lo que se ve).
+    if eventos and len(frames) > 2:
+        grises = [np.asarray(Image.open(r).convert("L"), dtype=np.float32) for _, r in frames]
+        retrasos = []
+        for ev in eventos:
+            for i in range(1, len(frames)):
+                if frames[i][0] < ev[0]:
+                    continue
+                if frames[i][0] > ev[0] + 1.5:
+                    break
+                if float(np.mean(np.abs(grises[i] - grises[i - 1]))) > 1.0:
+                    retrasos.append(frames[i][0] - ev[0])
+                    break
+        if retrasos:
+            ajuste = max(0.0, sorted(retrasos)[len(retrasos) // 2] - 0.08)
+            for ev in eventos:
+                ev[0] = round(ev[0] + ajuste, 3)
+            cap["_ajuste_s"] = round(ajuste, 3)
+    verif = []
+    for a_, b_ in cap.get("verificar", []):
+        if a_ in marcas and b_ in marcas:
+            A = np.asarray(Image.open(marcas[a_]).convert("L"), dtype=np.float32)
+            B = np.asarray(Image.open(marcas[b_]).convert("L"), dtype=np.float32)
+            dif = float(np.mean(np.abs(A - B)))
+            verif.append({"antes": a_, "despues": b_, "diferencia": round(dif, 2), "ok": dif < 3.0})
+        else:
+            verif.append({"antes": a_, "despues": b_, "ok": False, "diferencia": None})
+    info = {"frames": frames, "eventos": eventos, "duracion": frames[-1][0] if frames else 0, "url": urls[0],
+            "errores_consola": [], "texto_visible": " ".join(cap["paginas"]) + " " + " ".join(urls),
+            "tamano": [W, H - ((banda[1] - banda[0]) if banda else 0)], "viewport": [W, H], "banda_quitada": banda,
+            "verificaciones": verif, "video": video, "ajuste_eventos_s": cap.get("_ajuste_s", 0.0)}
+    json.dump(info, open(os.path.join(d, "captura.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return info

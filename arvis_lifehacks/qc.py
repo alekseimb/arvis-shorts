@@ -99,6 +99,8 @@ def comprobar(video, hq, guion, herramienta, capturas, montaje_info, voz, subs, 
     add("Ritmo de voz 2,3–3,8 pal/s", 2.3 <= ppm <= 3.8, "%.2f pal/s" % ppm)
     g = escenas[0]
     add("Gancho ≤ 2,5 s", g["beat"] == "gancho" and g["_t1"] - g["_t0"] <= 2.5, "%.2f s" % (g["_t1"] - g["_t0"]))
+    add("Gancho en forma de pregunta (decisión de Aleksei del 18/11/2026)", g["say"].strip().endswith("?") and g["say"].strip().startswith("¿"),
+        g["say"])
     beats = [e["beat"] for e in escenas]
     fin_problema = max([e["_t1"] for e in escenas if e["beat"] == "problema"] or [99])
     ok_est = (beats[0] == "gancho" and "problema" in beats and beats.count("tutorial") >= 2 and "resultado" in beats
@@ -107,7 +109,7 @@ def comprobar(video, hq, guion, herramienta, capturas, montaje_info, voz, subs, 
     add("Estructura gancho → problema → tutorial → resultado → CTA", ok_est, " → ".join(beats) + " · problema hasta %.1f s" % fin_problema)
     palabras_dichas = sum(len(e["say"].split()) for e in escenas)
     palabras_sub = sum(len(b["palabras"]) for b in subs)
-    abajo = SUBS_Y + 88 <= LIMITE_Y
+    abajo = SUBS_Y - 22 + 2 * 88 <= LIMITE_Y
     add("Subtítulos: todas las palabras, 70 px, en zona segura", palabras_sub == palabras_dichas and abajo,
         "%d/%d palabras" % (palabras_sub, palabras_dichas))
     negros = _negros(video)
@@ -137,8 +139,9 @@ def comprobar(video, hq, guion, herramienta, capturas, montaje_info, voz, subs, 
     add("Sin escenas repetidas", not rep, ", ".join(rep))
     tipos = {e["visual"]["tipo"] for e in escenas}
     add("Variedad visual ≥ 3 tipos de plano", len(tipos) >= 3, ", ".join(sorted(tipos)))
-    add("Herramienta revisada y probada antes de grabar", herramienta["ok"] and herramienta["pruebas"]["tests"] >= 1,
-        "%s pruebas OK · revisión %s" % (herramienta["pruebas"]["tests"], "OK" if herramienta["revision_ok"] else herramienta["hallazgos"][:3]))
+    add("Herramienta o truco probado de verdad (pruebas o verificación en la grabación)", herramienta["ok"] and herramienta["pruebas"]["tests"] >= 1,
+        "%s %s OK · revisión %s" % (herramienta["pruebas"]["tests"], "verificaciones" if herramienta.get("tipo") == "truco" else "pruebas",
+                                    "OK" if herramienta["revision_ok"] else herramienta["hallazgos"][:3]))
     reales = all(s["ok"] for s in herramienta["sesiones"].values()) and all(
         len(c["frames"]) >= 2 and not c["errores_consola"] for c in capturas.values())
     add("Demostración real (ejecución y capturas sin errores)", reales,

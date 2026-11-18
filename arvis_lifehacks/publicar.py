@@ -54,7 +54,7 @@ def descripcion(g, codigo=None):
     if g.get("sources"):
         partes += ["Fuentes:"] + ["• " + u for u in g["sources"]] + [""]
     partes += ["LIFEHACKS AI · Nº %03d · Pequeñas soluciones inteligentes para problemas de todos los días." % int(g.get("numero", 1)),
-               "Grabación de pantalla real de la herramienta funcionando. Narración con voz sintética. Música creada por el canal."]
+               "Grabación de pantalla real de la demostración. Narración con voz sintética. Música creada por el canal."]
     credito = CREDITO_VOZ.get(g.get("voice", VOZ), "")
     if credito:
         partes.append(credito)

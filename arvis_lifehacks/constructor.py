@@ -132,7 +132,11 @@ def construir(guion, base_tutorial, salida):
     if h.get("preparar_demo"):
         prep = subprocess.run([sys.executable, h["preparar_demo"]], cwd=trabajo, env=entorno_aislado(trabajo),
                               capture_output=True, text=True, timeout=120)
-    res_pruebas = pruebas(trabajo)
+    if h.get("tipo") == "truco":
+        # Truco sin código (atajo, función del navegador…): se prueba durante la grabación real (grabar.verificar)
+        res_pruebas = {"ok": None, "log": "Se verifica en la grabación real", "tests": 0}
+    else:
+        res_pruebas = pruebas(trabajo)
     sesiones = {}
     for cap in guion.get("capturas", []):
         if cap["tipo"] == "terminal":
@@ -141,7 +145,8 @@ def construir(guion, base_tutorial, salida):
         "revision_ok": ok_rev, "hallazgos": hallazgos, "permisos": permisos,
         "preparar_demo": None if prep is None else {"codigo": prep.returncode, "log": (prep.stdout + prep.stderr)[-1500:]},
         "pruebas": res_pruebas, "sesiones": sesiones, "carpeta_trabajo": trabajo,
-        "ok": ok_rev and res_pruebas["ok"] and (prep is None or prep.returncode == 0) and all(s["ok"] for s in sesiones.values()),
+        "ok": ok_rev and res_pruebas["ok"] is not False and (prep is None or prep.returncode == 0) and all(s["ok"] for s in sesiones.values()),
+        "tipo": h.get("tipo", "codigo"),
     }
     os.makedirs(salida, exist_ok=True)
     json.dump(informe, open(os.path.join(salida, "herramienta.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

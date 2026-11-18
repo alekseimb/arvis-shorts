@@ -293,7 +293,7 @@ def dibujar_subtitulo(lienzo, bloque, t):
         cur.append(i)
         ancho_cur += (esp if len(cur) > 1 else 0) + a
     lineas.append(cur)
-    y = SUBS_Y - (len(lineas) * 88) // 2
+    y = SUBS_Y - 22          # anclado arriba: con 2 líneas baja, nunca tapa el rótulo del paso (y ≤ 1416)
     for ln in lineas:
         tot = sum(anchos[i] for i in ln) + esp * (len(ln) - 1)
         x = (W - tot) / 2
@@ -379,9 +379,12 @@ class Montaje:
             titulo = v.get("titulo", "Terminal")
             if fy is not None:
                 foco_xy = (0, fy + 20)
-        elif v["tipo"] == "web":
+        elif v["tipo"] == "teclas":
+            img = self._teclas(v, t - e["_t0"], e["_t1"] - e["_t0"])
+            titulo = v.get("titulo", "El atajo")
+        elif v["tipo"] in ("web", "escritorio"):
             info = self.web[v["clip"]]
-            desde, hasta = v.get("desde", 0.0), v.get("hasta", info["duracion"])
+            desde, hasta = self.tramo(v)
             tt = desde + (hasta - desde) * min(1.0, u)
             ruta = grabar.frame_en(info, tt)
             fr = Image.open(ruta).convert("RGB")
@@ -392,7 +395,8 @@ class Montaje:
                 fr = fr.crop((rx, ry, rx + rw, ry + rh))
             img, s, (ox, oy) = _ajustar(fr, CW, CH)
             titulo = v.get("titulo", "Navegador")
-            for te, tipo, caja in info["eventos"]:
+            for ev in info["eventos"]:
+                te, tipo, caja = ev[0], ev[1], ev[2]
                 if caja and tipo in ("clic", "escribir") and desde - 0.6 <= te <= hasta:
                     cx = ox + ((caja[0] + caja[2] / 2) * esc_c - rx) * s
                     cy = oy + ((caja[1] + caja[3] / 2) * esc_c - ry) * s
@@ -404,6 +408,11 @@ class Montaje:
                             dd.ellipse([cx - r, cy - r, cx + r, cy + r], outline=C["lima"], width=5)
                         dd.polygon([(cx, cy), (cx + 30, cy + 36), (cx + 13, cy + 34), (cx + 4, cy + 52)], fill=(255, 255, 255), outline=(0, 0, 0))
                         foco_xy = (cx, cy)
+            for ev in info["eventos"]:
+                if ev[1] == "teclas" and ev[3] and 0 <= tt - ev[0] <= 1.4 and desde - 0.2 <= ev[0] <= hasta:
+                    img = self._chips(img, ev[3], tt - ev[0])
+            if v.get("foco") is not None:      # punto de la ventana hacia el que se acerca la cámara (px del área de contenido)
+                foco_xy = tuple(v["foco"])
         elif v["tipo"] == "cta":
             img = self._tarjeta_cta(t - e["_t0"])
             titulo = MARCA
@@ -422,6 +431,60 @@ class Montaje:
             img = self._destacado(img, v["destacado"], t - e["_t0"] - v["destacado"].get("desde", 0.0))
         return img, titulo
 
+    def _chips(self, img, rotulo, dt):
+        """Teclas pulsadas de verdad en la grabación (se dibujan en el instante en que se pulsaron)."""
+        img = img.copy()
+        d = ImageDraw.Draw(img, "RGBA")
+        k = _suave(dt / 0.15) * (1 - _suave((dt - 1.1) / 0.3))
+        f = fuente("Inter.ttf", 50, 800)
+        partes = [x.strip() for x in rotulo.split("+")]
+        anchos = [d.textlength(p_, font=f) + 56 for p_ in partes]
+        total = sum(anchos) + 52 * (len(partes) - 1)
+        x = (CW - total) / 2
+        y = CH - 170
+        for i, (p_, w) in enumerate(zip(partes, anchos)):
+            d.rounded_rectangle([x, y + 8, x + w, y + 104], 18, fill=(0, 0, 0, int(120 * k)))
+            d.rounded_rectangle([x, y, x + w, y + 96], 18, fill=(250, 250, 252, int(245 * k)), outline=C["cian"] + (int(255 * k),), width=4)
+            d.text((x + 28, y + 16), p_, font=f, fill=(20, 24, 36, int(255 * k)))
+            x += w
+            if i < len(partes) - 1:
+                d.text((x + 12, y + 14), "+", font=f, fill=C["lima"] + (int(255 * k),))
+                x += 52
+        return img
+
+    def _teclas(self, v, dt, dur):
+        """Animación explicativa del atajo: las teclas aparecen y se hunden una a una (no imita ninguna pantalla)."""
+        img = Image.new("RGB", (CW, CH), (14, 20, 34))
+        d = ImageDraw.Draw(img)
+        teclas = v["teclas"]
+        f = fuente("Inter.ttf", 66, 800)
+        anchos = [max(170, d.textlength(t_, font=f) + 80) for t_ in teclas]
+        total = sum(anchos) + 70 * (len(teclas) - 1)
+        x = (CW - total) / 2
+        y = 300
+        for i, (t_, w) in enumerate(zip(teclas, anchos)):
+            ti = 0.25 + i * 0.45
+            k = _suave((dt - ti) / 0.2)
+            hundida = 10 if dt >= ti + 0.25 else 0
+            if k > 0:
+                d.rounded_rectangle([x, y + 22, x + w, y + 182], 26, fill=(4, 6, 12))
+                d.rounded_rectangle([x, y + hundida, x + w, y + 160 + hundida], 26, fill=(236, 240, 247), outline=C["cian"], width=5)
+                tw = d.textlength(t_, font=f)
+                d.text((x + (w - tw) / 2, y + 38 + hundida), t_, font=f, fill=(16, 20, 32))
+            x += w
+            if i < len(teclas) - 1 and dt >= ti + 0.2:
+                d.text((x + 16, y + 40), "+", font=f, fill=C["lima"])
+            x += 70
+        if v.get("nota") and dt > 0.25 + len(teclas) * 0.45:
+            fn = fuente("Inter.ttf", 42, 700)
+            wn = d.textlength(v["nota"], font=fn)
+            d.text(((CW - wn) / 2, 560), v["nota"], font=fn, fill=C["gris"])
+        if v.get("encima"):
+            fe = fuente("Inter.ttf", 44, 800)
+            we = d.textlength(v["encima"], font=fe)
+            d.text(((CW - we) / 2, 170), v["encima"], font=fe, fill=C["cian"])
+        return img
+
     def _destacado(self, img, dz, dt):
         """Cifra o frase clave del resultado, sacada de la salida real (la comprueba el QC de cifras)."""
         img = img.copy()
@@ -439,6 +502,17 @@ class Montaje:
         d.text(((CW - w1) / 2, y0 + 18), dz["texto"], font=f1, fill=C["lima"] + (int(255 * k),))
         d.text(((CW - w2) / 2, y0 + 200), dz.get("sub", ""), font=f2, fill=C["texto"] + (int(255 * k),))
         return img
+
+    def tramo(self, v):
+        """Tramo de la grabación de una escena: absoluto (desde/hasta) o relativo a un evento real
+        ({"evento": n, "antes": s, "despues": s}) o el final ({"final": s})."""
+        info = self.web[v["clip"]]
+        if "evento" in v:
+            te = info["eventos"][v["evento"]][0]
+            return max(0.0, te - v.get("antes", 1.0)), min(info["duracion"], te + v.get("despues", 1.0))
+        if "final" in v:
+            return max(0.0, info["duracion"] - v["final"]), info["duracion"]
+        return v.get("desde", 0.0), v.get("hasta", info["duracion"])
 
     def web_vw(self, clip):
         cap = next(c for c in self.g["capturas"] if c["id"] == clip)
@@ -561,12 +635,16 @@ class Montaje:
                 self.efectos.append((e["_t0"] + 0.25, "ding"))
             elif e["visual"].get("destacado", {}).get("desde"):
                 self.efectos.append((e["_t0"] + e["visual"]["destacado"]["desde"], "pop"))
-            if e["visual"]["tipo"] == "web":
+            if e["visual"]["tipo"] in ("web", "escritorio"):
                 info = self.web[e["visual"]["clip"]]
-                desde, hasta = e["visual"].get("desde", 0), e["visual"].get("hasta", info["duracion"])
-                for te, tipo, _ in info["eventos"]:
-                    if tipo == "clic" and desde <= te <= hasta:
+                desde, hasta = self.tramo(e["visual"])
+                for ev in info["eventos"]:
+                    te, tipo = ev[0], ev[1]
+                    if tipo in ("clic", "teclas") and desde <= te <= hasta:
                         self.efectos.append((e["_t0"] + (te - desde) / max(0.01, hasta - desde) * (e["_t1"] - e["_t0"]), "clic"))
+            if e["visual"]["tipo"] == "teclas":
+                for i in range(len(e["visual"]["teclas"])):
+                    self.efectos.append((e["_t0"] + 0.5 + i * 0.45, "clic"))
         os.makedirs(self.out, exist_ok=True)
         hq = os.path.join(self.out, nombre + "_hq.mp4")
         video_mudo = os.path.join(self.out, "_video.mp4")
@@ -620,7 +698,7 @@ def _srt(t):
     return "%02d:%02d:%02d,%03d" % (ms // 3600000, ms // 60000 % 60, ms // 1000 % 60, ms % 1000)
 
 
-def normalizar(src, dst, objetivo=-14.0, pico=-2.0):
+def normalizar(src, dst, objetivo=-14.0, pico=-2.5):
     """loudnorm en dos pasadas (EBU R128) → −14 LUFS integrados, pico real ≤ −2 dBTP (margen para el AAC)."""
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", src, "-af", "loudnorm=I=%s:TP=%s:LRA=11:print_format=json" % (objetivo, pico),
                         "-f", "null", "-"], capture_output=True, text=True)
@@ -656,6 +734,18 @@ def comprimir_make(src, dst, dur, max_mb=None, audio_wav=None):
     for f in os.listdir(os.path.dirname(dst)):
         if f.startswith("_x264"):
             os.remove(os.path.join(os.path.dirname(dst), f))
+    # los clics y teclas pueden hacer que el AAC pase de −1 dBFS: se mide y se rehace solo el audio desde la mezcla WAV
+    ganancia = 0.0
+    for _ in range(3):
+        pico = _pico(dst)
+        if not audio_wav or pico is None or pico <= -1.2:
+            break
+        ganancia += -1.5 - pico
+        tmp = dst + ".tmp.mp4"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", dst, "-i", audio_wav, "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy",
+                        "-af", "volume=%.2fdB" % ganancia, "-c:a", "aac", "-b:a", "%dk" % audio_k, "-shortest", "-movflags", "+faststart", tmp],
+                       check=True)
+        os.replace(tmp, dst)
     return dst
 
 

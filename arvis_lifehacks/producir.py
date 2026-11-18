@@ -44,7 +44,21 @@ def producir(ruta_guion, out):
         print(json.dumps({"ok": False, "motivo": "herramienta", "revision": h["hallazgos"], "pruebas": h["pruebas"]["log"][-800:],
                           "sesiones_ok": {k: s["ok"] for k, s in h["sesiones"].items()}}, ensure_ascii=False, indent=1))
         return 2
-    capturas = {c["id"]: grabar.capturar_web(c, h["carpeta_trabajo"], out) for c in g.get("capturas", []) if c["tipo"] == "web"}
+    capturas = {}
+    for c in g.get("capturas", []):
+        if c["tipo"] == "web":
+            capturas[c["id"]] = grabar.capturar_web(c, h["carpeta_trabajo"], out)
+        elif c["tipo"] == "escritorio":
+            capturas[c["id"]] = grabar.capturar_escritorio(c, h["carpeta_trabajo"], out)
+    if h.get("tipo") == "truco":
+        verifs = [v for c in capturas.values() for v in c.get("verificaciones", [])]
+        h["pruebas"] = {"ok": bool(verifs) and all(v["ok"] for v in verifs), "tests": len(verifs),
+                        "log": json.dumps(verifs, ensure_ascii=False)}
+        h["ok"] = h["revision_ok"] and h["pruebas"]["ok"]
+        json.dump(h, open(os.path.join(out, "herramienta.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        if not h["ok"]:
+            print(json.dumps({"ok": False, "motivo": "el truco no se pudo verificar en la grabación", "verificaciones": verifs}, ensure_ascii=False))
+            return 2
     m = Montaje(g, h, capturas, base, out)
     info = m.render(g["id"])
     codigo = None
