@@ -1,0 +1,70 @@
+{
+  "pieza": "SH-TEST-001",
+  "tipo": "short",
+  "linea": "SHORT 2 · Tutorial práctico",
+  "titulo": "Protege tu WhatsApp en 20 segundos (verificación en dos pasos)",
+  "descripcion": "Cómo activar la verificación en dos pasos de WhatsApp para que nadie pueda robarte la cuenta aunque consiga tu código SMS.\n\nPasos: Ajustes > Cuenta > Verificación en dos pasos > Activar > PIN de 6 dígitos > correo de recuperación.\n\nNarración con voz sintética (Piper, voz davefx CC0). Gráficos y música creados por ARVIS.\n\n#whatsapp #seguridaddigital #trucos #tutorial #shorts",
+  "etiquetas": [
+    "whatsapp",
+    "seguridad digital",
+    "verificación en dos pasos",
+    "tutorial",
+    "trucos móvil",
+    "shorts"
+  ],
+  "fuentes": [
+    "Centro de ayuda de WhatsApp · «Acerca de la verificación en dos pasos» (faq.whatsapp.com). Ruta de menús verificada por conocimiento del producto; no se pudo abrir la web desde este entorno (bloqueada por el proxy). Revisión humana recomendada antes de hacerlo público."
+  ],
+  "miniatura": {
+    "titular": "PROTEGE TU WHATSAPP",
+    "sub": "en 20 segundos"
+  },
+  "escenas": [
+    {
+      "voz": "Si alguien consigue tu código de WhatsApp, puede quedarse con tu cuenta. Vamos a evitarlo en veinte segundos.",
+      "titular": "¿TE PUEDEN ROBAR WHATSAPP?",
+      "visual": "alerta"
+    },
+    {
+      "voz": "Abre WhatsApp y entra en Ajustes. En Android, desde los tres puntos de arriba. En iPhone, en la pestaña Ajustes.",
+      "titular": "1 · ABRE AJUSTES",
+      "visual": "menu",
+      "menu": [
+        "Chats",
+        "Novedades",
+        "Comunidades",
+        "Llamadas",
+        "Ajustes"
+      ],
+      "resaltar": 4
+    },
+    {
+      "voz": "Toca Cuenta, y después, Verificación en dos pasos.",
+      "titular": "2 · CUENTA",
+      "visual": "menu",
+      "menu": [
+        "Avisos de seguridad",
+        "Verificación en dos pasos",
+        "Cambiar número",
+        "Solicitar info. de mi cuenta",
+        "Eliminar cuenta"
+      ],
+      "resaltar": 1
+    },
+    {
+      "voz": "Pulsa Activar y crea un PIN de seis dígitos que no uses en ningún otro sitio.",
+      "titular": "3 · CREA UN PIN",
+      "visual": "pin"
+    },
+    {
+      "voz": "Añade un correo electrónico. Si algún día olvidas el PIN, te servirá para recuperarlo.",
+      "titular": "4 · AÑADE TU CORREO",
+      "visual": "correo"
+    },
+    {
+      "voz": "Listo. Ahora, aunque alguien reciba tu código por SMS, sin tu PIN no podrá entrar. Guarda este vídeo y compártelo con quien lo necesite.",
+      "titular": "¡CUENTA PROTEGIDA!",
+      "visual": "ok"
+    }
+  ]
+}

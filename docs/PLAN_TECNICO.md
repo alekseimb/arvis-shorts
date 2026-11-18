@@ -38,7 +38,8 @@ Tarea programada Claude (ARVIS Shorts, ya existe)  ──►  motor v4 (Blender/
 |---|---|---|
 | 1 | Auditoría, Open-Higgsfield instalado y probado, guardia de coste, registro de herramientas gratuitas, QC técnico, registro de producción, CI ligera | **Hecho 18/11/2026** |
 | 2 | Generador de imágenes gratuito local (SD-Turbo en CPU) como «proveedor local»; medir tiempo real por imagen. Requiere confirmar licencia del modelo para canal monetizado. | Pendiente de decisión |
-| 3 | Un Short completo usando `arvis_av` + motor v4 → QC → subida **en privado** con Make → verificación por API | Pendiente (necesita el motor v4 en el entorno; hoy solo vive en el Proyecto ARVIS) |
+| 3a | Short completo 100 % local con `arvis_av.productor_short` (Piper davefx + Pillow + FFmpeg + música propia) → QC | **Hecho 18/11/2026** · SH-TEST-001, 33,5 s, QC 11/11, 49 s de render, 0 € |
+| 3b | Subida **en privado** con Make 8260243 → verificación por API 8260190 | **Bloqueada:** falta URL pública del MP4. El puente es la rama `media` y esta rutina solo puede hacer push a su rama de trabajo. Necesita permiso explícito para usar `media` |
 | 4 | Vídeo largo 16:9 de prueba (8–12 min, capítulos, subtítulos, miniatura) → subida privada | Pendiente |
 | 5 | Cambiar CONFIG_YOUTUBE a 1 largo + 2 Shorts y activar público | **Solo con autorización explícita de Aleksei** |
 

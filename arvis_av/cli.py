@@ -4,6 +4,8 @@
   probar        Intenta una generación de prueba (la guardia la bloquea si no es gratis).
   local DIR     Genera imagen + clip 9:16 con FFmpeg y pasa QC técnico.
   qc FICHERO [short|largo] [SRT]
+  payload GUION.json URL  Payload para Make 8260243 (SIEMPRE privado; no ejecuta nada).
+  short GUION.json [DIR]  Produce un Short completo en local (Piper + Pillow + FFmpeg) y pasa QC.
 """
 from __future__ import annotations
 
@@ -36,6 +38,15 @@ def main(argv: list[str]) -> int:
         registro.anotar("PRUEBA-LOCAL", "prueba", motor="ffmpeg", fichero=clip.name,
                         qc={k: v[0] for k, v in rq["checks"].items()})
         print(json.dumps(rq, ensure_ascii=False, indent=1))
+    elif cmd == "short":
+        from . import productor_short
+        r = productor_short.producir(Path(argv[1]), Path(argv[2] if len(argv) > 2 else "salida"))
+        print(json.dumps(r, ensure_ascii=False, indent=1)); return 0 if r["qc"]["ok"] else 1
+    elif cmd == "payload":
+        g = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
+        print(json.dumps({"fileUrl": argv[2], "title": g["titulo"][:100], "description": g["descripcion"][:5000],
+                          "tags": g.get("etiquetas", []), "privacyStatus": "private", "categoryId": "27",
+                          "key": g["pieza"]}, ensure_ascii=False, indent=1))
     elif cmd == "qc":
         r = qc.revisar(Path(argv[1]), argv[2] if len(argv) > 2 else "short",
                        Path(argv[3]) if len(argv) > 3 else None)
