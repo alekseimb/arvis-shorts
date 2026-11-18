@@ -86,3 +86,14 @@ def test_subtitulos_por_frases():
     bl = [" ".join(x["w"] for x in b["palabras"]) for b in bloques_subtitulos(ws)]
     assert bl[0] == "Fotos descargadas dos veces," and all(len(b.split()) <= 5 for b in bl)
     assert sum(len(b.split()) for b in bl) == len(ws)
+
+
+def test_escritorio_cuenta_como_grabable():
+    """Chrome real con su interfaz (captura «escritorio») es una demostración de verdad: no se topa a 3."""
+    base = {"titulo": "Atajo de prueba", "categoria": "navegador", "segundos_estimados": 35,
+            "notas": {k: 9 for k in ideas.PESOS},
+            "evidencias": {k: "evidencia suficiente de prueba" for k in ideas.PESOS}}
+    esc = ideas.puntuar(dict(base, demo="escritorio"))
+    nog = ideas.puntuar(dict(base, demo="no_grabable"))
+    assert esc["desglose"]["demostrable"] == 18.0
+    assert nog["desglose"]["demostrable"] == 6.0

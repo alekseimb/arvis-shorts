@@ -18,7 +18,7 @@ import re
 import unicodedata
 
 PESOS = {"utilidad": 25, "interes": 20, "demostrable": 20, "retencion": 15, "originalidad": 10, "conversacion": 10}
-DEMOS_GRABABLES = {"terminal", "web", "mixta"}
+DEMOS_GRABABLES = {"escritorio", "terminal", "web", "mixta"}  # escritorio = Chrome real con su interfaz (Xvfb)
 
 
 def _norm(s):
