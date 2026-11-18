@@ -1,0 +1,2 @@
+{"ts": "2026-11-18T07:21:40+00:00", "pieza": "PRUEBA-LOCAL", "estado": "prueba", "coste_eur": 0.0, "motor": "ffmpeg", "fichero": "prueba.mp4", "qc": {"existe": true, "reproducible": true, "resolucion": true, "duracion": false, "audio": false, "sin_negro": true, "sin_congelados": true}}
+{"ts": "2026-11-18T07:23:12+00:00", "pieza": "PRUEBA-OPEN-HIGGSFIELD", "estado": "prueba", "coste_eur": 0.0, "motor": "open-higgsfield@7d06c70", "resultado": "API viva; 0 modelos utilizables; generación bloqueada por guardia y por ERR_GEMINI_API_KEY_NOT_CONFIGURED"}

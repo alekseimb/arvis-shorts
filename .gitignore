@@ -1,0 +1,20 @@
+# Nunca subir medios pesados ni secretos
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+salida/
+trabajo/
+.env
+.env.*
+*.key
+credentials*.json
+service-account*.json
+__pycache__/
+*.pyc
+.pytest_cache/

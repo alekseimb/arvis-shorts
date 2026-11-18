@@ -1,0 +1,3 @@
+[submodule "integrations/open-higgsfield"]
+	path = integrations/open-higgsfield
+	url = https://github.com/TechBeme/open-higgsfield

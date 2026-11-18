@@ -1,0 +1,27 @@
+{
+  "_actualizado": "2026-11-18",
+  "_regla": "Código abierto ≠ generación gratuita. Solo cuenta como gratis lo que funciona sin tarjeta, sin créditos y sin coste recurrente.",
+  "herramientas_gratuitas_locales": [
+    {"nombre": "FFmpeg 6.1", "uso": "montaje, subtítulos, Ken Burns, mezcla de audio, QC", "licencia": "LGPL/GPL", "hardware": "CPU", "estado": "instalado y probado 18/11/2026"},
+    {"nombre": "Blender (bpy)", "uso": "escenas 3D del motor v4 de ARVIS", "licencia": "GPL", "hardware": "CPU (lento) / GPU", "estado": "en uso por el motor v4 (Proyecto ARVIS › motor_v4)"},
+    {"nombre": "Piper TTS · voz davefx", "uso": "narración en español", "licencia": "MIT (motor) · voz CC0", "hardware": "CPU", "estado": "en uso por el motor v4"},
+    {"nombre": "Kokoro TTS", "uso": "narración alternativa", "licencia": "Apache-2.0", "hardware": "CPU", "estado": "histórico (motor v2)"},
+    {"nombre": "Open-Higgsfield", "uso": "estudio/API unificada de generación", "licencia": "MIT", "hardware": "Node 22, ~1 GB RAM", "estado": "instalado y probado 18/11/2026: API viva, 668 entradas de catálogo, 0 modelos utilizables sin clave"}
+  ],
+  "modelos_generativos_gratuitos": [
+    {"nombre": "Stable Diffusion Turbo / SDXL-Turbo (local, CPU)", "coste": "0 €", "limite": "~20-60 s por imagen 512px en CPU de 4 núcleos (estimado, sin probar aquí)", "licencia": "Stability AI Community/Non-commercial: revisar antes de monetizar", "estado": "NO instalado: pendiente de decisión (Fase 2)"},
+    {"nombre": "Vídeo generativo local (LTX-Video, Wan 2.x)", "coste": "0 €", "limite": "requiere GPU con ≥12-24 GB VRAM; inviable en CPU", "estado": "no viable con el hardware actual"}
+  ],
+  "proveedores_con_limites_o_prueba": [
+    {"nombre": "Google AI Studio (Gemini API)", "limite": "nivel gratuito para texto; para imagen no confirmado, para vídeo no existe", "requiere": "GEMINI_API_KEY", "estado": "desactivado"},
+    {"nombre": "Runware", "limite": "créditos de prueba únicos", "estado": "desactivado"},
+    {"nombre": "Magnific", "limite": "créditos de prueba únicos", "estado": "desactivado"},
+    {"nombre": "ToAPIs", "limite": "créditos de prueba sin cifra publicada", "estado": "desactivado"}
+  ],
+  "servicios_de_pago": ["Google Vertex AI", "Vercel AI Gateway", "Veo / Gemini Omni (vídeo)", "Kling, Runway, Seedance, PixVerse, MiniMax vía cualquier pasarela"],
+  "infraestructura_gratuita_en_uso": [
+    {"nombre": "Make (plan Free)", "limite": "1.000 operaciones/mes aprox.; escenario de subida ≈ 3-4 operaciones por vídeo", "estado": "activo"},
+    {"nombre": "YouTube Data API v3", "limite": "10.000 unidades/día; coste de videos.insert según la documentación de Google (históricamente 1.600 unidades; verificar)", "estado": "activo vía Make (conexión 12504455)"},
+    {"nombre": "GitHub", "limite": "repos y Actions gratis con límites; no se usa para render", "estado": "activo"}
+  ]
+}

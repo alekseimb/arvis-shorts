@@ -1,0 +1,19 @@
+{
+  "_nota": "Guardia de coste ARVIS. Presupuesto adicional 0 €. Ningún proveedor se habilita sin autorización explícita de Aleksei (frase y fecha). Verificado el 18/11/2026 contra open-higgsfield@7d06c70.",
+  "presupuesto_eur": 0,
+  "presupuesto_autorizado_por": null,
+  "proveedores": {
+    "google-ai-studio": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Requiere GEMINI_API_KEY. La API de Gemini cobra por imagen/vídeo; el nivel gratuito para modelos de imagen no está confirmado (fuentes contradictorias) y Veo/Omni son de pago. Revisar ai.google.dev/gemini-api/docs/pricing antes de autorizar."},
+    "google-vertex": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Google Cloud con facturación activa; todo uso se cobra (el crédito de prueba de GCP exige tarjeta)."},
+    "vercel-ai-gateway": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Pasarela de pago por uso; los modelos de imagen/vídeo se facturan."},
+    "toapis": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Créditos de pago; solo prueba inicial sin cantidad publicada."},
+    "magnific": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Plan por créditos; solo créditos de prueba limitados, sin nivel gratuito permanente."},
+    "runware": {"habilitado": false, "coste_estimado_eur": null, "modelos_permitidos": [], "autorizado_por": null, "fecha_autorizacion": null,
+      "motivo": "Pago por uso; créditos de prueba únicos (~2 $ según su llms.txt). Gastarlos también requiere autorización."}
+  }
+}

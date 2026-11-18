@@ -1,0 +1,19 @@
+name: validar
+on: [push, pull_request]
+permissions: { contents: read }
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4   # sin submódulos: no se construye ni renderiza nada aquí
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: JSON válido
+        run: for f in config/*.json; do python -m json.tool "$f" > /dev/null; done
+      - name: Tests
+        run: python -m unittest discover -s tests -v
+      - name: Sin medios pesados ni secretos
+        run: |
+          ! git ls-files | grep -Ei '\.(mp4|mov|mkv|webm|wav|mp3)$|(^|/)\.env|credentials.*\.json'
+          ! git grep -nE '(AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{36})' -- . ':!integrations'
