@@ -1,0 +1,322 @@
+{
+ "id": "SH-026",
+ "series": "lifehacks",
+ "numero": 3,
+ "categoria": "lectura",
+ "gancho_tecnica": "pregunta de experiencia común",
+ "title": "¿La letra de una web es demasiado pequeña? Haz zoom con Ctrl y +",
+ "voice": "sharvard_m",
+ "music_seed": 5,
+ "categoryId": "28",
+ "herramienta": {
+  "tipo": "truco",
+  "carpeta": "."
+ },
+ "capturas": [
+  {
+   "id": "zoom",
+   "tipo": "escritorio",
+   "paginas": [
+    "aviso.html"
+   ],
+   "pantalla": [
+    992,
+    942
+   ],
+   "escala": 1.6,
+   "acciones": [
+    {
+     "hacer": "esperar",
+     "ms": 3500
+    },
+    {
+     "hacer": "marca",
+     "nombre": "inicio"
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 1000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 2000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+minus",
+     "rotulo": "Ctrl + −"
+    },
+    {
+     "hacer": "esperar",
+     "ms": 2000
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+0",
+     "rotulo": "Ctrl + 0"
+    },
+    {
+     "hacer": "esperar",
+     "ms": 3500
+    },
+    {
+     "hacer": "marca",
+     "nombre": "final"
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 800
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 800
+    },
+    {
+     "hacer": "teclas",
+     "combo": "ctrl+equal",
+     "rotulo": ""
+    },
+    {
+     "hacer": "esperar",
+     "ms": 2500
+    }
+   ],
+   "verificar": [
+    [
+     "inicio",
+     "final"
+    ]
+   ]
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿La letra es demasiado pequeña?",
+   "rotulo": "¿LA LETRA ES\nDEMASIADO PEQUEÑA?",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "zoom": 1.5,
+    "foco": [
+     496,
+     302
+    ],
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 0,
+    "antes": 1.2,
+    "despues": -0.15
+   }
+  },
+  {
+   "beat": "problema",
+   "say": "Te acercas a la pantalla, entrecierras los ojos, y aun así cuesta leerla.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 0,
+    "antes": 3.3,
+    "despues": -1.3,
+    "zoom": 1.25,
+    "foco": [
+     496,
+     400
+    ]
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "Para ampliar",
+   "say": "Mantén pulsado Control y toca la tecla más.",
+   "visual": {
+    "tipo": "teclas",
+    "teclas": [
+     "Ctrl",
+     "+"
+    ],
+    "nota": "En Mac: Cmd y +",
+    "encima": "Windows y Linux",
+    "titulo": "El atajo"
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "titulo_paso": "Cada toque, más grande",
+   "say": "Cada vez que la tocas, toda la página se hace más grande.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 0,
+    "antes": 0.3,
+    "despues": 5.0
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "titulo_paso": "Para reducir",
+   "say": "¿Te has pasado? Control y menos la reduce un poco.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 4,
+    "antes": 0.5,
+    "despues": 1.7
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "titulo_paso": "Tamaño normal",
+   "say": "Y con Control y cero vuelve a su tamaño normal.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 5,
+    "antes": 0.4,
+    "despues": 2.2
+   }
+  },
+  {
+   "beat": "tutorial",
+   "paso": 4,
+   "titulo_paso": "Con el ratón",
+   "say": "Extra: Control y la rueda del ratón hacia arriba también amplía.",
+   "visual": {
+    "tipo": "teclas",
+    "teclas": [
+     "Ctrl",
+     "Rueda ↑"
+    ],
+    "nota": "Rueda ↓: reduce",
+    "encima": "Con ratón (Windows y Linux)",
+    "titulo": "Con el ratón"
+   }
+  },
+  {
+   "beat": "resultado",
+   "titulo_paso": "Lee sin forzar la vista",
+   "say": "Así lees cualquier web sin forzar la vista. En Mac, los atajos van con Comando.",
+   "visual": {
+    "tipo": "escritorio",
+    "clip": "zoom",
+    "titulo": "Chrome · página de ejemplo",
+    "evento": 7,
+    "antes": 0.3,
+    "despues": 2.8,
+    "destacado": {
+     "texto": "CTRL Y +",
+     "sub": "Ctrl y − reduce · Ctrl + 0 la deja normal",
+     "tam": 130,
+     "desde": 1.8
+    }
+   }
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para la próxima letra diminuta. Y sígueme: un truco cotidiano cada día.",
+   "visual": {
+    "tipo": "cta"
+   }
+  }
+ ],
+ "cta_linea": "para la próxima letra diminuta",
+ "description": "En Chrome, Ctrl y + amplía todo el contenido de la página, Ctrl y - lo reduce y Ctrl + 0 lo devuelve al tamaño predeterminado; en Windows y Linux también sirve Ctrl + rueda del ratón. En Mac, los atajos de teclado van con ⌘ en lugar de Ctrl. Demostración grabada en Chrome con una página de ejemplo (en el escritorio virtual de la grabación, con teclado estadounidense, la tecla + es la de =/+).",
+ "como_usar": "con la web abierta en Chrome, mantén Ctrl (⌘ en Mac) y pulsa + para ampliar, - para reducir o 0 para volver al tamaño normal.",
+ "sources": [
+  "https://support.google.com/chrome/answer/157179?hl=es",
+  "https://support.google.com/chrome/answer/96810?hl=en-GB"
+ ],
+ "facts": [
+  {
+   "claim": "En Chrome para Windows y Linux, «Ctrl y +» amplía todo el contenido de la página, «Ctrl y -» lo reduce y «Ctrl + 0» restaura el tamaño predeterminado.",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "En Chrome para Mac, «⌘ y +» amplía todo el contenido de la página, «⌘ y -» lo reduce y «⌘ + 0» restaura el tamaño predeterminado.",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "La ayuda de Chrome (ordenador) indica: para ampliar, pulsa Ctrl y + (Windows y Linux) o ⌘ y + (Mac); para reducir, Ctrl y - o ⌘ y -.",
+   "source": [
+    1
+   ],
+   "tipo": "confirmado"
+  },
+  {
+   "claim": "En Chrome para Windows y Linux, Ctrl + desplazar la rueda del ratón hacia arriba amplía todo el contenido de la página y hacia abajo lo reduce.",
+   "source": [
+    0
+   ],
+   "tipo": "confirmado"
+  }
+ ],
+ "tags": [
+  "zoom chrome",
+  "letra pequeña",
+  "atajos de teclado",
+  "chrome",
+  "ampliar página",
+  "trucos navegador",
+  "trucos pc",
+  "lifehacks",
+  "leer mejor",
+  "accesibilidad"
+ ],
+ "hashtags": [
+  "#Shorts",
+  "#TrucosPC",
+  "#Chrome",
+  "#Lifehacks"
+ ]
+}
