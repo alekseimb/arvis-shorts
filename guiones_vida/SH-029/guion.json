@@ -1,0 +1,671 @@
+{
+ "id": "SH-029",
+ "numero": 6,
+ "idea": "IDEA-022",
+ "categoria": "limpieza",
+ "gancho_tecnica": "pregunta + dato",
+ "variante": 2,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 0,
+  "nivel_db": -19
+ },
+ "title": "¿Tienes hielo en el congelador? 3 mm de escarcha suben el consumo un 30 %",
+ "description": "Según la OCU, tres milímetros de escarcha en las paredes del congelador aumentan el consumo un 30 %: el hielo aísla y el motor tiene que trabajar más. Si tu congelador no es no-frost, descongélalo cuando veas hielo (al menos dos veces al año): desconéctalo, saca la comida, deja que el hielo se derrita sin forzar los cajones, límpialo con agua jabonosa, sécalo bien, conéctalo y espera unos 15 minutos antes de volver a meter la comida.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#limpieza",
+  "#trucosdecasa",
+  "#congelador"
+ ],
+ "tags": [
+  "congelador",
+  "descongelar",
+  "escarcha",
+  "hielo en el congelador",
+  "limpiar nevera",
+  "ahorrar luz",
+  "trucos de casa",
+  "lifehacks",
+  "limpieza"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+  "https://www.ocu.org/electrodomesticos/frigorificos/noticias/frigos-con-hielo-enfrian-peor530644"
+ ],
+ "hechos": [
+  {
+   "dato": "3 mm de escarcha aumentan el consumo 30 por ciento",
+   "cita": "Ten en cuenta que tres milímetros de escarcha en las paredes del congelador aumentan el consumo un 30%.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "con hielo el motor trabaja más",
+   "cita": "Como el hielo actúa de aislante, si hubiera mucho acumulado el motor del congelador tendrá que trabajar más tiempo",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "descongelar cuando haya hielo, al menos 2 veces al año",
+   "cita": "Puedes descongelar cuando notes la presencia de hielo e incluso adoptar la rutina de hacerlo al menos dos veces al año.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "los no-frost no necesitan desescarchar",
+   "cita": "En los aparatos no-frost, la acumulación de hielo desapareció por sí sola, con lo que no es necesario desescarchar.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/noticias/frigos-con-hielo-enfrian-peor530644",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "primero desconectar el congelador",
+   "cita": "Desconecta el congelador.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "sacar la comida",
+   "cita": "Retira del congelador toda la comida y ponla en el frigorífico (si dispone de sitio)",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "cajones pegados: no forzar y esperar a que se derrita",
+   "cita": "Retira todos los cajones y estantes. Si están pegados, no los fuerces y espera a que el hielo se derrita.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "limpiar con agua jabonosa",
+   "cita": "Limpia el interior del aparato bien con agua jabonosa bien con agua con unas gotas de vinagre.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "secar bien",
+   "cita": "Seca el congelador todo lo que puedas con trapos secos, así como los cajones y estantes.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "esperar unos 15 minutos antes de meter la comida",
+   "cita": "Espera un tiempo a que la temperatura baje, unos 15 minutos debería ser suficiente.",
+   "url": "https://www.ocu.org/electrodomesticos/frigorificos/consejos/como-descongelar",
+   "leido": "20/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Tienes hielo en el congelador?",
+   "fondo": "cocina",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.48
+   ],
+   "titulo": "¿TIENES HIELO EN\nEL CONGELADOR?",
+   "resaltar": [
+    "HIELO"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "hielo"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.5,
+     "y": 0.48,
+     "tam": 0.25,
+     "en": -0.14,
+     "anim": "respirar"
+    },
+    {
+     "activo": "hielo",
+     "x": 0.45,
+     "y": 0.585,
+     "tam": 0.1,
+     "en": "hielo",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "hielo",
+     "x": 0.565,
+     "y": 0.58,
+     "tam": 0.08,
+     "en": "congelador",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "copo",
+     "x": 0.16,
+     "y": 0.38,
+     "tam": 0.13,
+     "en": "hielo",
+     "anim": "girar"
+    },
+    {
+     "activo": "pensando",
+     "x": 0.84,
+     "y": 0.36,
+     "tam": 0.13,
+     "en": "congelador",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "nieve",
+     "x": 0.5,
+     "y": 0.58,
+     "ancho": 0.22,
+     "alto": 0.05,
+     "en": "tienes",
+     "densidad": 7,
+     "vida": 1.2
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "Según la OCU, 3 milímetros de escarcha en las paredes del congelador aumentan el consumo un 30 por ciento.",
+   "fondo": "cocina",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "elementos": [
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 30,
+     "formato": "+{v} %",
+     "px": 210,
+     "color": "aviso",
+     "x": 0.5,
+     "y": 0.21,
+     "en": "escarcha",
+     "anim": "latir"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.27,
+     "y": 0.46,
+     "tam": 0.24,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "3 mm",
+     "px": 120,
+     "color": "cian",
+     "x": 0.68,
+     "y": 0.36,
+     "en": "milímetros",
+     "anim": "latir"
+    },
+    {
+     "activo": "hielo",
+     "x": 0.68,
+     "y": 0.46,
+     "tam": 0.13,
+     "en": "escarcha",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.58,
+      0.46
+     ],
+     "a": [
+      0.42,
+      0.53
+     ],
+     "curva": 0.25,
+     "color": "lima",
+     "en": "paredes"
+    },
+    {
+     "tipo": "barra",
+     "etiqueta": "CONSUMO",
+     "valor": 0.3,
+     "texto_valor": "+30 %",
+     "color": "rojo",
+     "x": 0.5,
+     "y": 0.62,
+     "ancho": 0.8,
+     "en": "consumo",
+     "entrada": "subir",
+     "anim": "ninguna",
+     "dur": 1.1
+    },
+    {
+     "activo": "rayo",
+     "x": 0.84,
+     "y": 0.5,
+     "tam": 0.1,
+     "en": "aumentan",
+     "anim": "vibrar"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Si no es no-frost, descongélalo cuando veas hielo, al menos 2 veces al año.",
+   "fondo": "despensa",
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "AL MENOS\n2 VECES AL AÑO",
+   "resaltar": [
+    "2",
+    "VECES"
+   ],
+   "golpes": [
+    "año"
+   ],
+   "elementos": [
+    {
+     "activo": "calendario",
+     "x": 0.5,
+     "y": 0.45,
+     "tam": 0.3,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "respirar"
+    },
+    {
+     "activo": "hielo",
+     "x": 0.18,
+     "y": 0.36,
+     "tam": 0.12,
+     "en": "hielo",
+     "entrada": "izq",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "copo",
+     "x": 0.82,
+     "y": 0.36,
+     "tam": 0.11,
+     "en": "descongélalo",
+     "anim": "girar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SI NO ES NO-FROST",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.62,
+     "en": 0.3,
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.8,
+     "y": 0.56,
+     "tam": 0.11,
+     "en": "año"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Desconéctalo, saca la comida y deja que el hielo se derrita, sin forzar los cajones.",
+   "fondo": "cocina",
+   "variante_fondo": 2,
+   "camara": "subir",
+   "transicion": "destello",
+   "titulo": "DESCONÉCTALO Y\nDEJA QUE SE DERRITA",
+   "resaltar": [
+    "DESCONÉCTALO"
+   ],
+   "golpes": [
+    "derrita"
+   ],
+   "elementos": [
+    {
+     "activo": "enchufe",
+     "x": 0.24,
+     "y": 0.38,
+     "tam": 0.2,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "capas": {
+      "clavija": {
+       "de": [
+        0,
+        0
+       ],
+       "a": [
+        0,
+        80
+       ],
+       "en": "desconéctalo",
+       "dur": 0.5
+      }
+     }
+    },
+    {
+     "activo": "carne",
+     "x": 0.76,
+     "y": 0.36,
+     "tam": 0.13,
+     "en": "comida",
+     "entrada": "der",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.82,
+        0.36
+       ],
+       "tam": 0.1,
+       "en": "deja",
+       "dur": 0.5
+      }
+     ]
+    },
+    {
+     "activo": "hielo",
+     "x": 0.5,
+     "y": 0.5,
+     "tam": 0.17,
+     "en": 0.3,
+     "sale_en": "cajones",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.5,
+     "y": 0.57,
+     "ancho": 0.22,
+     "alto": 0.08,
+     "en": "derrita",
+     "densidad": 8,
+     "vida": 1.0
+    },
+    {
+     "activo": "gota",
+     "x": 0.5,
+     "y": 0.55,
+     "tam": 0.12,
+     "en": "cajones",
+     "entrada": "caer",
+     "anim": "flotar"
+    },
+    {
+     "activo": "cajon",
+     "x": 0.77,
+     "y": 0.57,
+     "tam": 0.13,
+     "en": "forzar",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.77,
+     "y": 0.57,
+     "tam": 0.1,
+     "en": "cajones"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Límpialo con agua y jabón, sécalo bien, conéctalo y espera unos 15 minutos antes de meter la comida.",
+   "fondo": "cocina",
+   "camara": "empuje",
+   "transicion": "barrido",
+   "titulo": "SECA, CONECTA\nY ESPERA 15 MIN",
+   "resaltar": [
+    "15",
+    "MIN"
+   ],
+   "golpes": [
+    "espera"
+   ],
+   "elementos": [
+    {
+     "activo": "esponja",
+     "x": 0.24,
+     "y": 0.4,
+     "tam": 0.15,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "activo": "jabon",
+     "x": 0.24,
+     "y": 0.56,
+     "tam": 0.12,
+     "en": "jabón",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "burbujas",
+     "x": 0.24,
+     "y": 0.4,
+     "ancho": 0.18,
+     "alto": 0.12,
+     "en": "agua",
+     "hasta": "conéctalo",
+     "densidad": 7,
+     "vida": 1.0
+    },
+    {
+     "activo": "nevera",
+     "x": 0.52,
+     "y": 0.47,
+     "tam": 0.24,
+     "en": "sécalo",
+     "entrada": "zoom",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "temporizador",
+     "x": 0.8,
+     "y": 0.4,
+     "tam": 0.14,
+     "en": "espera",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "15 MIN",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 56,
+     "x": 0.8,
+     "y": 0.495,
+     "en": "minutos",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "carne",
+     "x": 0.8,
+     "y": 0.32,
+     "tam": 0.1,
+     "en": "comida",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "enchufe",
+     "x": 0.8,
+     "y": 0.595,
+     "tam": 0.12,
+     "en": "conéctalo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "capas": {
+      "clavija": {
+       "de": [
+        0,
+        80
+       ],
+       "a": [
+        0,
+        0
+       ],
+       "en": "conéctalo",
+       "dur": 0.5
+      }
+     }
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Sin capa de hielo, el motor no tiene que trabajar de más.",
+   "fondo": "cocina",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "SIN HIELO,\nMENOS CONSUMO",
+   "resaltar": [
+    "MENOS"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.32,
+     "y": 0.47,
+     "tam": 0.26,
+     "en": 0.0,
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.32,
+     "y": 0.47,
+     "ancho": 0.26,
+     "alto": 0.3,
+     "en": "hielo",
+     "densidad": 7,
+     "vida": 0.9
+    },
+    {
+     "activo": "rayo",
+     "x": 0.7,
+     "y": 0.37,
+     "tam": 0.12,
+     "en": "motor",
+     "anim": "latir"
+    },
+    {
+     "activo": "grafico_baja",
+     "x": 0.7,
+     "y": 0.53,
+     "tam": 0.14,
+     "en": "trabajar",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.84,
+     "y": 0.45,
+     "tam": 0.1,
+     "en": "más"
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para tu próxima limpieza y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "zoom",
+   "titulo": "GUÁRDALO PARA TU\nPRÓXIMA LIMPIEZA",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.32,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "esponja",
+     "x": 0.18,
+     "y": 0.5,
+     "tam": 0.15,
+     "en": "limpieza",
+     "anim": "flotar"
+    },
+    {
+     "activo": "copo",
+     "x": 0.82,
+     "y": 0.5,
+     "tam": 0.14,
+     "en": "limpieza",
+     "anim": "girar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.38,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    },
+    {
+     "activo": "calendario",
+     "x": 0.83,
+     "y": 0.35,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    }
+   ]
+  }
+ ]
+}
