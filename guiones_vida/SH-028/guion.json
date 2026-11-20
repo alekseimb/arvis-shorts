@@ -1,0 +1,496 @@
+{
+ "id": "SH-028",
+ "numero": 5,
+ "idea": "IDEA-017",
+ "categoria": "cocina",
+ "gancho_tecnica": "pregunta + dato",
+ "variante": 1,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 2,
+  "nivel_db": -19
+ },
+ "title": "¿Calientas las sobras en el horno? El microondas ahorra un 60 % de energía",
+ "description": "Según la Comunidad de Madrid, usar un horno microondas en vez de uno convencional ahorra un 60 % de energía, y además el tiempo de cocinado disminuye porque es más rápido. Para calentar una ración: horno apagado y microondas.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#cocina",
+  "#ahorro",
+  "#trucosdecasa"
+ ],
+ "tags": [
+  "microondas",
+  "horno",
+  "calentar sobras",
+  "ahorrar luz",
+  "ahorro de energía",
+  "trucos de cocina",
+  "trucos de casa",
+  "lifehacks",
+  "factura de la luz"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.comunidad.madrid/sites/default/files/doc/consumo/info_consumo_ahorro_energia.pdf",
+  "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable"
+ ],
+ "hechos": [
+  {
+   "dato": "microondas en vez del horno convencional ahorra 60 por ciento de energía",
+   "cita": "Utilizar un horno microondas en vez de uno convencional ahorra un 60% de energía.",
+   "url": "https://www.comunidad.madrid/sites/default/files/doc/consumo/info_consumo_ahorro_energia.pdf",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "el microondas es más rápido: menos tiempo de cocinado",
+   "cita": "además de que el tiempo de cocinado disminuye, puesto que son más rápidos.",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "el microondas calienta",
+   "cita": "Es un electrodoméstico muy versátil, ya que calienta, cuece, descongela…",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "20/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Calientas las sobras en el horno?",
+   "fondo": "cocina",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.48
+   ],
+   "titulo": "¿CALIENTAS LAS\nSOBRAS EN EL HORNO?",
+   "resaltar": [
+    "HORNO?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "horno"
+   ],
+   "elementos": [
+    {
+     "activo": "horno",
+     "x": 0.5,
+     "y": 0.475,
+     "tam": 0.44,
+     "en": -0.14,
+     "anim": "respirar",
+     "capas": {
+      "luz": {
+       "de": 0,
+       "a": 1,
+       "en": "calientas",
+       "dur": 0.3
+      }
+     }
+    },
+    {
+     "activo": "fiambrera",
+     "x": 0.15,
+     "y": 0.56,
+     "tam": 0.15,
+     "en": "sobras",
+     "anim": "balancear"
+    },
+    {
+     "activo": "pensando",
+     "x": 0.85,
+     "y": 0.36,
+     "tam": 0.14,
+     "en": "horno",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "calor",
+     "x": 0.5,
+     "y": 0.37,
+     "ancho": 0.34,
+     "alto": 0.1,
+     "en": "sobras",
+     "densidad": 7,
+     "vida": 1.2
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "El microondas ahorra un 60 por ciento de energía frente al horno convencional, según la Comunidad de Madrid.",
+   "fondo": "cocina",
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "elementos": [
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 60,
+     "formato": "{v} %",
+     "px": 210,
+     "color": "aviso",
+     "x": 0.5,
+     "y": 0.21,
+     "en": "60",
+     "anim": "latir"
+    },
+    {
+     "activo": "horno",
+     "x": 0.25,
+     "y": 0.415,
+     "tam": 0.29,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "capas": {
+      "luz": {
+       "de": 0.3,
+       "a": 1,
+       "en": "horno",
+       "dur": 0.4
+      }
+     }
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.42,
+      0.415
+     ],
+     "a": [
+      0.56,
+      0.415
+     ],
+     "curva": 0.25,
+     "color": "lima",
+     "en": "energía"
+    },
+    {
+     "activo": "microondas",
+     "x": 0.73,
+     "y": 0.415,
+     "tam": 0.33,
+     "en": "microondas",
+     "entrada": "der",
+     "anim": "respirar",
+     "estado": {
+      "pantalla": "ON"
+     },
+     "capas": {
+      "luz": {
+       "de": 0,
+       "a": 1,
+       "en": "ahorra",
+       "dur": 0.4
+      }
+     }
+    },
+    {
+     "tipo": "barra",
+     "etiqueta": "ENERGÍA AHORRADA",
+     "valor": 0.6,
+     "texto_valor": "60 %",
+     "color": "verde",
+     "x": 0.5,
+     "y": 0.555,
+     "ancho": 0.8,
+     "en": "energía",
+     "entrada": "subir",
+     "anim": "ninguna",
+     "dur": 1.1
+    },
+    {
+     "activo": "rayo",
+     "x": 0.86,
+     "y": 0.31,
+     "tam": 0.11,
+     "en": "convencional",
+     "anim": "vibrar"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Para calentar una sola ración, deja el horno apagado.",
+   "fondo": "cocina",
+   "variante_fondo": 1,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "UNA SOLA RACIÓN:\nHORNO APAGADO",
+   "resaltar": [
+    "APAGADO"
+   ],
+   "golpes": [
+    "apagado"
+   ],
+   "elementos": [
+    {
+     "activo": "horno",
+     "x": 0.5,
+     "y": 0.475,
+     "tam": 0.46,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "ninguna",
+     "capas": {
+      "luz": {
+       "de": 1,
+       "a": 0,
+       "en": "apagado",
+       "dur": 0.6
+      }
+     }
+    },
+    {
+     "activo": "fiambrera",
+     "x": 0.15,
+     "y": 0.34,
+     "tam": 0.14,
+     "en": "ración",
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "calor",
+     "x": 0.5,
+     "y": 0.4,
+     "ancho": 0.36,
+     "alto": 0.12,
+     "en": 0.0,
+     "hasta": "apagado",
+     "densidad": 8,
+     "vida": 1.2
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.8,
+     "y": 0.6,
+     "tam": 0.12,
+     "en": "apagado"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Usa el microondas: además es más rápido, así que esperas menos.",
+   "fondo": "cocina",
+   "variante_fondo": 2,
+   "camara": "empuje",
+   "transicion": "barrido",
+   "titulo": "USA EL\nMICROONDAS",
+   "resaltar": [
+    "MICROONDAS"
+   ],
+   "golpes": [
+    "rápido"
+   ],
+   "elementos": [
+    {
+     "activo": "microondas",
+     "x": 0.45,
+     "y": 0.46,
+     "tam": 0.56,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "ON"
+     },
+     "capas": {
+      "luz": {
+       "de": 0,
+       "a": 1,
+       "en": "microondas",
+       "dur": 0.4
+      }
+     }
+    },
+    {
+     "activo": "fiambrera",
+     "x": 0.14,
+     "y": 0.33,
+     "tam": 0.14,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.39,
+        0.48
+       ],
+       "tam": 0.07,
+       "en": "microondas",
+       "dur": 0.5
+      }
+     ]
+    },
+    {
+     "activo": "cronometro",
+     "x": 0.84,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "rápido",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.78,
+     "y": 0.6,
+     "tam": 0.12,
+     "en": "esperas"
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "El mismo plato caliente, con menos energía y menos espera.",
+   "fondo": "cocina",
+   "camara": "alejar",
+   "transicion": "destello",
+   "titulo": "MENOS ENERGÍA,\nMENOS ESPERA",
+   "resaltar": [
+    "MENOS"
+   ],
+   "elementos": [
+    {
+     "activo": "arroz",
+     "x": 0.3,
+     "y": 0.47,
+     "tam": 0.28,
+     "en": 0.0,
+     "anim": "flotar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "calor",
+     "x": 0.3,
+     "y": 0.37,
+     "ancho": 0.24,
+     "alto": 0.1,
+     "en": "caliente",
+     "densidad": 8,
+     "vida": 1.2
+    },
+    {
+     "activo": "rayo",
+     "x": 0.63,
+     "y": 0.38,
+     "tam": 0.13,
+     "en": "energía",
+     "anim": "latir"
+    },
+    {
+     "activo": "grafico_baja",
+     "x": 0.8,
+     "y": 0.38,
+     "tam": 0.13,
+     "en": "energía",
+     "anim": "latir"
+    },
+    {
+     "activo": "cronometro",
+     "x": 0.7,
+     "y": 0.55,
+     "tam": 0.13,
+     "en": "espera",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.3,
+     "y": 0.62,
+     "tam": 0.11,
+     "en": "espera"
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para tu próxima cena y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "subir",
+   "titulo": "GUÁRDALO PARA\nTU PRÓXIMA CENA",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.32,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "plato",
+     "x": 0.19,
+     "y": 0.5,
+     "tam": 0.16,
+     "en": "cena",
+     "anim": "flotar"
+    },
+    {
+     "activo": "microondas",
+     "x": 0.81,
+     "y": 0.5,
+     "tam": 0.2,
+     "en": "cena",
+     "anim": "flotar",
+     "estado": {
+      "pantalla": "ON"
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.38,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    },
+    {
+     "activo": "calendario",
+     "x": 0.83,
+     "y": 0.35,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    }
+   ]
+  }
+ ]
+}
