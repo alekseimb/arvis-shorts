@@ -18,7 +18,7 @@ import re
 import unicodedata
 
 PESOS = {"utilidad": 25, "interes": 20, "demostrable": 20, "retencion": 15, "originalidad": 10, "conversacion": 10}
-DEMOS_GRABABLES = {"escritorio", "terminal", "web", "mixta"}  # escritorio = Chrome real con su interfaz (Xvfb)
+DEMOS_GRABABLES = {"escritorio", "terminal", "web", "mixta", "2d"}  # 2d = animación de ARVIS VIDA (20/11/2026)
 
 
 def _norm(s):

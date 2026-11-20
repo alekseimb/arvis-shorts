@@ -1,0 +1,8 @@
+# ARVIS VIDA (motor 2D de lifehacks de la vida real) · todo gratis, sin GPU
+piper-tts
+scipy
+numpy
+pillow
+opencv-python-headless
+pytest
+# además: ffmpeg/ffprobe y rsvg-convert (librsvg) del sistema; git para el clon parcial de Fluent Emoji (MIT)

@@ -1,0 +1,501 @@
+{
+ "id": "SH-027",
+ "numero": 4,
+ "idea": "IDEA-016",
+ "categoria": "ahorro",
+ "gancho_tecnica": "pregunta + dato",
+ "variante": 0,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 1,
+  "nivel_db": -19
+ },
+ "title": "¿En qué gasta de verdad tu lavadora? (el 80–85 % se va en esto)",
+ "description": "Entre el 80 % y el 85 % del consumo de energía de la lavadora se va en calentar el agua. Dos gestos para recortarlo: programa ECO o de baja temperatura, y ponerla solo cuando esté llena.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#ahorro",
+  "#trucosdecasa",
+  "#lavadora"
+ ],
+ "tags": [
+  "lavadora",
+  "ahorrar luz",
+  "programa eco",
+  "ahorro de energía",
+  "trucos de casa",
+  "colada",
+  "lifehacks",
+  "factura de la luz"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+  "https://www.comunidad.madrid/sites/default/files/doc/consumo/info_consumo_ahorro_energia.pdf"
+ ],
+ "hechos": [
+  {
+   "dato": "80 85 por ciento del consumo de la lavadora es calentar el agua",
+   "cita": "Entre el 80% y el 85% del consumo energético que producen estos electrodomésticos proviene del proceso de calentamiento del agua durante el lavado.",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "programas de baja temperatura consumen menos",
+   "cita": "Para la lavadora, durante el lavado, se pueden aplicar programas de baja temperatura, que consumen menos, ya que reducen la energía usada en el calentamiento del agua.",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "programa ECO",
+   "cita": "Entre el 80% y el 85% del consumo energético que producen estos electrodomésticos proviene del proceso de calentamiento del agua durante el lavado, por ello es conveniente usar el programa ECO.",
+   "url": "https://www.comunidad.madrid/sites/default/files/doc/consumo/info_consumo_ahorro_energia.pdf",
+   "leido": "20/11/2026"
+  },
+  {
+   "dato": "usarla llena, no a media carga",
+   "cita": "es conveniente usar ambos electrodomésticos cuando estén llenos y no a mitad de carga.",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "20/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Sabes en qué gasta de verdad tu lavadora?",
+   "fondo": "lavadero",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.5
+   ],
+   "titulo": "¿EN QUÉ GASTA\nTU LAVADORA?",
+   "resaltar": [
+    "LAVADORA?"
+   ],
+   "titulo_en": -0.12,
+   "golpes": [
+    "verdad"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.5,
+     "y": 0.485,
+     "tam": 0.48,
+     "en": -0.14,
+     "anim": "respirar",
+     "capas": {
+      "tambor": {
+       "girar": 170,
+       "t": 0
+      }
+     }
+    },
+    {
+     "activo": "pregunta",
+     "x": 0.86,
+     "y": 0.5,
+     "tam": 0.15,
+     "en": "gasta",
+     "anim": "balancear"
+    },
+    {
+     "activo": "billete_alas",
+     "x": 0.14,
+     "y": 0.52,
+     "tam": 0.15,
+     "en": "verdad",
+     "anim": "flotar"
+    }
+   ],
+   "titulo_y": 0.125
+  },
+  {
+   "beat": "problema",
+   "say": "Entre el 80 y el 85 por ciento de su consumo se va en calentar el agua.",
+   "fondo": "lavadero",
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "elementos": [
+    {
+     "tipo": "texto",
+     "texto": "80–85 %",
+     "px": 210,
+     "color": "aviso",
+     "x": 0.5,
+     "y": 0.235,
+     "en": "80",
+     "anim": "latir"
+    },
+    {
+     "activo": "lavadora",
+     "x": 0.33,
+     "y": 0.42,
+     "tam": 0.36,
+     "entrada": "izq",
+     "en": 0.0,
+     "anim": "respirar",
+     "capas": {
+      "tambor": {
+       "girar": 120,
+       "t": 0
+      }
+     }
+    },
+    {
+     "activo": "termometro",
+     "x": 0.78,
+     "y": 0.43,
+     "tam": 0.15,
+     "en": "consumo",
+     "anim": "ninguna",
+     "capas": {
+      "columna": {
+       "de": 0.12,
+       "a": 0.95,
+       "en": "calentar",
+       "dur": 1.0
+      }
+     }
+    },
+    {
+     "tipo": "particulas",
+     "clase": "calor",
+     "x": 0.33,
+     "y": 0.31,
+     "ancho": 0.36,
+     "alto": 0.16,
+     "en": "calentar",
+     "densidad": 10,
+     "vida": 1.4
+    },
+    {
+     "tipo": "barra",
+     "etiqueta": "CALENTAR EL AGUA",
+     "valor": 0.85,
+     "texto_valor": "80–85 %",
+     "color": "rojo",
+     "x": 0.5,
+     "y": 0.59,
+     "ancho": 0.8,
+     "en": "calentar",
+     "entrada": "subir",
+     "anim": "ninguna",
+     "dur": 1.1
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Elige un programa de baja temperatura o el programa eco.",
+   "fondo": "lavadero",
+   "variante_fondo": 1,
+   "camara": "empuje",
+   "transicion": "zoom",
+   "titulo": "BAJA TEMPERATURA\nO PROGRAMA ECO",
+   "resaltar": [
+    "ECO"
+   ],
+   "golpes": [
+    "eco"
+   ],
+   "elementos": [
+    {
+     "activo": "dial",
+     "x": 0.42,
+     "y": 0.48,
+     "tam": 0.56,
+     "en": 0.0,
+     "anim": "ninguna",
+     "capas": {
+      "aguja": {
+       "de": "90°",
+       "a": "ECO",
+       "en": "baja",
+       "dur": 1.7
+      }
+     }
+    },
+    {
+     "activo": "termometro",
+     "x": 0.86,
+     "y": 0.47,
+     "tam": 0.11,
+     "en": "programa",
+     "anim": "ninguna",
+     "capas": {
+      "columna": {
+       "de": 0.9,
+       "a": 0.3,
+       "en": "baja",
+       "dur": 1.2
+      }
+     }
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.7,
+     "y": 0.585,
+     "tam": 0.12,
+     "en": "eco"
+    },
+    {
+     "activo": "hoja",
+     "x": 0.84,
+     "y": 0.34,
+     "tam": 0.12,
+     "en": "eco",
+     "anim": "balancear"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Y ponla solo cuando esté llena, no a media carga.",
+   "fondo": "lavadero",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "barrido",
+   "titulo": "SOLO CON LA\nCARGA LLENA",
+   "resaltar": [
+    "LLENA"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.5,
+     "y": 0.5,
+     "tam": 0.5,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "respirar",
+     "capas": {
+      "tambor": {
+       "girar": 90,
+       "t": 0
+      }
+     }
+    },
+    {
+     "activo": "camiseta",
+     "x": 0.14,
+     "y": 0.33,
+     "tam": 0.15,
+     "en": 0.05,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.5,
+        0.56
+       ],
+       "tam": 0.04,
+       "en": "ponla",
+       "dur": 0.5
+      }
+     ]
+    },
+    {
+     "activo": "vaqueros",
+     "x": 0.86,
+     "y": 0.33,
+     "tam": 0.15,
+     "en": 0.2,
+     "entrada": "der",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.5,
+        0.56
+       ],
+       "tam": 0.04,
+       "en": "solo",
+       "dur": 0.5
+      }
+     ]
+    },
+    {
+     "activo": "calcetines",
+     "x": 0.14,
+     "y": 0.6,
+     "tam": 0.13,
+     "en": 0.35,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.5,
+        0.56
+       ],
+       "tam": 0.04,
+       "en": "cuando",
+       "dur": 0.5
+      }
+     ]
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.82,
+     "y": 0.38,
+     "tam": 0.13,
+     "en": "llena"
+    },
+    {
+     "tipo": "texto",
+     "texto": "MEDIA CARGA",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "px": 70,
+     "x": 0.36,
+     "y": 0.6,
+     "en": "media",
+     "anim": "vibrar"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.72,
+     "y": 0.6,
+     "tam": 0.09,
+     "en": "carga"
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Así recortas justo la parte que más gasta.",
+   "fondo": "lavadero",
+   "camara": "alejar",
+   "transicion": "destello",
+   "titulo": "MENOS GASTO\nDONDE MÁS GASTA",
+   "resaltar": [
+    "MENOS"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.3,
+     "y": 0.5,
+     "tam": 0.4,
+     "en": 0.0,
+     "anim": "flotar",
+     "estado": {
+      "eco": true,
+      "pantalla": "ECO"
+     }
+    },
+    {
+     "activo": "grafico_baja",
+     "x": 0.74,
+     "y": 0.45,
+     "tam": 0.28,
+     "en": "recortas",
+     "anim": "latir"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.3,
+     "y": 0.48,
+     "ancho": 0.42,
+     "alto": 0.26,
+     "en": "justo",
+     "densidad": 9,
+     "vida": 0.9,
+     "tam": 0.08
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.78,
+     "y": 0.6,
+     "tam": 0.12,
+     "en": "gasta"
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para tu próxima colada y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "subir",
+   "titulo": "GUÁRDALO PARA\nTU PRÓXIMA COLADA",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.32,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "cesta",
+     "x": 0.2,
+     "y": 0.5,
+     "tam": 0.17,
+     "en": "colada",
+     "anim": "flotar"
+    },
+    {
+     "activo": "camiseta",
+     "x": 0.8,
+     "y": 0.5,
+     "tam": 0.15,
+     "en": "colada",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.5,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    },
+    {
+     "activo": "calendario",
+     "x": 0.83,
+     "y": 0.36,
+     "tam": 0.13,
+     "en": "cada",
+     "anim": "latir"
+    }
+   ]
+  }
+ ]
+}
