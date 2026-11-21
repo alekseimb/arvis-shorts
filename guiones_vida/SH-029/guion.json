@@ -8,7 +8,7 @@
  "voice": "sharvard_m",
  "musica": {
   "semilla": 0,
-  "nivel_db": -19
+  "nivel_db": -21
  },
  "title": "¿Tienes hielo en el congelador? 3 mm de escarcha suben el consumo un 30 %",
  "description": "Según la OCU, tres milímetros de escarcha en las paredes del congelador aumentan el consumo un 30 %: el hielo aísla y el motor tiene que trabajar más. Si tu congelador no es no-frost, descongélalo cuando veas hielo (al menos dos veces al año): desconéctalo, saca la comida, deja que el hielo se derrita sin forzar los cajones, límpialo con agua jabonosa, sécalo bien, conéctalo y espera unos 15 minutos antes de volver a meter la comida.",
@@ -228,11 +228,11 @@
      "tipo": "flecha",
      "de": [
       0.58,
-      0.46
+      0.44
      ],
      "a": [
-      0.42,
-      0.53
+      0.4,
+      0.47
      ],
      "curva": 0.25,
      "color": "lima",
@@ -244,9 +244,9 @@
      "valor": 0.3,
      "texto_valor": "+30 %",
      "color": "rojo",
-     "x": 0.5,
-     "y": 0.62,
-     "ancho": 0.8,
+     "x": 0.62,
+     "y": 0.565,
+     "ancho": 0.44,
      "en": "consumo",
      "entrada": "subir",
      "anim": "ninguna",
@@ -255,7 +255,7 @@
     {
      "activo": "rayo",
      "x": 0.84,
-     "y": 0.5,
+     "y": 0.47,
      "tam": 0.1,
      "en": "aumentan",
      "anim": "vibrar"
@@ -548,52 +548,105 @@
    "variante_fondo": 1,
    "camara": "alejar",
    "transicion": "subir",
-   "titulo": "SIN HIELO,\nMENOS CONSUMO",
+   "titulo": "SIN HIELO, EL MOTOR\nTRABAJA MENOS",
    "resaltar": [
     "MENOS"
    ],
    "elementos": [
     {
      "activo": "nevera",
-     "x": 0.32,
-     "y": 0.47,
-     "tam": 0.26,
+     "x": 0.27,
+     "y": 0.46,
+     "tam": 0.21,
      "en": 0.0,
+     "anim": "ninguna"
+    },
+    {
+     "activo": "hielo",
+     "x": 0.255,
+     "y": 0.545,
+     "tam": 0.06,
+     "en": 0.0,
+     "anim": "vibrar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "ANTES",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "px": 56,
+     "x": 0.27,
+     "y": 0.615,
+     "en": 0.0
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.27,
+     "y": 0.315,
+     "tam": 0.08,
+     "en": "capa"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.41,
+      0.46
+     ],
+     "a": [
+      0.57,
+      0.46
+     ],
+     "curva": 0.2,
+     "color": "lima",
+     "en": "hielo"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.71,
+     "y": 0.46,
+     "tam": 0.21,
+     "en": "hielo",
+     "entrada": "der",
      "anim": "respirar"
     },
     {
      "tipo": "particulas",
      "clase": "brillos",
-     "x": 0.32,
-     "y": 0.47,
-     "ancho": 0.26,
-     "alto": 0.3,
+     "x": 0.71,
+     "y": 0.46,
+     "ancho": 0.24,
+     "alto": 0.26,
      "en": "hielo",
-     "densidad": 7,
+     "densidad": 5,
      "vida": 0.9
     },
     {
-     "activo": "rayo",
-     "x": 0.7,
-     "y": 0.37,
-     "tam": 0.12,
-     "en": "motor",
-     "anim": "latir"
+     "tipo": "texto",
+     "texto": "DESPUÉS",
+     "fondo": "pastilla",
+     "color_fondo": "verde",
+     "color": "noche",
+     "px": 56,
+     "x": 0.71,
+     "y": 0.615,
+     "en": "hielo"
     },
     {
-     "activo": "grafico_baja",
-     "x": 0.7,
-     "y": 0.53,
-     "tam": 0.14,
-     "en": "trabajar",
+     "activo": "rayo",
+     "x": 0.5,
+     "y": 0.33,
+     "tam": 0.09,
+     "en": "motor",
      "anim": "latir"
     },
     {
      "tipo": "sello",
      "simbolo": "check",
-     "x": 0.84,
-     "y": 0.45,
-     "tam": 0.1,
+     "x": 0.71,
+     "y": 0.315,
+     "tam": 0.08,
      "en": "más"
     }
    ]
