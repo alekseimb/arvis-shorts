@@ -1,0 +1,677 @@
+{
+ "id": "SH-031",
+ "numero": 7,
+ "idea": "IDEA-018",
+ "categoria": "cocina",
+ "gancho_tecnica": "pregunta directa",
+ "variante": 1,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 2,
+  "nivel_db": -20
+ },
+ "title": "¿A qué temperatura tienes la nevera? 5 ºC y -18 ºC, según el IDAE",
+ "description": "La Comunidad de Madrid recoge la recomendación del IDAE: mantener aproximadamente 5 ºC en la zona de refrigeración y -18 ºC en el congelador. Además: no metas alimentos todavía calientes, abre la puerta solo cuando sea necesario y deja libres las rejillas de ventilación para que el aparato funcione correctamente.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#cocina",
+  "#trucosdecasa",
+  "#nevera"
+ ],
+ "tags": [
+  "nevera",
+  "frigorífico",
+  "temperatura de la nevera",
+  "congelador",
+  "ahorro de energía",
+  "trucos de cocina",
+  "trucos de casa",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano"
+ ],
+ "hechos": [
+  {
+   "dato": "la nevera funciona las 24 horas (no descansa nunca): usarla bien es especialmente importante",
+   "cita": "El frigorífico funciona las 24 horas del día, por lo que utilizarlo correctamente es especialmente importante.",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "el IDAE recomienda unos 5 ºC en la nevera y -18 ºC en el congelador",
+   "cita": "El Instituto para la Diversificación y Ahorro de la Energía (IDAE) recomienda mantener aproximadamente",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "temperaturas recomendadas",
+   "cita": "5 ºC en la zona de refrigeración y -18 ºC en el congelador",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "no meter comida todavía caliente",
+   "cita": "también es aconsejable no introducir alimentos todavía calientes",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "abrir la puerta solo cuando haga falta",
+   "cita": "abrir la puerta únicamente cuando sea necesario y cerrarla cuanto antes",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "rejillas de ventilación libres para que funcione correctamente",
+   "cita": "Además, las rejillas de ventilación deben permanecer libres para que el aparato pueda funcionar correctamente.",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "la página trata de cómo ahorrar energía en la cocina",
+   "cita": "Cómo ahorrar energía en la cocina durante todo el año",
+   "url": "https://www.comunidad.madrid/consumo/ahorrar-energia-cocina-todo-ano",
+   "leido": "21/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿A qué temperatura tienes la nevera?",
+   "fondo": "cocina",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "titulo": "¿A QUÉ TEMPERATURA\nTIENES LA NEVERA?",
+   "resaltar": [
+    "NEVERA?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "nevera"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.5,
+     "y": 0.47,
+     "tam": 0.25,
+     "en": -0.14,
+     "anim": "respirar",
+     "estado": {
+      "pantalla": "¿?",
+      "pantalla2": "¿?"
+     }
+    },
+    {
+     "activo": "Thermometer",
+     "x": 0.2,
+     "y": 0.42,
+     "tam": 0.13,
+     "en": "temperatura",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "pensando",
+     "x": 0.8,
+     "y": 0.4,
+     "tam": 0.13,
+     "en": "tienes",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "activo": "copo",
+     "x": 0.8,
+     "y": 0.56,
+     "tam": 0.09,
+     "en": "nevera",
+     "anim": "girar"
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "Tu nevera no descansa nunca: funciona las 24 horas del día. Por eso importa tanto usarla bien.",
+   "fondo": "cocina",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "golpes": [
+    "nunca",
+    "24"
+   ],
+   "elementos": [
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 24,
+     "formato": "{v} H",
+     "px": 200,
+     "color": "aviso",
+     "x": 0.5,
+     "y": 0.165,
+     "en": "nevera",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "HORAS AL DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 56,
+     "x": 0.5,
+     "y": 0.265,
+     "en": "horas",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.3,
+     "y": 0.465,
+     "tam": 0.23,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "ON",
+      "pantalla2": "ON"
+     }
+    },
+    {
+     "activo": "Zzz",
+     "x": 0.72,
+     "y": 0.38,
+     "tam": 0.14,
+     "en": "descansa",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.72,
+     "y": 0.38,
+     "tam": 0.13,
+     "en": "nunca"
+    },
+    {
+     "activo": "Alarm clock",
+     "x": 0.72,
+     "y": 0.535,
+     "tam": 0.13,
+     "en": "horas",
+     "entrada": "der",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "ÚSALA BIEN",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 56,
+     "x": 0.56,
+     "y": 0.635,
+     "en": "bien",
+     "entrada": "pop",
+     "anim": "ninguna"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "El IDAE recomienda unos 5 grados en la nevera y menos 18 en el congelador.",
+   "fondo": "cocina",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "NEVERA 5 °C\nCONGELADOR -18 °C",
+   "resaltar": [
+    "5",
+    "-18"
+   ],
+   "golpes": [
+    "congelador"
+   ],
+   "sfx": [
+    [
+     "ding",
+     "5"
+    ],
+    [
+     "ding",
+     "18"
+    ]
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.3,
+     "y": 0.47,
+     "tam": 0.25,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SEGÚN EL IDAE",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 44,
+     "x": 0.69,
+     "y": 0.315,
+     "en": "IDAE",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "5 °C",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 100,
+     "x": 0.7,
+     "y": 0.39,
+     "en": "5",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.56,
+      0.385
+     ],
+     "a": [
+      0.335,
+      0.368
+     ],
+     "curva": 0.2,
+     "color": "cian",
+     "en": "nevera"
+    },
+    {
+     "tipo": "texto",
+     "texto": "-18 °C",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 100,
+     "x": 0.7,
+     "y": 0.54,
+     "en": "18",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.53,
+      0.54
+     ],
+     "a": [
+      0.335,
+      0.534
+     ],
+     "curva": -0.2,
+     "color": "aviso",
+     "en": "congelador"
+    },
+    {
+     "activo": "copo",
+     "x": 0.84,
+     "y": 0.45,
+     "tam": 0.08,
+     "en": "congelador",
+     "anim": "girar"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "No metas comida todavía caliente, y abre la puerta solo cuando haga falta.",
+   "fondo": "despensa",
+   "camara": "subir",
+   "transicion": "destello",
+   "titulo": "NADA CALIENTE\nY PUERTA CERRADA",
+   "resaltar": [
+    "CALIENTE",
+    "CERRADA"
+   ],
+   "golpes": [
+    "caliente"
+   ],
+   "elementos": [
+    {
+     "activo": "Steaming bowl",
+     "x": 0.21,
+     "y": 0.43,
+     "tam": 0.2,
+     "en": "comida",
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "vapor",
+     "x": 0.21,
+     "y": 0.36,
+     "ancho": 0.16,
+     "alto": 0.1,
+     "en": "caliente",
+     "densidad": 6,
+     "vida": 1.2,
+     "tam": 0.08
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.33,
+      0.42
+     ],
+     "a": [
+      0.53,
+      0.44
+     ],
+     "curva": 0.2,
+     "color": "rojo",
+     "en": "metas"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.43,
+     "y": 0.5,
+     "tam": 0.1,
+     "en": "caliente"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.68,
+     "y": 0.46,
+     "tam": 0.22,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Stopwatch",
+     "x": 0.86,
+     "y": 0.34,
+     "tam": 0.09,
+     "en": "puerta",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PUERTA: LO JUSTO",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 48,
+     "x": 0.66,
+     "y": 0.6,
+     "en": "puerta",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.43,
+     "y": 0.6,
+     "tam": 0.09,
+     "en": "falta"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Y deja libres las rejillas de ventilación para que funcione correctamente.",
+   "fondo": "cocina",
+   "camara": "empuje",
+   "transicion": "barrido",
+   "foco": [
+    0.45,
+    0.47
+   ],
+   "titulo": "REJILLAS DE\nVENTILACIÓN LIBRES",
+   "resaltar": [
+    "LIBRES"
+   ],
+   "golpes": [
+    "libres"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.36,
+     "y": 0.47,
+     "tam": 0.24,
+     "en": 0.0,
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Package",
+     "x": 0.62,
+     "y": 0.54,
+     "tam": 0.13,
+     "en": 0.0,
+     "anim": "ninguna",
+     "sale_en": "ventilación"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.62,
+     "y": 0.54,
+     "tam": 0.08,
+     "en": "libres",
+     "sale_en": "ventilación"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.54,
+      0.47
+     ],
+     "a": [
+      0.7,
+      0.355
+     ],
+     "curva": 0.3,
+     "color": "cian",
+     "en": "ventilación"
+    },
+    {
+     "activo": "Dashing away",
+     "x": 0.78,
+     "y": 0.33,
+     "tam": 0.12,
+     "en": "ventilación",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "REJILLAS",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 56,
+     "x": 0.66,
+     "y": 0.615,
+     "en": "rejillas",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.8,
+     "y": 0.49,
+     "tam": 0.1,
+     "en": "correctamente"
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Así tu nevera funciona bien y ahorras energía en la cocina.",
+   "fondo": "cocina",
+   "variante_fondo": 2,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "NEVERA\nBIEN REGULADA",
+   "resaltar": [
+    "REGULADA"
+   ],
+   "golpes": [
+    "ahorras"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.5,
+     "y": 0.45,
+     "tam": 0.24,
+     "en": 0.0,
+     "anim": "respirar"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.78,
+     "y": 0.38,
+     "tam": 0.12,
+     "en": "bien"
+    },
+    {
+     "tipo": "texto",
+     "texto": "AHORRAS ENERGÍA",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 44,
+     "x": 0.21,
+     "y": 0.33,
+     "en": "ahorras",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "bombilla",
+     "x": 0.2,
+     "y": 0.47,
+     "tam": 0.12,
+     "en": "energía",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.3,
+     "alto": 0.2,
+     "en": "ahorras",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.07
+    },
+    {
+     "tipo": "texto",
+     "texto": "5 °C · -18 °C",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 54,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "funciona",
+     "anim": "ninguna"
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo, revisa tu nevera hoy y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "zoom",
+   "titulo": "GUÁRDALO Y\nREVISA TU NEVERA",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.3,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.18,
+     "y": 0.47,
+     "tam": 0.12,
+     "en": "nevera",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "calendario",
+     "x": 0.82,
+     "y": 0.5,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.38,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    }
+   ]
+  }
+ ]
+}
