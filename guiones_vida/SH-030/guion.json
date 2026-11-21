@@ -1,0 +1,628 @@
+{
+ "id": "SH-030",
+ "numero": 6,
+ "idea": "IDEA-021",
+ "categoria": "ahorro",
+ "gancho_tecnica": "pregunta + dato",
+ "variante": 0,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 1,
+  "nivel_db": -20
+ },
+ "title": "¿Dejas la tele en stand-by? Más del 7 % de la luz de los hogares se va así",
+ "description": "Según la Comunidad de Madrid, en España más del 7 % de la energía eléctrica que se consume en los hogares corresponde al consumo fantasma: lo que gastan los aparatos enchufados aunque no los usemos (modo reposo o stand-by, el de la lucecita encendida). Para eliminarlo, desenchúfalos cuando no los uses; si los conectas a una misma regleta, puedes apagarlos todos a la vez.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#ahorro",
+  "#trucosdecasa",
+  "#consumofantasma"
+ ],
+ "tags": [
+  "stand-by",
+  "consumo fantasma",
+  "ahorrar luz",
+  "ahorro de energía",
+  "desenchufar",
+  "regleta",
+  "factura de la luz",
+  "trucos de casa",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos"
+ ],
+ "hechos": [
+  {
+   "dato": "más del 7 por ciento de la luz de los hogares en España es consumo fantasma",
+   "cita": "En España, de la energía eléctrica consumida en los hogares más de un 7% corresponde al consumo fantasma.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "consumo fantasma: aparatos enchufados que gastan aunque no se usen",
+   "cita": "es el que producen los aparatos eléctricos cuando están enchufados, aunque no los estemos utilizando.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "stand-by: modo reposo o en espera",
+   "cita": "Es lo que se conoce como el modo reposo, en espera o stand by.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "la lucecita o piloto encendido indica que sigue conectado",
+   "cita": "el propio aparato nos indica que está conectado a través de una luz o piloto que permanece encendido",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "desenchufar cuando no se usan elimina el consumo fantasma",
+   "cita": "Para eliminar este consumo, sólo debe desenchufar los electrodomésticos cuando no los esté utilizando.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "conectarlos a una misma regleta permite apagarlos todos a la vez",
+   "cita": "Conectar un grupo de electrodomésticos a una misma regleta… podremos apagarlos todos a la vez cuando no se estén utilizando.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  },
+  {
+   "dato": "tele, ordenador y cargador del móvil tienen consumo fantasma",
+   "cita": "El televisor, el router, el ordenador… e incluso el cargador del móvil.",
+   "url": "https://www.comunidad.madrid/servicios/consumo/consumo-fantasma-gasto-silencioso-electrodomesticos",
+   "leido": "21/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Dejas la tele en stand-by?",
+   "fondo": "salon",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "titulo": "¿DEJAS LA TELE\nEN STAND-BY?",
+   "resaltar": [
+    "STAND-BY?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "stand-by"
+   ],
+   "elementos": [
+    {
+     "activo": "Television",
+     "x": 0.5,
+     "y": 0.465,
+     "tam": 0.46,
+     "en": -0.14,
+     "anim": "respirar"
+    },
+    {
+     "activo": "Red circle",
+     "x": 0.646,
+     "y": 0.444,
+     "tam": 0.04,
+     "en": "tele",
+     "anim": "latir"
+    },
+    {
+     "activo": "Zzz",
+     "x": 0.82,
+     "y": 0.34,
+     "tam": 0.13,
+     "en": "stand-by",
+     "anim": "flotar"
+    },
+    {
+     "activo": "rayo",
+     "x": 0.17,
+     "y": 0.58,
+     "tam": 0.11,
+     "en": "stand-by",
+     "anim": "vibrar"
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "En España, más del 7 por ciento de la luz de los hogares es consumo fantasma, según la Comunidad de Madrid.",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "golpes": [
+    "fantasma"
+   ],
+   "elementos": [
+    {
+     "tipo": "texto",
+     "texto": "MÁS DEL",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.135,
+     "en": "más",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 7,
+     "formato": "{v} %",
+     "px": 210,
+     "color": "aviso",
+     "x": 0.5,
+     "y": 0.225,
+     "en": "7",
+     "anim": "latir"
+    },
+    {
+     "activo": "Ghost",
+     "x": 0.5,
+     "y": 0.45,
+     "tam": 0.3,
+     "en": "España",
+     "entrada": "zoom",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Television",
+     "x": 0.19,
+     "y": 0.47,
+     "tam": 0.2,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Laptop",
+     "x": 0.78,
+     "y": 0.47,
+     "tam": 0.17,
+     "en": "luz",
+     "entrada": "der",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "DE LA LUZ DE LOS HOGARES",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 54,
+     "x": 0.5,
+     "y": 0.6,
+     "en": "hogares",
+     "anim": "ninguna"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Esa lucecita encendida avisa: sigue enchufada y gastando. Si no la usas, desenchúfala.",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "¿NO LA USAS?\nDESENCHÚFALA",
+   "resaltar": [
+    "DESENCHÚFALA"
+   ],
+   "golpes": [
+    "desenchúfala"
+   ],
+   "elementos": [
+    {
+     "activo": "Television",
+     "x": 0.27,
+     "y": 0.44,
+     "tam": 0.34,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Red circle",
+     "x": 0.378,
+     "y": 0.424,
+     "tam": 0.033,
+     "en": "lucecita",
+     "sale_en": "desenchúfala",
+     "anim": "latir"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.47,
+      0.335
+     ],
+     "a": [
+      0.395,
+      0.405
+     ],
+     "curva": 0.3,
+     "color": "aviso",
+     "en": "lucecita",
+     "sale_en": "desenchúfala"
+    },
+    {
+     "activo": "rayo",
+     "x": 0.12,
+     "y": 0.33,
+     "tam": 0.1,
+     "en": "gastando",
+     "sale_en": "desenchúfala",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "enchufe",
+     "x": 0.68,
+     "y": 0.42,
+     "tam": 0.25,
+     "en": "enchufada",
+     "entrada": "der",
+     "anim": "ninguna",
+     "capas": {
+      "clavija": {
+       "de": 1,
+       "a": 0,
+       "en": "desenchúfala",
+       "dur": 0.35
+      }
+     }
+    },
+    {
+     "activo": "Electric plug",
+     "x": 0.79,
+     "y": 0.535,
+     "tam": 0.12,
+     "en": "desenchúfala",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.68,
+      0.49
+     ],
+     "a": [
+      0.74,
+      0.53
+     ],
+     "curva": 0.3,
+     "color": "lima",
+     "en": "desenchúfala"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.27,
+     "y": 0.6,
+     "tam": 0.12,
+     "en": "desenchúfala"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "O conecta tele, ordenador y cargador a una misma regleta, y apágalos todos a la vez.",
+   "fondo": "dormitorio",
+   "camara": "subir",
+   "transicion": "destello",
+   "titulo": "UNA REGLETA\nPARA TODOS",
+   "resaltar": [
+    "REGLETA"
+   ],
+   "golpes": [
+    "vez"
+   ],
+   "elementos": [
+    {
+     "activo": "Television",
+     "x": 0.2,
+     "y": 0.355,
+     "tam": 0.2,
+     "en": "tele",
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Red circle",
+     "x": 0.263,
+     "y": 0.346,
+     "tam": 0.025,
+     "en": "tele",
+     "sale_en": "vez",
+     "anim": "latir"
+    },
+    {
+     "activo": "Laptop",
+     "x": 0.5,
+     "y": 0.355,
+     "tam": 0.2,
+     "en": "ordenador",
+     "entrada": "caer",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Red circle",
+     "x": 0.585,
+     "y": 0.392,
+     "tam": 0.025,
+     "en": "ordenador",
+     "sale_en": "vez",
+     "anim": "latir"
+    },
+    {
+     "activo": "Mobile phone",
+     "x": 0.78,
+     "y": 0.355,
+     "tam": 0.13,
+     "en": "cargador",
+     "entrada": "der",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Red circle",
+     "x": 0.826,
+     "y": 0.349,
+     "tam": 0.025,
+     "en": "cargador",
+     "sale_en": "vez",
+     "anim": "latir"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.2,
+      0.41
+     ],
+     "a": [
+      0.38,
+      0.475
+     ],
+     "curva": 0.2,
+     "color": "lima",
+     "en": "regleta"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.5,
+      0.415
+     ],
+     "a": [
+      0.5,
+      0.465
+     ],
+     "curva": 0.0,
+     "color": "lima",
+     "en": "regleta"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.78,
+      0.41
+     ],
+     "a": [
+      0.62,
+      0.475
+     ],
+     "curva": -0.2,
+     "color": "lima",
+     "en": "regleta"
+    },
+    {
+     "tipo": "texto",
+     "texto": "REGLETA",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 80,
+     "x": 0.5,
+     "y": 0.51,
+     "en": "regleta",
+     "entrada": "subir",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "TODOS OFF",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "px": 64,
+     "x": 0.5,
+     "y": 0.6,
+     "en": "apágalos",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.8,
+     "y": 0.58,
+     "tam": 0.11,
+     "en": "vez"
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Aparatos apagados de verdad, y adiós al consumo fantasma.",
+   "fondo": "salon",
+   "camara": "alejar",
+   "transicion": "barrido",
+   "titulo": "ADIÓS AL\nCONSUMO FANTASMA",
+   "resaltar": [
+    "FANTASMA"
+   ],
+   "golpes": [
+    "adiós"
+   ],
+   "elementos": [
+    {
+     "activo": "enchufe",
+     "x": 0.3,
+     "y": 0.43,
+     "tam": 0.26,
+     "en": 0.0,
+     "anim": "ninguna",
+     "capas": {
+      "clavija": {
+       "de": 0,
+       "a": 0,
+       "en": 0.0,
+       "dur": 0.1
+      }
+     }
+    },
+    {
+     "activo": "Electric plug",
+     "x": 0.3,
+     "y": 0.575,
+     "tam": 0.11,
+     "en": "apagados",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Ghost",
+     "x": 0.68,
+     "y": 0.42,
+     "tam": 0.24,
+     "en": 0.0,
+     "anim": "flotar",
+     "sale_en": "fantasma",
+     "mover": [
+      {
+       "a": [
+        0.83,
+        0.33
+       ],
+       "tam": 0.07,
+       "en": "adiós",
+       "dur": 0.8
+      }
+     ]
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.66,
+     "y": 0.45,
+     "tam": 0.13,
+     "en": "fantasma"
+    },
+    {
+     "activo": "grafico_baja",
+     "x": 0.68,
+     "y": 0.585,
+     "tam": 0.11,
+     "en": "verdad",
+     "anim": "latir"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.3,
+     "y": 0.43,
+     "ancho": 0.28,
+     "alto": 0.15,
+     "en": "verdad",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.07
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para esta noche y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "subir",
+   "titulo": "GUÁRDALO PARA\nESTA NOCHE",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.32,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "Crescent moon",
+     "x": 0.82,
+     "y": 0.35,
+     "tam": 0.13,
+     "en": "noche",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Television",
+     "x": 0.19,
+     "y": 0.5,
+     "tam": 0.17,
+     "en": "noche",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.38,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    },
+    {
+     "activo": "calendario",
+     "x": 0.82,
+     "y": 0.52,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    }
+   ]
+  }
+ ]
+}
