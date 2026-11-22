@@ -1,0 +1,777 @@
+{
+ "id": "SH-032",
+ "numero": 8,
+ "idea": "IDEA-024",
+ "categoria": "limpieza",
+ "gancho_tecnica": "pregunta directa",
+ "variante": 2,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 0,
+  "nivel_db": -20
+ },
+ "title": "¿Cuándo limpiaste el filtro de la lavadora? Al menos un par de veces al año",
+ "description": "La OCU recomienda limpiar el filtro de la lavadora al menos un par de veces al año. El filtro recoge los restos sólidos (hasta monedas) para que no lleguen a la bomba de vaciado. Cómo: desenchufa la lavadora, pon un barreño o trapos en el suelo, saca el filtro (suele estar abajo o en el zócalo), límpialo bajo el grifo con un cepillo de dientes viejo, sécalo y vuelve a colocarlo. Después de lavar, deja la puerta abierta para que se seque por dentro. Consulta siempre las instrucciones del fabricante.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#limpieza",
+  "#trucosdecasa",
+  "#lavadora"
+ ],
+ "tags": [
+  "lavadora",
+  "filtro de la lavadora",
+  "limpiar la lavadora",
+  "limpieza del hogar",
+  "trucos de limpieza",
+  "trucos de casa",
+  "OCU",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+  "https://www.ocu.org/electrodomesticos/lavadora/consejos/arreglar-averias-lavadora/limpiar-el-filtro"
+ ],
+ "hechos": [
+  {
+   "dato": "limpiar el filtro al menos un par de veces al año",
+   "cita": "Esta operación debes hacerla al menos un par de veces al año.",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "señal: queda agua en el tambor al terminar",
+   "cita": "la lavadora, después de acabar el programa, mantiene agua dentro del tambor",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "desenchufar y poner un barreño o trapos",
+   "cita": "Desenchufa o desconecta la lavadora, coloca en el suelo un barreño o trapos para recoger el agua acumulada",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "el filtro suele estar abajo o en el zócalo",
+   "cita": "Saca el filtro que, normalmente, se encuentra situado en la parte de abajo de la lavadora o en su zócalo.",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "limpiarlo bajo el grifo con un cepillo de dientes viejo",
+   "cita": "Límpialo bajo un chorro de agua fría, ayudándote con un estropajo y un viejo cepillo de dientes",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "secarlo y volver a colocarlo",
+   "cita": "Sécalo antes de volver a colocarlo en su lugar.",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "dejar la puerta abierta para que se seque por dentro",
+   "cita": "Dejar la puerta abierta cuando saques la ropa, para que el aparato se seque por dentro",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "el filtro protege la bomba de vaciado",
+   "cita": "se encarga de recoger los restos sólidos para que no lleguen a la bomba de vaciado y la estropeen",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/arreglar-averias-lavadora/limpiar-el-filtro",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "en el filtro aparecen restos y monedas",
+   "cita": "hay que retirar todos los restos visibles, como las monedas, y después enjuagar el filtro bajo el grifo",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/arreglar-averias-lavadora/limpiar-el-filtro",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "consultar las instrucciones del fabricante",
+   "cita": "consulta las instrucciones del fabricante",
+   "url": "https://www.ocu.org/electrodomesticos/lavadora/consejos/cuida-tu-lavadora",
+   "leido": "22/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Cuándo limpiaste el filtro de la lavadora?",
+   "fondo": "lavadero",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "titulo": "¿CUÁNDO LIMPIASTE\nEL FILTRO?",
+   "resaltar": [
+    "FILTRO?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "filtro"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.5,
+     "y": 0.465,
+     "tam": 0.38,
+     "en": -0.14,
+     "anim": "respirar",
+     "estado": {
+      "pantalla": "¿?"
+     },
+     "capas": {
+      "tambor": {
+       "girar": 80,
+       "t": 0
+      }
+     }
+    },
+    {
+     "activo": "Radio button",
+     "x": 0.42,
+     "y": 0.572,
+     "tam": 0.05,
+     "en": "filtro",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.26,
+      0.6
+     ],
+     "a": [
+      0.39,
+      0.578
+     ],
+     "curva": 0.25,
+     "color": "aviso",
+     "en": "filtro"
+    },
+    {
+     "tipo": "texto",
+     "texto": "FILTRO",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 52,
+     "x": 0.2,
+     "y": 0.615,
+     "en": "filtro",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "pensando",
+     "x": 0.82,
+     "y": 0.37,
+     "tam": 0.12,
+     "en": "limpiaste",
+     "entrada": "pop",
+     "anim": "flotar"
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "El filtro atrapa restos, y hasta monedas, para que no lleguen a la bomba. Si se atasca, queda agua en el tambor.",
+   "fondo": "lavadero",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.46
+   ],
+   "golpes": [
+    "monedas",
+    "agua"
+   ],
+   "titulo": "ATRAPA RESTOS\nY MONEDAS",
+   "resaltar": [
+    "MONEDAS"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.32,
+     "y": 0.465,
+     "tam": 0.34,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "STOP"
+     }
+    },
+    {
+     "activo": "Radio button",
+     "x": 0.27,
+     "y": 0.558,
+     "tam": 0.05,
+     "en": 0.0,
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "FILTRO",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 40,
+     "x": 0.12,
+     "y": 0.615,
+     "en": "filtro",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "moneda",
+     "x": 0.27,
+     "y": 0.56,
+     "tam": 0.06,
+     "en": "monedas",
+     "entrada": "pop",
+     "anim": "girar",
+     "mover": [
+      {
+       "a": [
+        0.72,
+        0.35
+       ],
+       "tam": 0.1,
+       "en": "monedas",
+       "dur": 0.6
+      }
+     ]
+    },
+    {
+     "activo": "Gear",
+     "x": 0.74,
+     "y": 0.47,
+     "tam": 0.11,
+     "en": "bomba",
+     "entrada": "pop",
+     "anim": "girar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "BOMBA",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 44,
+     "x": 0.74,
+     "y": 0.545,
+     "en": "bomba",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.27,
+     "y": 0.558,
+     "tam": 0.08,
+     "en": "atasca"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.32,
+     "y": 0.5,
+     "ancho": 0.16,
+     "alto": 0.08,
+     "en": "agua",
+     "densidad": 6,
+     "vida": 1.0,
+     "tam": 0.05
+    },
+    {
+     "tipo": "texto",
+     "texto": "AGUA EN EL TAMBOR",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "px": 48,
+     "x": 0.5,
+     "y": 0.63,
+     "en": "tambor",
+     "entrada": "pop",
+     "anim": "ninguna"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Primero, desenchúfala y pon un barreño o trapos en el suelo: saldrá agua.",
+   "fondo": "lavadero",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "DESENCHÚFALA\nY PON UN BARREÑO",
+   "resaltar": [
+    "DESENCHÚFALA"
+   ],
+   "golpes": [
+    "desenchúfala"
+   ],
+   "elementos": [
+    {
+     "activo": "enchufe",
+     "x": 0.24,
+     "y": 0.4,
+     "tam": 0.2,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "capas": {
+      "clavija": {
+       "de": 1,
+       "a": 0,
+       "en": "desenchúfala",
+       "dur": 0.35
+      }
+     }
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.24,
+     "y": 0.53,
+     "tam": 0.08,
+     "en": "pon"
+    },
+    {
+     "activo": "lavadora",
+     "x": 0.66,
+     "y": 0.44,
+     "tam": 0.3,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "OFF"
+     }
+    },
+    {
+     "activo": "cubo",
+     "x": 0.66,
+     "y": 0.6,
+     "tam": 0.12,
+     "en": "barreño",
+     "entrada": "subir",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "O TRAPOS",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 40,
+     "x": 0.3,
+     "y": 0.62,
+     "en": "trapos",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.66,
+     "y": 0.56,
+     "ancho": 0.1,
+     "alto": 0.05,
+     "en": "agua",
+     "densidad": 6,
+     "vida": 0.9,
+     "tam": 0.04
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Saca el filtro, suele estar abajo o en el zócalo, y límpialo bajo el grifo con un cepillo de dientes viejo.",
+   "fondo": "bano",
+   "camara": "subir",
+   "transicion": "destello",
+   "titulo": "SACA EL FILTRO\nY LÍMPIALO",
+   "resaltar": [
+    "FILTRO"
+   ],
+   "golpes": [
+    "grifo"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.3,
+     "y": 0.44,
+     "tam": 0.3,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "OFF",
+      "agua": false
+     }
+    },
+    {
+     "activo": "Radio button",
+     "x": 0.25,
+     "y": 0.523,
+     "tam": 0.05,
+     "en": "filtro",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.68,
+        0.5
+       ],
+       "tam": 0.07,
+       "en": "límpialo",
+       "dur": 0.6
+      }
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "FILTRO",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 48,
+     "x": 0.3,
+     "y": 0.575,
+     "en": "filtro",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.66,
+        0.56
+       ],
+       "en": "límpialo",
+       "dur": 0.6
+      }
+     ]
+    },
+    {
+     "tipo": "texto",
+     "texto": "ABAJO · ZÓCALO",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 40,
+     "x": 0.3,
+     "y": 0.63,
+     "en": "abajo",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "grifo",
+     "x": 0.68,
+     "y": 0.36,
+     "tam": 0.22,
+     "en": "saca",
+     "entrada": "der",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.68,
+     "y": 0.45,
+     "ancho": 0.08,
+     "alto": 0.08,
+     "en": "límpialo",
+     "densidad": 8,
+     "vida": 0.8,
+     "tam": 0.04
+    },
+    {
+     "activo": "Toothbrush",
+     "x": 0.84,
+     "y": 0.47,
+     "tam": 0.11,
+     "en": "cepillo",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.45,
+      0.53
+     ],
+     "a": [
+      0.58,
+      0.46
+     ],
+     "curva": -0.25,
+     "color": "cian",
+     "en": "límpialo"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Sécalo, vuelve a colocarlo y, después de lavar, deja la puerta abierta para que se seque por dentro.",
+   "fondo": "lavadero",
+   "camara": "bajar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.46
+   ],
+   "titulo": "SÉCALO Y DEJA\nLA PUERTA ABIERTA",
+   "resaltar": [
+    "ABIERTA"
+   ],
+   "golpes": [
+    "abierta"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.42,
+     "y": 0.465,
+     "tam": 0.34,
+     "en": 0.0,
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "FIN",
+      "agua": false
+     }
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.17,
+     "y": 0.37,
+     "tam": 0.08,
+     "en": "colocarlo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SECO",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 44,
+     "x": 0.17,
+     "y": 0.46,
+     "en": "sécalo",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Door",
+     "x": 0.8,
+     "y": 0.39,
+     "tam": 0.15,
+     "en": "puerta",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Dashing away",
+     "x": 0.8,
+     "y": 0.52,
+     "tam": 0.11,
+     "en": "seque",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PUERTA ABIERTA",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 48,
+     "x": 0.5,
+     "y": 0.63,
+     "en": "abierta",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.42,
+     "y": 0.48,
+     "ancho": 0.2,
+     "alto": 0.14,
+     "en": "dentro",
+     "densidad": 6,
+     "vida": 0.9,
+     "tam": 0.06
+    },
+    {
+     "tipo": "particulas",
+     "clase": "vapor",
+     "x": 0.42,
+     "y": 0.46,
+     "ancho": 0.12,
+     "alto": 0.1,
+     "en": "seque",
+     "densidad": 6,
+     "vida": 1.2,
+     "tam": 0.07
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Hazlo al menos un par de veces al año y proteges la bomba de vaciado.",
+   "fondo": "lavadero",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "UN PAR DE VECES\nAL AÑO",
+   "resaltar": [
+    "AÑO"
+   ],
+   "golpes": [
+    "proteges"
+   ],
+   "elementos": [
+    {
+     "activo": "lavadora",
+     "x": 0.5,
+     "y": 0.46,
+     "tam": 0.34,
+     "en": 0.0,
+     "anim": "respirar",
+     "estado": {
+      "pantalla": "OK"
+     },
+     "capas": {
+      "tambor": {
+       "girar": 120,
+       "t": 0
+      }
+     }
+    },
+    {
+     "activo": "calendario",
+     "x": 0.18,
+     "y": 0.38,
+     "tam": 0.12,
+     "en": "año",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.82,
+     "y": 0.38,
+     "tam": 0.11,
+     "en": "proteges"
+    },
+    {
+     "tipo": "texto",
+     "texto": "BOMBA A SALVO",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 48,
+     "x": 0.5,
+     "y": 0.63,
+     "en": "bomba",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.45,
+     "ancho": 0.32,
+     "alto": 0.2,
+     "en": "proteges",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.07
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo, mira hoy tu filtro y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "zoom",
+   "titulo": "GUÁRDALO Y\nMIRA TU FILTRO",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.3,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "activo": "lavadora",
+     "x": 0.18,
+     "y": 0.47,
+     "tam": 0.13,
+     "en": "filtro",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "calendario",
+     "x": 0.82,
+     "y": 0.5,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.38,
+     "alto": 0.22,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    }
+   ]
+  }
+ ]
+}
