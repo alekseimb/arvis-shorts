@@ -205,6 +205,12 @@
    "modos": "A+C",
    "resultado": "OK",
    "resumen": "SH-032 reintento 85,8 subido para 22/11 12:00 (texto v2.0)"
+  },
+  {
+   "fecha": "22/11/2026 15:16",
+   "modos": "A (orden ARVIS 3.1)",
+   "resultado": "Aviso",
+   "resumen": "SH-032 público confirmado; sin producción (texto de la tarea = orden de optimización); código ARVIS 3.1 en vida; v3.0 sin activar"
   }
  ],
  "errores": [
@@ -215,7 +221,11 @@
    "resuelto": false
   }
  ],
- "pendiente": [],
+ "pendiente": [
+  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea el cambio fue denegado; necesita a Aleksei",
+  "Franjas 22/11 17:00 y 21:00 vacías (la ejecución de las 14:47 llevaba la orden de optimización)",
+  "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
+ ],
  "reglas": {
   "franjas": [
    "12:00",
@@ -285,10 +295,10 @@
   ]
  },
  "make": {
-  "ultima_revision": "22/11/2026 08:50",
+  "ultima_revision": "22/11/2026 15:20",
   "estado": "OK",
   "almacen_registros": 35,
-  "nota": "8260190 no devuelve salidas por MCP: el resultado se lee en el almacén (clave fija)",
+  "nota": "scenarios_list: 8260243 y 8260190 activos, válidos, dlq 0. 8260190 no devuelve salidas por MCP: el resultado se lee en el almacén",
   "ultima_consulta": "22/11/2026 14:53 estados-lh kuePPJV7oa4 public"
  },
  "filas": {
@@ -309,7 +319,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "22/11/2026 15:08",
+ "actualizado": "22/11/2026 15:16",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -343,5 +353,10 @@
   "¿Dejas la tele en stand-by? Más del 7 % de la luz de los hogares se va así",
   "¿A qué temperatura tienes la nevera? 5 ºC y -18 ºC, según el IDAE",
   "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU"
- ]
+ ],
+ "motor": {
+  "huella_probada": "b36840c7863f0464",
+  "pytest": "OK 20 passed in 11.32s",
+  "fecha": "22/11/2026 15:11"
+ }
 }
