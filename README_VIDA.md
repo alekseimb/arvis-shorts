@@ -30,4 +30,8 @@ Microsoft (MIT, crédito en la descripción) · fuentes Google Fonts (OFL) · es
 Pexels, Pixabay y Wikimedia no son accesibles desde el entorno de las tareas (comprobado el 19 y el 20/11/2026); Hugging Face
 tampoco: no hay IA de imagen gratuita utilizable. Si algún día lo hay, entra como módulo opcional, nunca como dependencia.
 
+**ARVIS 3.1 (22/11/2026) · operación eficiente:** `python3 -m arvis_vida.ops plan` decide qué toca en cada ejecución con el
+estado persistente `estado/lh_estado.json`; `arvis_vida.sonda` es el QC fase 1 (geométrico, sin mirar imágenes) y deja la
+lista corta de fotogramas para la revisión visual. Detalle: `docs_vida/OPERACION_3_1.md`.
+
 Modelo de guion: `guiones_vida/SH-027/guion.json` (lavadora, Comunidad de Madrid). Reglas: Proyecto ARVIS › `agentes/lifehacks_ai.md` (v2.0).

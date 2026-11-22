@@ -1,0 +1,347 @@
+{
+ "version": 1,
+ "shorts": {
+  "SH-023": {
+   "fila": 24,
+   "fase": "6. Pendiente de subida",
+   "reserva": true,
+   "linea": "informatica",
+   "nota": "reserva de informática: no usar"
+  },
+  "SH-024": {
+   "fila": 25,
+   "yt": "qFQbjZbjDYg",
+   "franja": "19/11/2026 12:00",
+   "fase": "10. Publicado",
+   "linea": "informatica"
+  },
+  "SH-025": {
+   "fila": 26,
+   "yt": "u7G-2uacKQc",
+   "franja": "19/11/2026 17:00",
+   "fase": "10. Publicado",
+   "linea": "informatica",
+   "nota_estado": "retirados de la línea (informática); métricas sí"
+  },
+  "SH-026": {
+   "fila": 27,
+   "yt": "nLmtSn3x1mI",
+   "franja": "19/11/2026 21:00",
+   "fase": "10. Publicado",
+   "linea": "informatica",
+   "nota_estado": "retirados de la línea (informática); métricas sí"
+  },
+  "SH-027": {
+   "fila": 28,
+   "yt": "9m3kQ9tgt28",
+   "franja": "20/11/2026 12:00",
+   "fase": "10. Publicado",
+   "linea": "vida",
+   "categoria": "ahorro",
+   "gancho_tecnica": "pregunta + dato",
+   "idea": "IDEA-016",
+   "numero": 4,
+   "titulo": "¿En qué gasta de verdad tu lavadora? (el 80–85 % se va en esto)",
+   "nota": 86.8
+  },
+  "SH-028": {
+   "fila": 29,
+   "yt": "x3fdGcyEptk",
+   "franja": "20/11/2026 17:00",
+   "fase": "10. Publicado",
+   "linea": "vida",
+   "categoria": "cocina",
+   "gancho_tecnica": "pregunta + dato",
+   "idea": "IDEA-017",
+   "numero": 5,
+   "titulo": "¿Calientas las sobras en el horno? El microondas ahorra un 60 % de energía"
+  },
+  "SH-029": {
+   "fila": 30,
+   "linea": "vida",
+   "categoria": "limpieza",
+   "gancho_tecnica": "pregunta + dato",
+   "idea": "IDEA-022",
+   "numero": 6,
+   "titulo": "¿Tienes hielo en el congelador? 3 mm de escarcha suben el consumo un 30 %",
+   "fase": "Descartado",
+   "descartado": true,
+   "intentos": 2,
+   "nota": 84.0
+  },
+  "SH-030": {
+   "fila": 31,
+   "yt": "AiNuwu0OaZ4",
+   "franja": "21/11/2026 12:00",
+   "fase": "10. Publicado",
+   "linea": "vida",
+   "categoria": "ahorro",
+   "gancho_tecnica": "pregunta + dato",
+   "idea": "IDEA-021",
+   "numero": 6,
+   "titulo": "¿Dejas la tele en stand-by? Más del 7 % de la luz de los hogares se va así",
+   "nota": 85.0
+  },
+  "SH-031": {
+   "fila": 32,
+   "yt": "ED2BlyhPMds",
+   "franja": "21/11/2026 17:00",
+   "fase": "10. Publicado",
+   "linea": "vida",
+   "categoria": "cocina",
+   "gancho_tecnica": "pregunta directa",
+   "idea": "IDEA-018",
+   "numero": 7,
+   "titulo": "¿A qué temperatura tienes la nevera? 5 ºC y -18 ºC, según el IDAE",
+   "nota": 85.0
+  },
+  "SH-032": {
+   "fila": 33,
+   "yt": "kuePPJV7oa4",
+   "franja": "22/11/2026 12:00",
+   "fase": "10. Publicado",
+   "linea": "vida",
+   "categoria": "limpieza",
+   "gancho_tecnica": "pregunta directa con cifra",
+   "idea": "IDEA-024",
+   "numero": 8,
+   "titulo": "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU",
+   "nota": 85.8,
+   "intentos": 2,
+   "publicado": "22/11/2026"
+  }
+ },
+ "ideas": {
+  "IDEA-019": {
+   "fila": 20,
+   "estado": "Propuesta",
+   "categoria": "cocina",
+   "puntuacion": 72,
+   "titulo": "¿Apagas la vitro cuando terminas? Hazlo unos minutos antes",
+   "fuentes": [
+    "Comunidad de Madrid · consumo · ahorrar energía en la cocina"
+   ],
+   "leido": "20/11/2026",
+   "citas": [
+    "aprovechar el calor residual apagándola unos minutos antes de terminar",
+    "tapar las cacerolas mientras cocinamos ayuda a aprovechar mejor el calor"
+   ]
+  },
+  "IDEA-020": {
+   "fila": 21,
+   "estado": "Elegida",
+   "categoria": "ahorro",
+   "puntuacion": 76.5,
+   "titulo": "¿A cuántos grados tienes la calefacción? El rango que recomiendan",
+   "fuentes": [
+    "Comunidad de Madrid · consumo · ahorro energético"
+   ],
+   "leido": "20/11/2026",
+   "citas": [
+    "regular el termostato del calentador de agua entre los 55 y 60º C y el de la calefacción entre los 18 y 20 ºC"
+   ],
+   "nota": "la URL exacta no está en IDEAS_LH: relee la fuente para tener la URL antes de producir"
+  },
+  "IDEA-021": {
+   "fila": 22,
+   "estado": "Publicada",
+   "sh": "SH-030",
+   "categoria": "ahorro"
+  },
+  "IDEA-022": {
+   "fila": 23,
+   "estado": "Reserva",
+   "categoria": "limpieza",
+   "sh": "SH-029"
+  },
+  "IDEA-023": {
+   "fila": 24,
+   "estado": "Elegida",
+   "categoria": "ropa",
+   "puntuacion": 69.5,
+   "titulo": "¿Usas la secadora? Centrifuga antes y tiende cuando puedas",
+   "fuentes": [
+    "https://www.ocu.org/electrodomesticos/secadora/consejos/ahorrar-energia-con-secadora",
+    "https://www.ocu.org/electrodomesticos/secadora/consejos/secar-con-sin-secadora"
+   ],
+   "leido": "20/11/2026",
+   "citas": [
+    "cada programa de secado puede consumir, de media 2,1kWh.",
+    "Usa el programa de centrifugado de la lavadora y evitarás que la ropa que vaya a la secadora esté demasiado húmeda.",
+    "La forma más económica y sostenible de secar la ropa es tender tu colada al aire libre."
+   ],
+   "nota": "no hay secadora dibujada en el motor"
+  },
+  "IDEA-024": {
+   "fila": 25,
+   "estado": "Publicada",
+   "sh": "SH-032",
+   "categoria": "limpieza"
+  },
+  "IDEA-025": {
+   "fila": 26,
+   "estado": "Elegida",
+   "categoria": "cocina",
+   "puntuacion": 77.0,
+   "titulo": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
+   "fuentes": [
+    "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas"
+   ],
+   "leido": "22/11/2026",
+   "citas": [
+    "La fecha de consumo preferente indica el momento hasta el cual el alimento conserva la calidad prevista.",
+    "Una vez pasada la fecha indicada, el alimento sigue siendo seguro para el consumo",
+    "La fecha de caducidad indica el momento hasta el cual el alimento puede consumirse de forma segura.",
+    "No se debe consumir ningún alimento una vez superada su fecha de caducidad.",
+    "Antes de que los alimentos caduquen se pueden congelar en casa y así alargar su conservación.",
+    "Siempre se deben seguir las instrucciones de conservación y, una vez abierto el envase, las instrucciones de consumo."
+   ],
+   "nota": "sin cifras en la fuente; seguridad alimentaria informativa, no consejo médico"
+  }
+ },
+ "ejecuciones": [
+  {
+   "fecha": "22/11/2026 08:50",
+   "modos": "A+C",
+   "resultado": "OK",
+   "resumen": "SH-032 reintento 85,8 subido para 22/11 12:00 (texto v2.0)"
+  }
+ ],
+ "errores": [
+  {
+   "fecha": "22/11/2026 14:48",
+   "paso": "tarea programada",
+   "error": "El texto de la tarea «ARVIS LIFEHACKS» fue sustituido el 22/11 a las 10:35 por la orden de optimización ARVIS 3.1: la ejecución de las 14:47 no produjo (franjas 17:00 y 21:00 de hoy vacías)",
+   "resuelto": false
+  }
+ ],
+ "pendiente": [],
+ "reglas": {
+  "franjas": [
+   "12:00",
+   "17:00",
+   "21:00"
+  ],
+  "margen_min": 90,
+  "max_horas_cola": 30,
+  "umbral": 85,
+  "min_elegidas": 3,
+  "ideas_por_investigacion": 4,
+  "validez_fuentes_dias": 14,
+  "max_montajes": 3,
+  "max_reescrituras_qc": 2,
+  "max_videos_metricas": 50
+ },
+ "ultimo_sh": "SH-032",
+ "ultimo_numero": 8,
+ "metricas": {
+  "fecha": "22/11/2026 01:52",
+  "videos": {
+   "SH-024": {
+    "vistas": 23,
+    "me_gusta": 0
+   },
+   "SH-025": {
+    "vistas": 205,
+    "me_gusta": 0
+   },
+   "SH-026": {
+    "vistas": 218,
+    "me_gusta": 3
+   },
+   "SH-027": {
+    "vistas": 904,
+    "me_gusta": 8
+   },
+   "SH-028": {
+    "vistas": 491,
+    "me_gusta": 6
+   },
+   "SH-030": {
+    "vistas": 1012,
+    "me_gusta": 9,
+    "horas": 13.8
+   },
+   "SH-031": {
+    "vistas": 660,
+    "me_gusta": 11,
+    "horas": 8.8
+   }
+  }
+ },
+ "pesos_cache": {
+  "pesos": {
+   "utilidad": 25,
+   "interes": 20,
+   "demostrable": 20,
+   "retencion": 15,
+   "originalidad": 10,
+   "conversacion": 10
+  },
+  "multiplicador_categoria": {},
+  "duracion_recomendada": [
+   25,
+   40
+  ]
+ },
+ "make": {
+  "ultima_revision": "22/11/2026 08:50",
+  "estado": "OK",
+  "almacen_registros": 35,
+  "nota": "8260190 no devuelve salidas por MCP: el resultado se lee en el almacén (clave fija)",
+  "ultima_consulta": "22/11/2026 14:53 estados-lh kuePPJV7oa4 public"
+ },
+ "filas": {
+  "SALUD": {
+   "Make · subida 8260243": 3,
+   "Make · consultas 8260190": 4,
+   "LIFEHACKS · tarea": 17,
+   "LIFEHACKS · próxima publicación": 18,
+   "LIFEHACKS · cola de ideas": 19,
+   "LIFEHACKS · última nota": 20
+  },
+  "CONFIG_YOUTUBE": {
+   "Producción automática": 2,
+   "Pausa de emergencia": 19,
+   "Bloqueo de publicación": 24,
+   "LIFEHACKS · pesos del Researcher": 37,
+   "LIFEHACKS · motor": 39
+  },
+  "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
+ },
+ "actualizado": "22/11/2026 15:08",
+ "titulos_publicados": [
+  "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
+  "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
+  "378 días en un Marte falso de la NASA… y salen el 31 🚀",
+  "En Venus, un día dura más que un año (y el Sol sale por el oeste)",
+  "El 18 de noviembre, un mensaje a la Voyager 1 tardará un día entero 🛰️",
+  "Si hundes el Everest en el punto más hondo del océano, sobran más de 2 km de agua 🌊",
+  "Tardígrados: el primer animal que sobrevivió al vacío del espacio 🚀",
+  "En Marte el atardecer es azul: lo fotografió el rover Curiosity 🌅",
+  "Abascal cancela a Jordi Wild… ¡y se queda sin entrevista! 😂",
+  "¿Cuánto pesa una nube? Unos 100 elefantes flotando sobre tu cabeza ☁️",
+  "¿Por qué el mar es salado y los ríos no? La culpa es de las piedras 🌊",
+  "Saturno flotaría en una bañera… si existiera una tan grande 🪐",
+  "La Luna se está mudando: se aleja unos 3,8 cm al año 🌙",
+  "Las gotas de lluvia no son lágrimas: tienen forma de pan de hamburguesa 🌧️",
+  "La leyenda de Ulfgar, Voz de Trueno ⚔️ ¿Ha vuelto?",
+  "El pulpo tiene 3 corazones y la sangre azul (y no, no es de la nobleza) 🐙",
+  "El faro se apagó y sus tres fareros desaparecieron | Expediente 001",
+  "Cortaron su tienda desde dentro y huyeron a la nieve | Expediente 002",
+  "¿Quién era Kaspar Hauser? Apareció con dos cartas y ningún pasado | Expediente 003",
+  "¿Por qué cientos de tumbas rodean a los primeros reyes de Egipto?",
+  "Lo hallaron a la deriva, sin nadie a bordo | Expediente 004",
+  "En esta cueva no aparece ningún hombre: el misterio de Homo naledi",
+  "¿Tienes archivos repetidos? Encuéntralos con Python (gratis)",
+  "¿Cerraste una pestaña sin querer? Este atajo la recupera",
+  "¿Demasiadas pestañas abiertas? Salta a cualquiera con Ctrl + número",
+  "¿La letra de una web es demasiado pequeña? Haz zoom con Ctrl y +",
+  "¿En qué gasta de verdad tu lavadora? (el 80–85 % se va en esto)",
+  "¿Calientas las sobras en el horno? El microondas ahorra un 60 % de energía",
+  "¿Tienes hielo en el congelador? 3 mm de escarcha suben el consumo un 30 %",
+  "¿Dejas la tele en stand-by? Más del 7 % de la luz de los hogares se va así",
+  "¿A qué temperatura tienes la nevera? 5 ºC y -18 ºC, según el IDAE",
+  "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU"
+ ]
+}

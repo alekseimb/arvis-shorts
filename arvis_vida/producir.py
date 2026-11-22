@@ -7,6 +7,8 @@ Uso:  python3 -m arvis_vida.producir guiones_vida/SH-0NN/guion.json --out out/SH
 Salida: SH-0NN.mp4 (≤ 4,6 MB, para Make), SH-0NN_hq.mp4, SH-0NN.srt, stills/, SH-0NN_storyboard.md, SH-0NN.json (informe con
         las comprobaciones, apto para arvis_estudio.calidad), SH-0NN_evaluacion.json (plantilla), metadatos.json (para la subida).
 Código de salida: 0 = vídeo montado y QC completo; 1 = montado con fallos de QC; 2 = guion rechazado (no se monta nada).
+Desde ARVIS 3.1 cada montaje pasa además la SONDA (arvis_vida.sonda, QC fase 1): defectos de composición con su segundo,
+fotogramas sospechosos y hojas de contactos en stills/zz_*.jpg, y la lista «revisar» para la revisión visual (fase 2).
 """
 import argparse
 import hashlib
@@ -86,6 +88,15 @@ def producir(ruta, out, publicados=()):
         rep = qc.comprobar(g, info, m, out, publicados)
         ret = retencion.puntuar(g, info, m)
         rep["checks"].append({"check": "Gancho y retención automática ≥ 70/100", "ok": ret["total"] >= 70, "detalle": "%d/100 %s" % (ret["total"], ret["desglose"])})
+        # QC fase 1 (ARVIS 3.1): sonda geométrica local; avisa, no aprueba ni bloquea (la nota sigue saliendo de calidad.py)
+        son = None
+        if os.environ.get("ARVIS_SONDA", "1") != "0":
+            try:
+                from . import sonda
+                son = sonda.compacto(sonda.analizar(m, out))
+            except Exception as ex:  # la sonda nunca debe parar una producción
+                son = {"error": str(ex)[:200]}
+        rep["sonda"] = son
         rep["passed"] = sum(1 for c in rep["checks"] if c["ok"])
         rep["total"] = len(rep["checks"])
         fallos = [c["check"] for c in rep["checks"] if not c["ok"]]
@@ -118,7 +129,7 @@ def producir(ruta, out, publicados=()):
     fallos = [c["check"] + ": " + c["detalle"] for c in rep["checks"] if not c["ok"]]
     print(json.dumps({"ok": not fallos, "qc": "%d/%d" % (rep["passed"], rep["total"]), "fallos": fallos, "retencion": ret["total"],
                       "duracion": rep["duration_s"], "mb": rep["mb"], "lufs": rep["lufs"], "segundos": rep["segundos_produccion"],
-                      "intentos": len(intentos), "avisos_guion": rep["avisos_guion"]}, ensure_ascii=False, indent=1))
+                      "intentos": len(intentos), "avisos_guion": rep["avisos_guion"], "sonda": rep.get("sonda")}, ensure_ascii=False, indent=1))
     return 0 if not fallos else 1
 
 
