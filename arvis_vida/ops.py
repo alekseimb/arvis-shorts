@@ -184,6 +184,7 @@ def plan(est, ahora):
         "llamada_make": llamada_estado([shorts[sh]["yt"] for sh in vencidos]) if vencidos else None,
         "subidas_colgadas": colgados,
         "revisar_make": revisar_make,
+        "como_revisar_make": "scenarios_list teamId 3393416 + data-stores_get 238309 (sin blueprints)" if revisar_make else "",
         "nota": "Sin vencidos ni colgados: NO consultes Make ni el almacén." if not vencidos and not colgados else "",
     }
     # ---- MODO B · métricas (01:47, una vez al día)
