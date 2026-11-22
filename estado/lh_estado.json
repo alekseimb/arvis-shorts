@@ -355,8 +355,8 @@
   "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU"
  ],
  "motor": {
-  "huella_probada": "b36840c7863f0464",
-  "pytest": "OK 20 passed in 11.32s",
-  "fecha": "22/11/2026 15:11"
+  "huella_probada": "1a04d1911e46e1d4",
+  "pytest": "OK 20 passed in 13.11s",
+  "fecha": "22/11/2026 15:16"
  }
 }
