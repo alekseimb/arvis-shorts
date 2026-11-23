@@ -211,6 +211,12 @@
    "modos": "A (orden ARVIS 3.1)",
    "resultado": "Aviso",
    "resumen": "SH-032 público confirmado; sin producción (texto de la tarea = orden de optimización); código ARVIS 3.1 en vida; v3.0 sin activar"
+  },
+  {
+   "fecha": "23/11/2026 01:50",
+   "modos": "auditoria",
+   "resultado": "sin produccion",
+   "resumen": "23/11 01:47: la tarea sigue con el texto ARVIS 3.1. Auditoria no repetida (codigo sin cambios desde de54d20); comprobados plan, entorno (pytest omitido por huella, 20 s), Make 8260243/8260190 activos dlq 0, Sheets lectura. Sin Short ni metricas."
   }
  ],
  "errores": [
@@ -222,8 +228,8 @@
   }
  ],
  "pendiente": [
-  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea el cambio fue denegado; necesita a Aleksei",
-  "Franjas 22/11 17:00 y 21:00 vacías (la ejecución de las 14:47 llevaba la orden de optimización)",
+  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea no se cambia; necesita a Aleksei («ARVIS, activa la tarea v3»)",
+  "Franjas vacías por el texto ARVIS 3.1 en la tarea: 22/11 17:00 y 21:00; la ejecución del 23/11 01:47 tampoco produjo (SH-033 / IDEA-020 para 23/11 12:00 queda para la primera ejecución con el v3.0)",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -319,7 +325,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "22/11/2026 15:16",
+ "actualizado": "23/11/2026 01:50",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
