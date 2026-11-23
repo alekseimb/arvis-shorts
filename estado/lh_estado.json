@@ -217,6 +217,12 @@
    "modos": "auditoria",
    "resultado": "sin produccion",
    "resumen": "23/11 01:47: la tarea sigue con el texto ARVIS 3.1. Auditoria no repetida (codigo sin cambios desde de54d20); comprobados plan, entorno (pytest omitido por huella, 20 s), Make 8260243/8260190 activos dlq 0, Sheets lectura. Sin Short ni metricas."
+  },
+  {
+   "fecha": "23/11/2026 08:49",
+   "modos": "A (orden ARVIS 3.1)",
+   "resultado": "sin produccion",
+   "resumen": "23/11 08:47: la tarea sigue con el texto ARVIS 3.1 (list_triggers: activa, próxima 14:47). Auditoría no repetida (código sin cambios desde de54d20). ops plan OK (0,05 s); Sheets SHORTS A/U24:37 leído sin cambios (último SH-032 publicado); sin vencidos: Make no consultado (regla Modo A). Sin Short ni"
   }
  ],
  "errores": [
@@ -229,7 +235,8 @@
  ],
  "pendiente": [
   "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea no se cambia; necesita a Aleksei («ARVIS, activa la tarea v3»)",
-  "Franjas vacías por el texto ARVIS 3.1 en la tarea: 22/11 17:00 y 21:00; la ejecución del 23/11 01:47 tampoco produjo (SH-033 / IDEA-020 para 23/11 12:00 queda para la primera ejecución con el v3.0)",
+  "Franjas vacías por el texto ARVIS 3.1 en la tarea: 22/11 17:00 y 21:00 y 23/11 12:00 (ya inalcanzable: la siguiente ejecución es 14:47). Ejecuciones sin producir: 22/11 14:47, 23/11 01:47 y 23/11 08:47. SH-033 / IDEA-020 queda para la primera ejecución con el v3.0",
+  "Métricas del 23/11 sin tomar (la ejecución de 01:47 llevaba el texto ARVIS 3.1); las toma el Modo B a las 01:47 con el v3.0",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -325,7 +332,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "23/11/2026 01:50",
+ "actualizado": "23/11/2026 08:49",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
