@@ -112,7 +112,7 @@
   },
   "SH-033": {
    "fila": 34,
-   "fase": "Descartado",
+   "fase": "9. Programado",
    "linea": "vida",
    "categoria": "ahorro",
    "gancho_tecnica": "pregunta directa con cifra",
@@ -122,7 +122,10 @@
    "nota": 73.8,
    "intentos": 2,
    "montajes": 6,
-   "debilidades": "Reintento 25/11 14:47: 3 montajes (QC 22/22) y 3 revisiones visuales independientes: 77,0 · 73,3 · 73,8 < 85. Bajan narración y sonido (10,5/15) y originalidad (9,8/15). Descartado."
+   "debilidades": "Reintento 25/11 14:47: 3 montajes (QC 22/22) y 3 revisiones visuales independientes: 77,0 · 73,3 · 73,8 < 85. Bajan narración y sonido (10,5/15) y originalidad (9,8/15). Descartado.",
+   "franja": "26/11/2026 12:00",
+   "aprobado_por": "Aleksei en el chat 25/11 21:33 («publica SH-033») pese a CALIDAD 73,8 < 85",
+   "yt": "x1wHjUYKVQE"
   }
  },
  "ideas": {
@@ -143,7 +146,7 @@
   },
   "IDEA-020": {
    "fila": 21,
-   "estado": "Descartada",
+   "estado": "Publicada",
    "categoria": "ahorro",
    "puntuacion": 76.5,
    "titulo": "¿A cuántos grados tienes la calefacción? El rango que recomiendan",
@@ -360,8 +363,8 @@
   "max_reescrituras_qc": 2,
   "max_videos_metricas": 50
  },
- "ultimo_sh": "SH-032",
- "ultimo_numero": 8,
+ "ultimo_sh": "SH-033",
+ "ultimo_numero": 9,
  "metricas": {
   "fecha": "22/11/2026 01:52",
   "videos": {
@@ -437,7 +440,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "25/11/2026 15:17",
+ "actualizado": "25/11/2026 21:33",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
