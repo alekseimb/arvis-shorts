@@ -112,17 +112,17 @@
   },
   "SH-033": {
    "fila": 34,
-   "fase": "4. Revisión",
+   "fase": "Descartado",
    "linea": "vida",
    "categoria": "ahorro",
    "gancho_tecnica": "pregunta directa con cifra",
    "idea": "IDEA-020",
    "numero": 9,
    "titulo": "¿Tienes la calefacción a más de 20 grados? El rango que recomiendan",
-   "nota": 70.0,
-   "intentos": 1,
-   "montajes": 3,
-   "debilidades": "Revisión 2 (70,0): check y cruz del paso 1 encima del «+20 °C» que sale (cruz a y 0,40 sobre «+20 °C»; check y pastilla 18–20 en «rango», pastilla x 0,68); flecha sin punta; «+20 °C» del gancho pegado al borde (px 110, x 0,66); «18–20 °C» de la escena 2 roza los botones con latir (x 0,66, sin latir) y mitad derecha floja; termómetro del baño se puede leer como temperatura del agua: quitarlo y título «TERMOSTATO DEL CALENTADOR»; hucha = cerdo (usar moneda o gráfico a la baja); icono guardar parece etiqueta; titulo_en −0,4 en el gancho; tiradores del dormitorio bajo el título (otro fondo)."
+   "nota": 73.8,
+   "intentos": 2,
+   "montajes": 6,
+   "debilidades": "Reintento 25/11 14:47: 3 montajes (QC 22/22) y 3 revisiones visuales independientes: 77,0 · 73,3 · 73,8 < 85. Bajan narración y sonido (10,5/15) y originalidad (9,8/15). Descartado."
   }
  },
  "ideas": {
@@ -143,7 +143,7 @@
   },
   "IDEA-020": {
    "fila": 21,
-   "estado": "Elegida",
+   "estado": "Descartada",
    "categoria": "ahorro",
    "puntuacion": 76.5,
    "titulo": "¿A cuántos grados tienes la calefacción? El rango que recomiendan",
@@ -215,6 +215,68 @@
     "Siempre se deben seguir las instrucciones de conservación y, una vez abierto el envase, las instrucciones de consumo."
    ],
    "nota": "sin cifras en la fuente; seguridad alimentaria informativa, no consejo médico"
+  },
+  "IDEA-026": {
+   "fila": 27,
+   "estado": "Elegida",
+   "categoria": "errores",
+   "puntuacion": 76.0,
+   "titulo": "¿Te gotea un grifo? Pierde unos 30 litros al día",
+   "fuentes": [
+    "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf"
+   ],
+   "leido": "25/11/2026",
+   "citas": [
+    "Un grifo que gotea pierde alrededor de 30 litros de agua cada día."
+   ]
+  },
+  "IDEA-027": {
+   "fila": 28,
+   "estado": "Elegida",
+   "categoria": "limpieza",
+   "puntuacion": 75.0,
+   "titulo": "¿Mezclas lejía y amoniaco para que limpie más? Nunca",
+   "fuentes": [
+    "https://www.mjusticia.gob.es/es/institucional/organismos/instituto-nacional/servicios/servicio-informacion/intoxicaciones-frecuentes/productos-limpieza"
+   ],
+   "leido": "25/11/2026",
+   "citas": [
+    "no se deben mezclar productos de limpieza como la lejía y el amoníaco",
+    "inhalan vapores tóxicos al mezclar lejía con amoníaco o ácidos",
+    "un limpiador tras haber sido trasvasado a envases de bebida, botellas o vasos"
+   ]
+  },
+  "IDEA-028": {
+   "fila": 29,
+   "estado": "Elegida",
+   "categoria": "organizacion",
+   "puntuacion": 74.5,
+   "titulo": "¿Tiras el tique de compra? La garantía dura 3 años",
+   "fuentes": [
+    "https://www.ocu.org/consumo-familia/derechos-consumidor/consejos/conservar-documentos"
+   ],
+   "leido": "25/11/2026",
+   "citas": [
+    "3 años como mínimo.",
+    "Es el plazo actual de la garantía de un bien, y el tique o factura es el documento que prueba cuando lo compraste",
+    "Es recomendable conservarlas (en papel o formato digital) en un lugar diferente a aquel donde estén esos bienes"
+   ]
+  },
+  "IDEA-029": {
+   "fila": 30,
+   "estado": "Elegida",
+   "categoria": "ahorro",
+   "puntuacion": 73.5,
+   "titulo": "¿Ducha o bañera? 5 minutos de ducha gastan unos 50 litros",
+   "fuentes": [
+    "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf"
+   ],
+   "leido": "25/11/2026",
+   "citas": [
+    "para llenar la bañera hacen falta unos 200 litros de agua, mientras que una ducha de cinco minutos consume unos 50.",
+    "Una ducha consume, por término medio, una cuarta parte del agua que requiere un baño",
+    "relojes de arena impermeables, que nos permiten saber cuándo han transcurrido 4 ó 5 minutos"
+   ]
   }
  },
  "ejecuciones": [
@@ -247,6 +309,12 @@
    "modos": "A+C (orden ARVIS 3.1, procedimiento v3.0)",
    "resultado": "Aviso",
    "resumen": "SH-033 producido (QC 22/22) y no subido: CALIDAD 70,0 < 85; Make no consultado; tarea aún con texto 3.1"
+  },
+  {
+   "fecha": "25/11/2026 15:17",
+   "modos": "A+C",
+   "resultado": "Aviso",
+   "resumen": "Make OK; reintento SH-033 QC 22/22 pero CALIDAD 73,8 < 85 → Descartado; 4 ideas nuevas; sin subida"
   }
  ],
  "errores": [
@@ -261,14 +329,20 @@
    "paso": "Producción",
    "error": "SH-033 no subido: CALIDAD 70,0 < 85 tras 3 montajes y 2 revisiones visuales independientes (QC 22/22)",
    "resuelto": false
+  },
+  {
+   "fecha": "25/11/2026 15:17",
+   "paso": "Producción",
+   "error": "SH-033 descartado: CALIDAD 77,0/73,3/73,8 < 85 en el reintento (QC 22/22); franjas 25/11 17:00 y 21:00 vacías",
+   "resuelto": false
   }
  ],
  "pendiente": [
-  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea no se cambia; necesita a Aleksei («ARVIS, activa la tarea v3»)",
+  "Franjas vacías desde el 22/11 17:00; 17:00 y 21:00 del 25/11 también (SH-033 descartado). La siguiente ejecución (01:47) produce SH-034 (Nº 009) para el 26/11 12:00.",
+  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): necesita a Aleksei («ARVIS, activa la tarea v3»)",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)",
-  "Franjas vacías desde el 22/11 17:00 (ejecuciones 22/11 14:47 a 25/11 01:47 sin producción; de las del 23/11 14:47 al 25/11 01:47 no queda rastro en el estado ni en OPERACIONES). Métricas sin tomar desde el 22/11.",
-  "SH-033 en «4. Revisión» (CALIDAD 70,0/70,5 con revisión visual en subagente independiente): un reintento desde su guion aplicando las debilidades; si no llega a 85, Descartado.",
-  "Mejoras de motor detectadas por el QC visual (no aplicadas): subtítulos que parten cifras y nombres («entre 18 y | 20 grados», «Comunidad de | Madrid»); icono «guardar» (Bookmark) parece una etiqueta; alias «hucha» = cerdo sin moneda; primer fotograma con la 2.ª línea del título diminuta; tiradores del armario de fondos.dormitorio bajo el título."
+  "Calidad estancada en 70–77 con revisión visual independiente (SH-033: 5 revisiones): los criterios que bajan son narración/sonido y originalidad; conviene que Aleksei decida si ajusta el motor (voz, ritmo) o el umbral.",
+  "Mejoras de motor detectadas por el QC visual (no aplicadas): subtítulos que parten cifras y nombres; icono «guardar» parece etiqueta; «hucha» = cerdo; «grafico_baja» rojo se lee como pérdida; «moneda» muestra un banco; tiradores del armario de fondos.dormitorio bajo el título."
  ],
  "reglas": {
   "franjas": [
@@ -363,7 +437,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "25/11/2026 09:15",
+ "actualizado": "25/11/2026 15:17",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
