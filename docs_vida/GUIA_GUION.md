@@ -34,9 +34,9 @@ Todos admiten: `x`, `y`, `tam` (ancho en fracción de 1080), `en` (palabra de la
   - Aparatos (con capas animables en `capas`): `lavadora` (capa `tambor`: {"girar": grados/s}; `estado`: pantalla, eco) · `nevera` (estado: pantalla, pantalla2) ·
     `microondas` (capa `luz`: {"de": 0, "a": 1, "en": …} o {"pulso": 1.5}) · `horno` (capa `luz`) · `placa` (capas `zona1`, `zona2`: {"de": 1, "a": 0.2, "en", "dur"}) ·
     `olla` (capa `tapa`: {"de": [0, -90], "a": [0, 0], "en": "tapa"} (no más de −100: se recorta)) · `termometro` (capa `columna`: {"de": 0.2, "a": 0.9, "en", "dur"}) ·
-    `dial` (estado: etiquetas; capa `aguja`: {"de": "90°", "a": "ECO", "en", "dur"}) · `grifo` · `enchufe` (capa `clavija`: {"de": [0, 0], "a": [0, 160]}).
+    `dial` (estado: etiquetas; capa `aguja`: {"de": "90°", "a": "ECO", "en", "dur"}) · `grifo` · `enchufe` (capa `clavija`: {"de": [0, 0], "a": [0, 160]}) · `hucha` (cerdito con ranura; capa `moneda`: {"de": [0, -20], "a": [0, 50], "en": …} para que la moneda entre; para el ahorro, mejor que `cerdo`).
   - Iconos Fluent Emoji (MIT): alias del `CATALOGO` de `arvis_vida/activos.py` (limon, jabon, esponja, cubo, escoba, burbujas, brillos, gota, camiseta, calcetines,
-    vaqueros, bombilla, moneda, saco_dinero, billete_alas, recibo, copo, fuego, hielo, reloj, check, cruz, pensando, sorpresa, guardar…) o el nombre de carpeta
+    vaqueros, bombilla, moneda, saco_dinero (lleva «$»: evítalo), billete_alas, recibo, copo, fuego, hielo, reloj, check, cruz, pensando, sorpresa, guardar…) o el nombre de carpeta
     en inglés de Fluent («Frying pan»). Comprueba con `python3 -c "from arvis_vida import activos; print(activos.existe('X'))"`.
 - `{"tipo": "texto", "texto": "80–85 %", "px": 210, "color": "aviso"}` — cifras y rótulos grandes (`fondo: "pastilla"`, `color_fondo` para etiquetas).
 - `{"tipo": "contador", "desde": 0, "hasta": 60, "formato": "{v} %", "px": 220}` — cifra que cuenta (suena «tic»).
@@ -50,3 +50,4 @@ Imagen = narración: en cada escena, al menos un objeto o rótulo tiene que nomb
 ## Antes de montar
 `python3 -m arvis_vida.guion guiones_vida/SH-0NN/guion.json --publicados titulos.json` → sin errores. Después `python3 -m arvis_vida.producir …`.
 Mira SIEMPRE los fotogramas de `stills/` (Read) antes de evaluar: textos que se tapan, objetos cortados o fuera de zona → corrige posiciones y vuelve a montar.
+Subtítulos (desde el 25/11/2026): el motor ya no parte «18 y 20 grados», «40 %» ni «Comunidad de Madrid»; «guardar» es un disquete; el título del gancho se ve entero en el primer fotograma.
