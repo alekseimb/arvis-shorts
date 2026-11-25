@@ -109,6 +109,20 @@
    "nota": 85.8,
    "intentos": 2,
    "publicado": "22/11/2026"
+  },
+  "SH-033": {
+   "fila": 34,
+   "fase": "4. Revisión",
+   "linea": "vida",
+   "categoria": "ahorro",
+   "gancho_tecnica": "pregunta directa con cifra",
+   "idea": "IDEA-020",
+   "numero": 9,
+   "titulo": "¿Tienes la calefacción a más de 20 grados? El rango que recomiendan",
+   "nota": 70.0,
+   "intentos": 1,
+   "montajes": 3,
+   "debilidades": "Revisión 2 (70,0): check y cruz del paso 1 encima del «+20 °C» que sale (cruz a y 0,40 sobre «+20 °C»; check y pastilla 18–20 en «rango», pastilla x 0,68); flecha sin punta; «+20 °C» del gancho pegado al borde (px 110, x 0,66); «18–20 °C» de la escena 2 roza los botones con latir (x 0,66, sin latir) y mitad derecha floja; termómetro del baño se puede leer como temperatura del agua: quitarlo y título «TERMOSTATO DEL CALENTADOR»; hucha = cerdo (usar moneda o gráfico a la baja); icono guardar parece etiqueta; titulo_en −0,4 en el gancho; tiradores del dormitorio bajo el título (otro fondo)."
   }
  },
  "ideas": {
@@ -134,13 +148,16 @@
    "puntuacion": 76.5,
    "titulo": "¿A cuántos grados tienes la calefacción? El rango que recomiendan",
    "fuentes": [
-    "Comunidad de Madrid · consumo · ahorro energético"
+    "Comunidad de Madrid · Consumo · Ahorro energético: recomendaciones para un consumo responsable · https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable"
    ],
-   "leido": "20/11/2026",
+   "leido": "25/11/2026",
    "citas": [
-    "regular el termostato del calentador de agua entre los 55 y 60º C y el de la calefacción entre los 18 y 20 ºC"
+    "es conveniente regular el termostato del calentador de agua entre los 55 y 60º C y el de la calefacción entre los 18 y 20 ºC",
+    "Con un buen aislamiento se puede ahorrar hasta un 40% en el consumo de calefacción"
    ],
-   "nota": "la URL exacta no está en IDEAS_LH: relee la fuente para tener la URL antes de producir"
+   "nota": "fuente releída el 25/11/2026 (web-fetch)",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "sh": "SH-033"
   },
   "IDEA-021": {
    "fila": 22,
@@ -223,6 +240,12 @@
    "modos": "A (orden ARVIS 3.1)",
    "resultado": "sin produccion",
    "resumen": "23/11 08:47: la tarea sigue con el texto ARVIS 3.1 (list_triggers: activa, próxima 14:47). Auditoría no repetida (código sin cambios desde de54d20). ops plan OK (0,05 s); Sheets SHORTS A/U24:37 leído sin cambios (último SH-032 publicado); sin vencidos: Make no consultado (regla Modo A). Sin Short ni"
+  },
+  {
+   "fecha": "25/11/2026 09:15",
+   "modos": "A+C (orden ARVIS 3.1, procedimiento v3.0)",
+   "resultado": "Aviso",
+   "resumen": "SH-033 producido (QC 22/22) y no subido: CALIDAD 70,0 < 85; Make no consultado; tarea aún con texto 3.1"
   }
  ],
  "errores": [
@@ -231,13 +254,20 @@
    "paso": "tarea programada",
    "error": "El texto de la tarea «ARVIS LIFEHACKS» fue sustituido el 22/11 a las 10:35 por la orden de optimización ARVIS 3.1: la ejecución de las 14:47 no produjo (franjas 17:00 y 21:00 de hoy vacías)",
    "resuelto": false
+  },
+  {
+   "fecha": "25/11/2026 09:15",
+   "paso": "Producción",
+   "error": "SH-033 no subido: CALIDAD 70,0 < 85 tras 3 montajes y 2 revisiones visuales independientes (QC 22/22)",
+   "resuelto": false
   }
  ],
  "pendiente": [
   "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): desde la propia tarea no se cambia; necesita a Aleksei («ARVIS, activa la tarea v3»)",
-  "Franjas vacías por el texto ARVIS 3.1 en la tarea: 22/11 17:00 y 21:00 y 23/11 12:00 (ya inalcanzable: la siguiente ejecución es 14:47). Ejecuciones sin producir: 22/11 14:47, 23/11 01:47 y 23/11 08:47. SH-033 / IDEA-020 queda para la primera ejecución con el v3.0",
-  "Métricas del 23/11 sin tomar (la ejecución de 01:47 llevaba el texto ARVIS 3.1); las toma el Modo B a las 01:47 con el v3.0",
-  "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
+  "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)",
+  "Franjas vacías desde el 22/11 17:00 (ejecuciones 22/11 14:47 a 25/11 01:47 sin producción; de las del 23/11 14:47 al 25/11 01:47 no queda rastro en el estado ni en OPERACIONES). Métricas sin tomar desde el 22/11.",
+  "SH-033 en «4. Revisión» (CALIDAD 70,0/70,5 con revisión visual en subagente independiente): un reintento desde su guion aplicando las debilidades; si no llega a 85, Descartado.",
+  "Mejoras de motor detectadas por el QC visual (no aplicadas): subtítulos que parten cifras y nombres («entre 18 y | 20 grados», «Comunidad de | Madrid»); icono «guardar» (Bookmark) parece una etiqueta; alias «hucha» = cerdo sin moneda; primer fotograma con la 2.ª línea del título diminuta; tiradores del armario de fondos.dormitorio bajo el título."
  ],
  "reglas": {
   "franjas": [
@@ -332,7 +362,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "23/11/2026 08:49",
+ "actualizado": "25/11/2026 09:15",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
