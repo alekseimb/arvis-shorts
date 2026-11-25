@@ -1,0 +1,646 @@
+{
+ "id": "SH-033",
+ "numero": 9,
+ "idea": "IDEA-020",
+ "categoria": "ahorro",
+ "gancho_tecnica": "pregunta directa con cifra",
+ "variante": 0,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 1,
+  "nivel_db": -20
+ },
+ "title": "¿Tienes la calefacción a más de 20 grados? El rango que recomiendan",
+ "description": "La Comunidad de Madrid (Consumo · ahorro energético) recomienda regular el termostato de la calefacción entre 18 y 20 ºC y el del calentador de agua entre 55 y 60 ºC. Y añade que con un buen aislamiento se puede ahorrar hasta un 40 % en el consumo de calefacción. Cómo: mira hoy tu termostato; si marca más de 20 ºC, bájalo a ese rango, y revisa también la temperatura de tu calentador. Sigue siempre las instrucciones del fabricante de tu caldera o calentador.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#ahorro",
+  "#calefaccion",
+  "#trucosdecasa"
+ ],
+ "tags": [
+  "calefacción",
+  "termostato",
+  "temperatura calefacción",
+  "ahorro energético",
+  "ahorrar en casa",
+  "calentador de agua",
+  "trucos de casa",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable"
+ ],
+ "hechos": [
+  {
+   "dato": "termostato de la calefacción entre 18 y 20 ºC",
+   "cita": "es conveniente regular el termostato del calentador de agua entre los 55 y 60º C y el de la calefacción entre los 18 y 20 ºC",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "25/11/2026"
+  },
+  {
+   "dato": "calentador de agua entre 55 y 60 ºC",
+   "cita": "es conveniente regular el termostato del calentador de agua entre los 55 y 60º C y el de la calefacción entre los 18 y 20 ºC",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "25/11/2026"
+  },
+  {
+   "dato": "con un buen aislamiento se puede ahorrar hasta un 40 % en calefacción",
+   "cita": "Con un buen aislamiento se puede ahorrar hasta un 40% en el consumo de calefacción",
+   "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
+   "leido": "25/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Tienes la calefacción a más de 20 grados?",
+   "fondo": "salon",
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "titulo": "¿CALEFACCIÓN A MÁS\nDE 20 GRADOS?",
+   "resaltar": [
+    "20"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "20"
+   ],
+   "elementos": [
+    {
+     "activo": "termometro",
+     "x": 0.34,
+     "y": 0.45,
+     "tam": 0.18,
+     "en": -0.14,
+     "anim": "respirar",
+     "capas": {
+      "columna": {
+       "de": 0.3,
+       "a": 0.92,
+       "en": "calefacción",
+       "dur": 0.9
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "+20 °C",
+     "px": 150,
+     "color": "aviso",
+     "x": 0.7,
+     "y": 0.42,
+     "en": "más",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "calor",
+     "x": 0.34,
+     "y": 0.4,
+     "ancho": 0.16,
+     "alto": 0.12,
+     "en": "grados",
+     "densidad": 6,
+     "vida": 1.0,
+     "tam": 0.05
+    }
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "La Comunidad de Madrid recomienda poner el termostato de la calefacción entre 18 y 20 grados.",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.46
+   ],
+   "golpes": [
+    "18"
+   ],
+   "titulo": "RECOMENDADO:\n18–20 °C",
+   "resaltar": [
+    "18–20"
+   ],
+   "elementos": [
+    {
+     "activo": "dial",
+     "x": 0.28,
+     "y": 0.45,
+     "tam": 0.32,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "etiquetas": [
+       "16°",
+       "18°",
+       "20°",
+       "22°",
+       "24°"
+      ]
+     },
+     "capas": {
+      "aguja": {
+       "de": "24°",
+       "a": "20°",
+       "en": "calefacción",
+       "dur": 1.0
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "TERMOSTATO",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 44,
+     "anim": "ninguna",
+     "x": 0.28,
+     "y": 0.6,
+     "en": "termostato",
+     "entrada": "pop"
+    },
+    {
+     "tipo": "texto",
+     "texto": "COMUNIDAD DE MADRID",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 32,
+     "anim": "ninguna",
+     "x": 0.7,
+     "y": 0.36,
+     "en": "Comunidad",
+     "entrada": "pop"
+    },
+    {
+     "tipo": "texto",
+     "texto": "18–20 °C",
+     "px": 80,
+     "color": "lima",
+     "x": 0.7,
+     "y": 0.47,
+     "en": "18",
+     "entrada": "pop",
+     "anim": "latir"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Mira tu termostato hoy: si marca más, bájalo a ese rango.",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "MIRA TU TERMOSTATO\nY BÁJALO",
+   "resaltar": [
+    "BÁJALO"
+   ],
+   "golpes": [
+    "bájalo"
+   ],
+   "elementos": [
+    {
+     "activo": "termometro",
+     "x": 0.3,
+     "y": 0.46,
+     "tam": 0.2,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "capas": {
+      "columna": {
+       "de": 0.92,
+       "a": 0.6,
+       "en": "bájalo",
+       "dur": 0.7
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "+20 °C",
+     "px": 100,
+     "color": "aviso",
+     "x": 0.72,
+     "y": 0.4,
+     "en": 0.0,
+     "sale_en": "bájalo",
+     "entrada": "der",
+     "anim": "latir"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.72,
+     "y": 0.5,
+     "tam": 0.08,
+     "en": "más",
+     "sale_en": "bájalo"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.42,
+      0.38
+     ],
+     "a": [
+      0.42,
+      0.56
+     ],
+     "curva": 0.2,
+     "color": "lima",
+     "en": "bájalo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "18–20 °C",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 56,
+     "anim": "ninguna",
+     "x": 0.72,
+     "y": 0.52,
+     "en": "bájalo",
+     "entrada": "pop"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.72,
+     "y": 0.4,
+     "tam": 0.08,
+     "en": "bájalo"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "El calentador de agua también tiene el suyo: entre 55 y 60 grados.",
+   "fondo": "bano",
+   "variante_fondo": 0,
+   "camara": "bajar",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "CALENTADOR DE AGUA:\n55–60 °C",
+   "resaltar": [
+    "55–60"
+   ],
+   "golpes": [
+    "suyo",
+    "55"
+   ],
+   "elementos": [
+    {
+     "activo": "dial",
+     "x": 0.3,
+     "y": 0.43,
+     "tam": 0.32,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "etiquetas": [
+       "45°",
+       "50°",
+       "55°",
+       "60°",
+       "65°"
+      ]
+     },
+     "capas": {
+      "aguja": {
+       "de": "65°",
+       "a": "60°",
+       "en": "suyo",
+       "dur": 0.8
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "CALENTADOR",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 44,
+     "anim": "ninguna",
+     "x": 0.3,
+     "y": 0.56,
+     "en": "calentador",
+     "entrada": "pop"
+    },
+    {
+     "activo": "termometro",
+     "x": 0.72,
+     "y": 0.41,
+     "tam": 0.13,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "ninguna",
+     "capas": {
+      "columna": {
+       "de": 0.3,
+       "a": 0.8,
+       "en": "55",
+       "dur": 0.7
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "55–60 °C",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 60,
+     "anim": "ninguna",
+     "x": 0.72,
+     "y": 0.58,
+     "en": "55",
+     "entrada": "pop"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Y con un buen aislamiento se puede ahorrar hasta un 40 % en calefacción.",
+   "fondo": "dormitorio",
+   "variante_fondo": 0,
+   "camara": "der",
+   "transicion": "barrido",
+   "titulo": "BUEN AISLAMIENTO:\nHASTA UN 40 %",
+   "resaltar": [
+    "40"
+   ],
+   "golpes": [
+    "40"
+   ],
+   "elementos": [
+    {
+     "activo": "casa",
+     "x": 0.3,
+     "y": 0.45,
+     "tam": 0.26,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "nieve",
+     "x": 0.3,
+     "y": 0.34,
+     "ancho": 0.3,
+     "alto": 0.08,
+     "en": "buen",
+     "densidad": 6,
+     "vida": 1.0,
+     "tam": 0.03
+    },
+    {
+     "tipo": "texto",
+     "texto": "AISLAMIENTO",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "px": 44,
+     "anim": "ninguna",
+     "x": 0.3,
+     "y": 0.6,
+     "en": "aislamiento",
+     "entrada": "pop"
+    },
+    {
+     "activo": "hucha",
+     "x": 0.72,
+     "y": 0.36,
+     "tam": 0.12,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "latir"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 40,
+     "formato": "{v} %",
+     "px": 140,
+     "color": "lima",
+     "dur": 0.9,
+     "x": 0.72,
+     "y": 0.48,
+     "en": "ahorrar",
+     "entrada": "pop"
+    },
+    {
+     "tipo": "texto",
+     "texto": "EN CALEFACCIÓN",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 36,
+     "anim": "ninguna",
+     "x": 0.72,
+     "y": 0.6,
+     "en": "calefacción",
+     "entrada": "pop"
+    }
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Recuerda: casa de 18 a 20, y calentador de 55 a 60.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "CASA 18–20 °C\nCALENTADOR 55–60 °C",
+   "resaltar": [
+    "18–20",
+    "55–60"
+   ],
+   "golpes": [
+    "recuerda"
+   ],
+   "elementos": [
+    {
+     "activo": "casa",
+     "x": 0.28,
+     "y": 0.39,
+     "tam": 0.22,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "18–20 °C",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 60,
+     "anim": "ninguna",
+     "x": 0.28,
+     "y": 0.55,
+     "en": "18",
+     "entrada": "pop"
+    },
+    {
+     "activo": "dial",
+     "x": 0.72,
+     "y": 0.39,
+     "tam": 0.22,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna",
+     "estado": {
+      "etiquetas": [
+       "45°",
+       "50°",
+       "55°",
+       "60°",
+       "65°"
+      ]
+     },
+     "capas": {
+      "aguja": {
+       "de": "45°",
+       "a": "60°",
+       "en": "calentador",
+       "dur": 0.8
+      }
+     }
+    },
+    {
+     "tipo": "texto",
+     "texto": "55–60 °C",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "px": 60,
+     "anim": "ninguna",
+     "x": 0.72,
+     "y": 0.55,
+     "en": "55",
+     "entrada": "pop"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.5,
+     "y": 0.62,
+     "tam": 0.08,
+     "en": "60"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.45,
+     "ancho": 0.6,
+     "alto": 0.2,
+     "en": "recuerda",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.06
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo, mira hoy tu termostato y sígueme: un truco de casa cada día.",
+   "fondo": "estudio",
+   "camara": "fija",
+   "transicion": "barrido",
+   "titulo": "GUÁRDALO Y MIRA\nTU TERMOSTATO",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.42,
+     "tam": 0.22,
+     "en": 0.0,
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "GUÁRDALO",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "px": 48,
+     "anim": "ninguna",
+     "x": 0.5,
+     "y": 0.54,
+     "en": "guárdalo",
+     "entrada": "pop"
+    },
+    {
+     "activo": "termometro",
+     "x": 0.18,
+     "y": 0.46,
+     "tam": 0.11,
+     "en": "termostato",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "calendario",
+     "x": 0.78,
+     "y": 0.44,
+     "tam": 0.12,
+     "en": "cada",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche",
+     "px": 70,
+     "anim": "respirar",
+     "x": 0.5,
+     "y": 0.62,
+     "en": "sígueme"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.42,
+     "ancho": 0.38,
+     "alto": 0.2,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.08
+    }
+   ]
+  }
+ ]
+}
