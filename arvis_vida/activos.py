@@ -66,7 +66,7 @@ CATALOGO = {
     "rayo": ("High voltage", "electricidad energía luz consumo"), "bateria": ("Battery", "batería"), "bateria_baja": ("Low battery", "batería baja"),
     "moneda": ("Coin", "moneda dinero euros ahorro"), "saco_dinero": ("Money bag", "dinero ahorro euros"),
     "billete_alas": ("Money with wings", "dinero gasto pierdes euros factura"), "billete": ("Euro banknote", "euros dinero billete"),
-    "tarjeta": ("Credit card", "tarjeta pago"), "recibo": ("Receipt", "factura recibo ticket"), "hucha": ("Pig", "ahorro hucha"),
+    "tarjeta": ("Credit card", "tarjeta pago"), "recibo": ("Receipt", "factura recibo ticket"), "cerdo": ("Pig", "cerdo"),
     "grafico_baja": ("Chart decreasing", "baja menos reduce gasto"), "grafico_sube": ("Chart increasing", "sube más aumenta"),
     "carrito": ("Shopping cart", "compra supermercado carro"), "bolsas": ("Shopping bags", "compra bolsas"),
     "termometro_emoji": ("Thermometer", "temperatura grados"), "copo": ("Snowflake", "frío nieve congelar"), "fuego": ("Fire", "fuego calor caliente"),
@@ -88,7 +88,7 @@ CATALOGO = {
     "cruz": ("Cross mark", "mal error no nunca"), "prohibido": ("Prohibited", "nunca prohibido no"), "aviso": ("Warning", "cuidado atención aviso"),
     "lupa": ("Magnifying glass tilted right", "mira busca fíjate"), "pregunta": ("Red question mark", "pregunta qué"),
     "exclamacion": ("Red exclamation mark", "atención importante"), "cien": ("Hundred points", "perfecto"), "estrella": ("Glowing star", "mejor brillante"),
-    "corazon": ("Red heart", "gusta"), "guardar": ("Bookmark", "guárdalo guardar"), "bocadillo": ("Speech balloon", "comenta dime"),
+    "corazon": ("Red heart", "gusta"), "guardar": ("Floppy disk", "guárdalo guardar"), "bocadillo": ("Speech balloon", "comenta dime"),
     "colision": ("Collision", "golpe choque"), "chispa": ("High voltage", "chispa electricidad"), "ojos": ("Eyes", "mira fíjate"),
 }
 

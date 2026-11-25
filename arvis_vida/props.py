@@ -216,8 +216,33 @@ def enchufe():
             "clave": "enchufe desenchufar consumo fantasma cable"}
 
 
+# ----------------------------------------------------------------------------- hucha (cerdito con ranura y moneda)
+def hucha(simbolo="€"):
+    W, H = 440, 380
+    d = (_grad("hb", [(0, "#ffc6d6"), (1, "#f08bab")]) + _grad("hm", [(0, "#ffe27a"), (1, "#f2a900")])
+         + '<clipPath id="hf"><rect x="0" y="94" width="%d" height="%d"/></clipPath>' % (W, H))
+    cerdo = ('<path d="M120 98 L142 40 L178 92 Z" fill="#f48fb1" stroke="#d76a91" stroke-width="5" stroke-linejoin="round"/>'
+             '<ellipse cx="210" cy="206" rx="168" ry="122" fill="url(#hb)" stroke="#d76a91" stroke-width="6"/>'
+             '<ellipse cx="372" cy="214" rx="40" ry="34" fill="#f7a1bd" stroke="#d76a91" stroke-width="5"/>'
+             '<ellipse cx="360" cy="214" rx="7" ry="11" fill="#b4466f"/><ellipse cx="386" cy="214" rx="7" ry="11" fill="#b4466f"/>'
+             '<circle cx="318" cy="168" r="11" fill="#2b2233"/><circle cx="321" cy="164" r="3.5" fill="#fff"/>'
+             '<ellipse cx="150" cy="150" rx="70" ry="26" fill="#ffffff" opacity="0.28"/>')
+    patas = "".join('<rect x="%d" y="296" width="44" height="52" rx="14" fill="#f08bab" stroke="#d76a91" stroke-width="5"/>' % x
+                    for x in (98, 156, 250, 308))
+    cola = '<path d="M44 196 C14 186 18 150 40 160 C58 168 40 196 22 186" fill="none" stroke="#d76a91" stroke-width="7" stroke-linecap="round"/>'
+    ranura = '<rect x="168" y="86" width="92" height="16" rx="8" fill="#7a2f4a"/>'
+    base = _sombra(220, 360, 180, 14) + patas + cola + cerdo + ranura
+    moneda = ('<circle cx="214" cy="56" r="44" fill="url(#hm)" stroke="#b98000" stroke-width="5"/>'
+              '<circle cx="214" cy="56" r="31" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="4"/>'
+              + _texto(214, 58, simbolo, 44, "#8a5a00", 900))
+    frente = '<g clip-path="url(#hf)">' + cerdo + '</g><rect x="168" y="94" width="92" height="8" rx="4" fill="#7a2f4a"/>'
+    return {"w": W, "h": H, "capas": [{"id": "base", "svg": _svg(W, H, base, d)}, {"id": "moneda", "svg": _svg(W, H, moneda, d)},
+                                      {"id": "frente", "svg": _svg(W, H, frente, d)}],
+            "clave": "hucha ahorro ahorrar ahorras dinero moneda euros"}
+
+
 PROPS = {"lavadora": lavadora, "nevera": nevera, "microondas": microondas, "horno": horno, "placa": placa, "olla": olla,
-         "termometro": termometro, "dial": dial, "grifo": grifo, "enchufe": enchufe}
+         "termometro": termometro, "dial": dial, "grifo": grifo, "enchufe": enchufe, "hucha": hucha}
 
 
 def crear(nombre, estado=None):

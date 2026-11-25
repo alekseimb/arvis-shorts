@@ -131,21 +131,83 @@ def cabecera(lienzo, chip, etiqueta, k_etq, progreso, col_etq="lima"):
 SUBS_Y = 1330
 
 
+_CONECT_NUM = {"y", "a", "o", "al", "-", "–", "x"}
+_UNIDADES = {"%", "grados", "ºc", "°c", "º", "°", "euros", "€", "céntimos", "minutos", "min", "horas", "h", "segundos", "s",
+             "días", "semanas", "meses", "años", "veces", "litros", "l", "ml", "kg", "g", "kilos", "gramos", "cm", "mm", "metros",
+             "w", "kw", "kwh", "vatios"}
+_ENLACE_NOMBRE = {"de", "del", "la", "las", "los", "y"}
+
+
+def _limpia(w):
+    return re.sub(r"[.!?…:,;«»\"()¿¡]", "", w)
+
+
+def _num(w):
+    return bool(re.search(r"\d", _limpia(w)))
+
+
+def _cap(w):
+    c = _limpia(w)
+    return bool(c) and c[0].isupper()
+
+
+def _cierra(w):
+    return bool(re.search(r"[.!?…:,;]$", w))
+
+
+def unidades(palabras):
+    """Agrupa las palabras que no se deben separar en subtítulos: «18 y 20 grados», «40 %», «Comunidad de Madrid»."""
+    ws = [p["w"] for p in palabras]
+    out, i, n = [], 0, len(ws)
+    while i < n:
+        j = i + 1
+        if _num(ws[i]) and not _cierra(ws[i]):
+            # 18 y 20 · 55 a 60 · 3 x 2
+            if j + 1 < n and _limpia(ws[j]).lower() in _CONECT_NUM and not _cierra(ws[j]) and _num(ws[j + 1]):
+                j += 2
+            # unidad detrás de la cifra (grados, %, euros…)
+            if j < n and not _cierra(ws[j - 1]) and _limpia(ws[j]).lower() in _UNIDADES:
+                j += 1
+        elif _cap(ws[i]) and not _cierra(ws[i]):
+            # Comunidad de Madrid · Banco de España · Castilla y León
+            while j < n and not _cierra(ws[j - 1]):
+                if _cap(ws[j]) and _limpia(ws[j - 1]).lower() not in _ENLACE_NOMBRE and j == i + 1 and i > 0:
+                    j += 1
+                    continue
+                if (j + 1 < n and _limpia(ws[j]).lower() in _ENLACE_NOMBRE and not _cierra(ws[j]) and _cap(ws[j + 1])):
+                    j += 2
+                    continue
+                break
+        out.append(palabras[i:j])
+        i = j
+    return out
+
+
 def bloques(palabras, max_pal=3, max_chars=22):
+    """Bloques de subtítulos de ≤ 3 palabras sin partir cifras con su rango o unidad ni nombres propios compuestos."""
     out, cur = [], []
-    for p in palabras:
-        txt = " ".join(x["w"] for x in cur + [p])
-        if cur and (len(cur) >= max_pal or len(txt) > max_chars or re.search(r"[.!?…:,]$", cur[-1]["w"])):
+    for u in unidades(palabras):
+        txt = " ".join(x["w"] for x in cur + u)
+        if cur and (len(cur) + len(u) > max_pal or len(txt) > max_chars or _cierra(cur[-1]["w"])):
             out.append(cur)
             cur = []
-        cur.append(p)
+        cur.extend(u)
     if cur:
         out.append(cur)
     i = 1
     while i < len(out):
-        if len(out[i]) == 1 and len(out[i - 1]) <= 3 and not re.search(r"[.!?…:,]$", out[i - 1][-1]["w"]) \
+        if len(out[i]) == 1 and len(out[i - 1]) <= 3 and not _cierra(out[i - 1][-1]["w"]) \
                 and len(" ".join(x["w"] for x in out[i - 1] + out[i])) <= 26:
             out[i - 1].extend(out.pop(i))
+            continue
+        i += 1
+    # una palabra corta suelta («La», «entre») se une al bloque siguiente si cabe en una línea
+    i = 0
+    while i < len(out) - 1:
+        if len(out[i]) == 1 and len(_limpia(out[i][0]["w"])) <= 6 and not _cierra(out[i][0]["w"]) \
+                and len(" ".join(x["w"] for x in out[i] + out[i + 1])) <= max_chars:
+            suelta = out.pop(i)
+            out[i] = suelta + out[i]
             continue
         i += 1
     return [{"t0": b[0]["t0"], "t1": b[-1]["t1"], "palabras": b} for b in out]

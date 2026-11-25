@@ -45,6 +45,16 @@ def ease_out_cubic(x):
     return 1 - (1 - clamp(x)) ** 3
 
 
+def escala_titulo(beat, u, primera=False):
+    """(escala, desplazamiento y, opacidad) de una línea del título u segundos después de su entrada.
+    El gancho de la primera escena es el fotograma que se ve en el feed: entra ya legible (≥ 88 %) y opaco."""
+    if primera:
+        return 0.88 + 0.12 * muelle(max(0.0, u), 10, 16), 0, 1.0
+    if beat == "gancho":
+        return muelle(u, 10, 16), 0, clamp(u / 0.08)
+    return 1.0, (1 - ease_out_back(u / 0.35)) * -40, clamp(u / 0.08)
+
+
 def muelle(u, k=9.0, w=15.0):
     """0 → 1 con rebote (entrada «pop»)."""
     if u <= 0:
@@ -678,17 +688,12 @@ class Motor:
         y = int(e.get("titulo_y", 0.150) * H)
         t_in = l.tiempo(e.get("titulo_en"), 0.0)
         for k, s in enumerate(sprites):
-            u = t - t_in - k * 0.10
+            primera = i == 0 and e["beat"] == "gancho" and t_in <= 0
+            u = t - t_in - (0 if primera else k * 0.10)
             if u < 0:
                 y += s.height - 8
                 continue
-            if e["beat"] == "gancho":
-                esc = muelle(u, 10, 16)
-                dy = 0
-            else:
-                esc = 1.0
-                dy = (1 - ease_out_back(u / 0.35)) * -40
-            a = clamp(u / 0.08)
+            esc, dy, a = escala_titulo(e["beat"], u, primera)
             w = max(1, int(s.width * esc))
             h = max(1, int(s.height * esc))
             spr = s.resize((w, h), Image.BILINEAR) if (w, h) != s.size else s

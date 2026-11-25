@@ -138,7 +138,7 @@ def dormitorio(p):
               '<rect x="40" y="%d" width="1160" height="%d" rx="20" fill="%s"/>' % (int(_y(0.0)), ys - int(_y(0.0)), armario) +
               "".join('<rect x="%d" y="%d" width="370" height="%d" rx="14" fill="#ffffff22" stroke="#00000022" stroke-width="5"/>'
                       '<rect x="%d" y="%d" width="16" height="140" rx="8" fill="%s"/>' % (x, int(_y(0.0)) + 20, ys - int(_y(0.0)) - 40, x + (330 if i % 2 == 0 else 24),
-                                                                                       int(_y(0.25)), acento) for i, x in enumerate((60, 435, 810))) +
+                                                                                       int(_y(0.36)), acento) for i, x in enumerate((60, 435, 810))) +
               '<rect x="0" y="%d" width="%d" height="%d" fill="%s"/>' % (ys, BW, BH - ys, suelo))
     return _svg(cuerpo)
 
