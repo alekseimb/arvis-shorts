@@ -148,7 +148,7 @@
    "puntuacion": 76.5,
    "titulo": "¿A cuántos grados tienes la calefacción? El rango que recomiendan",
    "fuentes": [
-    "Comunidad de Madrid · Consumo · Ahorro energético: recomendaciones para un consumo responsable · https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable"
+    "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable"
    ],
    "leido": "25/11/2026",
    "citas": [
@@ -157,7 +157,8 @@
    ],
    "nota": "fuente releída el 25/11/2026 (web-fetch)",
    "url": "https://www.comunidad.madrid/consumo/ahorro-energetico-recomendaciones-consumo-responsable",
-   "sh": "SH-033"
+   "sh": "SH-033",
+   "fuente_nombre": "Comunidad de Madrid · Consumo · Ahorro energético: recomendaciones para un consumo responsable"
   },
   "IDEA-021": {
    "fila": 22,
