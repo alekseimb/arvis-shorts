@@ -7,7 +7,7 @@
  "variante": 1,
  "voice": "sharvard_m",
  "musica": {
-  "semilla": 2,
+  "semilla": 0,
   "nivel_db": -19
  },
  "title": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
@@ -95,29 +95,50 @@
     {
      "activo": "Beverage box",
      "x": 0.3,
-     "y": 0.45,
-     "tam": 0.2,
+     "y": 0.44,
+     "tam": 0.24,
      "en": -0.14,
      "entrada": "pop",
-     "anim": "respirar"
+     "anim": "respirar",
+     "mover": [
+      {
+       "a": [
+        0.72,
+        0.47
+       ],
+       "tam": 0.07,
+       "en": "fecha",
+       "dur": 0.5
+      }
+     ]
     },
     {
      "tipo": "texto",
      "texto": "¿FECHA?",
-     "px": 48,
+     "px": 56,
      "x": 0.3,
-     "y": 0.6,
-     "en": "fecha",
+     "y": 0.56,
+     "en": -0.14,
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "aviso",
-     "color": "noche"
+     "color": "noche",
+     "sale_en": "fecha"
+    },
+    {
+     "activo": "papelera",
+     "x": 0.72,
+     "y": 0.47,
+     "tam": 0.22,
+     "en": "Tiras",
+     "entrada": "der",
+     "anim": "balancear"
     },
     {
      "tipo": "flecha",
      "de": [
-      0.42,
+      0.44,
       0.44
      ],
      "a": [
@@ -126,28 +147,24 @@
      ],
      "curva": 0.25,
      "color": "aviso",
-     "en": "comida"
-    },
-    {
-     "activo": "papelera",
-     "x": 0.72,
-     "y": 0.47,
-     "tam": 0.2,
-     "en": "Tiras",
-     "entrada": "der",
-     "anim": "balancear"
+     "en": "comida",
+     "sale_en": "fecha"
     }
    ],
    "sfx": [
     [
-     "golpe",
+     "whoosh",
      "fecha"
+    ],
+    [
+     "error",
+     "envase"
     ]
    ]
   },
   {
    "beat": "problema",
-   "say": "Ojo: caducidad y consumo preferente no significan lo mismo.",
+   "say": "Ojo: ¿consumo preferente o caducidad? No significan lo mismo.",
    "fondo": "despensa",
    "variante_fondo": 0,
    "camara": "der",
@@ -156,53 +173,53 @@
     0.5,
     0.46
    ],
-   "titulo": "NO ES LO\nMISMO",
+   "titulo": "¿PREFERENTE O\nCADUCIDAD?",
    "resaltar": [
-    "MISMO"
+    "CADUCIDAD"
    ],
    "golpes": [
-    "caducidad",
-    "preferente"
+    "preferente",
+    "caducidad"
    ],
    "elementos": [
     {
      "activo": "calendario",
      "x": 0.5,
-     "y": 0.34,
-     "tam": 0.13,
+     "y": 0.35,
+     "tam": 0.12,
      "en": 0.0,
      "entrada": "pop",
      "anim": "balancear"
     },
     {
-     "activo": "carne",
+     "activo": "lata",
      "x": 0.27,
      "y": 0.43,
-     "tam": 0.14,
-     "en": "caducidad",
+     "tam": 0.22,
+     "en": "consumo",
      "entrada": "izq",
      "anim": "flotar"
     },
     {
      "tipo": "texto",
-     "texto": "FECHA DE\nCADUCIDAD",
-     "px": 44,
+     "texto": "PREFERENTE",
+     "px": 52,
      "x": 0.27,
-     "y": 0.54,
-     "en": "caducidad",
+     "y": 0.55,
+     "en": "preferente",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
-     "color_fondo": "rojo",
-     "color": "blanco"
+     "color_fondo": "lima",
+     "color": "noche"
     },
     {
      "tipo": "texto",
      "texto": "VS",
      "px": 72,
      "x": 0.5,
-     "y": 0.46,
-     "en": "significan",
+     "y": 0.47,
+     "en": "o",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
@@ -210,108 +227,72 @@
      "color": "aviso"
     },
     {
-     "activo": "lata",
-     "x": 0.71,
+     "activo": "carne",
+     "x": 0.73,
      "y": 0.43,
-     "tam": 0.14,
-     "en": "preferente",
+     "tam": 0.22,
+     "en": "caducidad",
      "entrada": "der",
      "anim": "flotar"
     },
     {
      "tipo": "texto",
-     "texto": "CONSUMIR\nPREFERENTEMENTE",
-     "px": 40,
-     "x": 0.69,
-     "y": 0.54,
-     "en": "preferente",
+     "texto": "CADUCIDAD",
+     "px": 52,
+     "x": 0.73,
+     "y": 0.55,
+     "en": "caducidad",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
-     "color_fondo": "lima",
-     "color": "noche"
+     "color_fondo": "rojo",
+     "color": "blanco"
     }
    ],
    "sfx": [
     [
+     "golpe",
+     "Ojo"
+    ],
+    [
      "ding",
-     "preferente"
+     "mismo"
     ]
    ]
   },
   {
    "beat": "tutorial",
    "paso": 1,
-   "say": "Consumo preferente es calidad: pasada la fecha, bien conservado y sin abrir, sigue siendo seguro.",
+   "say": "Mira la etiqueta: consumo preferente es calidad. Pasada la fecha, si está cerrado y bien guardado, sigue siendo seguro.",
    "fondo": "despensa",
    "variante_fondo": 1,
    "camara": "izq",
    "transicion": "zoom",
-   "titulo": "CONSUMO\nPREFERENTE",
+   "titulo": "MIRA LA\nETIQUETA",
    "resaltar": [
-    "PREFERENTE"
+    "ETIQUETA"
    ],
    "golpes": [
-    "calidad",
+    "etiqueta",
     "seguro"
    ],
    "elementos": [
     {
      "activo": "lata",
-     "x": 0.28,
-     "y": 0.42,
-     "tam": 0.18,
+     "x": 0.3,
+     "y": 0.44,
+     "tam": 0.25,
      "en": 0.0,
      "entrada": "izq",
-     "anim": "flotar"
-    },
-    {
-     "activo": "Cookie",
-     "x": 0.3,
-     "y": 0.57,
-     "tam": 0.12,
-     "en": "pasada",
-     "entrada": "izq",
-     "anim": "balancear"
-    },
-    {
-     "tipo": "particulas",
-     "clase": "brillos",
-     "x": 0.28,
-     "y": 0.38,
-     "ancho": 0.2,
-     "alto": 0.08,
-     "en": "calidad",
-     "densidad": 7,
-     "vida": 0.9,
-     "tam": 0.05
-    },
-    {
-     "tipo": "sello",
-     "simbolo": "check",
-     "x": 0.38,
-     "y": 0.47,
-     "tam": 0.09,
-     "en": "seguro"
+     "anim": "ninguna"
     },
     {
      "tipo": "texto",
-     "texto": "CALIDAD",
-     "px": 64,
-     "x": 0.68,
-     "y": 0.37,
-     "en": "calidad",
-     "entrada": "pop",
-     "anim": "ninguna",
-     "color": "lima"
-    },
-    {
-     "tipo": "texto",
-     "texto": "SIN ABRIR",
-     "px": 44,
-     "x": 0.68,
-     "y": 0.46,
-     "en": "abrir",
+     "texto": "CONSUMO PREFERENTE",
+     "px": 40,
+     "x": 0.32,
+     "y": 0.53,
+     "en": "Mira",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
@@ -319,24 +300,99 @@
      "color": "noche"
     },
     {
+     "activo": "lupa",
+     "x": 0.62,
+     "y": 0.36,
+     "tam": 0.14,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "balancear",
+     "mover": [
+      {
+       "a": [
+        0.53,
+        0.55
+       ],
+       "tam": 0.12,
+       "en": "etiqueta",
+       "dur": 0.5
+      }
+     ],
+     "sale_en": "calidad"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CALIDAD",
+     "px": 52,
+     "x": 0.7,
+     "y": 0.4,
+     "en": "calidad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "color": "noche",
+     "fondo": "pastilla",
+     "color_fondo": "lima"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CERRADO",
+     "px": 48,
+     "x": 0.7,
+     "y": 0.48,
+     "en": "cerrado",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.38,
+     "y": 0.43,
+     "tam": 0.1,
+     "en": "seguro"
+    },
+    {
      "tipo": "texto",
      "texto": "SEGURO",
-     "px": 56,
-     "x": 0.68,
-     "y": 0.55,
+     "px": 52,
+     "x": 0.7,
+     "y": 0.56,
      "en": "seguro",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "lima",
      "color": "noche"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.5,
+      0.5
+     ],
+     "a": [
+      0.58,
+      0.42
+     ],
+     "curva": 0.25,
+     "color": "lima",
+     "en": "calidad"
     }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "etiqueta"
+    ]
    ]
   },
   {
    "beat": "tutorial",
    "paso": 2,
-   "say": "Caducidad es seguridad: una vez superada esa fecha, no lo comas nunca.",
+   "say": "Y si pone caducidad, es seguridad: una vez superada, no lo comas.",
    "fondo": "cocina",
    "variante_fondo": 1,
    "camara": "bajar",
@@ -345,7 +401,7 @@
     0.5,
     0.45
    ],
-   "titulo": "FECHA DE\nCADUCIDAD",
+   "titulo": "SI PONE\nCADUCIDAD",
    "resaltar": [
     "CADUCIDAD"
    ],
@@ -355,36 +411,53 @@
    "elementos": [
     {
      "activo": "carne",
-     "x": 0.26,
-     "y": 0.42,
-     "tam": 0.16,
+     "x": 0.3,
+     "y": 0.44,
+     "tam": 0.25,
      "en": 0.0,
      "entrada": "izq",
-     "anim": "flotar"
+     "anim": "ninguna"
     },
     {
-     "activo": "Fish",
+     "tipo": "texto",
+     "texto": "FECHA DE CADUCIDAD",
+     "px": 40,
      "x": 0.32,
-     "y": 0.56,
-     "tam": 0.13,
-     "en": "seguridad",
-     "entrada": "izq",
-     "anim": "balancear"
+     "y": 0.53,
+     "en": "pone",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "rojo"
     },
     {
-     "tipo": "sello",
-     "simbolo": "prohibido",
-     "x": 0.3,
-     "y": 0.48,
-     "tam": 0.12,
-     "en": "superada"
+     "activo": "lupa",
+     "x": 0.62,
+     "y": 0.36,
+     "tam": 0.14,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "balancear",
+     "mover": [
+      {
+       "a": [
+        0.53,
+        0.55
+       ],
+       "tam": 0.12,
+       "en": "pone",
+       "dur": 0.5
+      }
+     ],
+     "sale_en": "seguridad"
     },
     {
      "tipo": "texto",
      "texto": "SEGURIDAD",
      "px": 52,
-     "x": 0.69,
-     "y": 0.38,
+     "x": 0.7,
+     "y": 0.42,
      "en": "seguridad",
      "entrada": "pop",
      "anim": "ninguna",
@@ -393,24 +466,52 @@
      "color": "blanco"
     },
     {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.3,
+     "y": 0.43,
+     "tam": 0.13,
+     "en": "superada"
+    },
+    {
      "tipo": "texto",
-     "texto": "NO LO\nCOMAS",
-     "px": 56,
-     "x": 0.69,
-     "y": 0.5,
-     "en": "fecha",
+     "texto": "NO LO COMAS",
+     "px": 52,
+     "x": 0.67,
+     "y": 0.52,
+     "en": "superada",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "rojo",
      "color": "blanco"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.5,
+      0.5
+     ],
+     "a": [
+      0.58,
+      0.44
+     ],
+     "curva": 0.25,
+     "color": "rojo",
+     "en": "seguridad"
     }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "pone"
+    ]
    ]
   },
   {
    "beat": "tutorial",
    "paso": 3,
-   "say": "¿Está a punto de caducar? Congélalo antes en casa y alargas su conservación.",
+   "say": "¿Le queda poco? Mételo al congelador antes de que caduque y alargas su conservación.",
    "fondo": "cocina",
    "variante_fondo": 2,
    "camara": "der",
@@ -420,14 +521,14 @@
     "ANTES"
    ],
    "golpes": [
-    "congélalo"
+    "congelador"
    ],
    "elementos": [
     {
      "activo": "nevera",
      "x": 0.3,
      "y": 0.47,
-     "tam": 0.26,
+     "tam": 0.28,
      "en": 0.0,
      "entrada": "izq",
      "anim": "ninguna",
@@ -437,32 +538,54 @@
      }
     },
     {
+     "activo": "carne",
+     "x": 0.66,
+     "y": 0.43,
+     "tam": 0.18,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.3,
+        0.59
+       ],
+       "tam": 0.07,
+       "en": "Mételo",
+       "dur": 0.6
+      }
+     ],
+     "sale_en": "antes"
+    },
+    {
+     "activo": "reloj_arena",
+     "x": 0.8,
+     "y": 0.33,
+     "tam": 0.09,
+     "en": "poco",
+     "entrada": "der",
+     "anim": "balancear",
+     "sale_en": "antes"
+    },
+    {
      "tipo": "particulas",
      "clase": "nieve",
      "x": 0.3,
-     "y": 0.4,
+     "y": 0.58,
      "ancho": 0.26,
-     "alto": 0.1,
-     "en": "Congélalo",
+     "alto": 0.06,
+     "en": "congelador",
      "densidad": 7,
      "vida": 1.0,
      "tam": 0.03
     },
     {
-     "activo": "reloj_arena",
-     "x": 0.68,
-     "y": 0.35,
-     "tam": 0.1,
-     "en": 0.0,
-     "entrada": "der",
-     "anim": "balancear"
-    },
-    {
      "tipo": "texto",
      "texto": "ANTES DE CADUCAR",
-     "px": 40,
-     "x": 0.68,
-     "y": 0.45,
+     "px": 48,
+     "x": 0.66,
+     "y": 0.4,
      "en": "antes",
      "entrada": "pop",
      "anim": "ninguna",
@@ -472,10 +595,10 @@
     },
     {
      "tipo": "texto",
-     "texto": "MÁS CONSERVACIÓN",
-     "px": 40,
-     "x": 0.68,
-     "y": 0.54,
+     "texto": "DURA MÁS",
+     "px": 56,
+     "x": 0.66,
+     "y": 0.49,
      "en": "alargas",
      "entrada": "pop",
      "anim": "ninguna",
@@ -485,9 +608,9 @@
     },
     {
      "activo": "copo",
-     "x": 0.68,
-     "y": 0.61,
-     "tam": 0.07,
+     "x": 0.66,
+     "y": 0.57,
+     "tam": 0.08,
      "en": "conservación",
      "entrada": "pop",
      "anim": "girar"
@@ -496,13 +619,13 @@
    "sfx": [
     [
      "whoosh",
-     "Congélalo"
+     "Mételo"
     ]
    ]
   },
   {
    "beat": "resultado",
-   "say": "Recuerda: preferente es calidad, caducidad es seguridad.",
+   "say": "Preferente es calidad; caducidad, seguridad. Así no tiras comida que aún es segura.",
    "fondo": "estudio",
    "variante_fondo": 1,
    "camara": "alejar",
@@ -512,23 +635,23 @@
     "DIFERENCIA"
    ],
    "golpes": [
-    "recuerda"
+    "tiras"
    ],
    "elementos": [
     {
      "activo": "lata",
-     "x": 0.3,
+     "x": 0.27,
      "y": 0.38,
-     "tam": 0.15,
+     "tam": 0.2,
      "en": 0.0,
      "entrada": "pop",
      "anim": "respirar"
     },
     {
      "activo": "carne",
-     "x": 0.7,
+     "x": 0.73,
      "y": 0.38,
-     "tam": 0.15,
+     "tam": 0.2,
      "en": "caducidad",
      "entrada": "pop",
      "anim": "respirar"
@@ -536,7 +659,7 @@
     {
      "tipo": "texto",
      "texto": "PREFERENTE = CALIDAD",
-     "px": 44,
+     "px": 52,
      "x": 0.5,
      "y": 0.5,
      "en": "calidad",
@@ -549,10 +672,10 @@
     {
      "tipo": "texto",
      "texto": "CADUCIDAD = SEGURIDAD",
-     "px": 44,
+     "px": 52,
      "x": 0.5,
      "y": 0.58,
-     "en": "seguridad",
+     "en": "caducidad",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
@@ -560,17 +683,28 @@
      "color": "blanco"
     },
     {
-     "tipo": "particulas",
-     "clase": "brillos",
+     "activo": "papelera",
      "x": 0.5,
-     "y": 0.4,
-     "ancho": 0.3,
-     "alto": 0.08,
-     "en": "recuerda",
-     "densidad": 7,
-     "vida": 0.9,
-     "tam": 0.05
+     "y": 0.36,
+     "tam": 0.12,
+     "en": "tiras",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.5,
+     "y": 0.36,
+     "tam": 0.1,
+     "en": "segura"
     }
+   ],
+   "sfx": [
+    [
+     "exito",
+     "segura"
+    ]
    ]
   },
   {
@@ -579,7 +713,7 @@
    "fondo": "salon",
    "variante_fondo": 0,
    "camara": "fija",
-   "transicion": "barrido",
+   "transicion": "zoom",
    "titulo": "GUÁRDALO Y MIRA\nTU NEVERA",
    "resaltar": [
     "GUÁRDALO"
@@ -589,16 +723,16 @@
      "activo": "guardar",
      "x": 0.5,
      "y": 0.42,
-     "tam": 0.16,
+     "tam": 0.2,
      "en": 0.0,
      "entrada": "pop",
      "anim": "latir"
     },
     {
      "activo": "nevera",
-     "x": 0.18,
+     "x": 0.2,
      "y": 0.44,
-     "tam": 0.12,
+     "tam": 0.16,
      "en": "nevera",
      "entrada": "izq",
      "anim": "ninguna",
@@ -611,7 +745,7 @@
      "activo": "calendario",
      "x": 0.8,
      "y": 0.43,
-     "tam": 0.12,
+     "tam": 0.15,
      "en": "mira",
      "entrada": "pop",
      "anim": "latir"
