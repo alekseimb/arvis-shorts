@@ -164,7 +164,8 @@
    "sha256": "cbd9fb479d23928e",
    "aprobado": false,
    "rubrica": "5.0",
-   "enfoque": "error común + dato poco conocido"
+   "enfoque": "error común + dato poco conocido",
+   "preparado": "26/11/2026 20:35"
   }
  },
  "ideas": {
@@ -324,12 +325,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "22/11/2026 08:50",
-   "modos": "A+C",
-   "resultado": "OK",
-   "resumen": "SH-032 reintento 85,8 subido para 22/11 12:00 (texto v2.0)"
-  },
-  {
    "fecha": "22/11/2026 15:16",
    "modos": "A (orden ARVIS 3.1)",
    "resultado": "Aviso",
@@ -376,6 +371,12 @@
    "modos": "A+C",
    "resultado": "Aviso",
    "resumen": "SH-033 público (API); SH-035 QC 22/22 pero CALIDAD 57,0/65,0 < 85 tras 3 montajes → 4. Revisión, sin subida"
+  },
+  {
+   "fecha": "26/11/2026 20:47",
+   "modos": "chat · ARVIS 5.0",
+   "resultado": "OK",
+   "resumen": "ARVIS LIFEHACKS 5.0 implantado (motor 2.0, tarea v5.0, rúbrica 5.0); SH-035 prueba 85,0 preparado sin subir"
   }
  ],
  "errores": [
@@ -531,7 +532,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 15:09",
+ "actualizado": "26/11/2026 20:47",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
