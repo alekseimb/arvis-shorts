@@ -15,6 +15,7 @@ from . import activos, fondos, props
 
 ORDEN = ["gancho", "problema", "tutorial", "resultado", "cta"]
 DOMINIOS_FIABLES = ("support.google.com/youtube", "blog.youtube",   # fuente primaria de las reglas y métricas de YouTube
+                    "nih.gov",   # PubMed / PMC (Biblioteca Nacional de Medicina de EE. UU.): estudios revisados por pares
                     ".gob.es", "comunidad.madrid", "aesan.gob.es", "idae.es", "ocu.org", "consumo.gob.es", "sanidad.gob.es", "boe.es",
                     "europa.eu", "who.int", "juntadeandalucia.es", "gencat.cat", "euskadi.eus", "gva.es", "xunta.gal", "jcyl.es",
                     "madrid.es", "bcn.cat", "cnmc.es", "miteco.gob.es", "mapa.gob.es", "efsa.europa.eu", "fao.org", "csic.es",

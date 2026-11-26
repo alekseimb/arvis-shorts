@@ -219,6 +219,26 @@
    "aprobado_por": "Aleksei en el chat 26/11/2026 21:53 («Súbelo»)",
    "franja": "27/11/2026 17:00",
    "yt": "HhJUYmYpV5s"
+  },
+  "SH-038": {
+   "fila": 39,
+   "fase": "5. Vídeo aprobado",
+   "linea": "vida",
+   "tema": "T-003",
+   "categoria": "cotidiano",
+   "numero": 13,
+   "idea": "IDEA-032",
+   "enfoque": "sorpresa (mito desmontado + lo que sí está demostrado)",
+   "titulo": "¿Mirar el móvil al despertar te arruina el día? Lo que sí está demostrado",
+   "nota": 85.5,
+   "rubrica": "5.0",
+   "duracion": 25.0,
+   "sha256": "2c4cfe99ae64f90c",
+   "huella_contenido": "424f22ea4597f7b9",
+   "huella_motor": "39426a97f33065d1",
+   "preparado": "26/11/2026 22:40",
+   "aprobado": false,
+   "voz": "sharvard_f_animada"
   }
  },
  "ideas": {
@@ -400,6 +420,20 @@
     "https://support.google.com/youtube/answer/1715160?hl=en",
     "https://support.google.com/youtube/answer/12220281"
    ]
+  },
+  "IDEA-032": {
+   "fila": 33,
+   "estado": "En producción",
+   "categoria": "cotidiano",
+   "tema": "T-003",
+   "leido": "26/11/2026",
+   "sh": "SH-038",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8293243",
+    "https://pubmed.ncbi.nlm.nih.gov/12531174/",
+    "https://www.ovid.com/journals/jephp/pdf/10.1037/xhp0000100~the-attentional-cost-of-receiving-a-cell-phone-notification",
+    "https://support.apple.com/es-lamr/105112"
+   ]
   }
  },
  "ejecuciones": [
@@ -516,8 +550,8 @@
    35
   ]
  },
- "ultimo_sh": "SH-037",
- "ultimo_numero": 12,
+ "ultimo_sh": "SH-038",
+ "ultimo_numero": 13,
  "metricas": {
   "fecha": "26/11/2026 01:48",
   "videos": {
@@ -611,7 +645,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 21:54",
+ "actualizado": "26/11/2026 22:40",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -671,6 +705,14 @@
    "estado": "Programado",
    "publicar": false,
    "sh": "SH-037"
+  },
+  "T-003": {
+   "texto": "Por qué mirar el móvil nada más despertarte arruina tu concentración durante todo el día",
+   "fecha": "26/11/2026 22:01",
+   "origen": "Aleksei",
+   "estado": "Preparado",
+   "publicar": false,
+   "sh": "SH-038"
   }
  },
  "voz": "sharvard_f_animada"

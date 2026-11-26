@@ -1,0 +1,565 @@
+{
+ "voice": "sharvard_f_animada",
+ "categoryId": "26",
+ "id": "SH-038",
+ "numero": 13,
+ "tema": "T-003",
+ "categoria": "cotidiano",
+ "enfoque": "sorpresa (mito desmontado + lo que sí está demostrado)",
+ "gancho_tecnica": "pregunta directa sobre un hábito",
+ "variante": 0,
+ "musica": {
+  "semilla": 1,
+  "nivel_db": -19
+ },
+ "title": "¿Mirar el móvil al despertar te arruina el día? Lo que sí está demostrado",
+ "description": "¿Mirar el móvil nada más despertarte te arruina la concentración todo el día? No hemos encontrado ningún estudio que lo demuestre. Lo que sí está estudiado: al despertar el cerebro rinde menos durante un rato (la inercia del sueño), y un estudio publicado por la Asociación Americana de Psicología (Stothart y otros, 2015) vio que una notificación, aunque no se toque el móvil, empeora una tarea de atención casi tanto como usarlo. Truco: programa «No molestar» para tu primera hora del día (en iPhone, Ajustes > Concentración > No molestar; en Android, Ajustes > Notificaciones > No molestar).",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#productividad",
+  "#concentracion",
+  "#habitos"
+ ],
+ "tags": [
+  "móvil al despertar",
+  "concentración",
+  "inercia del sueño",
+  "notificaciones",
+  "no molestar",
+  "productividad",
+  "hábitos de mañana",
+  "lifehacks"
+ ],
+ "sources": [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8293243",
+  "https://pubmed.ncbi.nlm.nih.gov/12531174/",
+  "https://www.ovid.com/journals/jephp/pdf/10.1037/xhp0000100~the-attentional-cost-of-receiving-a-cell-phone-notification",
+  "https://support.apple.com/es-lamr/105112"
+ ],
+ "hechos": [
+  {
+   "dato": "la inercia del sueño: somnolencia y peor rendimiento mental al despertar",
+   "cita": "This refers to the transient period of sleepiness, grogginess, disorientation, and decreased cognitive performance that occurs upon awakening",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8293243",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "estado de baja activación justo al despertar que empeora temporalmente el rendimiento",
+   "cita": "Sleep inertia is a transitional state of lowered arousal occurring immediately after awakening from sleep and producing a temporary decrement in subsequent performance.",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/12531174/",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "una notificación sola, sin tocar el móvil, empeora una tarea de atención",
+   "cita": "cellular phone notifications alone significantly disrupted performance on an attention-demanding task, even when participants did not directly interact with a mobile device during the task",
+   "url": "https://www.ovid.com/journals/jephp/pdf/10.1037/xhp0000100~the-attentional-cost-of-receiving-a-cell-phone-notification",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "efecto comparable a usar el móvil",
+   "cita": "The magnitude of observed distraction effects was comparable in magnitude to those seen when users actively used a mobile phone",
+   "url": "https://www.ovid.com/journals/jephp/pdf/10.1037/xhp0000100~the-attentional-cost-of-receiving-a-cell-phone-notification",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "No molestar se puede programar por horario",
+   "cita": "Es posible que la funcionalidad No molestar tenga programado activarse a determinados horarios",
+   "url": "https://support.apple.com/es-lamr/105112",
+   "leido": "26/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿El móvil al despertar te arruina el día?",
+   "fondo": "dormitorio",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.44
+   ],
+   "titulo": "¿TE ARRUINA\nEL DÍA?",
+   "resaltar": [
+    "DÍA?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "arruina"
+   ],
+   "elementos": [
+    {
+     "activo": "Mobile phone",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.46,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "Alarm clock",
+     "x": 0.17,
+     "y": 0.35,
+     "tam": 0.15,
+     "en": "despertar",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "Zzz",
+     "x": 0.83,
+     "y": 0.35,
+     "tam": 0.13,
+     "en": "arruina",
+     "entrada": "pop",
+     "anim": "respirar"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "móvil"
+    ],
+    [
+     "ding",
+     "despertar"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "¡Ojo! Eso no está demostrado. Pero dos cosas sí.",
+   "fondo": "estudio",
+   "variante_fondo": 0,
+   "camara": "alejar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "NO ESTÁ\nDEMOSTRADO",
+   "resaltar": [
+    "DEMOSTRADO"
+   ],
+   "golpes": [
+    "demostrado"
+   ],
+   "elementos": [
+    {
+     "activo": "Brain",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "demostrado"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SIN PRUEBAS",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "demostrado",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "sale_en": "dos"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PERO DOS COSAS, SÍ",
+     "px": 56,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "dos",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "sí"
+    }
+   ],
+   "sfx": [
+    [
+     "error",
+     "demostrado"
+    ],
+    [
+     "exito",
+     "sí"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Uno: al despertar, tu cerebro arranca lento. Se llama inercia del sueño.",
+   "fondo": "dormitorio",
+   "variante_fondo": 1,
+   "camara": "izq",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "INERCIA\nDEL SUEÑO",
+   "resaltar": [
+    "SUEÑO"
+   ],
+   "golpes": [
+    "lento"
+   ],
+   "elementos": [
+    {
+     "activo": "Yawning face",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "activo": "Snail",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.15,
+     "en": "lento",
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CEREBRO EN MODO LENTO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "cerebro",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    },
+    {
+     "activo": "Zzz",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "inercia",
+     "entrada": "subir",
+     "anim": "flotar"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "lento"
+    ],
+    [
+     "pop",
+     "inercia"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Dos: una notificación te distrae casi tanto como usar el móvil, ¡aunque no la abras!",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "UN AVISO\nYA DISTRAE",
+   "resaltar": [
+    "DISTRAE"
+   ],
+   "golpes": [
+    "notificación"
+   ],
+   "elementos": [
+    {
+     "activo": "Mobile phone",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "Bell",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.15,
+     "en": "notificación",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "≈ COMO USARLO",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "tanto",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "sale_en": "abras"
+    },
+    {
+     "tipo": "texto",
+     "texto": "AUNQUE NO LA ABRAS",
+     "px": 56,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "abras",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "abras"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "notificación"
+    ],
+    [
+     "error",
+     "abras"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Tres: programa No molestar para tu primera hora del día.",
+   "fondo": "dormitorio",
+   "variante_fondo": 2,
+   "camara": "bajar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "PROGRAMA\n«NO MOLESTAR»",
+   "resaltar": [
+    "MOLESTAR»"
+   ],
+   "golpes": [
+    "programa"
+   ],
+   "elementos": [
+    {
+     "activo": "Bell with slash",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "programa"
+    },
+    {
+     "tipo": "texto",
+     "texto": "TU PRIMERA HORA DEL DÍA",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "primera",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "activo": "Alarm clock",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.15,
+     "en": "hora",
+     "entrada": "pop",
+     "anim": "ninguna"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "programa"
+    ],
+    [
+     "exito",
+     "hora"
+    ]
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Así arrancas a tu ritmo, sin avisos que te corten.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "alejar",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "A TU\nRITMO",
+   "resaltar": [
+    "RITMO"
+   ],
+   "elementos": [
+    {
+     "activo": "Sun",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.46,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "ritmo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SIN AVISOS",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "avisos",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.5,
+     "alto": 0.15,
+     "en": "ritmo",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.04
+    }
+   ],
+   "sfx": [
+    [
+     "exito",
+     "ritmo"
+    ]
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "¡Guárdalo y prográmalo esta noche!",
+   "fondo": "estudio",
+   "variante_fondo": 2,
+   "camara": "fija",
+   "transicion": "fundido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "GUÁRDALO",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.42,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "Bell with slash",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "prográmalo",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PROGRÁMALO ESTA NOCHE",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "prográmalo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "prográmalo"
+    ]
+   ]
+  }
+ ]
+}
