@@ -1,0 +1,647 @@
+{
+ "id": "SH-034",
+ "numero": 10,
+ "idea": "IDEA-025",
+ "categoria": "cocina",
+ "gancho_tecnica": "pregunta directa",
+ "variante": 1,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 2,
+  "nivel_db": -19
+ },
+ "title": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
+ "description": "La AESAN (Agencia Española de Seguridad Alimentaria y Nutrición) lo explica: la fecha de consumo preferente indica hasta cuándo el alimento conserva la calidad prevista y, una vez pasada, sigue siendo seguro para el consumo. La fecha de caducidad indica hasta cuándo puede consumirse de forma segura: no se debe consumir ningún alimento una vez superada. Truco: antes de que caduquen, los alimentos se pueden congelar en casa para alargar su conservación. Sigue siempre las instrucciones de conservación y, una vez abierto el envase, las instrucciones de consumo.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#cocina",
+  "#desperdicioalimentario",
+  "#trucosdecasa"
+ ],
+ "tags": [
+  "fecha de caducidad",
+  "consumo preferente",
+  "caducidad alimentos",
+  "desperdicio de comida",
+  "conservar alimentos",
+  "congelar alimentos",
+  "trucos de cocina",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas"
+ ],
+ "hechos": [
+  {
+   "dato": "consumo preferente = calidad prevista",
+   "cita": "La fecha de consumo preferente indica el momento hasta el cual el alimento conserva la calidad prevista.",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "pasada la fecha de consumo preferente sigue siendo seguro",
+   "cita": "Una vez pasada la fecha indicada, el alimento sigue siendo seguro para el consumo",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "caducidad = consumo seguro",
+   "cita": "La fecha de caducidad indica el momento hasta el cual el alimento puede consumirse de forma segura.",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "no consumir pasada la caducidad",
+   "cita": "No se debe consumir ningún alimento una vez superada su fecha de caducidad.",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "congelar antes de que caduquen",
+   "cita": "Antes de que los alimentos caduquen se pueden congelar en casa y así alargar su conservación.",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  },
+  {
+   "dato": "seguir instrucciones de conservación",
+   "cita": "Siempre se deben seguir las instrucciones de conservación y, una vez abierto el envase, las instrucciones de consumo.",
+   "url": "https://www.aesan.gob.es/es/actualidad/actualidad-noticias/fechas",
+   "leido": "22/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Tiras comida por la fecha del envase?",
+   "fondo": "cocina",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.47
+   ],
+   "titulo": "¿TIRAS COMIDA POR\nLA FECHA?",
+   "resaltar": [
+    "FECHA"
+   ],
+   "titulo_en": -0.4,
+   "titulo_y": 0.125,
+   "golpes": [
+    "fecha"
+   ],
+   "elementos": [
+    {
+     "activo": "Beverage box",
+     "x": 0.3,
+     "y": 0.45,
+     "tam": 0.2,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "¿FECHA?",
+     "px": 48,
+     "x": 0.3,
+     "y": 0.6,
+     "en": "fecha",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.42,
+      0.44
+     ],
+     "a": [
+      0.6,
+      0.47
+     ],
+     "curva": 0.25,
+     "color": "aviso",
+     "en": "comida"
+    },
+    {
+     "activo": "papelera",
+     "x": 0.72,
+     "y": 0.47,
+     "tam": 0.2,
+     "en": "Tiras",
+     "entrada": "der",
+     "anim": "balancear"
+    }
+   ],
+   "sfx": [
+    [
+     "golpe",
+     "fecha"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "Ojo: caducidad y consumo preferente no significan lo mismo.",
+   "fondo": "despensa",
+   "variante_fondo": 0,
+   "camara": "der",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.46
+   ],
+   "titulo": "NO ES LO\nMISMO",
+   "resaltar": [
+    "MISMO"
+   ],
+   "golpes": [
+    "caducidad",
+    "preferente"
+   ],
+   "elementos": [
+    {
+     "activo": "calendario",
+     "x": 0.5,
+     "y": 0.34,
+     "tam": 0.13,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "carne",
+     "x": 0.27,
+     "y": 0.43,
+     "tam": 0.14,
+     "en": "caducidad",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "FECHA DE\nCADUCIDAD",
+     "px": 44,
+     "x": 0.27,
+     "y": 0.54,
+     "en": "caducidad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco"
+    },
+    {
+     "tipo": "texto",
+     "texto": "VS",
+     "px": 72,
+     "x": 0.5,
+     "y": 0.46,
+     "en": "significan",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "noche",
+     "color": "aviso"
+    },
+    {
+     "activo": "lata",
+     "x": 0.71,
+     "y": 0.43,
+     "tam": 0.14,
+     "en": "preferente",
+     "entrada": "der",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CONSUMIR\nPREFERENTEMENTE",
+     "px": 40,
+     "x": 0.69,
+     "y": 0.54,
+     "en": "preferente",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "ding",
+     "preferente"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Consumo preferente es calidad: pasada la fecha, bien conservado y sin abrir, sigue siendo seguro.",
+   "fondo": "despensa",
+   "variante_fondo": 1,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "CONSUMO\nPREFERENTE",
+   "resaltar": [
+    "PREFERENTE"
+   ],
+   "golpes": [
+    "calidad",
+    "seguro"
+   ],
+   "elementos": [
+    {
+     "activo": "lata",
+     "x": 0.28,
+     "y": 0.42,
+     "tam": 0.18,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Cookie",
+     "x": 0.3,
+     "y": 0.57,
+     "tam": 0.12,
+     "en": "pasada",
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.28,
+     "y": 0.38,
+     "ancho": 0.2,
+     "alto": 0.08,
+     "en": "calidad",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.05
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.38,
+     "y": 0.47,
+     "tam": 0.09,
+     "en": "seguro"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CALIDAD",
+     "px": 64,
+     "x": 0.68,
+     "y": 0.37,
+     "en": "calidad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "color": "lima"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SIN ABRIR",
+     "px": 44,
+     "x": 0.68,
+     "y": 0.46,
+     "en": "abrir",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SEGURO",
+     "px": 56,
+     "x": 0.68,
+     "y": 0.55,
+     "en": "seguro",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Caducidad es seguridad: una vez superada esa fecha, no lo comas nunca.",
+   "fondo": "cocina",
+   "variante_fondo": 1,
+   "camara": "bajar",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "FECHA DE\nCADUCIDAD",
+   "resaltar": [
+    "CADUCIDAD"
+   ],
+   "golpes": [
+    "superada"
+   ],
+   "elementos": [
+    {
+     "activo": "carne",
+     "x": 0.26,
+     "y": 0.42,
+     "tam": 0.16,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Fish",
+     "x": 0.32,
+     "y": 0.56,
+     "tam": 0.13,
+     "en": "seguridad",
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.3,
+     "y": 0.48,
+     "tam": 0.12,
+     "en": "superada"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SEGURIDAD",
+     "px": 52,
+     "x": 0.69,
+     "y": 0.38,
+     "en": "seguridad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco"
+    },
+    {
+     "tipo": "texto",
+     "texto": "NO LO\nCOMAS",
+     "px": 56,
+     "x": 0.69,
+     "y": 0.5,
+     "en": "fecha",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco"
+    }
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "¿Está a punto de caducar? Congélalo antes en casa y alargas su conservación.",
+   "fondo": "cocina",
+   "variante_fondo": 2,
+   "camara": "der",
+   "transicion": "barrido",
+   "titulo": "CONGÉLALO\nANTES",
+   "resaltar": [
+    "ANTES"
+   ],
+   "golpes": [
+    "congélalo"
+   ],
+   "elementos": [
+    {
+     "activo": "nevera",
+     "x": 0.3,
+     "y": 0.47,
+     "tam": 0.26,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "",
+      "pantalla2": "CONG"
+     }
+    },
+    {
+     "tipo": "particulas",
+     "clase": "nieve",
+     "x": 0.3,
+     "y": 0.4,
+     "ancho": 0.26,
+     "alto": 0.1,
+     "en": "Congélalo",
+     "densidad": 7,
+     "vida": 1.0,
+     "tam": 0.03
+    },
+    {
+     "activo": "reloj_arena",
+     "x": 0.68,
+     "y": 0.35,
+     "tam": 0.1,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "ANTES DE CADUCAR",
+     "px": 40,
+     "x": 0.68,
+     "y": 0.45,
+     "en": "antes",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "MÁS CONSERVACIÓN",
+     "px": 40,
+     "x": 0.68,
+     "y": 0.54,
+     "en": "alargas",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "activo": "copo",
+     "x": 0.68,
+     "y": 0.61,
+     "tam": 0.07,
+     "en": "conservación",
+     "entrada": "pop",
+     "anim": "girar"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "Congélalo"
+    ]
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Recuerda: preferente es calidad, caducidad es seguridad.",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "RECUERDA LA\nDIFERENCIA",
+   "resaltar": [
+    "DIFERENCIA"
+   ],
+   "golpes": [
+    "recuerda"
+   ],
+   "elementos": [
+    {
+     "activo": "lata",
+     "x": 0.3,
+     "y": 0.38,
+     "tam": 0.15,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "activo": "carne",
+     "x": 0.7,
+     "y": 0.38,
+     "tam": 0.15,
+     "en": "caducidad",
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PREFERENTE = CALIDAD",
+     "px": 44,
+     "x": 0.5,
+     "y": 0.5,
+     "en": "calidad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CADUCIDAD = SEGURIDAD",
+     "px": 44,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "seguridad",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.4,
+     "ancho": 0.3,
+     "alto": 0.08,
+     "en": "recuerda",
+     "densidad": 7,
+     "vida": 0.9,
+     "tam": 0.05
+    }
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo, mira hoy tu nevera y sígueme: un truco de casa cada día.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "fija",
+   "transicion": "barrido",
+   "titulo": "GUÁRDALO Y MIRA\nTU NEVERA",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.42,
+     "tam": 0.16,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "nevera",
+     "x": 0.18,
+     "y": 0.44,
+     "tam": 0.12,
+     "en": "nevera",
+     "entrada": "izq",
+     "anim": "ninguna",
+     "estado": {
+      "pantalla": "",
+      "pantalla2": ""
+     }
+    },
+    {
+     "activo": "calendario",
+     "x": 0.8,
+     "y": 0.43,
+     "tam": 0.12,
+     "en": "mira",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "sígueme",
+     "entrada": "pop",
+     "anim": "respirar",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.8,
+     "y": 0.43,
+     "ancho": 0.18,
+     "alto": 0.12,
+     "en": "truco",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.05
+    }
+   ]
+  }
+ ]
+}
