@@ -17,6 +17,15 @@ VOZ = "sharvard_m"                              # decisión de Aleksei del 18/11
 CREDITO_VOZ = {
     "sharvard_m": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
     "davefx_natural": "", "davefx_tuto": "", "davefx": "",
+    "sharvard_animado": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
+    "sharvard_show": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
+    "davefx_animado": "Voz: modelo Piper es_ES «davefx» (dominio público, CC0).",
+    "davefx_show": "Voz: modelo Piper es_ES «davefx» (dominio público, CC0).",
+    "davefx_radio": "Voz: modelo Piper es_ES «davefx» (dominio público, CC0).",
+    "sharvard_f_animada": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
+    "sharvard_f_show": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
+    "sharvard_cartoon": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
+    "carlfm_animado": "Voz: modelo Piper es_ES «carlfm» (dominio público).",
 }
 CACHE = os.path.expanduser(os.environ.get("ARVIS_EXP_CACHE", "~/.cache/arvis_expedientes"))
 

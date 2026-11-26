@@ -23,7 +23,44 @@ PRESETS = {
     "davefx_natural": ("davefx", None, 1.04, 0.75, 0.9, None),
     "davefx_tuto": ("davefx", None, 0.96, 0.62, 0.8, "corr"),       # la del primer montaje (descartada por Aleksei)
     "davefx": ("davefx", None, 1.06, 0.667, 0.8, "corr"),
+    # ARVIS 5.0 (26/11/2026, Aleksei: «quiero que la voz sea más divertida»): más rápidas, más variación de entonación,
+    # tono algo más agudo (sin cambiar la duración ni el timbre: rubberband con formantes conservados) y más brillo.
+    # 7.º campo = semitonos.
+    "sharvard_animado": ("sharvard", 0, 0.88, 0.80, 0.95, "brillo", 1.5),
+    "davefx_animado": ("davefx", None, 0.90, 0.80, 0.95, "corr", 1.0),
+    "sharvard_show": ("sharvard", 0, 0.84, 0.90, 1.0, "brillo", 2.5),
+    # Más opciones (26/11/2026, Aleksei: «dame más opciones»)
+    "sharvard_f_animada": ("sharvard", 1, 0.88, 0.80, 0.95, "brillo", 1.0),    # chica animada
+    "sharvard_f_show": ("sharvard", 1, 0.84, 0.90, 1.0, "brillo", 2.0),        # chica muy enérgica
+    "davefx_show": ("davefx", None, 0.84, 0.90, 1.0, "corr", 2.5),             # chico muy enérgico
+    "davefx_radio": ("davefx", None, 0.92, 0.75, 0.90, "radio", -1.0),         # locutor de radio con gracia
+    "sharvard_cartoon": ("sharvard", 0, 0.86, 0.90, 1.0, "brillo", 5.0),       # dibujos animados
+    "carlfm_animado": ("carlfm", None, 0.90, 0.80, 0.95, "brillo", 1.0),       # otra voz de chico (calidad más baja, 16 kHz)
 }
+
+
+def _preset(nombre):
+    p = PRESETS.get(nombre, PRESETS["sharvard_m"])
+    return p[:6], (p[6] if len(p) > 6 else 0.0)
+
+
+def _tono(x, semitonos):
+    """Sube o baja el tono sin cambiar la duración (ffmpeg + rubberband, formantes conservados). Determinista."""
+    if not semitonos:
+        return x
+    import subprocess
+    import tempfile
+    from scipy.io import wavfile
+    with tempfile.TemporaryDirectory() as d:
+        a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
+        wavfile.write(a, SR, x.astype(np.float32))
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a, "-af",
+                        "rubberband=pitch=%.5f:formant=preserved:pitchq=quality" % (2 ** (semitonos / 12.0)),
+                        "-c:a", "pcm_f32le", "-ar", str(SR), b], check=True)
+        y = wavfile.read(b)[1].astype(np.float64)
+    if len(y) >= len(x):
+        return y[:len(x)]
+    return np.concatenate([y, np.zeros(len(x) - len(y))])
 
 
 def _voz(modelo):
@@ -58,6 +95,14 @@ def _acabado(x, eq):
         x = _peq(x, 120, 3, 0.7, "low")
         x = _peq(x, 1400, -5, 1.0)
         x = _peq(x, 5000, 4, 0.7, "high")
+    elif eq == "radio":    # locutor: cuerpo en graves, presencia y aire
+        x = _peq(x, 120, 3, 0.7, "low")
+        x = _peq(x, 2500, 2, 0.9)
+        x = _peq(x, 6000, 2, 0.7, "high")
+    elif eq == "brillo":   # ARVIS 5.0 «más divertida»: menos peso en graves, más presencia y aire
+        x = _peq(x, 150, -2, 0.7, "low")
+        x = _peq(x, 3000, 3, 0.9)
+        x = _peq(x, 7000, 3, 0.7, "high")
     return x
 
 
@@ -75,9 +120,10 @@ def _frases(texto, n):
 
 
 class _Trozo:
-    def __init__(self, audio, fonemas):
+    def __init__(self, audio, fonemas, sr=22050):
         self.audio_float_array = audio
         self.phonemes = fonemas
+        self.sr = sr
 
 
 def _piper(texto, preset, ritmo, cache=None):
@@ -90,33 +136,38 @@ def _piper(texto, preset, ritmo, cache=None):
     if ruta and os.path.exists(ruta):
         z = np.load(ruta, allow_pickle=False)
         n = int(z["n"])
-        return [_Trozo(z["a%d" % i].astype(np.float32) / 32767.0, list(str(z["f%d" % i]))) for i in range(n)]
+        sr = int(z["sr"]) if "sr" in z else 22050
+        return [_Trozo(z["a%d" % i].astype(np.float32) / 32767.0, list(str(z["f%d" % i])), sr) for i in range(n)]
     from piper.config import SynthesisConfig
-    modelo, hablante, ls, ns, nw, eq = PRESETS.get(preset, PRESETS["sharvard_m"])
+    (modelo, hablante, ls, ns, nw, eq), _ = _preset(preset)
     v = _voz(modelo)
     trozos = list(v.synthesize(texto, syn_config=SynthesisConfig(speaker_id=hablante, length_scale=ls * ritmo,
                                                                  noise_scale=ns, noise_w_scale=nw)))
+    sr = int(getattr(getattr(v, "config", None), "sample_rate", 22050) or 22050)
     q = [np.clip(np.round(ch.audio_float_array.astype(np.float64) * 32767), -32767, 32767).astype(np.int16) for ch in trozos]
     f = ["".join(ch.phonemes) if ch.phonemes else "" for ch in trozos]
     if ruta:
         os.makedirs(cache, exist_ok=True)
-        datos = {"n": np.array(len(q))}
+        datos = {"n": np.array(len(q)), "sr": np.array(sr)}
         for i, (a, fo) in enumerate(zip(q, f)):
             datos["a%d" % i], datos["f%d" % i] = a, np.array(fo)
         np.savez_compressed(ruta + ".part.npz", **datos)
         os.replace(ruta + ".part.npz", ruta)
-    return [_Trozo(a.astype(np.float32) / 32767.0, list(fo)) for a, fo in zip(q, f)]
+    return [_Trozo(a.astype(np.float32) / 32767.0, list(fo), sr) for a, fo in zip(q, f)]
 
 
 def sintetizar(texto, preset="sharvard_m", ritmo=1.0, cache=None):
     """Devuelve (audio float32 48 kHz mono, [{w, t0, t1}]). ritmo < 1 = más rápido (solo para ajustar el gancho).
     cache: carpeta donde guardar/reutilizar la voz de este guion (ver _piper)."""
-    modelo, hablante, ls, ns, nw, eq = PRESETS.get(preset, PRESETS["sharvard_m"])
+    (modelo, hablante, ls, ns, nw, eq), semitonos = _preset(preset)
     texto = re.sub(r"\s+", " ", texto).strip()
     trozos = _piper(texto, preset, ritmo, cache)
     piezas, palabras, t, hueco = [], [], 0.0, 0.0
     for ch, ftxt in zip(trozos, _frases(texto, len(trozos))):
-        a = resample_poly(ch.audio_float_array.astype(np.float64), 320, 147)   # 22050 → 48000
+        from math import gcd
+        sr0 = getattr(ch, "sr", 22050)
+        k = gcd(SR, sr0)
+        a = resample_poly(ch.audio_float_array.astype(np.float64), SR // k, sr0 // k)   # 22050 (o 16000) → 48000
         nz = np.where(np.abs(a) > 0.01)[0]
         if len(nz):
             a = a[max(0, nz[0] - int(0.02 * SR)): nz[-1] + int(0.06 * SR)]
@@ -143,6 +194,6 @@ def sintetizar(texto, preset="sharvard_m", ritmo=1.0, cache=None):
         piezas.pop()
         t -= hueco
     audio = np.concatenate(piezas) if piezas else np.zeros(1)
-    audio = _acabado(audio, eq)
+    audio = _tono(_acabado(audio, eq), semitonos)
     pico = float(np.max(np.abs(audio))) or 1.0
     return (audio / pico * 0.85).astype(np.float32), palabras

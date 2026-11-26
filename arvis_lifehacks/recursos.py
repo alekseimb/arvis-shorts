@@ -18,6 +18,7 @@ FUENTES = {
 MODELOS_VOZ = {   # voces Piper es_ES publicadas en GitHub (sherpa-onnx, release tts-models)
     "davefx": "es_ES-davefx-medium",        # CC0
     "sharvard": "es_ES-sharvard-medium",    # CC BY 3.0 (corpus Sharvard, Universidad de Edimburgo): crédito obligatorio
+    "carlfm": "es_ES-carlfm-x_low",         # dominio público (MODEL_CARD), 16 kHz
 }
 VOZ_URL = "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-%s.tar.bz2"
 

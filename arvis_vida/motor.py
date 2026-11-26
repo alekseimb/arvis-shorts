@@ -589,7 +589,7 @@ class Motor:
         partes, lineas, t = [], [], 0.0
         for i, e in enumerate(self.escenas):
             ritmo = float(e.get("ritmo", 0.93 if e["beat"] == "gancho" else 1.0)) * ritmo_global
-            audio, pal = voz_mod.sintetizar(e["say"], self.voz_preset, ritmo, cache=self.cache_voz)
+            audio, pal = voz_mod.sintetizar(e["say"], e.get("voz", self.voz_preset), ritmo, cache=self.cache_voz)   # «voz» por escena: dúo
             lead = 0.04 if i == 0 else 0.10
             pausa = 0.95 if i == len(self.escenas) - 1 else float(e.get("pausa", 0.20))
             dur = lead + len(audio) / sonido.SR + pausa
