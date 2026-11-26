@@ -1,0 +1,537 @@
+{
+ "voice": "sharvard_f_animada",
+ "categoryId": "26",
+ "id": "SH-037",
+ "numero": 12,
+ "tema": "T-002",
+ "categoria": "errores",
+ "enfoque": "error común (idea de Aleksei)",
+ "gancho_tecnica": "pregunta directa al creador",
+ "variante": 2,
+ "musica": {
+  "semilla": 0,
+  "nivel_db": -19
+ },
+ "title": "¿Por qué deslizan tu vídeo nada más empezar? El error invisible",
+ "description": "El error invisible: lo primero que se ve no es lo que prometen el título y la portada. Según la ayuda de YouTube, una buena retención al inicio puede significar que el contenido coincidió con lo que el espectador esperaba por la miniatura y el título; recomienda llevar el contenido más interesante al principio y, si el inicio falla, cambiar título y miniatura para que reflejen el vídeo. En los Shorts, YouTube Studio muestra el porcentaje de veces que se vio frente a las que se deslizó. 3 trucos: enseña en el primer segundo lo que promete el título, fuera saludos e intros, y revisa «visto frente a deslizado».",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#youtubeshorts",
+  "#creadores",
+  "#consejos"
+ ],
+ "tags": [
+  "retención youtube",
+  "youtube shorts",
+  "gancho",
+  "primeros segundos",
+  "visto vs deslizado",
+  "miniatura y título",
+  "consejos para creadores",
+  "lifehacks"
+ ],
+ "sources": [
+  "https://support.google.com/youtube/answer/1715160?hl=en",
+  "https://support.google.com/youtube/answer/12220281"
+ ],
+ "hechos": [
+  {
+   "dato": "una buena retención al inicio puede significar que el contenido coincidió con lo que esperaba el espectador por la miniatura y el título",
+   "cita": "matched the viewer’s expectation of the video’s thumbnail and title",
+   "url": "https://support.google.com/youtube/answer/1715160?hl=en",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "llevar el contenido más interesante al principio",
+   "cita": "consider introducing the compelling content earlier in the video",
+   "url": "https://support.google.com/youtube/answer/1715160?hl=en",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "si el inicio falla, cambiar título y miniatura",
+   "cita": "Consider changing your video thumbnail and title to better reflect your video content.",
+   "url": "https://support.google.com/youtube/answer/1715160?hl=en",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "en los Shorts, porcentaje de veces visto frente a deslizado",
+   "cita": "The percentage of times viewers viewed your Shorts versus swiped away.",
+   "url": "https://support.google.com/youtube/answer/12220281",
+   "leido": "26/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Por qué deslizan tu vídeo nada más empezar?",
+   "fondo": "estudio",
+   "variante_fondo": 2,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.44
+   ],
+   "titulo": "¿POR QUÉ\nTE DESLIZAN?",
+   "resaltar": [
+    "DESLIZAN?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "deslizan"
+   ],
+   "elementos": [
+    {
+     "activo": "Mobile phone",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.46,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Backhand index pointing up",
+     "x": 0.62,
+     "y": 0.5,
+     "tam": 0.2,
+     "en": "deslizan",
+     "entrada": "subir",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.62,
+        0.36
+       ],
+       "tam": 0.2,
+       "en": "nada",
+       "dur": 0.35
+      }
+     ]
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "empezar"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "deslizan"
+    ],
+    [
+     "error",
+     "empezar"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "El error invisible: tu título promete una cosa, pero lo primero que se ve es otra. ¡Y la gente se va!",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "EL ERROR\nINVISIBLE",
+   "resaltar": [
+    "INVISIBLE"
+   ],
+   "golpes": [
+    "invisible"
+   ],
+   "elementos": [
+    {
+     "activo": "Ghost",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "flotar",
+     "sale_en": "primero"
+    },
+    {
+     "tipo": "texto",
+     "texto": "TÍTULO: «LIMPIA EL HORNO»",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "título",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "sale_en": "primero"
+    },
+    {
+     "activo": "Waving hand",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": "primero",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PRIMERA IMAGEN: «¡HOLA!»",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "otra",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "va"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "invisible"
+    ],
+    [
+     "error",
+     "va"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Uno: si tu título dice «horno», enseña el horno en el primer segundo.",
+   "fondo": "estudio",
+   "variante_fondo": 0,
+   "camara": "izq",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "LO PROMETIDO,\nDE ENTRADA",
+   "resaltar": [
+    "ENTRADA"
+   ],
+   "golpes": [
+    "primer"
+   ],
+   "elementos": [
+    {
+     "tipo": "texto",
+     "texto": "TÍTULO: «LIMPIA EL HORNO»",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    },
+    {
+     "activo": "horno",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.48,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "segundo"
+    },
+    {
+     "activo": "Bullseye",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "título",
+     "entrada": "pop",
+     "anim": "latir"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "enseña"
+    ],
+    [
+     "exito",
+     "segundo"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Dos: fuera saludos e intros. ¡Lo más interesante, al principio!",
+   "fondo": "dormitorio",
+   "variante_fondo": 0,
+   "camara": "der",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "SIN «HOLA,\nCHICOS»",
+   "resaltar": [
+    "CHICOS»"
+   ],
+   "golpes": [
+    "fuera"
+   ],
+   "elementos": [
+    {
+     "activo": "Clapper board",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.42,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "fuera"
+    },
+    {
+     "tipo": "texto",
+     "texto": "LO INTERESANTE, AL PRINCIPIO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "interesante",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "error",
+     "fuera"
+    ],
+    [
+     "exito",
+     "principio"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Tres: en YouTube Studio mira cuántos lo vieron y cuántos lo deslizaron.",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "bajar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "¿VISTO O\nDESLIZADO?",
+   "resaltar": [
+    "DESLIZADO?"
+   ],
+   "golpes": [
+    "deslizaron"
+   ],
+   "elementos": [
+    {
+     "activo": "Bar chart",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Magnifying glass tilted left",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "mira",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "VISTO vs. DESLIZADO",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "vieron",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "tic",
+     "vieron"
+    ],
+    [
+     "whoosh",
+     "deslizaron"
+    ]
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Si el inicio cumple lo que prometes, la gente se queda.",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "alejar",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "Y SE\nQUEDAN",
+   "resaltar": [
+    "QUEDAN"
+   ],
+   "elementos": [
+    {
+     "activo": "Chart increasing",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "cumple"
+    },
+    {
+     "tipo": "texto",
+     "texto": "INICIO = PROMESA",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "queda",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.5,
+     "alto": 0.15,
+     "en": "queda",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.04
+    }
+   ],
+   "sfx": [
+    [
+     "exito",
+     "cumple"
+    ]
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "¡Guárdalo y revisa tu último vídeo!",
+   "fondo": "estudio",
+   "variante_fondo": 2,
+   "camara": "fija",
+   "transicion": "fundido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "GUÁRDALO",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.42,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "Mobile phone",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "revisa",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "REVISA TU ÚLTIMO VÍDEO",
+     "px": 52,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "revisa",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "revisa"
+    ]
+   ]
+  }
+ ]
+}

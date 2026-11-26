@@ -14,7 +14,8 @@ import unicodedata
 from . import activos, fondos, props
 
 ORDEN = ["gancho", "problema", "tutorial", "resultado", "cta"]
-DOMINIOS_FIABLES = (".gob.es", "comunidad.madrid", "aesan.gob.es", "idae.es", "ocu.org", "consumo.gob.es", "sanidad.gob.es", "boe.es",
+DOMINIOS_FIABLES = ("support.google.com/youtube", "blog.youtube",   # fuente primaria de las reglas y métricas de YouTube
+                    ".gob.es", "comunidad.madrid", "aesan.gob.es", "idae.es", "ocu.org", "consumo.gob.es", "sanidad.gob.es", "boe.es",
                     "europa.eu", "who.int", "juntadeandalucia.es", "gencat.cat", "euskadi.eus", "gva.es", "xunta.gal", "jcyl.es",
                     "madrid.es", "bcn.cat", "cnmc.es", "miteco.gob.es", "mapa.gob.es", "efsa.europa.eu", "fao.org", "csic.es",
                     "ree.es", "omie.es", "dgt.es", "bde.es", "cnmv.es", "carm.es", "navarra.es", "aragon.es", "castillalamancha.es",
