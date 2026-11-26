@@ -196,6 +196,26 @@
    "publicar_ya": true,
    "yt": "6MKhH_lbElA",
    "publicado": "26/11/2026"
+  },
+  "SH-037": {
+   "fila": 38,
+   "fase": "5. Vídeo aprobado",
+   "linea": "vida",
+   "tema": "T-002",
+   "categoria": "errores",
+   "numero": 12,
+   "idea": "IDEA-031",
+   "enfoque": "error común + antes/después",
+   "titulo": "¿Por qué deslizan tu vídeo nada más empezar? El error invisible",
+   "nota": 85.3,
+   "rubrica": "5.0",
+   "duracion": 27.3,
+   "sha256": "b10f890758df26ff",
+   "huella_contenido": "6ea43e7b2e120f22",
+   "huella_motor": "39426a97f33065d1",
+   "preparado": "26/11/2026 22:05",
+   "aprobado": false,
+   "voz": "sharvard_f_animada"
   }
  },
  "ideas": {
@@ -364,6 +384,18 @@
     "https://www.dsca.gob.es/ca/consumo/preguntas-frecuentes/he-comprado-ordenador-black-friday-tienda-online-pero-segun-me-ha",
     "https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2023/black-friday-7-consejos-del-cec-espana-para-comprar-de-forma-responsable",
     "https://www.ocu.org/consumo-familia/compras-online/noticias/denuncia-falsas-rebajas"
+   ]
+  },
+  "IDEA-031": {
+   "fila": 32,
+   "estado": "En producción",
+   "categoria": "errores",
+   "tema": "T-002",
+   "leido": "26/11/2026",
+   "sh": "SH-037",
+   "fuentes": [
+    "https://support.google.com/youtube/answer/1715160?hl=en",
+    "https://support.google.com/youtube/answer/12220281"
    ]
   }
  },
@@ -576,7 +608,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 21:38",
+ "actualizado": "26/11/2026 21:49",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -628,6 +660,14 @@
    "estado": "Publicada",
    "publicar": false,
    "sh": "SH-036"
+  },
+  "T-002": {
+   "texto": "El error invisible que hace que la gente abandone tus vídeos en los primeros 3 segundos",
+   "fecha": "26/11/2026 21:41",
+   "origen": "Aleksei",
+   "estado": "Preparado",
+   "publicar": false,
+   "sh": "SH-037"
   }
  },
  "voz": "sharvard_f_animada"
