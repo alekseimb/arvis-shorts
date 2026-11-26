@@ -129,7 +129,7 @@
   },
   "SH-034": {
    "fila": 35,
-   "fase": "4. Revisión",
+   "fase": "Descartado",
    "linea": "vida",
    "categoria": "cocina",
    "gancho_tecnica": "pregunta directa",
@@ -138,9 +138,11 @@
    "franja": "26/11/2026 17:00",
    "titulo": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
    "nota": 70.5,
-   "intentos": 1,
-   "montajes": 3,
-   "debilidades": "26/11 01:47: 3 montajes (QC 22/22), 3 revisiones visuales independientes: 67,0 · 70,5 · 70,5 < 85. Bajan narración/sonido 10,5/15 y originalidad 9/15. Pendiente: pasos 1-2 son definiciones (añadir gesto práctico: mirar la etiqueta), «Congélalo» sin acción (alimento que entra en la nevera), rótulos de 2 líneas en pastillas sueltas (usar 1 línea), iconos tam 0,20-0,25, «CADUCIDAD = SEGURIDAD» anclado a «caducidad», brik del gancho con etiqueta de fecha desde 0 s, subtítulo parte «consumo / preferente»."
+   "intentos": 2,
+   "montajes": 6,
+   "debilidades": "Reintento 26/11 08:47: 3 montajes (QC 22/22) y 3 revisiones visuales independientes: 72,0 · 71,5 · 70,5 < 85. Bajan originalidad (6/10), narración/sonido (7/10) y visual (7/10). Descartado.",
+   "descartado": true,
+   "duracion": 34.8
   }
  },
  "ideas": {
@@ -216,7 +218,7 @@
   },
   "IDEA-025": {
    "fila": 26,
-   "estado": "Elegida",
+   "estado": "Descartada",
    "categoria": "cocina",
    "puntuacion": 77.0,
    "titulo": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
@@ -232,7 +234,8 @@
     "Antes de que los alimentos caduquen se pueden congelar en casa y así alargar su conservación.",
     "Siempre se deben seguir las instrucciones de conservación y, una vez abierto el envase, las instrucciones de consumo."
    ],
-   "nota": "sin cifras en la fuente; seguridad alimentaria informativa, no consejo médico"
+   "nota": "sin cifras en la fuente; seguridad alimentaria informativa, no consejo médico",
+   "sh": "SH-034"
   },
   "IDEA-026": {
    "fila": 27,
@@ -339,6 +342,12 @@
    "modos": "A+B+C",
    "resultado": "Aviso",
    "resumen": "Make OK; métricas de 8 Shorts; SH-034 QC 22/22 pero CALIDAD 70,5 < 85 tras 3 montajes → 4. Revisión, sin subida"
+  },
+  {
+   "fecha": "26/11/2026 09:10",
+   "modos": "A+C",
+   "resultado": "Aviso",
+   "resumen": "Supervisión OK; reintento SH-034 QC 22/22 pero CALIDAD 72,0/71,5/70,5 < 85 → Descartado; sin subida"
   }
  ],
  "errores": [
@@ -365,13 +374,19 @@
    "paso": "Producción",
    "error": "SH-034 no subido: CALIDAD 70,5 < 85 tras 3 montajes y 3 revisiones visuales independientes (QC 22/22); franjas 26/11 17:00 y 21:00 vacías",
    "resuelto": false
+  },
+  {
+   "fecha": "26/11/2026 09:10",
+   "paso": "Producción",
+   "error": "SH-034 descartado: CALIDAD 72,0/71,5/70,5 < 85 en el reintento (QC 22/22); franjas 26/11 17:00 y 21:00 vacías",
+   "resuelto": false
   }
  ],
  "pendiente": [
-  "Franjas vacías: 26/11 17:00 y 21:00 (SH-034 en «4. Revisión», CALIDAD 70,5). La ejecución de las 08:47 reintenta SH-034 una vez (franja 17:00); si no llega a 85, Descartado.",
+  "Franjas vacías: 26/11 17:00 y 21:00 (SH-034 descartado en el reintento, CALIDAD 70,5). La ejecución de las 14:47 produce SH-035 para la primera franja libre.",
   "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): necesita a Aleksei («ARVIS, activa la tarea v3»)",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)",
-  "Calidad estancada en 67–77 con revisión visual independiente (SH-033: 5 revisiones; SH-034: 3): bajan narración/sonido y originalidad; conviene que Aleksei decida si ajusta el motor (voz, ritmo, acción en pantalla) o el umbral."
+  "Calidad estancada en 67–77 con revisión visual independiente (SH-033: 5 revisiones; SH-034: 6 revisiones, la última 70,5): bajan originalidad (plantilla repetida), narración/sonido y visual; 2 Shorts seguidos descartados. Conviene que Aleksei decida si ajusta el motor (voz, ritmo, composiciones nuevas) o el umbral."
  ],
  "reglas": {
   "franjas": [
@@ -484,7 +499,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 02:08",
+ "actualizado": "26/11/2026 09:10",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
