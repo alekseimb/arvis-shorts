@@ -184,12 +184,13 @@
    "titulo": "¿Ese -50 % es mentira? 3 trucos para pillar ofertas falsas en Black Friday",
    "nota": 85.7,
    "rubrica": "5.0",
-   "duracion": 33.4,
-   "sha256": "e396a7689599e769",
-   "huella_contenido": "9ecab82fd4f4301e",
-   "huella_motor": "48a6b701dc356896",
-   "preparado": "26/11/2026 21:08",
-   "aprobado": false
+   "duracion": 32.1,
+   "sha256": "a24bda93c899121e",
+   "huella_contenido": "48921025bce545e1",
+   "huella_motor": "9cf26abe55825e4b",
+   "preparado": "26/11/2026 21:40",
+   "aprobado": false,
+   "voz": "sharvard_f_animada"
   }
  },
  "ideas": {
@@ -570,7 +571,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 21:04",
+ "actualizado": "26/11/2026 21:33",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -623,5 +624,6 @@
    "publicar": false,
    "sh": "SH-036"
   }
- }
+ },
+ "voz": "sharvard_f_animada"
 }
