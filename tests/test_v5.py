@@ -72,8 +72,12 @@ def test_ancla_coloca_las_gotas_en_la_boca_del_grifo():
 
 def test_guion_avisa_protagonista_pequeno_y_ancla_rota():
     g = json.load(open(os.path.join(RAIZ, "guiones_vida", "SH-035", "guion.json"), encoding="utf-8"))
-    v = guion.validar(g)
-    assert any("protagonista pequeño" in a for a in v["avisos"])
+    assert not any("protagonista" in a for a in guion.validar(g)["avisos"])          # SH-035 ya está hecho con las reglas 5.0
+    g1 = copy.deepcopy(g)
+    for el in g1["escenas"][0]["elementos"]:
+        if el.get("activo"):
+            el["tam"] = 0.3
+    assert any("protagonista pequeño" in a for a in guion.validar(g1)["avisos"])
     g2 = copy.deepcopy(g)
     g2["escenas"][1]["elementos"].append({"tipo": "particulas", "clase": "gotas", "ancla": "grifo", "x": 0.5, "y": 0.5})
     assert any("ancla" in e for e in guion.validar(g2)["errores"])
