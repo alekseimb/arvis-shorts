@@ -199,7 +199,7 @@
   },
   "SH-037": {
    "fila": 38,
-   "fase": "5. Vídeo aprobado",
+   "fase": "9. Programado",
    "linea": "vida",
    "tema": "T-002",
    "categoria": "errores",
@@ -214,8 +214,11 @@
    "huella_contenido": "6ea43e7b2e120f22",
    "huella_motor": "39426a97f33065d1",
    "preparado": "26/11/2026 22:05",
-   "aprobado": false,
-   "voz": "sharvard_f_animada"
+   "aprobado": true,
+   "voz": "sharvard_f_animada",
+   "aprobado_por": "Aleksei en el chat 26/11/2026 21:53 («Súbelo»)",
+   "franja": "27/11/2026 17:00",
+   "yt": "HhJUYmYpV5s"
   }
  },
  "ideas": {
@@ -388,7 +391,7 @@
   },
   "IDEA-031": {
    "fila": 32,
-   "estado": "En producción",
+   "estado": "Publicada",
    "categoria": "errores",
    "tema": "T-002",
    "leido": "26/11/2026",
@@ -513,8 +516,8 @@
    35
   ]
  },
- "ultimo_sh": "SH-036",
- "ultimo_numero": 11,
+ "ultimo_sh": "SH-037",
+ "ultimo_numero": 12,
  "metricas": {
   "fecha": "26/11/2026 01:48",
   "videos": {
@@ -608,7 +611,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 21:49",
+ "actualizado": "26/11/2026 21:54",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -665,7 +668,7 @@
    "texto": "El error invisible que hace que la gente abandone tus vídeos en los primeros 3 segundos",
    "fecha": "26/11/2026 21:41",
    "origen": "Aleksei",
-   "estado": "Preparado",
+   "estado": "Programado",
    "publicar": false,
    "sh": "SH-037"
   }
