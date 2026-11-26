@@ -147,7 +147,7 @@
   },
   "SH-035": {
    "fila": 36,
-   "fase": "5. Vídeo aprobado",
+   "fase": "9. Programado",
    "linea": "vida",
    "categoria": "errores",
    "gancho_tecnica": "doble pregunta con curiosidad",
@@ -162,10 +162,13 @@
    "tema": "PRUEBA-5.0",
    "huella_contenido": "bb9b6c480f7c8649",
    "sha256": "cbd9fb479d23928e",
-   "aprobado": false,
+   "aprobado": true,
    "rubrica": "5.0",
    "enfoque": "error común + dato poco conocido",
-   "preparado": "26/11/2026 20:35"
+   "preparado": "26/11/2026 20:35",
+   "aprobado_por": "Aleksei en el chat 26/11/2026 20:52 («Sí, súbelo»)",
+   "franja": "27/11/2026 12:00",
+   "yt": "otcxwOzwtpo"
   }
  },
  "ideas": {
@@ -262,7 +265,7 @@
   },
   "IDEA-026": {
    "fila": 27,
-   "estado": "Reserva",
+   "estado": "Publicada",
    "categoria": "errores",
    "puntuacion": 76.0,
    "titulo": "¿Te gotea un grifo? Pierde unos 30 litros al día",
@@ -272,7 +275,8 @@
    "leido": "25/11/2026",
    "citas": [
     "Un grifo que gotea pierde alrededor de 30 litros de agua cada día."
-   ]
+   ],
+   "sh": "SH-035"
   },
   "IDEA-027": {
    "fila": 28,
@@ -437,8 +441,8 @@
    35
   ]
  },
- "ultimo_sh": "SH-033",
- "ultimo_numero": 9,
+ "ultimo_sh": "SH-035",
+ "ultimo_numero": 10,
  "metricas": {
   "fecha": "26/11/2026 01:48",
   "videos": {
@@ -532,7 +536,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 20:47",
+ "actualizado": "26/11/2026 20:54",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -573,7 +577,7 @@
    "texto": "Prueba del sistema 5.0 con el tema ya investigado del grifo que gotea (IDEA-026)",
    "fecha": "26/11/2026 20:35",
    "origen": "ARVIS (prueba, no elegido por Aleksei)",
-   "estado": "Preparado",
+   "estado": "Programado",
    "publicar": false,
    "sh": "SH-035"
   }
