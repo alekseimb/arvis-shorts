@@ -4,7 +4,7 @@ import datetime as dt
 
 from arvis_vida import ops
 
-BASE = {"version": 1, "ultimo_sh": "SH-032", "ultimo_numero": 8, "reglas": dict(ops.REGLAS),
+BASE = {"version": 1, "ultimo_sh": "SH-032", "ultimo_numero": 8, "reglas": dict(ops.REGLAS, modo="autonomo"),   # 3.1
         "shorts": {"SH-031": {"fila": 32, "yt": "ED2BlyhPMds", "franja": "21/11/2026 17:00", "fase": "10. Publicado", "categoria": "cocina", "linea": "vida"},
                    "SH-032": {"fila": 33, "yt": "kuePPJV7oa4", "franja": "22/11/2026 12:00", "fase": "9. Programado", "categoria": "limpieza", "linea": "vida"}},
         "ideas": {"IDEA-020": {"fila": 21, "estado": "Elegida", "categoria": "ahorro", "puntuacion": 76.5, "leido": "20/11/2026",
@@ -89,3 +89,57 @@ def test_fusionar_y_borrar_claves():
     e = {"a": {"b": 1, "c": 2}}
     ops.fusionar(e, {"a": {"c": None, "d": 3}})
     assert e == {"a": {"b": 1, "d": 3}}
+
+
+# ------------------------------------------------------------------ ARVIS LIFEHACKS 5.0 · modo dirigido
+def _dirigido():
+    e = copy.deepcopy(BASE)
+    e["reglas"]["modo"] = "dirigido"
+    e["shorts"]["SH-032"]["fase"] = "10. Publicado"
+    return e
+
+
+def test_dirigido_no_elige_temas_ni_investiga():
+    p = ops.plan(_dirigido(), t("22/11/2026 14:47"))
+    assert "C" not in p["modos"] and p["C"]["producir"] is False and p["C"]["investigar"] is False
+    assert "IDEA" not in str(p["C"])                     # nunca propone ideas «Elegida» de ARVIS
+
+
+def test_tema_registra_y_da_siguiente_sh():
+    e = _dirigido()
+    r = ops.tema(e, "Trucos para que no se arrugue la ropa en la lavadora", ahora=t("22/11/2026 20:00"))
+    assert r["tema"] == "T-001" and r["siguiente_sh"] == "SH-033" and r["numero"] == 9
+    assert e["temas"]["T-001"]["estado"] == "En producción (chat)" and e["temas"]["T-001"]["origen"] == "Aleksei"
+    p = ops.plan(e, t("22/11/2026 20:30"))
+    assert "C" not in p["modos"]                         # lo produce el chat, no la tarea
+
+
+def test_tema_encargado_lo_produce_la_tarea_sin_subir():
+    e = _dirigido()
+    ops.tema(e, "Cómo quitar la cal del grifo", encargar=True, ahora=t("22/11/2026 20:00"))
+    p = ops.plan(e, t("23/11/2026 01:47"))
+    c = p["C"]
+    assert "C" in p["modos"] and c["tipo"] == "producir_tema" and c["tema"] == "T-001" and c["siguiente_sh"] == "SH-033"
+    assert c["publicar_sin_preguntar"] is False and "NO subas" in c["al_terminar"]
+
+
+def test_solo_sube_lo_aprobado_por_aleksei():
+    e = _dirigido()
+    e["shorts"]["SH-033"] = {"fase": "5. Vídeo aprobado", "tema": "T-001", "numero": 9, "huella_contenido": "abc", "huella_motor": "x"}
+    p = ops.plan(e, t("23/11/2026 08:47"))
+    assert "C" not in p["modos"] and p["C"]["esperan_tu_si"] == ["SH-033"]      # preparado: espera su sí
+    r = ops.aprobar(e, "SH-033", "Aleksei en el chat 23/11 09:00", ahora=t("23/11/2026 09:00"))
+    assert r["ok"] and e["shorts"]["SH-033"]["fase"] == "6. Pendiente de subida" and r["franja"] == "23/11/2026 12:00"
+    p = ops.plan(e, t("23/11/2026 14:47"))
+    assert p["C"]["tipo"] == "subir_aprobado" and p["C"]["sh"] == "SH-033" and p["C"]["franja"] == "23/11/2026 17:00"
+    assert ops.aprobar(dict(e, shorts={"SH-031": {"yt": "x"}}), "SH-031", "x")["ok"] is False   # nunca dos veces
+
+
+def test_reintento_solo_de_temas_de_aleksei():
+    e = _dirigido()
+    e["shorts"]["SH-035"] = {"fase": "4. Revisión", "intentos": 1, "idea": "IDEA-026"}           # tema de ARVIS: no se reintenta
+    assert "C" not in ops.plan(e, t("23/11/2026 01:47"))["modos"]
+    e["shorts"]["SH-036"] = {"fase": "4. Revisión", "intentos": 1, "tema": "T-001", "numero": 11}
+    e["temas"] = {"T-001": {"texto": "x", "estado": "En producción (chat)"}}
+    c = ops.plan(e, t("23/11/2026 01:47"))["C"]
+    assert c["tipo"] == "reintento_tema" and c["siguiente_sh"] == "SH-036"

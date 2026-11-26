@@ -1,4 +1,7 @@
-"""Evaluador de calidad 0–100 (rúbrica del 18/11/2026) · umbral 85.
+"""Evaluador de calidad 0–100 · umbral 85.
+
+  LIFEHACKS (rúbrica «5.0», 26/11/2026): Gancho 20 · Retención 20 · Calidad visual 20 · Originalidad 15 · Utilidad 10 · Claridad 10 · Viralidad 5
+  Resto (rúbrica «2026-11-18»):
 
   Guion 20 · Gancho y retención 20 · Calidad visual 20 · Narración y sonido 15 · Originalidad y valor 15 · Edición y acabado 10
 
@@ -35,15 +38,54 @@ ARREGLO = {
 }
 MIN_MOTIVO = 12
 
+# --- ARVIS LIFEHACKS 5.0 (26/11/2026, orden de Aleksei): rúbrica propia de los Shorts de la vida.
+RUBRICA_50 = {
+    "pesos": {"gancho": 20, "retencion": 20, "visual": 20, "originalidad": 15, "utilidad": 10, "claridad": 10, "viralidad": 5},
+    "nombres": {"gancho": "Gancho", "retencion": "Retención", "visual": "Calidad visual", "originalidad": "Originalidad",
+                "utilidad": "Utilidad", "claridad": "Claridad", "viralidad": "Potencial de viralidad"},
+    "responsable": {"gancho": "Guionista", "retencion": "Guionista + Editor", "visual": "Director visual (motor ARVIS VIDA)",
+                    "originalidad": "Director creativo + Investigador", "utilidad": "Investigador", "claridad": "Guionista + Editor (voz y subtítulos)",
+                    "viralidad": "Director creativo"},
+    "arreglo": {
+        "gancho": "Primera frase con la cifra o la sorpresa citada, en pregunta de ≤ 9 palabras, y el objeto protagonista en pantalla desde el segundo 0.",
+        "retencion": "Un cambio visual o un dato nuevo cada 2–3 s; quitar frases de relleno; cada paso con su objeto en grande.",
+        "visual": "Objeto protagonista grande y apoyado en su sitio, todo en el mismo estilo con volumen, sin pantallas vacías ni elementos que se tapen.",
+        "originalidad": "Cambiar el enfoque (error común, comparación, antes/después) o el dato poco conocido; no repetir la plantilla del último vídeo.",
+        "utilidad": "Que el consejo se pueda aplicar hoy, con el paso exacto y la fuente oficial citada; sin cifras sin cita.",
+        "claridad": "Frases cortas, una idea por escena, subtítulos legibles y voz a ritmo natural; se entiende sin contexto previo.",
+        "viralidad": "Remate que invite a guardar o comentar, título concreto y dato que apetezca compartir.",
+    },
+    "topes": [  # (palabras en el nombre de la comprobación que falla, criterio, fracción máxima)
+        (("Fuentes",), "utilidad", 0.4), (("cifras",), "utilidad", 0.75), (("Gancho",), "gancho", 0.6),
+        (("Capítulos", "Estructura"), "retencion", 0.7), (("repetidas",), "visual", 0.5), (("estáticos", "movimiento"), "visual", 0.6),
+        (("estáticos", "movimiento"), "retencion", 0.8), (("negros",), "visual", 0.3), (("Variedad",), "visual", 0.7),
+        (("Sonoridad",), "claridad", 0.6), (("silencios", "Ritmo de voz"), "retencion", 0.7), (("silencios", "Ritmo de voz"), "claridad", 0.8),
+        (("Decodifica", "Formato"), "visual", 0.0), (("Decodifica", "Formato"), "claridad", 0.0), (("Subtítulos",), "claridad", 0.5),
+        (("Storyboard", "Miniatura"), "visual", 0.85), (("etiquet", "sintético"), "viralidad", 0.5),
+    ],
+    "plantilla": {"visual": 0.7, "originalidad": 0.6},
+    "tema_repetido": "originalidad",
+}
+RUBRICA_181 = {"pesos": PESOS, "nombres": NOMBRES, "responsable": RESPONSABLE, "arreglo": ARREGLO, "topes": None,
+               "plantilla": {"visual": 0.7, "originalidad": 0.6}, "tema_repetido": "originalidad"}
+RUBRICAS = {"5.0": RUBRICA_50, "2026-11-18": RUBRICA_181}
 
-def _peso_tope(nombre, frac):
-    return round(PESOS[nombre] * frac, 1)
+
+def _peso_tope(nombre, frac, pesos=None):
+    return round((pesos or PESOS)[nombre] * frac, 1)
 
 
-def topes_automaticos(rep, tipo):
+def topes_automaticos(rep, tipo, rubrica=None):
     """rep: informe del motor (checks, passed, total, duration_s…). Devuelve {criterio: (tope, motivo)}."""
     t = {}
     fallos = {c["check"]: c for c in rep.get("checks", []) if not c.get("ok")}
+    if rubrica and rubrica.get("topes"):
+        for palabras, crit, frac in rubrica["topes"]:
+            for k in [k for k in fallos if any(p.lower() in k.lower() for p in palabras)]:
+                tope = _peso_tope(crit, frac, rubrica["pesos"])
+                if crit not in t or tope < t[crit][0]:
+                    t[crit] = (tope, k)
+        return t
 
     def fallo(*palabras):
         return [k for k in fallos if any(p.lower() in k.lower() for p in palabras)]
@@ -99,7 +141,10 @@ def parecido(f1, f2):
     return round(0.8 * a + 0.2 * (1.0 if f1.get("variante") and f1.get("variante") == f2.get("variante") else 0.0), 3)
 
 
-def evaluar(rep, ev, tipo="short", umbral=85, firma_actual=None, firmas_recientes=(), titulos_recientes=(), stills_dir=None):
+def evaluar(rep, ev, tipo="short", umbral=85, firma_actual=None, firmas_recientes=(), titulos_recientes=(), stills_dir=None,
+            rubrica=None):
+    R = RUBRICAS[rubrica or ev.get("rubrica") or "2026-11-18"]
+    PESOS, NOMBRES, RESPONSABLE, ARREGLO = R["pesos"], R["nombres"], R["responsable"], R["arreglo"]
     dur = float(rep.get("duration_s") or 0)
     crit = ev.get("criterios", {})
     desglose, faltan, evidencias = {}, [], {}
@@ -123,7 +168,7 @@ def evaluar(rep, ev, tipo="short", umbral=85, firma_actual=None, firmas_reciente
             faltan.append(NOMBRES[nombre] + " (sin evidencia válida)")
             continue
         desglose[nombre] = round(peso * max(0.0, min(10.0, float(nota))) / 10.0, 1)
-    topes = topes_automaticos(rep, tipo)
+    topes = topes_automaticos(rep, tipo, R if R.get("topes") else None)
     sim_max, sim_con = 0.0, None
     if firma_actual:
         for f in firmas_recientes:
@@ -131,12 +176,13 @@ def evaluar(rep, ev, tipo="short", umbral=85, firma_actual=None, firmas_reciente
             if s > sim_max:
                 sim_max, sim_con = s, f.get("clave")
         if sim_max >= 0.75:
-            topes["visual"] = min(topes.get("visual", (99, "")), (_peso_tope("visual", 0.7), "plantilla repetida (%.0f %% igual a %s)" % (sim_max * 100, sim_con)))
-            topes["originalidad"] = min(topes.get("originalidad", (99, "")), (_peso_tope("originalidad", 0.6), "plantilla repetida"))
+            for crit, frac in R["plantilla"].items():
+                topes[crit] = min(topes.get(crit, (99, "")), (_peso_tope(crit, frac, PESOS), "plantilla repetida (%.0f %% igual a %s)" % (sim_max * 100, sim_con)))
     tit = ev.get("titulo") or rep.get("title") or ""
     for t in titulos_recientes:
         if tit and difflib.SequenceMatcher(None, tit.lower(), t.lower()).ratio() >= 0.8:
-            topes["originalidad"] = min(topes.get("originalidad", (99, "")), (_peso_tope("originalidad", 0.4), "tema casi igual a «%s»" % t))
+            c = R["tema_repetido"]
+            topes[c] = min(topes.get(c, (99, "")), (_peso_tope(c, 0.4, PESOS), "tema casi igual a «%s»" % t))
             break
     aplicados = {}
     for k, (tope, motivo) in topes.items():
@@ -164,14 +210,20 @@ def evaluar(rep, ev, tipo="short", umbral=85, firma_actual=None, firmas_reciente
             devolver.append({"criterio": NOMBRES[k], "puntos": desglose[k], "de": peso, "agente": RESPONSABLE[k], "arreglo": ARREGLO[k],
                              "tope": aplicados.get(k, {}).get("motivo")})
     return {"total": total, "umbral": umbral, "aprobado": aprobado, "decision": "Aprobado" if aprobado else "Corregir",
+            "rubrica": rubrica or ev.get("rubrica") or "2026-11-18",
             "desglose": desglose, "topes_aplicados": aplicados, "evidencias_validas": evidencias, "puertas": puertas,
             "devolver_a": devolver, "debilidades": ev.get("debilidades", []), "parecido_max": sim_max,
             "medidas": {"duracion_s": dur, "qc": "%s/%s" % (rep.get("passed"), rep.get("total"))}}
 
 
-def plantilla_evaluacion():
-    return {"titulo": "", "criterios": {k: {"nota": None, "evidencias": [{"segundo": 0.0, "motivo": "", "fotograma": ""}]} for k in PESOS},
-            "debilidades": [], "veracidad_ok": False, "etica_ok": False, "sintetico_realista": False}
+def plantilla_evaluacion(rubrica=None):
+    pesos = RUBRICAS[rubrica]["pesos"] if rubrica else PESOS
+    ev = {"titulo": "", "criterios": {k: {"nota": None, "evidencias": [{"segundo": 0.0, "motivo": "", "fotograma": ""}]} for k in pesos},
+          "debilidades": [], "veracidad_ok": False, "etica_ok": False, "sintetico_realista": False}
+    if rubrica:
+        ev["rubrica"] = rubrica
+        ev["pesos"] = dict(pesos)
+    return ev
 
 
 def main():
@@ -181,13 +233,14 @@ def main():
     ap.add_argument("--tipo", default="short")
     ap.add_argument("--umbral", type=float, default=85)
     ap.add_argument("--stills", default=None)
+    ap.add_argument("--rubrica", default=None, help="5.0 (LIFEHACKS) o 2026-11-18; por defecto, la que diga la evaluación")
     a = ap.parse_args()
     rep = json.load(open(a.informe, encoding="utf-8"))
     ev = json.load(open(a.evaluacion, encoding="utf-8"))
-    out = evaluar(rep, ev, a.tipo, a.umbral, stills_dir=a.stills)
+    out = evaluar(rep, ev, a.tipo, a.umbral, stills_dir=a.stills, rubrica=a.rubrica)
     dst = a.informe.replace(".json", "_calidad.json")
     json.dump(out, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(json.dumps({k: out[k] for k in ("total", "decision", "puertas")}, ensure_ascii=False))
+    print(json.dumps({k: out[k] for k in ("total", "decision", "rubrica", "desglose", "puertas")}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -82,7 +82,7 @@ def producir(ruta, out, publicados=()):
             for e in g["escenas"]:
                 if e.get("camara") == "fija":
                     e["camara"] = "empuje"
-        m = Motor(g, out)
+        m = Motor(g, out, cache_voz=os.path.join(os.path.dirname(os.path.abspath(ruta)), "voz"))
         info = m.render(g["id"], params["ritmo"])
         storyboard(g, os.path.join(out, g["id"] + "_storyboard.md"))
         rep = qc.comprobar(g, info, m, out, publicados)
@@ -108,7 +108,13 @@ def producir(ruta, out, publicados=()):
         for k in arreglables:
             ARREGLOS[k](params)
     sha = hashlib.sha256(open(info["make"], "rb").read()).hexdigest()
-    rep.update({"id": g["id"], "serie": "lifehacks", "formato": "lifehacks-vida", "numero": g.get("numero"), "categoria": g.get("categoria"),
+    # ARVIS 5.0 · huella de contenido: duración + audio mezclado + fotogramas clave. El MP4 no sale idéntico bit a bit
+    # (x264), pero el mismo guion con la voz guardada da la misma huella: así se sabe que es el vídeo que aprobó Aleksei.
+    hc = hashlib.sha256(("%.2f|" % info["duracion"]).encode())
+    hc.update(hashlib.sha256(open(info["wav"], "rb").read()).digest())
+    for st in sorted(x for x in m.stills if not x.startswith("zz_")):
+        hc.update(hashlib.sha256(open(os.path.join(out, "stills", st), "rb").read()).digest())
+    rep.update({"huella_contenido": hc.hexdigest()[:16],"id": g["id"], "serie": "lifehacks", "formato": "lifehacks-vida", "numero": g.get("numero"), "categoria": g.get("categoria"),
                 "title": g["title"], "gancho_tecnica": g.get("gancho_tecnica"), "palabras": info["palabras"],
                 "pal_s": round(info["palabras"] / max(1, info["duracion"]), 2), "retencion": ret,
                 "escenas": [{"beat": e["beat"], "t0": e["_t0"], "t1": e["_t1"], "fondo": e.get("fondo"), "camara": e.get("camara", "empuje"),
@@ -122,14 +128,20 @@ def producir(ruta, out, publicados=()):
                                                                   for e in g["escenas"]]}})
     json.dump(rep, open(os.path.join(out, g["id"] + ".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(metadatos(g), open(os.path.join(out, "metadatos.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # ARVIS 5.0 · portada: fotograma del gancho con el título entero (Make no puede subir miniaturas: es para Aleksei)
+    gancho = sorted(x for x in m.stills if x.startswith("01_gancho")) or sorted(x for x in m.stills if x.startswith("00_"))
+    if gancho:
+        import shutil
+        shutil.copyfile(os.path.join(out, "stills", gancho[0]), os.path.join(out, "portada.jpg"))
     from arvis_estudio.calidad import plantilla_evaluacion
-    ev = plantilla_evaluacion()
+    ev = plantilla_evaluacion("5.0")   # ARVIS LIFEHACKS 5.0
     ev["titulo"] = g["title"]
     json.dump(ev, open(os.path.join(out, g["id"] + "_evaluacion.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     fallos = [c["check"] + ": " + c["detalle"] for c in rep["checks"] if not c["ok"]]
     print(json.dumps({"ok": not fallos, "qc": "%d/%d" % (rep["passed"], rep["total"]), "fallos": fallos, "retencion": ret["total"],
                       "duracion": rep["duration_s"], "mb": rep["mb"], "lufs": rep["lufs"], "segundos": rep["segundos_produccion"],
-                      "intentos": len(intentos), "avisos_guion": rep["avisos_guion"], "sonda": rep.get("sonda")}, ensure_ascii=False, indent=1))
+                      "intentos": len(intentos), "huella_contenido": rep["huella_contenido"], "sha256": sha[:16],
+                      "avisos_guion": rep["avisos_guion"], "sonda": rep.get("sonda")}, ensure_ascii=False, indent=1))
     return 0 if not fallos else 1
 
 

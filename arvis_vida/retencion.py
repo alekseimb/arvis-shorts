@@ -53,7 +53,7 @@ def puntuar(g, info, motor):
     # --- estructura y duración (15)
     d = info["duracion"]
     p = 0
-    p += 6 if 22 <= d <= 38 else 4 if 20 <= d <= 45 else 0
+    p += 6 if 22 <= d <= 35 else 4 if 20 <= d <= 38 else 0
     problema_t = next((e["_t0"] for e in es if e["beat"] == "problema"), 9)
     p += 4 if problema_t <= 3.0 else 1
     cta = es[-1]

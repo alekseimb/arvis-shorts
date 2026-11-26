@@ -6,6 +6,8 @@ Cada prop devuelve capas SVG con el mismo viewBox; el motor las rasteriza una ve
 Uso en el guion: {"activo": "lavadora", "estado": {"pantalla": "40°"}, "capas": {"tambor": {"girar": 140}}}
 """
 
+import re
+
 GRAD = """<linearGradient id="{id}" x1="0" y1="0" x2="{x2}" y2="{y2}">{stops}</linearGradient>"""
 
 
@@ -14,9 +16,23 @@ def _grad(id_, colores, vertical=True):
     return GRAD.format(id=id_, x2=0 if vertical else 1, y2=1 if vertical else 0, stops=stops)
 
 
+_RELLENO_CON_TRAZO = re.compile(r'<(rect|circle|ellipse|path|polygon)\b((?:(?!/>)[^>])*?)stroke="(#[0-9a-fA-F]{3,6})"')
+
+
+def _suavizar_trazos(cuerpo):
+    """Estilo único ARVIS 5.0 (sin contornos de dibujo plano): los contornos de las formas rellenas pasan a ser un filo
+    casi invisible; el volumen lo da activos.volumen. Los trazos sin relleno (asas, colas, aros) no cambian."""
+    def sub(m):
+        attrs = m.group(2)
+        if 'fill="none"' in attrs or "stroke-opacity" in attrs:
+            return m.group(0)
+        return '<%s%sstroke-opacity="0.18" stroke="%s"' % (m.group(1), attrs, m.group(3))
+    return _RELLENO_CON_TRAZO.sub(sub, cuerpo)
+
+
 def _svg(w, h, cuerpo, defs=""):
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d"><defs>%s</defs>%s</svg>'
-            % (w, h, w, h, defs, cuerpo))
+            % (w, h, w, h, defs, _suavizar_trazos(cuerpo)))
 
 
 def _sombra(cx, cy, rx, ry, op=0.28):
@@ -193,15 +209,36 @@ def dial(etiquetas=("90°", "60°", "40°", "30°", "ECO"), color="#00c2e0"):
             "angulos": {e: -135 + 270 * i / max(1, n - 1) for i, e in enumerate(etiquetas)}}
 
 
-# ----------------------------------------------------------------------------- grifo
-def grifo():
-    W, H = 360, 340
-    d = _grad("cg", [(0, "#f5f7fa"), (0.5, "#aeb8c8"), (1, "#eef2f7")], vertical=False)
-    base = ('<rect x="40" y="250" width="280" height="40" rx="16" fill="#cfd6e1"/>'
-            '<rect x="150" y="120" width="60" height="140" rx="18" fill="url(#cg)" stroke="#7f8a9c" stroke-width="3"/>'
-            '<path d="M180 130 Q180 60 260 60 L300 60 Q320 60 320 80 L320 100 L290 100 L290 92 Q290 88 284 88 L262 88 Q212 88 212 130 Z" fill="url(#cg)" stroke="#7f8a9c" stroke-width="3"/>'
-            '<rect x="120" y="96" width="120" height="26" rx="13" fill="#9aa5b6"/>')
-    return {"w": W, "h": H, "capas": [{"id": "base", "svg": _svg(W, H, base, d)}], "clave": "grifo agua lavar", "boca": (305, 104)}
+# ----------------------------------------------------------------------------- grifo (lavabo con grifo monomando)
+def grifo(agua=False):
+    """Lavabo de cerámica con grifo monomando cromado. Capas: «base» (lavabo y cuerpo del grifo), «palanca» (gira sobre
+    su eje: {"capas": {"palanca": {"girar": -25}}} = cerrar) y «chorro» (solo si agua=True). Boca del caño en «boca»
+    (fracción del ancho y alto del activo) para colocar las gotas."""
+    W, H = 440, 400
+    d = (_grad("cro", [(0, "#8d99ad"), (0.18, "#f4f7fb"), (0.42, "#ffffff"), (0.62, "#b4bfcf"), (0.85, "#e6ebf2"), (1, "#7c879a")], vertical=False)
+         + _grad("croV", [(0, "#ffffff"), (0.5, "#cfd7e3"), (1, "#8f9bb0")])
+         + _grad("cer", [(0, "#ffffff"), (0.6, "#f1f4f8"), (1, "#d5dce6")])
+         + _grad("cerD", [(0, "#ffffff"), (1, "#c9d2de")], vertical=False)
+         + _grad("cuen", [(0, "#c3ccd8"), (0.55, "#e7ecf2"), (1, "#ffffff")])
+         + _grad("agua", [(0, "#bfe8ff"), (1, "#4aa8ff")]))
+    lavabo = (_sombra(220, 384, 200, 14, 0.3)
+              + '<path d="M22 232 Q22 214 40 212 L400 212 Q418 214 418 232 L410 262 Q396 352 300 370 L140 370 Q44 352 30 262 Z" fill="url(#cer)"/>'
+              + '<path d="M60 236 Q60 226 72 226 L368 226 Q380 226 380 236 Q376 300 220 312 Q64 300 60 236 Z" fill="url(#cuen)"/>'
+              + '<ellipse cx="220" cy="290" rx="20" ry="7" fill="#9aa6b8"/><ellipse cx="220" cy="289" rx="11" ry="3.5" fill="#6f7b8f"/>'
+              + '<path d="M40 214 L400 214" stroke="#ffffff" stroke-width="6" opacity="0.9" stroke-linecap="round" fill="none"/>')
+    cuerpo = ('<ellipse cx="220" cy="214" rx="46" ry="10" fill="#aab4c4"/>'
+              '<rect x="190" y="96" width="60" height="118" rx="26" fill="url(#cro)"/>'
+              '<path d="M236 112 Q236 92 262 92 L318 92 Q344 92 344 118 L344 138 Q344 146 336 146 L322 146 Q314 146 314 138 L314 126 Q314 120 308 120 L262 120 Q250 120 250 132 Z" fill="url(#croV)"/>'
+              '<rect x="318" y="138" width="22" height="10" rx="5" fill="#6f7b8f"/>'
+              '<path d="M202 108 L202 196" stroke="#ffffff" stroke-width="8" opacity="0.75" stroke-linecap="round" fill="none"/>')
+    palanca = ('<rect x="200" y="66" width="40" height="40" rx="14" fill="url(#cro)"/>'
+               '<path d="M214 74 L136 52 Q122 48 118 60 Q116 70 128 74 L212 92 Z" fill="url(#croV)"/>'
+               '<circle cx="220" cy="84" r="9" fill="#e85d75"/><circle cx="217" cy="81" r="3" fill="#ffffff" opacity="0.8"/>')
+    capas = [{"id": "base", "svg": _svg(W, H, lavabo + cuerpo, d)},
+             {"id": "palanca", "svg": _svg(W, H, palanca, d), "pivote": (220, 86)}]
+    if agua:
+        capas.append({"id": "chorro", "svg": _svg(W, H, '<path d="M321 148 L339 148 L336 290 Q330 300 324 290 Z" fill="url(#agua)" opacity="0.85"/>', d)})
+    return {"w": W, "h": H, "capas": capas, "clave": "grifo agua lavar lavabo gotea goteo caño", "boca": (330 / W, 150 / H)}
 
 
 # ----------------------------------------------------------------------------- enchufe de pared

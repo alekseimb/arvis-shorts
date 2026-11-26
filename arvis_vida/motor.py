@@ -5,6 +5,7 @@ textos, cifras que cuentan, barras, sellos ✓/✗, flechas y partículas) + cá
 golpes de zoom en palabras clave) + transición de entrada (barrido con desenfoque, zoom, destello, subida).
 Los momentos visuales se anclan a PALABRAS de la narración («en»: "agua") para que la imagen vaya con lo que se dice.
 """
+import hashlib
 import json
 import math
 import os
@@ -129,7 +130,8 @@ class Elemento:
         self.tam = spec.get("tam", 0.3)
         self.entrada = spec.get("entrada", "pop")
         self.anim = spec.get("anim", "flotar")
-        self.semilla = (hash(json.dumps(spec, sort_keys=True, ensure_ascii=False)) & 0xFFFF) + orden
+        # semilla estable entre ejecuciones (hash() de Python cambia en cada proceso): mismo guion = mismo vídeo (ARVIS 5.0)
+        self.semilla = int(hashlib.sha1(json.dumps(spec, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:4], 16) + orden
         self.mov = []
         for k in spec.get("mover", []):
             self.mov.append({"t": linea.tiempo(k.get("en", k.get("t")), 0.5), "dur": k.get("dur", 0.6),
@@ -150,7 +152,7 @@ class Elemento:
                 esc = ancho / p["w"]
                 self.capas = []
                 for c in p["capas"]:
-                    img = activos.svg_a_png(c["svg"], ancho, int(round(p["h"] * esc)))
+                    img = activos.prop_a_png(c["svg"], ancho, int(round(p["h"] * esc)), p.get("volumen", 1.0))
                     self.capas.append({"id": c["id"], "img": img, "pivote": tuple(v * esc for v in c.get("pivote", (p["w"] / 2, p["h"] / 2))),
                                        "revelar": tuple(v * esc for v in c["revelar"]) if c.get("revelar") else None})
                 for cid, a in (self.s.get("capas") or {}).items():
@@ -476,12 +478,14 @@ _TINT = {}
 
 
 def _tintar(im, col):
+    # la caché guarda también la imagen original: así su id() no se reutiliza para otra imagen (antes, partículas
+    # con el color de otra y vídeos distintos con el mismo guion)
     k = (id(im), col)
-    if k not in _TINT:
+    if k not in _TINT or _TINT[k][0] is not im:
         t = Image.new("RGBA", im.size, col + (0,))
         t.putalpha(im.getchannel("A"))
-        _TINT[k] = t
-    return _TINT[k]
+        _TINT[k] = (im, t)
+    return _TINT[k][1]
 
 
 _BURB = []
@@ -507,6 +511,29 @@ def _apilar(sprites, sep=-6):
         im.alpha_composite(s, ((w - s.width) // 2, y))
         y += s.height + sep
     return im
+
+
+DESENFOQUE_FONDO = 6.5   # ARVIS 5.0: profundidad de campo; el escenario plano queda detrás y los objetos con volumen destacan
+
+
+def _resolver_anclas(elementos):
+    """«ancla»: "grifo" (o {"activo": "grifo", "punto": "boca"}) en un elemento coloca su x, y en ese punto del activo
+    de la misma escena (p. ej. las gotas en la boca del grifo, aunque el grifo cambie de tamaño o de sitio)."""
+    out = []
+    for s in elementos:
+        a = s.get("ancla")
+        if a:
+            nombre, punto = (a, "boca") if isinstance(a, str) else (a.get("activo"), a.get("punto", "boca"))
+            ref = next((x for x in elementos if x.get("activo") == nombre), None)
+            if ref is not None and nombre in props.PROPS:
+                p = props.crear(nombre, ref.get("estado"))
+                if punto in p:
+                    bx, by = p[punto]
+                    tam = float(ref.get("tam", 0.3))
+                    s = dict(s, x=round(float(ref["x"]) + (bx - 0.5) * tam, 4),
+                             y=round(float(ref["y"]) + (by - 0.5) * tam * p["h"] / p["w"] * W / H, 4))
+        out.append(s)
+    return out
 
 
 def _pegar(lienzo, im, cam, x, y, ancho, rot, alfa):
@@ -546,9 +573,10 @@ class Camara:
 
 # ----------------------------------------------------------------------------- motor
 class Motor:
-    def __init__(self, guion, salida, voz=None):
+    def __init__(self, guion, salida, voz=None, cache_voz=None):
         self.g = guion
         self.out = salida
+        self.cache_voz = cache_voz          # ARVIS 5.0: carpeta con la voz guardada (guiones_vida/SH-0NN/voz)
         os.makedirs(salida, exist_ok=True)
         self.voz_preset = voz or guion.get("voice", "sharvard_m")
         self.escenas = guion["escenas"]
@@ -561,7 +589,7 @@ class Motor:
         partes, lineas, t = [], [], 0.0
         for i, e in enumerate(self.escenas):
             ritmo = float(e.get("ritmo", 0.93 if e["beat"] == "gancho" else 1.0)) * ritmo_global
-            audio, pal = voz_mod.sintetizar(e["say"], self.voz_preset, ritmo)
+            audio, pal = voz_mod.sintetizar(e["say"], self.voz_preset, ritmo, cache=self.cache_voz)
             lead = 0.04 if i == 0 else 0.10
             pausa = 0.95 if i == len(self.escenas) - 1 else float(e.get("pausa", 0.20))
             dur = lead + len(audio) / sonido.SR + pausa
@@ -592,10 +620,10 @@ class Motor:
             k = (nombre, semilla + e.get("variante_fondo", 0))
             if k not in cache_f:
                 img = fondos.fondo(nombre, k[1])
-                img = img.filter(ImageFilter.GaussianBlur(float(e.get("desenfoque", 3.0))))
+                img = img.filter(ImageFilter.GaussianBlur(float(e.get("desenfoque", DESENFOQUE_FONDO))))
                 cache_f[k] = np.asarray(img)
             self.fondos.append(cache_f[k])
-            els = [Elemento(s, l, self, j) for j, s in enumerate(e.get("elementos", []))]
+            els = [Elemento(s, l, self, j) for j, s in enumerate(_resolver_anclas(e.get("elementos", [])))]
             self.elems.append(els)
             for el in els:
                 self.eventos_visuales.append(round(el.t_in, 2))

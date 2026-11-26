@@ -11,7 +11,7 @@
   "nivel_db": -19
  },
  "title": "¿Te gotea un grifo? Pierde unos 30 litros al día",
- "description": "Según las fichas de ahorro de agua del Ministerio para la Transición Ecológica (MITECO, programa Hogares Verdes), un grifo que gotea pierde alrededor de 30 litros de agua cada día. Truco: pon un vaso debajo para comprobar si gotea, ciérralo bien sin forzar y, si sigue goteando, cierra la llave de paso y cambia la junta o llama a un fontanero.",
+ "description": "Según las fichas de ahorro de agua del Ministerio para la Transición Ecológica (MITECO, programa Hogares Verdes), un grifo que gotea pierde alrededor de 30 litros de agua cada día. Truco: pon un vaso debajo para comprobar si gotea, ciérralo bien sin forzar y, si sigue goteando, cierra la llave de paso y cambia la junta o llama a un fontanero. Truco extra (MITECO): anota la cifra del contador del agua antes de acostarte; si por la mañana ha cambiado, puede haber una fuga.",
  "hashtags": [
   "#Shorts",
   "#lifehacks",
@@ -38,7 +38,19 @@
    "dato": "un grifo que gotea pierde unos 30 litros al día",
    "cita": "Un grifo que gotea pierde alrededor de 30 litros de agua cada día.",
    "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf",
-   "leido": "25/11/2026"
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "anotar el contador antes de dormir para detectar fugas",
+   "cita": "Anota la cifra que marca el contador de agua antes de acostarte",
+   "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "si la cifra cambia, puede haber una fuga",
+   "cita": "Si la cifra del contador ha cambiado, es posible que tengamos alguna fuga.",
+   "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf",
+   "leido": "26/11/2026"
   }
  ],
  "escenas": [
@@ -64,9 +76,9 @@
    "elementos": [
     {
      "activo": "grifo",
-     "x": 0.42,
-     "y": 0.42,
-     "tam": 0.38,
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.5,
      "en": -0.14,
      "entrada": "pop",
      "anim": "ninguna"
@@ -74,10 +86,9 @@
     {
      "tipo": "particulas",
      "clase": "gotas",
-     "x": 0.552,
-     "y": 0.425,
-     "ancho": 0.02,
-     "alto": 0.07,
+     "ancla": "grifo",
+     "ancho": 0.012,
+     "alto": 0.08,
      "en": -0.14,
      "densidad": 3,
      "vida": 0.9,
@@ -85,9 +96,9 @@
     },
     {
      "activo": "pregunta",
-     "x": 0.74,
-     "y": 0.35,
-     "tam": 0.14,
+     "x": 0.84,
+     "y": 0.33,
+     "tam": 0.13,
      "en": "Sabes",
      "entrada": "pop",
      "anim": "balancear"
@@ -95,9 +106,9 @@
     {
      "tipo": "texto",
      "texto": "¿CUÁNTO?",
-     "px": 72,
-     "x": 0.72,
-     "y": 0.47,
+     "px": 68,
+     "x": 0.5,
+     "y": 0.585,
      "en": "Sabes",
      "entrada": "pop",
      "anim": "ninguna",
@@ -141,19 +152,19 @@
      "desde": 0,
      "hasta": 30,
      "formato": "{v} L",
-     "px": 220,
+     "px": 210,
      "x": 0.5,
-     "y": 0.37,
+     "y": 0.355,
      "en": "Alrededor",
      "dur": 1.0,
      "color": "aviso"
     },
     {
      "tipo": "texto",
-     "texto": "APROX. · FUENTE: MITECO",
-     "px": 40,
+     "texto": "AL DÍA · FUENTE: MITECO",
+     "px": 58,
      "x": 0.5,
-     "y": 0.46,
+     "y": 0.43,
      "en": "agua",
      "entrada": "pop",
      "anim": "ninguna",
@@ -164,18 +175,18 @@
     {
      "activo": "cubo",
      "x": 0.5,
-     "y": 0.58,
-     "tam": 0.17,
-     "en": "Gota",
-     "entrada": "subir",
+     "y": 0.54,
+     "tam": 0.3,
+     "en": "Alrededor",
+     "entrada": "pop",
      "anim": "ninguna"
     },
     {
      "tipo": "particulas",
      "clase": "gotas",
      "x": 0.5,
-     "y": 0.52,
-     "ancho": 0.04,
+     "y": 0.45,
+     "ancho": 0.03,
      "alto": 0.05,
      "en": "Gota",
      "densidad": 4,
@@ -212,66 +223,45 @@
    "elementos": [
     {
      "activo": "grifo",
-     "x": 0.36,
-     "y": 0.42,
-     "tam": 0.34,
+     "x": 0.46,
+     "y": 0.43,
+     "tam": 0.5,
      "en": 0.0,
      "entrada": "izq",
      "anim": "ninguna"
     },
     {
      "activo": "cronometro",
-     "x": 0.74,
-     "y": 0.36,
+     "x": 0.84,
+     "y": 0.33,
      "tam": 0.13,
      "en": "minuto",
      "entrada": "pop",
      "anim": "latir"
     },
     {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "ancla": "grifo",
+     "ancho": 0.012,
+     "alto": 0.07,
+     "en": "gota",
+     "densidad": 3,
+     "vida": 0.7,
+     "tam": 0.035
+    },
+    {
      "tipo": "texto",
      "texto": "¿CAE UNA GOTA?",
-     "px": 44,
-     "x": 0.69,
-     "y": 0.5,
+     "px": 68,
+     "x": 0.5,
+     "y": 0.585,
      "en": "mira",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "aviso",
      "color": "noche"
-    },
-    {
-     "activo": "gota",
-     "x": 0.478,
-     "y": 0.4,
-     "tam": 0.06,
-     "en": "Cae",
-     "entrada": "fade",
-     "anim": "ninguna",
-     "mover": [
-      {
-       "a": [
-        0.478,
-        0.445
-       ],
-       "tam": 0.06,
-       "en": "alguna",
-       "dur": 0.45
-      }
-     ]
-    },
-    {
-     "tipo": "particulas",
-     "clase": "gotas",
-     "x": 0.478,
-     "y": 0.425,
-     "ancho": 0.02,
-     "alto": 0.06,
-     "en": "gota",
-     "densidad": 3,
-     "vida": 0.7,
-     "tam": 0.035
     }
    ],
    "sfx": [
@@ -291,7 +281,7 @@
    "say": "¿Gotea? Ciérralo hasta el final, pero sin forzar la maneta.",
    "fondo": "bano",
    "variante_fondo": 0,
-   "camara": "subir",
+   "camara": "fija",
    "transicion": "destello",
    "foco": [
     0.5,
@@ -307,33 +297,28 @@
    "elementos": [
     {
      "activo": "grifo",
-     "x": 0.36,
-     "y": 0.45,
-     "tam": 0.34,
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.5,
      "en": 0.0,
      "entrada": "izq",
-     "anim": "ninguna"
-    },
-    {
-     "tipo": "flecha",
-     "de": [
-      0.28,
-      0.35
-     ],
-     "a": [
-      0.44,
-      0.35
-     ],
-     "curva": 0.5,
-     "color": "lima",
-     "en": "Ciérralo"
+     "anim": "ninguna",
+     "capas": {
+      "palanca": {
+       "tipo": "angulo",
+       "de": 0,
+       "a": 28,
+       "en": "Ciérralo",
+       "dur": 0.6
+      }
+     }
     },
     {
      "tipo": "texto",
      "texto": "HASTA EL FINAL",
-     "px": 44,
-     "x": 0.7,
-     "y": 0.37,
+     "px": 68,
+     "x": 0.5,
+     "y": 0.575,
      "en": "final",
      "entrada": "pop",
      "anim": "ninguna",
@@ -343,9 +328,9 @@
     },
     {
      "activo": "musculo",
-     "x": 0.66,
-     "y": 0.49,
-     "tam": 0.11,
+     "x": 0.84,
+     "y": 0.34,
+     "tam": 0.12,
      "en": "forzar",
      "entrada": "pop",
      "anim": "vibrar"
@@ -353,9 +338,9 @@
     {
      "tipo": "sello",
      "simbolo": "prohibido",
-     "x": 0.66,
-     "y": 0.49,
-     "tam": 0.12,
+     "x": 0.84,
+     "y": 0.34,
+     "tam": 0.13,
      "en": "forzar"
     }
    ],
@@ -388,81 +373,67 @@
    "elementos": [
     {
      "tipo": "texto",
-     "texto": "¿SIGUE GOTEANDO?",
-     "px": 40,
-     "x": 0.5,
-     "y": 0.33,
-     "en": "Sigue",
-     "entrada": "pop",
-     "anim": "ninguna",
-     "fondo": "pastilla",
-     "color_fondo": "aviso",
-     "color": "noche",
-     "sale_en": "Cierra"
-    },
-    {
-     "tipo": "texto",
      "texto": "CIERRA LA LLAVE DE PASO",
-     "px": 38,
+     "px": 58,
      "x": 0.5,
-     "y": 0.33,
-     "en": "llave",
+     "y": 0.585,
+     "en": "Cierra",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "lima",
-     "color": "noche"
+     "color": "noche",
+     "sale_en": "junta"
     },
     {
      "activo": "caja_herramientas",
-     "x": 0.28,
-     "y": 0.45,
-     "tam": 0.2,
-     "en": "Cierra",
-     "entrada": "izq",
-     "anim": "balancear"
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.46,
+     "en": "Sigue",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.27,
+        0.43
+       ],
+       "tam": 0.34,
+       "en": "O",
+       "dur": 0.5
+      }
+     ]
     },
     {
      "tipo": "texto",
      "texto": "JUNTA NUEVA",
-     "px": 40,
-     "x": 0.28,
-     "y": 0.55,
+     "px": 68,
+     "x": 0.27,
+     "y": 0.585,
      "en": "junta",
      "entrada": "pop",
      "anim": "ninguna",
      "fondo": "pastilla",
      "color_fondo": "blanco",
-     "color": "noche"
-    },
-    {
-     "tipo": "texto",
-     "texto": "O",
-     "px": 56,
-     "x": 0.5,
-     "y": 0.46,
-     "en": "O",
-     "entrada": "pop",
-     "anim": "ninguna",
-     "fondo": "pastilla",
-     "color_fondo": "noche",
-     "color": "aviso"
+     "color": "noche",
+     "sale_en": "O"
     },
     {
      "activo": "Mechanic",
-     "x": 0.72,
-     "y": 0.45,
-     "tam": 0.18,
+     "x": 0.73,
+     "y": 0.43,
+     "tam": 0.34,
      "en": "O",
      "entrada": "der",
      "anim": "respirar"
     },
     {
      "tipo": "texto",
-     "texto": "FONTANERO",
-     "px": 40,
-     "x": 0.72,
-     "y": 0.55,
+     "texto": "O FONTANERO",
+     "px": 68,
+     "x": 0.5,
+     "y": 0.585,
      "en": "llama",
      "entrada": "pop",
      "anim": "ninguna",
@@ -487,8 +458,104 @@
    ]
   },
   {
+   "beat": "tutorial",
+   "paso": 4,
+   "chip": "TRUCO EXTRA",
+   "say": "Truco extra: anota el contador del agua antes de dormir. Si por la mañana ha cambiado, puede haber una fuga.",
+   "fondo": "bano",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "transicion": "fundido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "¿FUGAS\nOCULTAS?",
+   "resaltar": [
+    "OCULTAS?"
+   ],
+   "golpes": [
+    "fuga"
+   ],
+   "elementos": [
+    {
+     "activo": "Input numbers",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Crescent moon",
+     "x": 0.82,
+     "y": 0.33,
+     "tam": 0.12,
+     "en": "dormir",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Sunrise",
+     "x": 0.18,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "mañana",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "ANOTA EL CONTADOR",
+     "px": 58,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "anota",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "sale_en": "Si"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SI CAMBIA = FUGA",
+     "px": 68,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "Si",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "activo": "Magnifying glass tilted left",
+     "x": 0.62,
+     "y": 0.4,
+     "tam": 0.2,
+     "en": "cambiado",
+     "entrada": "pop",
+     "anim": "balancear"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "anota"
+    ],
+    [
+     "error",
+     "fuga"
+    ]
+   ]
+  },
+  {
    "beat": "resultado",
-   "say": "Un goteo arreglado son unos 30 litros al día que no se van por el desagüe.",
+   "say": "Arreglado, son unos 30 litros al día que no tiras.",
    "fondo": "bano",
    "variante_fondo": 2,
    "camara": "alejar",
@@ -503,9 +570,9 @@
    "elementos": [
     {
      "activo": "grifo",
-     "x": 0.32,
-     "y": 0.42,
-     "tam": 0.3,
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.5,
      "en": 0.0,
      "entrada": "pop",
      "anim": "ninguna"
@@ -513,26 +580,17 @@
     {
      "tipo": "sello",
      "simbolo": "check",
-     "x": 0.44,
-     "y": 0.5,
-     "tam": 0.11,
-     "en": "arreglado"
-    },
-    {
-     "activo": "cubo",
-     "x": 0.7,
-     "y": 0.42,
-     "tam": 0.18,
-     "en": "30",
-     "entrada": "pop",
-     "anim": "respirar"
+     "x": 0.82,
+     "y": 0.34,
+     "tam": 0.13,
+     "en": "Arreglado"
     },
     {
      "tipo": "texto",
-     "texto": "LITROS QUE AHORRAS",
-     "px": 44,
-     "x": 0.7,
-     "y": 0.53,
+     "texto": "30 L AL DÍA QUE AHORRAS",
+     "px": 58,
+     "x": 0.5,
+     "y": 0.585,
      "en": "30",
      "entrada": "pop",
      "anim": "ninguna",
@@ -547,7 +605,7 @@
      "y": 0.45,
      "ancho": 0.5,
      "alto": 0.15,
-     "en": "desagüe",
+     "en": "tiras",
      "densidad": 8,
      "vida": 0.9,
      "tam": 0.04
@@ -556,60 +614,51 @@
    "sfx": [
     [
      "exito",
-     "arreglado"
+     "Arreglado"
     ],
     [
-     "ding",
-     "desagüe"
+     "monedas",
+     "30"
     ]
    ]
   },
   {
    "beat": "cta",
-   "say": "Guárdalo y sígueme: un truco de casa cada día.",
+   "say": "¿Te gotea alguno? Cuéntamelo y guárdalo.",
    "fondo": "bano",
    "variante_fondo": 0,
    "camara": "fija",
    "transicion": "zoom",
-   "titulo": "GUÁRDALO\nY SÍGUEME",
+   "titulo": "¿TE GOTEA\nALGUNO?",
    "resaltar": [
-    "GUÁRDALO"
+    "ALGUNO?"
    ],
    "elementos": [
     {
-     "activo": "guardar",
+     "activo": "bocadillo",
      "x": 0.5,
-     "y": 0.42,
-     "tam": 0.2,
+     "y": 0.43,
+     "tam": 0.44,
      "en": 0.0,
      "entrada": "pop",
      "anim": "latir"
     },
     {
-     "activo": "gota",
-     "x": 0.24,
-     "y": 0.43,
-     "tam": 0.1,
-     "en": "truco",
-     "entrada": "izq",
-     "anim": "flotar"
-    },
-    {
-     "activo": "check",
-     "x": 0.76,
-     "y": 0.43,
-     "tam": 0.1,
-     "en": "sígueme",
+     "activo": "guardar",
+     "x": 0.84,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "guárdalo",
      "entrada": "pop",
      "anim": "latir"
     },
     {
      "tipo": "texto",
-     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
-     "px": 70,
+     "texto": "CUÉNTAMELO",
+     "px": 68,
      "x": 0.5,
-     "y": 0.58,
-     "en": "sígueme",
+     "y": 0.585,
+     "en": "Cuéntamelo",
      "entrada": "pop",
      "anim": "respirar",
      "fondo": "pastilla",
@@ -620,13 +669,15 @@
    "sfx": [
     [
      "pop",
-     "Guárdalo"
+     "Cuéntamelo"
     ],
     [
      "ding",
-     "sígueme"
+     "guárdalo"
     ]
    ]
   }
- ]
+ ],
+ "tema": "PRUEBA-5.0",
+ "enfoque": "error común + dato poco conocido"
 }

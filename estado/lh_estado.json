@@ -147,19 +147,24 @@
   },
   "SH-035": {
    "fila": 36,
-   "fase": "4. Revisión",
+   "fase": "5. Vídeo aprobado",
    "linea": "vida",
    "categoria": "errores",
    "gancho_tecnica": "doble pregunta con curiosidad",
    "idea": "IDEA-026",
    "numero": 10,
-   "franja": "26/11/2026 17:00",
    "titulo": "¿Te gotea un grifo? Pierde unos 30 litros al día",
-   "nota": 65.0,
+   "nota": 85.0,
    "intentos": 1,
-   "montajes": 3,
-   "duracion": 28.7,
-   "debilidades": "26/11 14:47: 3 montajes y 2 revisiones visuales independientes: 57,0 · 65,0 < 85. Bajan originalidad (5/10) y visual (6/10): el grifo es vectorial y plano, sin lavabo, junto a emojis 3D; fontanero poco tiempo en pantalla. El 3.er montaje dio QC 21/22 (resultado sin palabra clave: corregido en el guion con «LITROS QUE AHORRAS»). Reintento: montar el guion actual y revisar."
+   "montajes": 4,
+   "duracion": 34.02,
+   "debilidades": "Prueba de ARVIS 5.0 (26/11, chat): motor 2.0, QC 22/22, retención 94, CALIDAD 85,0 (rúbrica 5.0, evaluada en el chat, no por un revisor independiente). Espera el sí de Aleksei.",
+   "tema": "PRUEBA-5.0",
+   "huella_contenido": "bb9b6c480f7c8649",
+   "sha256": "cbd9fb479d23928e",
+   "aprobado": false,
+   "rubrica": "5.0",
+   "enfoque": "error común + dato poco conocido"
   }
  },
  "ideas": {
@@ -211,7 +216,7 @@
   },
   "IDEA-023": {
    "fila": 24,
-   "estado": "Elegida",
+   "estado": "Reserva",
    "categoria": "ropa",
    "puntuacion": 69.5,
    "titulo": "¿Usas la secadora? Centrifuga antes y tiende cuando puedas",
@@ -256,7 +261,7 @@
   },
   "IDEA-026": {
    "fila": 27,
-   "estado": "Elegida",
+   "estado": "Reserva",
    "categoria": "errores",
    "puntuacion": 76.0,
    "titulo": "¿Te gotea un grifo? Pierde unos 30 litros al día",
@@ -270,7 +275,7 @@
   },
   "IDEA-027": {
    "fila": 28,
-   "estado": "Elegida",
+   "estado": "Reserva",
    "categoria": "limpieza",
    "puntuacion": 75.0,
    "titulo": "¿Mezclas lejía y amoniaco para que limpie más? Nunca",
@@ -286,7 +291,7 @@
   },
   "IDEA-028": {
    "fila": 29,
-   "estado": "Elegida",
+   "estado": "Reserva",
    "categoria": "organizacion",
    "puntuacion": 74.5,
    "titulo": "¿Tiras el tique de compra? La garantía dura 3 años",
@@ -302,7 +307,7 @@
   },
   "IDEA-029": {
    "fila": 30,
-   "estado": "Elegida",
+   "estado": "Reserva",
    "categoria": "ahorro",
    "puntuacion": 73.5,
    "titulo": "¿Ducha o bañera? 5 minutos de ducha gastan unos 50 litros",
@@ -378,38 +383,37 @@
    "fecha": "22/11/2026 14:48",
    "paso": "tarea programada",
    "error": "El texto de la tarea «ARVIS LIFEHACKS» fue sustituido el 22/11 a las 10:35 por la orden de optimización ARVIS 3.1: la ejecución de las 14:47 no produjo (franjas 17:00 y 21:00 de hoy vacías)",
-   "resuelto": false
+   "resuelto": true
   },
   {
    "fecha": "25/11/2026 09:15",
    "paso": "Producción",
    "error": "SH-033 no subido: CALIDAD 70,0 < 85 tras 3 montajes y 2 revisiones visuales independientes (QC 22/22)",
-   "resuelto": false
+   "resuelto": true
   },
   {
    "fecha": "25/11/2026 15:17",
    "paso": "Producción",
    "error": "SH-033 descartado: CALIDAD 77,0/73,3/73,8 < 85 en el reintento (QC 22/22); franjas 25/11 17:00 y 21:00 vacías",
-   "resuelto": false
+   "resuelto": true
   },
   {
    "fecha": "26/11/2026 02:08",
    "paso": "Producción",
    "error": "SH-034 no subido: CALIDAD 70,5 < 85 tras 3 montajes y 3 revisiones visuales independientes (QC 22/22); franjas 26/11 17:00 y 21:00 vacías",
-   "resuelto": false
+   "resuelto": true
   },
   {
    "fecha": "26/11/2026 09:10",
    "paso": "Producción",
    "error": "SH-034 descartado: CALIDAD 72,0/71,5/70,5 < 85 en el reintento (QC 22/22); franjas 26/11 17:00 y 21:00 vacías",
-   "resuelto": false
+   "resuelto": true
   }
  ],
  "pendiente": [
-  "Franjas vacías: 26/11 17:00 y 21:00. SH-035 (IDEA-026, grifo que gotea) en 4. Revisión con CALIDAD 65,0: la siguiente ejecución lo reintenta una vez desde guiones_vida/SH-035 (luego, Descartado).",
-  "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): necesita a Aleksei («ARVIS, activa la tarea v3»)",
-  "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)",
-  "Calidad estancada en 57–77 con revisión visual independiente (SH-033: 73,8; SH-034: 70,5; SH-035: 65,0 en el 1.er intento): bajan originalidad y visual (props vectoriales planos junto a emojis 3D, plantilla repetida). Conviene que Aleksei decida si ajusta el motor o el umbral."
+  "ARVIS 5.0 (26/11): la tarea ya no elige temas. Producción solo de temas de Aleksei («ARVIS, nuevo Short» en el chat).",
+  "SH-035 (grifo, prueba 5.0, CALIDAD 85,0) preparado en «5. Vídeo aprobado»: espera el sí de Aleksei («ARVIS, publica SH-035»).",
+  "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
   "franjas": [
@@ -425,7 +429,12 @@
   "validez_fuentes_dias": 14,
   "max_montajes": 3,
   "max_reescrituras_qc": 2,
-  "max_videos_metricas": 50
+  "max_videos_metricas": 50,
+  "modo": "dirigido",
+  "duracion": [
+   20,
+   35
+  ]
  },
  "ultimo_sh": "SH-033",
  "ultimo_numero": 9,
@@ -557,9 +566,15 @@
   "¿A qué temperatura tienes la nevera? 5 ºC y -18 ºC, según el IDAE",
   "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU"
  ],
- "motor": {
-  "huella_probada": "22c21416bccc6abd",
-  "pytest": "OK 20 passed in 17.62s",
-  "fecha": "26/11/2026 01:49"
+ "motor": {},
+ "temas": {
+  "PRUEBA-5.0": {
+   "texto": "Prueba del sistema 5.0 con el tema ya investigado del grifo que gotea (IDEA-026)",
+   "fecha": "26/11/2026 20:35",
+   "origen": "ARVIS (prueba, no elegido por Aleksei)",
+   "estado": "Preparado",
+   "publicar": false,
+   "sh": "SH-035"
+  }
  }
 }

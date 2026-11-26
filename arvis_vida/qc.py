@@ -64,7 +64,7 @@ def comprobar(g, info, motor, salida, titulos_publicados=()):
     add("Formato vertical 1080×1920 H.264 30 fps", v.get("width") == 1080 and v.get("height") == 1920 and v.get("codec_name") == "h264"
         and abs(fps - 30) < 0.01 and v.get("pix_fmt") == "yuv420p", "%sx%s %s %.2f fps %s" % (v.get("width"), v.get("height"), v.get("codec_name"), fps, v.get("pix_fmt")))
     dur = float(pr.get("format", {}).get("duration", 0))
-    add("Duración 20–45 s", 20 <= dur <= 45, "%.1f s" % dur)
+    add("Duración 20–35 s", 20 <= dur <= 35.5, "%.1f s" % dur)   # ARVIS 5.0: 20–35 s
     mb = os.path.getsize(mk) / 1048576
     add("Tamaño ≤ %.1f MB (Make Free)" % MAX_MB, mb <= MAX_MB, "%.2f MB" % mb)
     lufs, pico = sonoridad(mk)

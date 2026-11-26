@@ -5,4 +5,4 @@ Imagen: escenarios y aparatos dibujados por ARVIS (SVG propio) + iconos Fluent E
 animados con cámara virtual, entradas con muelle, partículas, contadores, barras y sellos.
 Voz: Piper es_ES «sharvard_m» (CC BY 3.0). Música y efectos: compuestos por código (arvis_lifehacks.musica).
 """
-__version__ = "1.0"
+__version__ = "2.0"   # ARVIS LIFEHACKS 5.0 (26/11/2026): estilo único con volumen 3D suave, fondo desenfocado, voz guardada, rúbrica 5.0

@@ -7,6 +7,7 @@ Adaptado de arvis_expedientes/voice.py (motor v4); davefx (CC0) queda como alter
 Devuelve el audio y el tiempo de cada palabra (repartido por fonemas dentro de cada frase; Piper sintetiza
 frase a frase, así que el error queda dentro de la frase: suficiente para subtítulos de 1–4 palabras).
 """
+import os
 import re
 
 import numpy as np
@@ -73,14 +74,46 @@ def _frases(texto, n):
     return partes
 
 
-def sintetizar(texto, preset="sharvard_m", ritmo=1.0):
-    """Devuelve (audio float32 48 kHz mono, [{w, t0, t1}]). ritmo < 1 = más rápido (solo para ajustar el gancho)."""
+class _Trozo:
+    def __init__(self, audio, fonemas):
+        self.audio_float_array = audio
+        self.phonemes = fonemas
+
+
+def _piper(texto, preset, ritmo, cache=None):
+    """Trozos de Piper. Con `cache` (carpeta), la voz se guarda la primera vez (int16, 22 050 Hz, comprimida) y se reutiliza:
+    Piper no es determinista (ruido aleatorio), así que volver a montar el mismo guion daría otra entonación y otros tiempos.
+    Con la caché, el vídeo que aprobó Aleksei se puede reconstruir igual (ARVIS 5.0)."""
+    import hashlib
+    clave = hashlib.sha1(("%s|%.4f|%s" % (preset, ritmo, texto)).encode("utf-8")).hexdigest()[:16]
+    ruta = os.path.join(cache, clave + ".npz") if cache else None
+    if ruta and os.path.exists(ruta):
+        z = np.load(ruta, allow_pickle=False)
+        n = int(z["n"])
+        return [_Trozo(z["a%d" % i].astype(np.float32) / 32767.0, list(str(z["f%d" % i]))) for i in range(n)]
     from piper.config import SynthesisConfig
     modelo, hablante, ls, ns, nw, eq = PRESETS.get(preset, PRESETS["sharvard_m"])
     v = _voz(modelo)
-    texto = re.sub(r"\s+", " ", texto).strip()
     trozos = list(v.synthesize(texto, syn_config=SynthesisConfig(speaker_id=hablante, length_scale=ls * ritmo,
                                                                  noise_scale=ns, noise_w_scale=nw)))
+    q = [np.clip(np.round(ch.audio_float_array.astype(np.float64) * 32767), -32767, 32767).astype(np.int16) for ch in trozos]
+    f = ["".join(ch.phonemes) if ch.phonemes else "" for ch in trozos]
+    if ruta:
+        os.makedirs(cache, exist_ok=True)
+        datos = {"n": np.array(len(q))}
+        for i, (a, fo) in enumerate(zip(q, f)):
+            datos["a%d" % i], datos["f%d" % i] = a, np.array(fo)
+        np.savez_compressed(ruta + ".part.npz", **datos)
+        os.replace(ruta + ".part.npz", ruta)
+    return [_Trozo(a.astype(np.float32) / 32767.0, list(fo)) for a, fo in zip(q, f)]
+
+
+def sintetizar(texto, preset="sharvard_m", ritmo=1.0, cache=None):
+    """Devuelve (audio float32 48 kHz mono, [{w, t0, t1}]). ritmo < 1 = más rápido (solo para ajustar el gancho).
+    cache: carpeta donde guardar/reutilizar la voz de este guion (ver _piper)."""
+    modelo, hablante, ls, ns, nw, eq = PRESETS.get(preset, PRESETS["sharvard_m"])
+    texto = re.sub(r"\s+", " ", texto).strip()
+    trozos = _piper(texto, preset, ritmo, cache)
     piezas, palabras, t, hueco = [], [], 0.0, 0.0
     for ch, ftxt in zip(trozos, _frases(texto, len(trozos))):
         a = resample_poly(ch.audio_float_array.astype(np.float64), 320, 147)   # 22050 → 48000

@@ -38,6 +38,9 @@ def numeros(texto):
     return set(re.findall(r"\d+(?:[.,]\d+)?", texto))
 
 
+TAM_PROTAGONISTA = 0.42   # ARVIS 5.0: ancho mínimo (fracción del fotograma) del objeto principal de cada escena
+
+
 def validar(g, titulos_publicados=()):
     errores, avisos = [], []
     for k in ("id", "title", "description", "escenas", "sources", "hechos", "categoria"):
@@ -86,6 +89,19 @@ def validar(g, titulos_publicados=()):
                     errores.append("escena %d: posición fuera del fotograma" % (i + 1))
                 if el.get("tipo") not in ("particulas", "flecha") and 0.665 <= y <= 0.74:
                     avisos.append("escena %d: «%s» en la franja de subtítulos (y=%.2f)" % (i + 1, el.get("activo") or el.get("tipo"), y))
+        # ARVIS 5.0 · identidad visual: el objeto protagonista se ve grande y nada queda vacío
+        tams = [float(el.get("tam", 0.3)) for el in e.get("elementos", []) if el.get("activo")]
+        if e.get("beat") != "cta" and not tams and not any(el.get("tipo") in ("contador", "barra") for el in e.get("elementos", [])):
+            avisos.append("escena %d: sin objeto ni cifra grande (solo textos): pantalla vacía" % (i + 1))
+        elif (e.get("beat") not in ("cta",) and tams and max(tams) < TAM_PROTAGONISTA
+              and not any(el.get("tipo") in ("contador", "barra") for el in e.get("elementos", []))):   # la cifra grande también vale
+            avisos.append("escena %d: objeto protagonista pequeño (tam %.2f < %.2f)" % (i + 1, max(tams), TAM_PROTAGONISTA))
+        nombres = {el.get("activo") for el in e.get("elementos", [])}
+        for el in e.get("elementos", []):
+            a = el.get("ancla")
+            n = a if isinstance(a, str) else (a or {}).get("activo")
+            if a and n not in nombres:
+                errores.append("escena %d: «ancla» a «%s», que no está en la escena" % (i + 1, n))
     # contenido
     fuentes = g.get("sources", [])
     if not any(any(d in u for d in DOMINIOS_FIABLES) for u in fuentes):

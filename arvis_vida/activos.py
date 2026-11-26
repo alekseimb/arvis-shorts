@@ -152,6 +152,40 @@ def svg_a_png(svg, ancho, alto=None):
     return Image.open(dest).convert("RGBA")
 
 
+def volumen(img, fuerza=1.0, radio=None):
+    """Estilo único ARVIS 5.0: da volumen 3D suave (luz arriba-izquierda, brillo, oclusión en los bordes) a una capa RGBA
+    dibujada en plano, para que los aparatos propios casen con los iconos Fluent (que ya tienen volumen).
+    Mismo resultado para la misma imagen (determinista)."""
+    import numpy as np
+    from scipy import ndimage
+    a = np.asarray(img.convert("RGBA")).astype(np.float32) / 255.0
+    rgb, al = a[..., :3], a[..., 3]
+    h, w = al.shape
+    r = radio or max(3.0, min(h, w) * 0.045)
+    alt = ndimage.gaussian_filter(al, r)
+    lum = rgb @ np.array([0.3, 0.59, 0.11], np.float32)
+    alt2 = ndimage.gaussian_filter(lum * al, r * 0.35)
+    gy, gx = np.gradient(alt + alt2 * 0.3)
+    sh = np.clip(-(gx * -0.55 + gy * -0.83) * r * 2.2 * fuerza, -0.55, 0.55)
+    spec = np.clip(sh - 0.18, 0, None) * 1.4
+    out = (rgb * (1 + np.minimum(sh, 0)[..., None] * 0.9) + (1 - rgb) * np.maximum(sh, 0)[..., None] * 0.55
+           + spec[..., None] * 0.25 + np.linspace(0.06, -0.08, h, dtype=np.float32)[:, None, None] * fuerza)
+    res = np.dstack([np.clip(out, 0, 1), al])
+    return Image.fromarray((res * 255 + 0.5).astype(np.uint8), "RGBA")
+
+
+def prop_a_png(svg, ancho, alto=None, fuerza=1.0):
+    """Capa de un aparato dibujado por ARVIS, rasterizada y con volumen 3D suave (caché en disco)."""
+    datos = svg.encode("utf-8")
+    h = hashlib.sha1(datos + ("%sx%s v%s" % (ancho, alto, fuerza)).encode()).hexdigest()[:20]
+    dest = os.path.join(CACHE, "png3d", h + ".png")
+    if not os.path.exists(dest):
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        volumen(svg_a_png(svg, ancho, alto), fuerza).save(dest + ".part.png")
+        os.replace(dest + ".part.png", dest)
+    return Image.open(dest).convert("RGBA")
+
+
 def icono(nombre, ancho):
     r = ruta_fluent(nombre)
     if not r:

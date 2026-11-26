@@ -17,9 +17,16 @@ Google siguen siendo la fuente de verdad: si no coinciden con el estado, mandan 
   python3 -m arvis_vida.ops metricas registro.json                # MODO B: filas METRICAS + SHORTS K:O + analista
   python3 -m arvis_vida.ops titulos titulos.json                  # títulos ya usados (sin leer SHORTS › F)
   python3 -m arvis_vida.ops guardar "mensaje"                     # commit + push del estado si cambió
+
+ARVIS LIFEHACKS 5.0 (26/11/2026, «yo elijo el tema»): con reglas.modo = "dirigido" la tarea ya no elige temas ni investiga
+por su cuenta. Solo sube los Shorts que Aleksei aprobó («6. Pendiente de subida») y produce los temas que él le encargó.
+  python3 -m arvis_vida.ops tema "texto del tema" [--encargar] [--publicar]   # registra el tema (T-0NN) y da SH, Nº y parecidos
+  python3 -m arvis_vida.ops aprobar SH-0NN "Aleksei en el chat dd/mm HH:MM"   # su «sí»: pasa a 6. Pendiente de subida
+  python3 -m arvis_vida.ops franja                                # primera franja libre y publishAt (subida desde el chat)
 """
 import argparse
 import datetime as dt
+import difflib
 import hashlib
 import json
 import os
@@ -36,13 +43,14 @@ except Exception:  # pragma: no cover
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RUTA = os.environ.get("ARVIS_ESTADO") or os.path.join(RAIZ, "estado", "lh_estado.json")
 ARBOL_MOTOR = ["arvis_vida", "arvis_lifehacks", "arvis_estudio/calidad.py", "tests/test_vida.py", "tests/test_ops.py",
-               "tests/test_sonda.py", "requirements-vida.txt"]
+               "tests/test_sonda.py", "tests/test_v5.py", "requirements-vida.txt"]
 FASES_OCUPAN = ("6.", "7.", "8.", "9.", "10.")
 CAT_VIDA_DESDE = 27          # SH-024…026 eran de informática: no cuentan para aprender categorías
 
 REGLAS = {"franjas": ["12:00", "17:00", "21:00"], "margen_min": 90, "max_horas_cola": 30, "umbral": 85,
           "min_elegidas": 3, "ideas_por_investigacion": 4, "validez_fuentes_dias": 14, "max_montajes": 3,
-          "max_reescrituras_qc": 2, "max_videos_metricas": 50}
+          "max_reescrituras_qc": 2, "max_videos_metricas": 50,
+          "modo": "dirigido", "duracion": [20, 35]}   # ARVIS 5.0: «dirigido» = solo temas de Aleksei; «autonomo» = como el 3.1
 
 # Presupuesto interno por ejecución (no es un límite de tokens: Claude no permite imponerlo. Son topes de operaciones
 # contables que la tarea respeta; al llegar a uno: parar lo no esencial, guardar estado, nada a medias, anotar pendiente).
@@ -197,7 +205,17 @@ def plan(est, ahora):
         out["B"] = {"videos": len(pub), "llamada_make": llamada_metricas(pub) if pub else None,
                     "despues": "guarda el «data» de metricas-lh en /tmp/metricas-lh.json y ejecuta: python3 -m arvis_vida.ops metricas /tmp/metricas-lh.json"}
 
-    # ---- MODO C · producción
+    # ---- MODO C · ARVIS 5.0 dirigido (solo temas de Aleksei y Shorts que él aprobó)
+    if r.get("modo") == "dirigido":
+        out["C"] = plan_dirigido(est, ahora, r)
+        if out["C"].get("producir"):
+            out["modos"].append("C")
+        out["presupuesto"] = {m: PRESUPUESTO[m] for m in out["modos"]}
+        out["errores_abiertos"] = [e for e in est.get("errores", []) if not e.get("resuelto")][-3:]
+        out["pendiente"] = est.get("pendiente", [])[-5:]
+        return out
+
+    # ---- MODO C · producción (modo «autonomo», ARVIS 3.1)
     rev = [sh for sh, s in shorts.items() if str(s.get("fase", "")).startswith("4.") and int(s.get("intentos", 1)) < 2 and not s.get("descartado")]
     franja, motivo = franja_libre(est, ahora)
     c = {"producir": bool(franja), "motivo": motivo}
@@ -244,6 +262,94 @@ def plan(est, ahora):
     return out
 
 
+# ----------------------------------------------------------------------------- ARVIS 5.0 · temas de Aleksei
+def siguiente(est):
+    shorts = est.get("shorts", {})
+    ult = max([num(sh) for sh in shorts] + [num(est.get("ultimo_sh", "SH-000"))])
+    return "SH-%03d" % (ult + 1), int(est.get("ultimo_numero", 0)) + 1
+
+
+def plan_dirigido(est, ahora, r):
+    shorts = est.get("shorts", {})
+    esperan = sorted(sh for sh, s in shorts.items() if str(s.get("fase", "")).startswith("5.") and s.get("tema") and not s.get("aprobado"))
+    c = {"producir": False, "modo": "dirigido", "investigar": False,
+         "esperan_tu_si": esperan, "regla": "Nunca elijas ni investigues temas por tu cuenta; nunca uses ideas «Elegida» de ARVIS."}
+    aprobados = sorted((sh for sh, s in shorts.items() if str(s.get("fase", "")).startswith("6.") and s.get("aprobado")
+                        and not s.get("yt") and not s.get("retirado")), key=num)
+    encargados = sorted((k for k, t in est.get("temas", {}).items() if t.get("estado") == "Encargado a la tarea"), key=lambda k: k)
+    rev = sorted((sh for sh, s in shorts.items() if str(s.get("fase", "")).startswith("4.") and s.get("tema")
+                  and int(s.get("intentos", 1)) < 2 and not s.get("descartado")), key=num)
+    franja, motivo = franja_libre(est, ahora)
+    if aprobados:
+        sh = aprobados[0]
+        s = shorts[sh]
+        if not franja:
+            c["motivo"] = "%s aprobado, pero %s" % (sh, motivo)
+            return c
+        c.update(producir=True, tipo="subir_aprobado", sh=sh, numero=s.get("numero"), tema=s.get("tema"),
+                 guion="guiones_vida/%s/guion.json" % sh, huella_contenido_aprobada=s.get("huella_contenido"),
+                 huella_motor_aprobado=s.get("huella_motor"),
+                 mismo_motor=bool(s.get("huella_motor")) and s.get("huella_motor") == huella_motor(),
+                 franja=fmt(franja), publishAt=utc_iso(franja),
+                 pasos="Monta el guion aprobado SIN cambiarlo (C5), QC 22/22 y sonda sin graves; si mismo_motor y la "
+                       "huella_contenido del informe coincide, es el vídeo que vio Aleksei: súbelo (C7). Si no coincide o cambió "
+                       "el motor: no subas, déjalo en «5. Vídeo aprobado» y pide su sí de nuevo.")
+        return c
+    if encargados or rev:
+        if not franja and not (encargados and not est["temas"][encargados[0]].get("publicar")):
+            c["motivo"] = motivo
+            return c
+        if rev:
+            sh = rev[0]
+            c.update(producir=True, tipo="reintento_tema", siguiente_sh=sh, numero=shorts[sh].get("numero"),
+                     tema=shorts[sh].get("tema"), debilidades=shorts[sh].get("debilidades", ""))
+        else:
+            k = encargados[0]
+            sh, n = siguiente(est)
+            c.update(producir=True, tipo="producir_tema", tema=k, texto=est["temas"][k].get("texto"), siguiente_sh=sh, numero=n,
+                     investigar_tema=True)
+        t = est.get("temas", {}).get(c["tema"], {})
+        c["publicar_sin_preguntar"] = bool(t.get("publicar"))
+        if franja:
+            c.update(franja=fmt(franja), publishAt=utc_iso(franja))
+        c["al_terminar"] = ("nota ≥ 85 → sube a la franja (Aleksei ya lo autorizó)" if c["publicar_sin_preguntar"] else
+                            "nota ≥ 85 → NO subas: SHORTS «Vídeo listo (pendiente de subir)» + Fase «5. Vídeo aprobado» + Notas «ESPERA TU SÍ», "
+                            "ops anotar (fase 5, tema, sha256, huella_motor) y aviso push «Short listo: ¿lo subo?»")
+        c["entorno"] = "python3 -m arvis_vida.ops entorno"
+        return c
+    c["motivo"] = "sin temas de Aleksei ni Shorts aprobados: no se produce nada"
+    return c
+
+
+def tema(est, texto, encargar=False, publicar=False, ahora=None):
+    """Registra un tema que eligió Aleksei. Devuelve su ID, el SH y Nº que tocan y los temas o títulos parecidos."""
+    ahora = ahora or ahora_madrid()
+    temas = est.setdefault("temas", {})
+    k = "T-%03d" % (max([int(x[2:]) for x in temas] + [0]) + 1)
+    sh, n = siguiente(est)
+    usados = [(x, t.get("texto", "")) for x, t in temas.items()] + [(sh2, s.get("titulo", "")) for sh2, s in est.get("shorts", {}).items()]
+    parecidos = sorted(((round(difflib.SequenceMatcher(None, texto.lower(), u.lower()).ratio(), 2), x, u) for x, u in usados if u),
+                       reverse=True)[:3]
+    temas[k] = {"texto": texto[:200], "fecha": fmt(ahora), "origen": "Aleksei",
+                "estado": "Encargado a la tarea" if encargar else "En producción (chat)", "publicar": bool(publicar)}
+    recientes = [est["shorts"][x].get("categoria") for x in sorted(est.get("shorts", {}), key=num, reverse=True)
+                 if est["shorts"][x].get("categoria")][:3]
+    return {"ok": True, "tema": k, "siguiente_sh": sh, "numero": n, "parecidos": [p for p in parecidos if p[0] >= 0.45],
+            "categorias_recientes": recientes, "publicar_sin_preguntar": bool(publicar)}
+
+
+def aprobar(est, sh, quien, ahora=None):
+    s = est.get("shorts", {}).get(sh)
+    if not s:
+        return {"ok": False, "error": "%s no está en el estado" % sh}
+    if s.get("yt"):
+        return {"ok": False, "error": "%s ya está subido (%s)" % (sh, s["yt"])}
+    s.update(aprobado=True, aprobado_por=quien[:120], fase="6. Pendiente de subida")
+    f, motivo = franja_libre(est, ahora or ahora_madrid())
+    return {"ok": True, "sh": sh, "fase": s["fase"], "franja": fmt(f) if f else None, "publishAt": utc_iso(f) if f else None,
+            "motivo": motivo, "mismo_motor": s.get("huella_motor") == huella_motor()}
+
+
 # ----------------------------------------------------------------------------- entorno (solo MODO C)
 def huella_motor():
     try:
@@ -281,7 +387,7 @@ def entorno(est):
     if res["ok"] and m.get("huella_probada") == h and m.get("pytest", "").startswith("OK"):
         res["pytest"] = "omitido: el motor no ha cambiado desde la prueba del %s (%s)" % (m.get("fecha"), m.get("pytest"))
     elif res["ok"]:
-        pruebas = [os.path.join(RAIZ, "tests", x) for x in ("test_vida.py", "test_ops.py", "test_sonda.py") if os.path.exists(os.path.join(RAIZ, "tests", x))]
+        pruebas = [os.path.join(RAIZ, "tests", x) for x in ("test_vida.py", "test_ops.py", "test_sonda.py", "test_v5.py") if os.path.exists(os.path.join(RAIZ, "tests", x))]
         r = subprocess.run([sys.executable, "-m", "pytest", "-q", "-x"] + pruebas, capture_output=True, text=True, cwd=RAIZ)
         ultima = (r.stdout.strip().splitlines() or ["?"])[-1]
         res["pytest"] = ("OK " if r.returncode == 0 else "FALLO ") + ultima
@@ -409,6 +515,14 @@ def main(argv=None):
     p.add_argument("--ahora", default=None)
     p = sub.add_parser("titulos")
     p.add_argument("salida", nargs="?", default="titulos.json")
+    p = sub.add_parser("tema")
+    p.add_argument("texto")
+    p.add_argument("--encargar", action="store_true", help="lo produce la tarea programada en su próxima ejecución")
+    p.add_argument("--publicar", action="store_true", help="Aleksei ya autorizó subirlo si llega a 85")
+    p = sub.add_parser("aprobar")
+    p.add_argument("sh")
+    p.add_argument("quien")
+    sub.add_parser("franja")
     p = sub.add_parser("guardar")
     p.add_argument("mensaje", nargs="?", default="ARVIS 3.1: estado de LIFEHACKS")
     a = ap.parse_args(argv)
@@ -441,6 +555,16 @@ def main(argv=None):
         t = titulos(est)
         json.dump(t, open(a.salida, "w", encoding="utf-8"), ensure_ascii=False)
         out = {"ok": True, "titulos": len(t), "archivo": a.salida}
+    elif a.cmd == "tema":
+        out = tema(est, a.texto, a.encargar, a.publicar)
+        guardar_local(est)
+    elif a.cmd == "aprobar":
+        out = aprobar(est, a.sh, a.quien)
+        if out.get("ok"):
+            guardar_local(est)
+    elif a.cmd == "franja":
+        f, motivo = franja_libre(est, ahora_madrid())
+        out = {"franja": fmt(f) if f else None, "publishAt": utc_iso(f) if f else None, "motivo": motivo}
     elif a.cmd == "guardar":
         out = guardar_git(a.mensaje)
     # salida compacta (cada carácter impreso entra en el contexto de Claude)
