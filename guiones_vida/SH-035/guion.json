@@ -1,0 +1,632 @@
+{
+ "id": "SH-035",
+ "numero": 10,
+ "idea": "IDEA-026",
+ "categoria": "errores",
+ "gancho_tecnica": "doble pregunta con curiosidad",
+ "variante": 2,
+ "voice": "sharvard_m",
+ "musica": {
+  "semilla": 1,
+  "nivel_db": -19
+ },
+ "title": "¿Te gotea un grifo? Pierde unos 30 litros al día",
+ "description": "Según las fichas de ahorro de agua del Ministerio para la Transición Ecológica (MITECO, programa Hogares Verdes), un grifo que gotea pierde alrededor de 30 litros de agua cada día. Truco: pon un vaso debajo para comprobar si gotea, ciérralo bien sin forzar y, si sigue goteando, cierra la llave de paso y cambia la junta o llama a un fontanero.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#ahorrodeagua",
+  "#trucosdecasa",
+  "#hogar"
+ ],
+ "tags": [
+  "grifo que gotea",
+  "goteo grifo",
+  "ahorrar agua",
+  "cambiar junta grifo",
+  "llave de paso",
+  "ahorro en casa",
+  "trucos de casa",
+  "lifehacks"
+ ],
+ "categoryId": "26",
+ "sources": [
+  "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf"
+ ],
+ "hechos": [
+  {
+   "dato": "un grifo que gotea pierde unos 30 litros al día",
+   "cita": "Un grifo que gotea pierde alrededor de 30 litros de agua cada día.",
+   "url": "https://www.miteco.gob.es/content/dam/miteco/es/ceneam/programas-de-educacion-ambiental/hogares-verdes/fichas-ahorro-agua_tcm30-171552.pdf",
+   "leido": "25/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Tu grifo gotea? ¿Sabes cuánto pierde?",
+   "fondo": "bano",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.44
+   ],
+   "titulo": "¿TU GRIFO\nGOTEA?",
+   "resaltar": [
+    "GOTEA"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "gotea"
+   ],
+   "elementos": [
+    {
+     "activo": "grifo",
+     "x": 0.42,
+     "y": 0.42,
+     "tam": 0.38,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.552,
+     "y": 0.425,
+     "ancho": 0.02,
+     "alto": 0.07,
+     "en": -0.14,
+     "densidad": 3,
+     "vida": 0.9,
+     "tam": 0.035
+    },
+    {
+     "activo": "pregunta",
+     "x": 0.74,
+     "y": 0.35,
+     "tam": 0.14,
+     "en": "Sabes",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "¿CUÁNTO?",
+     "px": 72,
+     "x": 0.72,
+     "y": 0.47,
+     "en": "Sabes",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "salpicadura",
+     "gotea"
+    ],
+    [
+     "tic",
+     "pierde"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "Alrededor de 30 litros de agua al día. Gota a gota.",
+   "fondo": "bano",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "GOTA A GOTA,\nCADA DÍA",
+   "resaltar": [
+    "DÍA"
+   ],
+   "golpes": [
+    "30"
+   ],
+   "elementos": [
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 30,
+     "formato": "{v} L",
+     "px": 220,
+     "x": 0.5,
+     "y": 0.37,
+     "en": "Alrededor",
+     "dur": 1.0,
+     "color": "aviso"
+    },
+    {
+     "tipo": "texto",
+     "texto": "APROX. · FUENTE: MITECO",
+     "px": 40,
+     "x": 0.5,
+     "y": 0.46,
+     "en": "agua",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "activo": "cubo",
+     "x": 0.5,
+     "y": 0.58,
+     "tam": 0.17,
+     "en": "Gota",
+     "entrada": "subir",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.5,
+     "y": 0.52,
+     "ancho": 0.04,
+     "alto": 0.05,
+     "en": "Gota",
+     "densidad": 4,
+     "vida": 0.8,
+     "tam": 0.03
+    }
+   ],
+   "sfx": [
+    [
+     "golpe",
+     "30"
+    ],
+    [
+     "salpicadura",
+     "Gota#2"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Haz la prueba: ciérralo y mira el caño un minuto. ¿Cae alguna gota?",
+   "fondo": "bano",
+   "variante_fondo": 2,
+   "camara": "izq",
+   "transicion": "zoom",
+   "titulo": "MIRA EL CAÑO\nUN MINUTO",
+   "resaltar": [
+    "MINUTO"
+   ],
+   "golpes": [
+    "minuto"
+   ],
+   "elementos": [
+    {
+     "activo": "grifo",
+     "x": 0.36,
+     "y": 0.42,
+     "tam": 0.34,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "cronometro",
+     "x": 0.74,
+     "y": 0.36,
+     "tam": 0.13,
+     "en": "minuto",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "¿CAE UNA GOTA?",
+     "px": 44,
+     "x": 0.69,
+     "y": 0.5,
+     "en": "mira",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "activo": "gota",
+     "x": 0.478,
+     "y": 0.4,
+     "tam": 0.06,
+     "en": "Cae",
+     "entrada": "fade",
+     "anim": "ninguna",
+     "mover": [
+      {
+       "a": [
+        0.478,
+        0.445
+       ],
+       "tam": 0.06,
+       "en": "alguna",
+       "dur": 0.45
+      }
+     ]
+    },
+    {
+     "tipo": "particulas",
+     "clase": "gotas",
+     "x": 0.478,
+     "y": 0.425,
+     "ancho": 0.02,
+     "alto": 0.06,
+     "en": "gota",
+     "densidad": 3,
+     "vida": 0.7,
+     "tam": 0.035
+    }
+   ],
+   "sfx": [
+    [
+     "tic",
+     "minuto"
+    ],
+    [
+     "salpicadura",
+     "gota"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "¿Gotea? Ciérralo hasta el final, pero sin forzar la maneta.",
+   "fondo": "bano",
+   "variante_fondo": 0,
+   "camara": "subir",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "CIÉRRALO\nSIN FORZAR",
+   "resaltar": [
+    "FORZAR"
+   ],
+   "golpes": [
+    "final"
+   ],
+   "elementos": [
+    {
+     "activo": "grifo",
+     "x": 0.36,
+     "y": 0.45,
+     "tam": 0.34,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "flecha",
+     "de": [
+      0.28,
+      0.35
+     ],
+     "a": [
+      0.44,
+      0.35
+     ],
+     "curva": 0.5,
+     "color": "lima",
+     "en": "Ciérralo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "HASTA EL FINAL",
+     "px": 44,
+     "x": 0.7,
+     "y": 0.37,
+     "en": "final",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "activo": "musculo",
+     "x": 0.66,
+     "y": 0.49,
+     "tam": 0.11,
+     "en": "forzar",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.66,
+     "y": 0.49,
+     "tam": 0.12,
+     "en": "forzar"
+    }
+   ],
+   "sfx": [
+    [
+     "tic",
+     "final"
+    ],
+    [
+     "error",
+     "forzar"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "¿Sigue goteando? Cierra la llave de paso y cambia la junta. O llama al fontanero.",
+   "fondo": "bano",
+   "variante_fondo": 1,
+   "camara": "der",
+   "transicion": "barrido",
+   "titulo": "CAMBIA\nLA JUNTA",
+   "resaltar": [
+    "JUNTA"
+   ],
+   "golpes": [
+    "junta"
+   ],
+   "elementos": [
+    {
+     "tipo": "texto",
+     "texto": "¿SIGUE GOTEANDO?",
+     "px": 40,
+     "x": 0.5,
+     "y": 0.33,
+     "en": "Sigue",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "sale_en": "Cierra"
+    },
+    {
+     "tipo": "texto",
+     "texto": "CIERRA LA LLAVE DE PASO",
+     "px": 38,
+     "x": 0.5,
+     "y": 0.33,
+     "en": "llave",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "activo": "caja_herramientas",
+     "x": 0.28,
+     "y": 0.45,
+     "tam": 0.2,
+     "en": "Cierra",
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "JUNTA NUEVA",
+     "px": 40,
+     "x": 0.28,
+     "y": 0.55,
+     "en": "junta",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "O",
+     "px": 56,
+     "x": 0.5,
+     "y": 0.46,
+     "en": "O",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "noche",
+     "color": "aviso"
+    },
+    {
+     "activo": "Mechanic",
+     "x": 0.72,
+     "y": 0.45,
+     "tam": 0.18,
+     "en": "O",
+     "entrada": "der",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "FONTANERO",
+     "px": 40,
+     "x": 0.72,
+     "y": 0.55,
+     "en": "llama",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "llave"
+    ],
+    [
+     "pop",
+     "junta"
+    ],
+    [
+     "ding",
+     "fontanero"
+    ]
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Un goteo arreglado son unos 30 litros al día que no se van por el desagüe.",
+   "fondo": "bano",
+   "variante_fondo": 2,
+   "camara": "alejar",
+   "transicion": "subir",
+   "titulo": "UNOS 30 L\nQUE NO TIRAS",
+   "resaltar": [
+    "30"
+   ],
+   "golpes": [
+    "30"
+   ],
+   "elementos": [
+    {
+     "activo": "grifo",
+     "x": 0.32,
+     "y": 0.42,
+     "tam": 0.3,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.44,
+     "y": 0.5,
+     "tam": 0.11,
+     "en": "arreglado"
+    },
+    {
+     "activo": "cubo",
+     "x": 0.7,
+     "y": 0.42,
+     "tam": 0.18,
+     "en": "30",
+     "entrada": "pop",
+     "anim": "respirar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "LITROS QUE AHORRAS",
+     "px": 44,
+     "x": 0.7,
+     "y": 0.53,
+     "en": "30",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.45,
+     "ancho": 0.5,
+     "alto": 0.15,
+     "en": "desagüe",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.04
+    }
+   ],
+   "sfx": [
+    [
+     "exito",
+     "arreglado"
+    ],
+    [
+     "ding",
+     "desagüe"
+    ]
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo y sígueme: un truco de casa cada día.",
+   "fondo": "bano",
+   "variante_fondo": 0,
+   "camara": "fija",
+   "transicion": "zoom",
+   "titulo": "GUÁRDALO\nY SÍGUEME",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.42,
+     "tam": 0.2,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "gota",
+     "x": 0.24,
+     "y": 0.43,
+     "tam": 0.1,
+     "en": "truco",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "activo": "check",
+     "x": 0.76,
+     "y": 0.43,
+     "tam": 0.1,
+     "en": "sígueme",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SÍGUEME · UN TRUCO CADA DÍA",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "sígueme",
+     "entrada": "pop",
+     "anim": "respirar",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "Guárdalo"
+    ],
+    [
+     "ding",
+     "sígueme"
+    ]
+   ]
+  }
+ ]
+}
