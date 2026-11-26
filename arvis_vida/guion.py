@@ -111,7 +111,10 @@ def validar(g, titulos_publicados=()):
             errores.append("hecho sin cita literal o sin URL: %s" % h.get("dato"))
     narracion = " ".join(e.get("say", "") for e in es)
     citas = " ".join(h.get("cita", "") + " " + h.get("dato", "") for h in g.get("hechos", []))
-    sin_fuente = sorted(n for n in numeros(narracion + " " + " ".join(str(el.get("texto", "")) for e in es for el in e.get("elementos", [])))
+    # «"ejemplo": true» en un rótulo = cifra ilustrativa (p. ej. una etiqueta «-50 %» genérica), no un dato: no necesita cita,
+    # pero esa cifra no puede decirse en la narración (ahí sí sería una afirmación)
+    sin_fuente = sorted(n for n in numeros(narracion + " " + " ".join(str(el.get("texto", "")) for e in es for el in e.get("elementos", [])
+                                                                      if not el.get("ejemplo")))
                         if n not in numeros(citas))
     if sin_fuente:
         errores.append("cifras sin cita que las respalde: %s" % ", ".join(sin_fuente))

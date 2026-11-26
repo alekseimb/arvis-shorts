@@ -1,0 +1,526 @@
+{
+ "voice": "sharvard_m",
+ "categoryId": "26",
+ "id": "SH-036",
+ "numero": 11,
+ "tema": "T-001",
+ "categoria": "ahorro",
+ "enfoque": "sorpresa + consejo práctico (idea de Aleksei)",
+ "gancho_tecnica": "pregunta directa con etiqueta de oferta",
+ "variante": 1,
+ "musica": {
+  "semilla": 2,
+  "nivel_db": -19
+ },
+ "title": "¿Ese -50 % es mentira? 3 trucos para pillar ofertas falsas en Black Friday",
+ "description": "En el Black Friday de 2025, la OCU comprobó que el 89 % de los precios tachados no correspondían al precio de referencia que exige la ley. 3 trucos: 1) mira el historial de precios (en Amazon, por ejemplo con Keepa o CamelCamelCamel); 2) compara con el precio de hace un mes: por ley, el precio anterior de una rebaja debe ser el más bajo de los 30 días anteriores; 3) desconfía de los avisos de «últimas unidades», que buscan meter prisa (CEC-España, Ministerio de Consumo). Las herramientas se citan como ejemplo, sin patrocinio. La etiqueta «-50 %» es un ejemplo.",
+ "hashtags": [
+  "#Shorts",
+  "#lifehacks",
+  "#BlackFriday",
+  "#ahorro",
+  "#ofertas"
+ ],
+ "tags": [
+  "black friday",
+  "ofertas falsas",
+  "falsas rebajas",
+  "historial de precios",
+  "precio más bajo 30 días",
+  "últimas unidades",
+  "ahorrar dinero",
+  "trucos de compras",
+  "lifehacks"
+ ],
+ "sources": [
+  "https://www.dsca.gob.es/ca/consumo/preguntas-frecuentes/he-comprado-ordenador-black-friday-tienda-online-pero-segun-me-ha",
+  "https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2023/black-friday-7-consejos-del-cec-espana-para-comprar-de-forma-responsable",
+  "https://www.ocu.org/consumo-familia/compras-online/noticias/denuncia-falsas-rebajas",
+  "https://www.genbeta.com/paso-a-paso/que-camelcamelcamel-como-usarlo-para-detectar-chollos-amazon",
+  "https://www.eldebate.com/tecnologia/20241004/mejores-aplicaciones-hacer-seguimiento-precios-amazon_232767_amp.html"
+ ],
+ "hechos": [
+  {
+   "dato": "el 89 % de los precios tachados del Black Friday 2025 no eran el precio de referencia legal (OCU, 03/12/2025)",
+   "cita": "El 89% de los precios que aparecen tachados o que acompañan al precio actual",
+   "url": "https://www.ocu.org/consumo-familia/compras-online/noticias/denuncia-falsas-rebajas",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "el precio anterior de una rebaja debe ser el más bajo de los 30 días anteriores",
+   "cita": "debe indicar como precio anterior el precio más bajo aplicado al mismo producto durante los 30 días anteriores a la reducción",
+   "url": "https://www.dsca.gob.es/ca/consumo/preguntas-frecuentes/he-comprado-ordenador-black-friday-tienda-online-pero-segun-me-ha",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "los mensajes de «últimas unidades» buscan presionar",
+   "cita": "Las tiendas online utilizan mensajes del tipo “últimas unidades” para presionar",
+   "url": "https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2023/black-friday-7-consejos-del-cec-espana-para-comprar-de-forma-responsable",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "CamelCamelCamel rastrea los precios de Amazon",
+   "cita": "Camelcamelcamel es un sitio web y una extensión de navegador que rastrea los precios de productos en Amazon",
+   "url": "https://www.genbeta.com/paso-a-paso/que-camelcamelcamel-como-usarlo-para-detectar-chollos-amazon",
+   "leido": "26/11/2026"
+  },
+  {
+   "dato": "Keepa permite ver el historial de precios de Amazon",
+   "cita": "Keepa es una de las aplicaciones más populares para el seguimiento de precios en Amazon",
+   "url": "https://www.eldebate.com/tecnologia/20241004/mejores-aplicaciones-hacer-seguimiento-precios-amazon_232767_amp.html",
+   "leido": "26/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Y si esa rebaja es mentira?",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.44
+   ],
+   "titulo": "¿REBAJA\nO MENTIRA?",
+   "resaltar": [
+    "MENTIRA?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "mentira"
+   ],
+   "elementos": [
+    {
+     "activo": "Label",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.5,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "-50 %",
+     "px": 124,
+     "x": 0.5,
+     "y": 0.575,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "ejemplo": true
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "cruz",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.14,
+     "en": "mentira"
+    }
+   ],
+   "sfx": [
+    [
+     "golpe",
+     "mentira"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "En el último Black Friday, la OCU vio que el 89 % de los precios tachados no cumplían la ley.",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "PRECIOS\nTACHADOS",
+   "resaltar": [
+    "TACHADOS"
+   ],
+   "golpes": [
+    "89"
+   ],
+   "elementos": [
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 89,
+     "formato": "{v} %",
+     "px": 210,
+     "x": 0.5,
+     "y": 0.355,
+     "en": "89",
+     "dur": 1.0,
+     "color": "rojo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "NO CUMPLÍAN LA LEY · OCU",
+     "px": 48,
+     "x": 0.5,
+     "y": 0.43,
+     "en": "ley",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "activo": "Shopping cart",
+     "x": 0.5,
+     "y": 0.54,
+     "tam": 0.3,
+     "en": "Black",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Label",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "tachados",
+     "entrada": "pop",
+     "anim": "vibrar"
+    }
+   ],
+   "sfx": [
+    [
+     "golpe",
+     "89"
+    ],
+    [
+     "error",
+     "ley"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Uno: mira el historial de precios. En Amazon, Keepa o CamelCamelCamel te lo enseñan.",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "izq",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "MIRA EL\nHISTORIAL",
+   "resaltar": [
+    "HISTORIAL"
+   ],
+   "golpes": [
+    "historial"
+   ],
+   "elementos": [
+    {
+     "activo": "Mobile phone",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "Amazon",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "activo": "Chart increasing",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "KEEPA · CAMELCAMELCAMEL",
+     "px": 58,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "Keepa",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "historial"
+    ],
+    [
+     "ding",
+     "Keepa"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Dos: compáralo con su precio de hace un mes. Por ley, el tachado debe ser el más bajo de los últimos 30 días.",
+   "fondo": "estudio",
+   "variante_fondo": 0,
+   "camara": "der",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "COMPARA CON\nHACE UN MES",
+   "resaltar": [
+    "MES"
+   ],
+   "golpes": [
+    "30"
+   ],
+   "elementos": [
+    {
+     "activo": "Spiral calendar",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "30 DÍAS · LO DICE LA LEY",
+     "px": 58,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "30",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "ley"
+    },
+    {
+     "activo": "Magnifying glass tilted left",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "precio",
+     "entrada": "pop",
+     "anim": "balancear"
+    }
+   ],
+   "sfx": [
+    [
+     "tic",
+     "mes"
+    ],
+    [
+     "exito",
+     "ley"
+    ]
+   ]
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Tres: desconfía del «últimas unidades». Es un truco para meterte prisa.",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "bajar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "¿ÚLTIMAS\nUNIDADES?",
+   "resaltar": [
+    "UNIDADES?"
+   ],
+   "golpes": [
+    "prisa"
+   ],
+   "elementos": [
+    {
+     "activo": "Hourglass not done",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.42,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "¡ÚLTIMAS UNIDADES!",
+     "px": 64,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "últimas",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "noche"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "prohibido",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "prisa"
+    }
+   ],
+   "sfx": [
+    [
+     "tic",
+     "últimas"
+    ],
+    [
+     "error",
+     "prisa"
+    ]
+   ]
+  },
+  {
+   "beat": "resultado",
+   "say": "Así pagas el precio de verdad, no uno inflado.",
+   "fondo": "estudio",
+   "variante_fondo": 2,
+   "camara": "alejar",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "PRECIO\nDE VERDAD",
+   "resaltar": [
+    "VERDAD"
+   ],
+   "elementos": [
+    {
+     "activo": "Shopping bags",
+     "x": 0.5,
+     "y": 0.44,
+     "tam": 0.46,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "sello",
+     "simbolo": "check",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "verdad"
+    },
+    {
+     "tipo": "texto",
+     "texto": "PRECIO REAL",
+     "px": 64,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "inflado",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    },
+    {
+     "tipo": "particulas",
+     "clase": "brillos",
+     "x": 0.5,
+     "y": 0.44,
+     "ancho": 0.5,
+     "alto": 0.15,
+     "en": "verdad",
+     "densidad": 8,
+     "vida": 0.9,
+     "tam": 0.04
+    }
+   ],
+   "sfx": [
+    [
+     "exito",
+     "verdad"
+    ]
+   ]
+  },
+  {
+   "beat": "cta",
+   "say": "Guárdalo para tus compras de este finde y compártelo.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "fija",
+   "transicion": "fundido",
+   "foco": [
+    0.5,
+    0.45
+   ],
+   "titulo": "GUÁRDALO\nY COMPÁRTELO",
+   "resaltar": [
+    "GUÁRDALO"
+   ],
+   "elementos": [
+    {
+     "activo": "guardar",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.42,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "Shopping cart",
+     "x": 0.83,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "compras",
+     "entrada": "pop",
+     "anim": "ninguna"
+    },
+    {
+     "tipo": "texto",
+     "texto": "COMPÁRTELO",
+     "px": 64,
+     "x": 0.5,
+     "y": 0.585,
+     "en": "compártelo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "compártelo"
+    ]
+   ]
+  }
+ ]
+}

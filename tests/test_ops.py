@@ -107,6 +107,7 @@ def test_dirigido_no_elige_temas_ni_investiga():
 
 def test_tema_registra_y_da_siguiente_sh():
     e = _dirigido()
+    e["temas"] = {"PRUEBA-5.0": {"texto": "prueba", "estado": "Programado"}}     # claves que no son T-0NN no rompen la numeración
     r = ops.tema(e, "Trucos para que no se arrugue la ropa en la lavadora", ahora=t("22/11/2026 20:00"))
     assert r["tema"] == "T-001" and r["siguiente_sh"] == "SH-033" and r["numero"] == 9
     assert e["temas"]["T-001"]["estado"] == "En producción (chat)" and e["temas"]["T-001"]["origen"] == "Aleksei"

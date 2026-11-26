@@ -81,3 +81,11 @@ def test_guion_avisa_protagonista_pequeno_y_ancla_rota():
     g2 = copy.deepcopy(g)
     g2["escenas"][1]["elementos"].append({"tipo": "particulas", "clase": "gotas", "ancla": "grifo", "x": 0.5, "y": 0.5})
     assert any("ancla" in e for e in guion.validar(g2)["errores"])
+
+
+def test_cifra_de_ejemplo_en_rotulo_no_necesita_cita_pero_en_la_voz_si():
+    g = json.load(open(os.path.join(RAIZ, "guiones_vida", "SH-035", "guion.json"), encoding="utf-8"))
+    g["escenas"][0]["elementos"].append({"tipo": "texto", "texto": "-50 %", "x": 0.5, "y": 0.4, "ejemplo": True})
+    assert not any("cifras sin cita" in e for e in guion.validar(g)["errores"])
+    g["escenas"][0]["elementos"][-1]["ejemplo"] = False
+    assert any("cifras sin cita" in e for e in guion.validar(g)["errores"])

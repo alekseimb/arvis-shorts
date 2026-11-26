@@ -131,7 +131,6 @@ def producir(ruta, out, publicados=()):
     # ARVIS 5.0 · portada: fotograma del gancho con el título entero (Make no puede subir miniaturas: es para Aleksei)
     gancho = sorted(x for x in m.stills if x.startswith("01_gancho")) or sorted(x for x in m.stills if x.startswith("00_"))
     if gancho:
-        import shutil
         shutil.copyfile(os.path.join(out, "stills", gancho[0]), os.path.join(out, "portada.jpg"))
     from arvis_estudio.calidad import plantilla_evaluacion
     ev = plantilla_evaluacion("5.0")   # ARVIS LIFEHACKS 5.0

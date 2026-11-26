@@ -325,7 +325,7 @@ def tema(est, texto, encargar=False, publicar=False, ahora=None):
     """Registra un tema que eligió Aleksei. Devuelve su ID, el SH y Nº que tocan y los temas o títulos parecidos."""
     ahora = ahora or ahora_madrid()
     temas = est.setdefault("temas", {})
-    k = "T-%03d" % (max([int(x[2:]) for x in temas] + [0]) + 1)
+    k = "T-%03d" % (max([int(x[2:]) for x in temas if x[:2] == "T-" and x[2:].isdigit()] + [0]) + 1)
     sh, n = siguiente(est)
     usados = [(x, t.get("texto", "")) for x, t in temas.items()] + [(sh2, s.get("titulo", "")) for sh2, s in est.get("shorts", {}).items()]
     parecidos = sorted(((round(difflib.SequenceMatcher(None, texto.lower(), u.lower()).ratio(), 2), x, u) for x, u in usados if u),
