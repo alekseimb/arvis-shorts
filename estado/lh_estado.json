@@ -169,6 +169,26 @@
    "aprobado_por": "Aleksei en el chat 26/11/2026 20:52 («Sí, súbelo»)",
    "franja": "27/11/2026 12:00",
    "yt": "otcxwOzwtpo"
+  },
+  "SH-036": {
+   "fila": 37,
+   "fase": "5. Vídeo aprobado",
+   "linea": "vida",
+   "tema": "T-001",
+   "categoria": "ahorro",
+   "numero": 11,
+   "enfoque": "sorpresa + consejo práctico",
+   "gancho_tecnica": "pregunta directa con etiqueta de oferta",
+   "idea": "IDEA-030",
+   "titulo": "¿Ese -50 % es mentira? 3 trucos para pillar ofertas falsas en Black Friday",
+   "nota": 85.7,
+   "rubrica": "5.0",
+   "duracion": 33.4,
+   "sha256": "e396a7689599e769",
+   "huella_contenido": "9ecab82fd4f4301e",
+   "huella_motor": "a201feff72fee614",
+   "preparado": "26/11/2026 21:08",
+   "aprobado": false
   }
  },
  "ideas": {
@@ -324,6 +344,19 @@
     "para llenar la bañera hacen falta unos 200 litros de agua, mientras que una ducha de cinco minutos consume unos 50.",
     "Una ducha consume, por término medio, una cuarta parte del agua que requiere un baño",
     "relojes de arena impermeables, que nos permiten saber cuándo han transcurrido 4 ó 5 minutos"
+   ]
+  },
+  "IDEA-030": {
+   "fila": 31,
+   "estado": "En producción",
+   "categoria": "ahorro",
+   "tema": "T-001",
+   "leido": "26/11/2026",
+   "sh": "SH-036",
+   "fuentes": [
+    "https://www.dsca.gob.es/ca/consumo/preguntas-frecuentes/he-comprado-ordenador-black-friday-tienda-online-pero-segun-me-ha",
+    "https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2023/black-friday-7-consejos-del-cec-espana-para-comprar-de-forma-responsable",
+    "https://www.ocu.org/consumo-familia/compras-online/noticias/denuncia-falsas-rebajas"
    ]
   }
  },
@@ -536,7 +569,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 20:54",
+ "actualizado": "26/11/2026 21:04",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -580,6 +613,14 @@
    "estado": "Programado",
    "publicar": false,
    "sh": "SH-035"
+  },
+  "T-001": {
+   "texto": "Cómo saber si una oferta de Black Friday es falsa (gancho «Ese -50 % es mentira» con etiqueta de oferta; 3 trucos: historial de precios con Keepa o CamelCamelCamel, comparar con el precio de hace un m",
+   "fecha": "26/11/2026 20:54",
+   "origen": "Aleksei",
+   "estado": "Preparado",
+   "publicar": false,
+   "sh": "SH-036"
   }
  }
 }
