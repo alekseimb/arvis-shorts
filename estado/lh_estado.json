@@ -126,6 +126,21 @@
    "franja": "26/11/2026 12:00",
    "aprobado_por": "Aleksei en el chat 25/11 21:33 («publica SH-033») pese a CALIDAD 73,8 < 85",
    "yt": "x1wHjUYKVQE"
+  },
+  "SH-034": {
+   "fila": 35,
+   "fase": "4. Revisión",
+   "linea": "vida",
+   "categoria": "cocina",
+   "gancho_tecnica": "pregunta directa",
+   "idea": "IDEA-025",
+   "numero": 10,
+   "franja": "26/11/2026 17:00",
+   "titulo": "¿Tiras comida por la fecha del envase? Caducidad no es lo mismo que consumo preferente",
+   "nota": 70.5,
+   "intentos": 1,
+   "montajes": 3,
+   "debilidades": "26/11 01:47: 3 montajes (QC 22/22), 3 revisiones visuales independientes: 67,0 · 70,5 · 70,5 < 85. Bajan narración/sonido 10,5/15 y originalidad 9/15. Pendiente: pasos 1-2 son definiciones (añadir gesto práctico: mirar la etiqueta), «Congélalo» sin acción (alimento que entra en la nevera), rótulos de 2 líneas en pastillas sueltas (usar 1 línea), iconos tam 0,20-0,25, «CADUCIDAD = SEGURIDAD» anclado a «caducidad», brik del gancho con etiqueta de fecha desde 0 s, subtítulo parte «consumo / preferente»."
   }
  },
  "ideas": {
@@ -318,6 +333,12 @@
    "modos": "A+C",
    "resultado": "Aviso",
    "resumen": "Make OK; reintento SH-033 QC 22/22 pero CALIDAD 73,8 < 85 → Descartado; 4 ideas nuevas; sin subida"
+  },
+  {
+   "fecha": "26/11/2026 02:08",
+   "modos": "A+B+C",
+   "resultado": "Aviso",
+   "resumen": "Make OK; métricas de 8 Shorts; SH-034 QC 22/22 pero CALIDAD 70,5 < 85 tras 3 montajes → 4. Revisión, sin subida"
   }
  ],
  "errores": [
@@ -338,14 +359,19 @@
    "paso": "Producción",
    "error": "SH-033 descartado: CALIDAD 77,0/73,3/73,8 < 85 en el reintento (QC 22/22); franjas 25/11 17:00 y 21:00 vacías",
    "resuelto": false
+  },
+  {
+   "fecha": "26/11/2026 02:08",
+   "paso": "Producción",
+   "error": "SH-034 no subido: CALIDAD 70,5 < 85 tras 3 montajes y 3 revisiones visuales independientes (QC 22/22); franjas 26/11 17:00 y 21:00 vacías",
+   "resuelto": false
   }
  ],
  "pendiente": [
-  "Franjas vacías desde el 22/11 17:00; 17:00 y 21:00 del 25/11 también (SH-033 descartado). La siguiente ejecución (01:47) produce SH-034 (Nº 009) para el 26/11 12:00.",
+  "Franjas vacías: 26/11 17:00 y 21:00 (SH-034 en «4. Revisión», CALIDAD 70,5). La ejecución de las 08:47 reintenta SH-034 una vez (franja 17:00); si no llega a 85, Descartado.",
   "Activar el texto v3.0 en la tarea «ARVIS LIFEHACKS» (Proyecto › lifehacks/tarea_arvis_lifehacks_v3.0.txt): necesita a Aleksei («ARVIS, activa la tarea v3»)",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)",
-  "Calidad estancada en 70–77 con revisión visual independiente (SH-033: 5 revisiones): los criterios que bajan son narración/sonido y originalidad; conviene que Aleksei decida si ajusta el motor (voz, ritmo) o el umbral.",
-  "Mejoras de motor detectadas por el QC visual (no aplicadas): subtítulos que parten cifras y nombres; icono «guardar» parece etiqueta; «hucha» = cerdo; «grafico_baja» rojo se lee como pérdida; «moneda» muestra un banco; tiradores del armario de fondos.dormitorio bajo el título."
+  "Calidad estancada en 67–77 con revisión visual independiente (SH-033: 5 revisiones; SH-034: 3): bajan narración/sonido y originalidad; conviene que Aleksei decida si ajusta el motor (voz, ritmo, acción en pantalla) o el umbral."
  ],
  "reglas": {
   "franjas": [
@@ -366,37 +392,55 @@
  "ultimo_sh": "SH-033",
  "ultimo_numero": 9,
  "metricas": {
-  "fecha": "22/11/2026 01:52",
+  "fecha": "26/11/2026 01:48",
   "videos": {
    "SH-024": {
-    "vistas": 23,
-    "me_gusta": 0
+    "vistas": 32,
+    "me_gusta": 0,
+    "comentarios": 0,
+    "horas": 172.3
    },
    "SH-025": {
-    "vistas": 205,
-    "me_gusta": 0
+    "vistas": 208,
+    "me_gusta": 0,
+    "comentarios": 0,
+    "horas": 150.8
    },
    "SH-026": {
-    "vistas": 218,
-    "me_gusta": 3
+    "vistas": 217,
+    "me_gusta": 3,
+    "comentarios": 0,
+    "horas": 150.8
    },
    "SH-027": {
-    "vistas": 904,
-    "me_gusta": 8
+    "vistas": 927,
+    "me_gusta": 8,
+    "comentarios": 0,
+    "horas": 133.8
    },
    "SH-028": {
-    "vistas": 491,
-    "me_gusta": 6
+    "vistas": 511,
+    "me_gusta": 7,
+    "comentarios": 0,
+    "horas": 128.8
    },
    "SH-030": {
-    "vistas": 1012,
+    "vistas": 1018,
     "me_gusta": 9,
-    "horas": 13.8
+    "horas": 109.8,
+    "comentarios": 0
    },
    "SH-031": {
-    "vistas": 660,
-    "me_gusta": 11,
-    "horas": 8.8
+    "vistas": 992,
+    "me_gusta": 13,
+    "horas": 104.8,
+    "comentarios": 0
+   },
+   "SH-032": {
+    "vistas": 859,
+    "me_gusta": 13,
+    "comentarios": 0,
+    "horas": 85.8
    }
   }
  },
@@ -416,11 +460,11 @@
   ]
  },
  "make": {
-  "ultima_revision": "22/11/2026 15:20",
+  "ultima_revision": "26/11/2026 01:48",
   "estado": "OK",
   "almacen_registros": 35,
   "nota": "scenarios_list: 8260243 y 8260190 activos, válidos, dlq 0. 8260190 no devuelve salidas por MCP: el resultado se lee en el almacén",
-  "ultima_consulta": "22/11/2026 14:53 estados-lh kuePPJV7oa4 public"
+  "ultima_consulta": "26/11/2026 01:48 metricas-lh (8 vídeos, todos public)"
  },
  "filas": {
   "SALUD": {
@@ -440,7 +484,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "25/11/2026 21:33",
+ "actualizado": "26/11/2026 02:08",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -476,8 +520,8 @@
   "¿Pones más de 4 lavadoras a la semana? Sacude el filtro cada semana, según la OCU"
  ],
  "motor": {
-  "huella_probada": "1a04d1911e46e1d4",
-  "pytest": "OK 20 passed in 13.11s",
-  "fecha": "22/11/2026 15:16"
+  "huella_probada": "22c21416bccc6abd",
+  "pytest": "OK 20 passed in 17.62s",
+  "fecha": "26/11/2026 01:49"
  }
 }
