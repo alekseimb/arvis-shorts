@@ -168,7 +168,8 @@
    "preparado": "26/11/2026 20:35",
    "aprobado_por": "Aleksei en el chat 26/11/2026 20:52 («Sí, súbelo»)",
    "franja": "27/11/2026 12:00",
-   "yt": "otcxwOzwtpo"
+   "yt": "otcxwOzwtpo",
+   "huella_motor": "48a6b701dc356896"
   },
   "SH-036": {
    "fila": 37,
@@ -186,7 +187,7 @@
    "duracion": 33.4,
    "sha256": "e396a7689599e769",
    "huella_contenido": "9ecab82fd4f4301e",
-   "huella_motor": "a201feff72fee614",
+   "huella_motor": "48a6b701dc356896",
    "preparado": "26/11/2026 21:08",
    "aprobado": false
   }
