@@ -13,7 +13,7 @@ MARGEN_MIN = 90                                 # minutos mínimos entre el fin 
 MAX_MB_MAKE = 4.6                               # Make Free admite 5 MB por archivo
 CATEGORIA_YT = "28"                             # Ciencia y tecnología
 DURACION = (25.0, 50.0)                         # duración ideal pedida por Aleksei
-VOZ = "sharvard_m"                              # decisión de Aleksei del 18/11/2026 (muestra 2)
+VOZ = "sharvard_f_animada"                     # decisión de Aleksei del 26/11/2026 (opción D, «más divertida»); antes sharvard_m (18/11)
 CREDITO_VOZ = {
     "sharvard_m": "Voz: modelo Piper es_ES «sharvard» (corpus Sharvard, Universidad de Edimburgo, CC BY 3.0).",
     "davefx_natural": "", "davefx_tuto": "", "davefx": "",

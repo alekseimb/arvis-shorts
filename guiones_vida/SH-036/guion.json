@@ -1,5 +1,5 @@
 {
- "voice": "sharvard_m",
+ "voice": "sharvard_f_animada",
  "categoryId": "26",
  "id": "SH-036",
  "numero": 11,
@@ -133,7 +133,7 @@
   },
   {
    "beat": "problema",
-   "say": "En el último Black Friday, la OCU vio que el 89 % de los precios tachados no cumplían la ley.",
+   "say": "¡Ojo! En el último Black Friday, la OCU vio que el 89 % de los precios tachados no cumplían la ley.",
    "fondo": "estudio",
    "variante_fondo": 1,
    "camara": "alejar",
@@ -180,7 +180,7 @@
      "x": 0.5,
      "y": 0.54,
      "tam": 0.3,
-     "en": "Black",
+     "en": 0.0,
      "entrada": "pop",
      "anim": "ninguna"
     },
@@ -192,6 +192,15 @@
      "en": "tachados",
      "entrada": "pop",
      "anim": "vibrar"
+    },
+    {
+     "activo": "Warning",
+     "x": 0.17,
+     "y": 0.33,
+     "tam": 0.13,
+     "en": "Black",
+     "entrada": "pop",
+     "anim": "latir"
     }
    ],
    "sfx": [
@@ -342,7 +351,7 @@
   {
    "beat": "tutorial",
    "paso": 3,
-   "say": "Tres: desconfía del «últimas unidades». Es un truco para meterte prisa.",
+   "say": "Tres: desconfía del «últimas unidades». ¡Es un truco para meterte prisa!",
    "fondo": "salon",
    "variante_fondo": 2,
    "camara": "bajar",
@@ -373,7 +382,7 @@
      "texto": "¡ÚLTIMAS UNIDADES!",
      "px": 64,
      "x": 0.5,
-     "y": 0.585,
+     "y": 0.575,
      "en": "últimas",
      "entrada": "pop",
      "anim": "ninguna",
@@ -403,7 +412,7 @@
   },
   {
    "beat": "resultado",
-   "say": "Así pagas el precio de verdad, no uno inflado.",
+   "say": "¡Así pagas el precio de verdad, no uno inflado!",
    "fondo": "estudio",
    "variante_fondo": 2,
    "camara": "alejar",
@@ -469,7 +478,7 @@
   },
   {
    "beat": "cta",
-   "say": "Guárdalo para tus compras de este finde y compártelo.",
+   "say": "¡Guárdalo para tus compras de este finde y compártelo!",
    "fondo": "salon",
    "variante_fondo": 0,
    "camara": "fija",

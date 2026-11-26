@@ -16,7 +16,7 @@ Modelo completo y probado: `guiones_vida/SH-027/guion.json` (QC 22/22, retenció
 
 ## Campos de primer nivel
 `id` (SH-0NN) · `numero` (Nº de la serie lifehacks) · `idea` (IDEA-0NN) · `categoria` (cocina · limpieza · ahorro · organizacion · ropa · reparaciones · cotidiano · errores) ·
-`gancho_tecnica` · `variante` (0–2: cambia la paleta de los escenarios; alterna entre vídeos) · `voice` (la de CONFIG_YOUTUBE › Voz; opciones «más divertidas» en arvis_lifehacks/voz.py › PRESETS, pendientes de que Aleksei elija; «voz» en una escena = otra voz para esa escena, p. ej. un dúo; usa también «¡…!» y alguna interjección como «¡Ojo!» para dar vida a la voz) · `musica` ({"semilla": 0–2, "nivel_db": -19}) ·
+`gancho_tecnica` · `variante` (0–2: cambia la paleta de los escenarios; alterna entre vídeos) · `voice` ("sharvard_f_animada" desde el 26/11/2026: voz de chica animada, opción D elegida por Aleksei; otras en arvis_lifehacks/voz.py › PRESETS; «voz» en una escena = otra voz para esa escena, p. ej. un dúo; usa también «¡…!» y alguna interjección como «¡Ojo!» para dar vida a la voz) · `musica` ({"semilla": 0–2, "nivel_db": -19}) ·
 `title` (≤ 100 caracteres, en pregunta, concreto, sin engañar) · `description` · `hashtags` · `tags` · `categoryId` ("26") ·
 `sources` (URLs oficiales o primarias, ver `guion.DOMINIOS_FIABLES`) · `hechos` ([{dato, cita LITERAL, url, leido: dd/mm/aaaa}]).
 **Cada cifra que se diga o se escriba en pantalla tiene que aparecer en alguna `cita`** (si no, el guion se rechaza).
