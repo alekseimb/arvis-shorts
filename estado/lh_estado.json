@@ -173,7 +173,7 @@
   },
   "SH-036": {
    "fila": 37,
-   "fase": "5. Vídeo aprobado",
+   "fase": "10. Publicado",
    "linea": "vida",
    "tema": "T-001",
    "categoria": "ahorro",
@@ -189,8 +189,13 @@
    "huella_contenido": "48921025bce545e1",
    "huella_motor": "9cf26abe55825e4b",
    "preparado": "26/11/2026 21:40",
-   "aprobado": false,
-   "voz": "sharvard_f_animada"
+   "aprobado": true,
+   "voz": "sharvard_f_animada",
+   "aprobado_por": "Aleksei en el chat 26/11/2026 21:37 («Súbelo ahora público»)",
+   "franja": "26/11/2026 21:38",
+   "publicar_ya": true,
+   "yt": "6MKhH_lbElA",
+   "publicado": "26/11/2026"
   }
  },
  "ideas": {
@@ -350,7 +355,7 @@
   },
   "IDEA-030": {
    "fila": 31,
-   "estado": "En producción",
+   "estado": "Publicada",
    "categoria": "ahorro",
    "tema": "T-001",
    "leido": "26/11/2026",
@@ -476,8 +481,8 @@
    35
   ]
  },
- "ultimo_sh": "SH-035",
- "ultimo_numero": 10,
+ "ultimo_sh": "SH-036",
+ "ultimo_numero": 11,
  "metricas": {
   "fecha": "26/11/2026 01:48",
   "videos": {
@@ -571,7 +576,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 21:33",
+ "actualizado": "26/11/2026 21:38",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -620,7 +625,7 @@
    "texto": "Cómo saber si una oferta de Black Friday es falsa (gancho «Ese -50 % es mentira» con etiqueta de oferta; 3 trucos: historial de precios con Keepa o CamelCamelCamel, comparar con el precio de hace un m",
    "fecha": "26/11/2026 20:54",
    "origen": "Aleksei",
-   "estado": "Preparado",
+   "estado": "Publicada",
    "publicar": false,
    "sh": "SH-036"
   }
