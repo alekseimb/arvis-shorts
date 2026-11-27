@@ -441,12 +441,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "22/11/2026 15:16",
-   "modos": "A (orden ARVIS 3.1)",
-   "resultado": "Aviso",
-   "resumen": "SH-032 público confirmado; sin producción (texto de la tarea = orden de optimización); código ARVIS 3.1 en vida; v3.0 sin activar"
-  },
-  {
    "fecha": "23/11/2026 01:50",
    "modos": "auditoria",
    "resultado": "sin produccion",
@@ -493,6 +487,12 @@
    "modos": "chat · ARVIS 5.0",
    "resultado": "OK",
    "resumen": "ARVIS LIFEHACKS 5.0 implantado (motor 2.0, tarea v5.0, rúbrica 5.0); SH-035 prueba 85,0 preparado sin subir"
+  },
+  {
+   "fecha": "27/11/2026 01:50",
+   "modos": "A+B",
+   "resultado": "OK",
+   "resumen": "Supervisión OK (3 programados hoy, Make OK, almacén 36); métricas de 10 vídeos; ahorro ×1,1"
   }
  ],
  "errores": [
@@ -529,7 +529,7 @@
  ],
  "pendiente": [
   "ARVIS 5.0 (26/11): la tarea ya no elige temas. Producción solo de temas de Aleksei («ARVIS, nuevo Short» en el chat).",
-  "SH-035 (grifo, prueba 5.0, CALIDAD 85,0) preparado en «5. Vídeo aprobado»: espera el sí de Aleksei («ARVIS, publica SH-035»).",
+  "27/11: SH-035 12:00, SH-037 17:00 y SH-038 21:00 programados (privados con ID); comprobar público tras cada franja.",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -556,55 +556,67 @@
  "ultimo_sh": "SH-038",
  "ultimo_numero": 13,
  "metricas": {
-  "fecha": "26/11/2026 01:48",
+  "fecha": "27/11/2026 01:48",
   "videos": {
    "SH-024": {
-    "vistas": 32,
+    "vistas": 33,
     "me_gusta": 0,
     "comentarios": 0,
-    "horas": 172.3
+    "horas": 196.3
    },
    "SH-025": {
     "vistas": 208,
     "me_gusta": 0,
     "comentarios": 0,
-    "horas": 150.8
+    "horas": 174.8
    },
    "SH-026": {
     "vistas": 217,
     "me_gusta": 3,
     "comentarios": 0,
-    "horas": 150.8
+    "horas": 174.8
    },
    "SH-027": {
-    "vistas": 927,
+    "vistas": 928,
     "me_gusta": 8,
     "comentarios": 0,
-    "horas": 133.8
+    "horas": 157.8
    },
    "SH-028": {
-    "vistas": 511,
+    "vistas": 513,
     "me_gusta": 7,
     "comentarios": 0,
-    "horas": 128.8
+    "horas": 152.8
    },
    "SH-030": {
-    "vistas": 1018,
+    "vistas": 1019,
     "me_gusta": 9,
-    "horas": 109.8,
+    "horas": 133.8,
     "comentarios": 0
    },
    "SH-031": {
-    "vistas": 992,
+    "vistas": 997,
     "me_gusta": 13,
-    "horas": 104.8,
+    "horas": 128.8,
     "comentarios": 0
    },
    "SH-032": {
-    "vistas": 859,
+    "vistas": 862,
     "me_gusta": 13,
     "comentarios": 0,
-    "horas": 85.8
+    "horas": 109.8
+   },
+   "SH-033": {
+    "vistas": 375,
+    "me_gusta": 4,
+    "comentarios": 0,
+    "horas": 20.6
+   },
+   "SH-036": {
+    "vistas": 255,
+    "me_gusta": 5,
+    "comentarios": 0,
+    "horas": 4.2
    }
   }
  },
@@ -617,18 +629,20 @@
    "originalidad": 10,
    "conversacion": 10
   },
-  "multiplicador_categoria": {},
+  "multiplicador_categoria": {
+   "ahorro": 1.1
+  },
   "duracion_recomendada": [
-   25,
+   30,
    40
   ]
  },
  "make": {
-  "ultima_revision": "26/11/2026 01:48",
+  "ultima_revision": "27/11/2026 01:49",
   "estado": "OK",
-  "almacen_registros": 35,
+  "almacen_registros": 36,
   "nota": "scenarios_list: 8260243 y 8260190 activos, válidos, dlq 0. 8260190 no devuelve salidas por MCP: el resultado se lee en el almacén",
-  "ultima_consulta": "26/11/2026 01:48 metricas-lh (8 vídeos, todos public)"
+  "ultima_consulta": "27/11/2026 01:48 metricas-lh (10 vídeos, todos public)"
  },
  "filas": {
   "SALUD": {
@@ -648,7 +662,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "26/11/2026 22:19",
+ "actualizado": "27/11/2026 01:50",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
