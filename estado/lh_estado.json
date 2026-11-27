@@ -147,7 +147,7 @@
   },
   "SH-035": {
    "fila": 36,
-   "fase": "9. Programado",
+   "fase": "10. Publicado",
    "linea": "vida",
    "categoria": "errores",
    "gancho_tecnica": "doble pregunta con curiosidad",
@@ -169,7 +169,8 @@
    "aprobado_por": "Aleksei en el chat 26/11/2026 20:52 («Sí, súbelo»)",
    "franja": "27/11/2026 12:00",
    "yt": "otcxwOzwtpo",
-   "huella_motor": "48a6b701dc356896"
+   "huella_motor": "48a6b701dc356896",
+   "publicado": "27/11/2026"
   },
   "SH-036": {
    "fila": 37,
@@ -441,12 +442,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "23/11/2026 08:49",
-   "modos": "A (orden ARVIS 3.1)",
-   "resultado": "sin produccion",
-   "resumen": "23/11 08:47: la tarea sigue con el texto ARVIS 3.1 (list_triggers: activa, próxima 14:47). Auditoría no repetida (código sin cambios desde de54d20). ops plan OK (0,05 s); Sheets SHORTS A/U24:37 leído sin cambios (último SH-032 publicado); sin vencidos: Make no consultado (regla Modo A). Sin Short ni"
-  },
-  {
    "fecha": "25/11/2026 09:15",
    "modos": "A+C (orden ARVIS 3.1, procedimiento v3.0)",
    "resultado": "Aviso",
@@ -493,6 +488,12 @@
    "modos": "A",
    "resultado": "OK",
    "resumen": "08:47 supervisión: SH-035 12:00, SH-037 17:00 y SH-038 21:00 programados; nada vencido; sin temas de Aleksei"
+  },
+  {
+   "fecha": "27/11/2026 14:52",
+   "modos": "A",
+   "resultado": "OK",
+   "resumen": "14:47 supervisión: SH-035 público (API); SH-037 17:00 y SH-038 21:00 programados; Make falló 1 vez por conexión temporal, reintento OK"
   }
  ],
  "errores": [
@@ -529,7 +530,8 @@
  ],
  "pendiente": [
   "ARVIS 5.0 (26/11): la tarea ya no elige temas. Producción solo de temas de Aleksei («ARVIS, nuevo Short» en el chat).",
-  "27/11: SH-035 12:00, SH-037 17:00 y SH-038 21:00 programados (privados con ID); comprobar público tras cada franja.",
+  "27/11: SH-035 público (API, 14:51). SH-037 17:00 y SH-038 21:00 programados (privados con ID); comprobar público tras cada franja.",
+  "27/11 14:47: 1.ª consulta 8260190 falló (conexión ARVIS YouTube temporalmente no disponible); el reintento a los 2 min fue OK.",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -662,7 +664,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "27/11/2026 08:48",
+ "actualizado": "27/11/2026 14:52",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
