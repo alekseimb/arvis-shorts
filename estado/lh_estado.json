@@ -441,12 +441,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "23/11/2026 01:50",
-   "modos": "auditoria",
-   "resultado": "sin produccion",
-   "resumen": "23/11 01:47: la tarea sigue con el texto ARVIS 3.1. Auditoria no repetida (codigo sin cambios desde de54d20); comprobados plan, entorno (pytest omitido por huella, 20 s), Make 8260243/8260190 activos dlq 0, Sheets lectura. Sin Short ni metricas."
-  },
-  {
    "fecha": "23/11/2026 08:49",
    "modos": "A (orden ARVIS 3.1)",
    "resultado": "sin produccion",
@@ -493,6 +487,12 @@
    "modos": "A+B",
    "resultado": "OK",
    "resumen": "Supervisión OK (3 programados hoy, Make OK, almacén 36); métricas de 10 vídeos; ahorro ×1,1"
+  },
+  {
+   "fecha": "27/11/2026 08:48",
+   "modos": "A",
+   "resultado": "OK",
+   "resumen": "08:47 supervisión: SH-035 12:00, SH-037 17:00 y SH-038 21:00 programados; nada vencido; sin temas de Aleksei"
   }
  ],
  "errores": [
@@ -662,7 +662,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "27/11/2026 01:50",
+ "actualizado": "27/11/2026 08:48",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
