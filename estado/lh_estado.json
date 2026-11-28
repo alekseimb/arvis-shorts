@@ -444,12 +444,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "25/11/2026 15:17",
-   "modos": "A+C",
-   "resultado": "Aviso",
-   "resumen": "Make OK; reintento SH-033 QC 22/22 pero CALIDAD 73,8 < 85 → Descartado; 4 ideas nuevas; sin subida"
-  },
-  {
    "fecha": "26/11/2026 02:08",
    "modos": "A+B+C",
    "resultado": "Aviso",
@@ -496,6 +490,12 @@
    "modos": "A+B",
    "resultado": "OK",
    "resumen": "01:47: SH-037 y SH-038 públicos (API); métricas de 13 vídeos; Make OK (40 registros); pesos ahorro 1,1→1,0; sin temas de Aleksei"
+  },
+  {
+   "fecha": "28/11/2026 07:34",
+   "modos": "A",
+   "resultado": "OK",
+   "resumen": "08:47 (07:34): supervisión sin vencidos ni colgados; sin temas de Aleksei ni Shorts aprobados"
   }
  ],
  "errores": [
@@ -684,7 +684,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "28/11/2026 01:50",
+ "actualizado": "28/11/2026 07:34",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
