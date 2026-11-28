@@ -46,6 +46,16 @@ def decodifica(f):
     return r.returncode == 0 and not r.stderr.strip(), r.stderr.strip()[:300]
 
 
+def duracion_objetivo(g):
+    """[mín, máx] en segundos: 20–35 por defecto (ARVIS 5.0). Solo un tema encargado por Aleksei con otra duración pedida
+    lleva «duracion_objetivo» en el guion (p. ej. [45, 60] en SH-039); se acota a 15–60 s (límite de un Short)."""
+    d = g.get("duracion_objetivo")
+    if isinstance(d, (list, tuple)) and len(d) == 2 and g.get("tema"):
+        a, b = sorted(float(x) for x in d)
+        return max(15.0, a), min(60.0, b)
+    return 20.0, 35.0
+
+
 def comprobar(g, info, motor, salida, titulos_publicados=()):
     checks = []
 
@@ -64,7 +74,8 @@ def comprobar(g, info, motor, salida, titulos_publicados=()):
     add("Formato vertical 1080×1920 H.264 30 fps", v.get("width") == 1080 and v.get("height") == 1920 and v.get("codec_name") == "h264"
         and abs(fps - 30) < 0.01 and v.get("pix_fmt") == "yuv420p", "%sx%s %s %.2f fps %s" % (v.get("width"), v.get("height"), v.get("codec_name"), fps, v.get("pix_fmt")))
     dur = float(pr.get("format", {}).get("duration", 0))
-    add("Duración 20–35 s", 20 <= dur <= 35.5, "%.1f s" % dur)   # ARVIS 5.0: 20–35 s
+    dmin, dmax = duracion_objetivo(g)   # ARVIS 5.0: 20–35 s; un tema de Aleksei puede pedir otra («duracion_objetivo» en el guion)
+    add("Duración %g–%g s" % (dmin, dmax), dmin <= dur <= dmax + 0.5, "%.1f s" % dur)
     mb = os.path.getsize(mk) / 1048576
     add("Tamaño ≤ %.1f MB (Make Free)" % MAX_MB, mb <= MAX_MB, "%.2f MB" % mb)
     lufs, pico = sonoridad(mk)

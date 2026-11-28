@@ -352,7 +352,11 @@ class Elemento:
             de, a = float(self.s.get("desde", 0)), float(self.s.get("hasta", 100))
             v = de + (a - de) * ease_out_cubic(u / float(self.s.get("dur", 1.2)))
             dec = int(self.s.get("decimales", 0))
-            txt = self.s.get("formato", "{v}").replace("{v}", ("%." + str(dec) + "f") % v if dec else str(int(round(v))))
+            if self.s.get("miles"):   # formato español: 93.145 · 10,63 (punto de miles y coma decimal)
+                num = ("{:,.%df}" % dec).format(v).replace(",", "§").replace(".", ",").replace("§", ".")
+            else:
+                num = ("%." + str(dec) + "f") % v if dec else str(int(round(v)))
+            txt = self.s.get("formato", "{v}").replace("{v}", num)
             k = (txt, int(self.s.get("px", 220)))
             if k not in self._cache:
                 self._cache[k] = texto.cifra_sprite(txt, k[1], self.s.get("color", "aviso"))

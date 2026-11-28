@@ -278,8 +278,128 @@ def hucha(simbolo="€"):
             "clave": "hucha ahorro ahorrar ahorras dinero moneda euros"}
 
 
+# ----------------------------------------------------------------------------- bandera (mástil + tela ondeada; SVG propio)
+# Banderas simplificadas, sin escudos. La tela ondea: cada punto (u, v) de la bandera plana (0–1 × 0–1) va a
+# x = 44 + 450·u, y = onda(u) + 300·v (bezier con los puntos de control en x equidistantes → x lineal en t).
+_BX, _BY, _BW, _BH = 44, 40, 450, 300
+
+
+def _onda(u):
+    t = u
+    return (1 - t) ** 3 * 40 + 3 * (1 - t) ** 2 * t * 10 + 3 * (1 - t) * t ** 2 * 72 + t ** 3 * 40
+
+
+def _P(u, v):
+    return _BX + _BW * u, _onda(u) + _BH * v
+
+
+def _poli(puntos, color, n=14):
+    """Polígono en coordenadas de la bandera plana (u, v), con los lados subdivididos para que sigan la onda."""
+    pts = []
+    for (u0, v0), (u1, v1) in zip(puntos, puntos[1:] + puntos[:1]):
+        for k in range(n):
+            f = k / n
+            pts.append(_P(u0 + (u1 - u0) * f, v0 + (v1 - v0) * f))
+    return '<path d="M%s Z" fill="%s"/>' % (" L".join("%.1f %.1f" % p for p in pts), color)
+
+
+def _rect(u0, v0, u1, v1, color):
+    return _poli([(u0, v0), (u1, v0), (u1, v1), (u0, v1)], color)
+
+
+def _estrella(cx, cy, r, color, ang=-90.0):
+    import math
+    pts = []
+    for k in range(10):
+        a = math.radians(ang + k * 36)
+        rr = r if k % 2 == 0 else r * 0.382
+        pts.append("%.1f %.1f" % (cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return '<path d="M%s Z" fill="%s"/>' % (" L".join(pts), color)
+
+
+def _banda(p0, p1, semiancho, color):
+    """Banda recta entre dos puntos de la bandera plana en píxeles (0–450 × 0–300), con su semiancho en píxeles."""
+    import math
+    (x0, y0), (x1, y1) = p0, p1
+    L = math.hypot(x1 - x0, y1 - y0)
+    nx, ny = -(y1 - y0) / L * semiancho, (x1 - x0) / L * semiancho
+    esquinas = [(x0 + nx, y0 + ny), (x1 + nx, y1 + ny), (x1 - nx, y1 - ny), (x0 - nx, y0 - ny)]
+    return _poli([(x / _BW, y / _BH) for x, y in esquinas], color, n=24)
+
+
+def _tela(pais):
+    import math
+    R, B, W_ = "#c8102e", "#0a3a8c", "#ffffff"
+    if pais == "es":
+        return _rect(0, 0, 1, .25, "#c60b1e") + _rect(0, .25, 1, .75, "#ffc400") + _rect(0, .75, 1, 1, "#c60b1e")
+    if pais == "de":
+        return _rect(0, 0, 1, 1 / 3, "#1b1b1b") + _rect(0, 1 / 3, 1, 2 / 3, "#dd0000") + _rect(0, 2 / 3, 1, 1, "#ffce00")
+    if pais == "ru":
+        return _rect(0, 0, 1, 1 / 3, W_) + _rect(0, 1 / 3, 1, 2 / 3, "#0039a6") + _rect(0, 2 / 3, 1, 1, "#d52b1e")
+    if pais == "ua":
+        return _rect(0, 0, 1, .5, "#0057b7") + _rect(0, .5, 1, 1, "#ffd700")
+    if pais == "fr":
+        return _rect(0, 0, 1 / 3, 1, "#002395") + _rect(1 / 3, 0, 2 / 3, 1, W_) + _rect(2 / 3, 0, 1, 1, "#ed2939")
+    if pais == "it":
+        return _rect(0, 0, 1 / 3, 1, "#009246") + _rect(1 / 3, 0, 2 / 3, 1, W_) + _rect(2 / 3, 0, 1, 1, "#ce2b37")
+    if pais == "cn":   # cuadrícula oficial 30 × 20 (1 unidad = 15 px)
+        s = _rect(0, 0, 1, 1, "#de2910")
+        x, y = _P(5 / 30, 5 / 20)
+        s += _estrella(x, y, 45, "#ffde00")
+        for cx, cy in ((10, 2), (12, 4), (12, 7), (10, 9)):
+            x, y = _P(cx / 30, cy / 20)
+            s += _estrella(x, y, 15, "#ffde00", math.degrees(math.atan2(5 - cy, 5 - cx)))
+        return s
+    if pais == "us":
+        s = "".join(_rect(0, k / 13, 1, (k + 1) / 13, "#b22234" if k % 2 == 0 else W_) for k in range(13))
+        s += _rect(0, 0, 0.4, 7 / 13, "#3c3b6e")
+        G, E = 0.4 * _BW / 12, (7 / 13) * _BH / 10
+        for i in range(9):
+            for j in range(6 if i % 2 == 0 else 5):
+                x = G * (1 + 2 * j) if i % 2 == 0 else G * (2 + 2 * j)
+                px, py = _P(x / _BW, E * (1 + i) / _BH)
+                s += _estrella(px, py, 7.5, W_)
+        return s
+    if pais == "gb":   # simplificada: aspas rojas centradas
+        s = _rect(0, 0, 1, 1, "#012169")
+        for p0, p1 in (((0, 0), (_BW, _BH)), ((0, _BH), (_BW, 0))):
+            s += _banda(p0, p1, 30, W_) + _banda(p0, p1, 10, R)
+        s += _rect(0, 1 / 3, 1, 2 / 3, W_) + _rect(0.5 - 50 / _BW, 0, 0.5 + 50 / _BW, 1, W_)
+        s += _rect(0, 0.4, 1, 0.6, R) + _rect(0.5 - 30 / _BW, 0, 0.5 + 30 / _BW, 1, R)
+        return s
+    return _rect(0, 0, 1, 1, B)
+
+
+BANDERAS = {"es": "bandera españa española español sánchez pedro presidente gobierno",
+            "us": "bandera estados unidos eeuu americano trump donald presidente dólares",
+            "fr": "bandera francia francés macron emmanuel presidente república",
+            "de": "bandera alemania alemán merz friedrich canciller",
+            "gb": "bandera reino unido británico burnham starmer primer ministro libras",
+            "it": "bandera italia italiana meloni giorgia primera ministra",
+            "ru": "bandera rusia ruso putin vladímir presidente",
+            "ua": "bandera ucrania ucraniano zelenski volodímir presidente",
+            "cn": "bandera china chino xi jinping presidente"}
+
+
+def bandera(pais="es"):
+    """Bandera de país (es, us, fr, de, gb, it, ru, ua, cn) en un mástil, con la tela ondeada y pliegues suaves."""
+    W, H = 520, 420
+    contorno = ("M44 40 C194 10 344 72 494 40 L494 340 C344 372 194 310 44 340 Z")
+    d = ('<clipPath id="bt"><path d="%s"/></clipPath>' % contorno
+         + _grad("bm", [(0, "#eef1f6"), (0.5, "#b8c0cc"), (1, "#8d96a5")], vertical=False)
+         + _grad("bp", [(0, "#ffffff"), (0.18, "#000000"), (0.36, "#ffffff"), (0.55, "#000000"), (0.75, "#ffffff"), (1, "#000000")],
+                 vertical=False))
+    mastil = ('<rect x="22" y="16" width="18" height="392" rx="9" fill="url(#bm)"/>'
+              '<circle cx="31" cy="16" r="15" fill="#f2c14e"/><circle cx="26" cy="11" r="5" fill="#fff6d8" opacity="0.8"/>')
+    tela = ('<g clip-path="url(#bt)">' + _tela(pais)
+            + '<rect x="40" y="0" width="460" height="380" fill="url(#bp)" opacity="0.10"/></g>')
+    base = _sombra(40, 410, 60, 9) + mastil + tela
+    return {"w": W, "h": H, "capas": [{"id": "base", "svg": _svg(W, H, base, d)}],
+            "clave": BANDERAS.get(pais, "bandera país")}
+
+
 PROPS = {"lavadora": lavadora, "nevera": nevera, "microondas": microondas, "horno": horno, "placa": placa, "olla": olla,
-         "termometro": termometro, "dial": dial, "grifo": grifo, "enchufe": enchufe, "hucha": hucha}
+         "termometro": termometro, "dial": dial, "grifo": grifo, "enchufe": enchufe, "hucha": hucha, "bandera": bandera}
 
 
 def crear(nombre, estado=None):
