@@ -444,12 +444,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "26/11/2026 02:08",
-   "modos": "A+B+C",
-   "resultado": "Aviso",
-   "resumen": "Make OK; métricas de 8 Shorts; SH-034 QC 22/22 pero CALIDAD 70,5 < 85 tras 3 montajes → 4. Revisión, sin subida"
-  },
-  {
    "fecha": "26/11/2026 09:10",
    "modos": "A+C",
    "resultado": "Aviso",
@@ -496,6 +490,12 @@
    "modos": "A",
    "resultado": "OK",
    "resumen": "08:47 (07:34): supervisión sin vencidos ni colgados; sin temas de Aleksei ni Shorts aprobados"
+  },
+  {
+   "fecha": "28/11/2026 08:48",
+   "modos": "A",
+   "resultado": "OK",
+   "resumen": "08:47: supervisión sin vencidos ni colgados; sin temas de Aleksei ni Shorts aprobados; temas T-002/T-003/PRUEBA-5.0 → Publicada"
   }
  ],
  "errores": [
@@ -684,7 +684,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "28/11/2026 07:34",
+ "actualizado": "28/11/2026 08:48",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -726,7 +726,7 @@
    "texto": "Prueba del sistema 5.0 con el tema ya investigado del grifo que gotea (IDEA-026)",
    "fecha": "26/11/2026 20:35",
    "origen": "ARVIS (prueba, no elegido por Aleksei)",
-   "estado": "Programado",
+   "estado": "Publicada",
    "publicar": false,
    "sh": "SH-035"
   },
@@ -742,7 +742,7 @@
    "texto": "El error invisible que hace que la gente abandone tus vídeos en los primeros 3 segundos",
    "fecha": "26/11/2026 21:41",
    "origen": "Aleksei",
-   "estado": "Programado",
+   "estado": "Publicada",
    "publicar": false,
    "sh": "SH-037"
   },
@@ -750,7 +750,7 @@
    "texto": "Por qué mirar el móvil nada más despertarte arruina tu concentración durante todo el día",
    "fecha": "26/11/2026 22:01",
    "origen": "Aleksei",
-   "estado": "Programado",
+   "estado": "Publicada",
    "publicar": false,
    "sh": "SH-038"
   }
