@@ -245,6 +245,23 @@
    "franja": "27/11/2026 21:00",
    "yt": "sP8njhIVog0",
    "publico": "28/11/2026 01:49 (API: public)"
+  },
+  "SH-039": {
+   "fase": "4. Revisión",
+   "fila": 40,
+   "tema": "T-004",
+   "numero": 14,
+   "titulo": "¿Cuánto ganan los presidentes por segundo? Sánchez, Trump, Macron, Merz y más",
+   "nota": 68.5,
+   "categoria": "cotidiano",
+   "sha256": "f27b4b39a75cd1e674e531ee725f0cd8531ce984db0e51d661ec56f4194fa038",
+   "huella_contenido": "1c6dece02528ae18",
+   "huella_motor": "bbea4353fd49bd74",
+   "intentos": 2,
+   "aprobado": false,
+   "preparado": "28/11/2026 09:00",
+   "debilidades": "cifra por segundo pequeña bajo el contador anual; gancho sin cifra hasta 12 s; seis escenas de país con la misma plantilla; banderas de RU/UA/CN pequeñas",
+   "nota_estado": "No llega a 85 tras 4 montajes: espera la decisión de Aleksei en el chat (no reintentar sola). No publicar antes de las elecciones del 29/11."
   }
  },
  "ideas": {
@@ -440,15 +457,16 @@
     "https://www.ovid.com/journals/jephp/pdf/10.1037/xhp0000100~the-attentional-cost-of-receiving-a-cell-phone-notification",
     "https://support.apple.com/es-lamr/105112"
    ]
+  },
+  "T-004": {
+   "fila": 34,
+   "estado": "En producción",
+   "categoria": "cotidiano",
+   "tema": "T-004",
+   "leido": "28/11/2026"
   }
  },
  "ejecuciones": [
-  {
-   "fecha": "26/11/2026 09:10",
-   "modos": "A+C",
-   "resultado": "Aviso",
-   "resumen": "Supervisión OK; reintento SH-034 QC 22/22 pero CALIDAD 72,0/71,5/70,5 < 85 → Descartado; sin subida"
-  },
   {
    "fecha": "26/11/2026 15:09",
    "modos": "A+C",
@@ -496,6 +514,12 @@
    "modos": "A",
    "resultado": "OK",
    "resumen": "08:47: supervisión sin vencidos ni colgados; sin temas de Aleksei ni Shorts aprobados; temas T-002/T-003/PRUEBA-5.0 → Publicada"
+  },
+  {
+   "fecha": "28/11/2026 09:01",
+   "modos": "C (chat)",
+   "resultado": "Aviso",
+   "resumen": "Chat 28/11: tema T-004 → SH-039 (56,6 s, QC 22/22) con CALIDAD 68,5 < 85: no subido, espera decisión de Aleksei"
   }
  ],
  "errores": [
@@ -684,7 +708,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "28/11/2026 08:48",
+ "actualizado": "28/11/2026 09:01",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -753,6 +777,14 @@
    "estado": "Publicada",
    "publicar": false,
    "sh": "SH-038"
+  },
+  "T-004": {
+   "texto": "Cuánto ganan los presidentes por segundo, minuto, hora, día, semana, mes y año (España, EE. UU., Francia, Alemania, Reino Unido, Italia, Rusia, Ucrania, China) · 45-60 s · comparación Sánchez-Trump · pregunta final",
+   "fecha": "28/11/2026 07:40",
+   "origen": "Aleksei",
+   "estado": "En revisión (SH-039, 68,5)",
+   "publicar": false,
+   "sh": "SH-039"
   }
  },
  "voz": "sharvard_f_animada"
