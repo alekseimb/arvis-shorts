@@ -471,12 +471,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "26/11/2026 20:47",
-   "modos": "chat · ARVIS 5.0",
-   "resultado": "OK",
-   "resumen": "ARVIS LIFEHACKS 5.0 implantado (motor 2.0, tarea v5.0, rúbrica 5.0); SH-035 prueba 85,0 preparado sin subir"
-  },
-  {
    "fecha": "27/11/2026 01:50",
    "modos": "A+B",
    "resultado": "OK",
@@ -523,6 +517,12 @@
    "modos": "C7 (chat)",
    "resultado": "OK",
    "resumen": "Chat 28/11 09:10: SH-039 aprobado por Aleksei → subido privado, programado 30/11 12:00 (OoXpM2RRK_A)"
+  },
+  {
+   "fecha": "28/11/2026 14:49",
+   "modos": "A",
+   "resultado": "OK",
+   "resumen": "14:47: supervisión sin vencidos ni colgados; SH-039 programado 30/11 12:00; sin temas de Aleksei"
   }
  ],
  "errores": [
@@ -559,7 +559,7 @@
  ],
  "pendiente": [
   "ARVIS 5.0 (26/11): la tarea ya no elige temas. Producción solo de temas de Aleksei («ARVIS, nuevo Short» en el chat).",
-  "28/11 01:47: SH-037 y SH-038 públicos (API). Sin Shorts programados ni temas de Aleksei en cola.",
+  "28/11: SH-039 aprobado por Aleksei, programado 30/11/2026 12:00 (comprobar público en la ejecución posterior). Sin temas de Aleksei en cola.",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -711,7 +711,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "28/11/2026 09:07",
+ "actualizado": "28/11/2026 14:49",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
