@@ -1,0 +1,1221 @@
+{
+ "voice": "sharvard_f_animada",
+ "categoryId": "26",
+ "id": "SH-039",
+ "numero": 14,
+ "tema": "T-004",
+ "categoria": "cotidiano",
+ "enfoque": "comparación (de menos a más, con duelo Sánchez–Trump)",
+ "gancho_tecnica": "pregunta directa con contraste (tú trabajas / él cobra)",
+ "variante": 1,
+ "duracion_objetivo": [
+  45,
+  60
+ ],
+ "musica": {
+  "semilla": 2,
+  "nivel_db": -18
+ },
+ "title": "¿Cuánto ganan los presidentes por segundo? Sánchez, Trump, Macron, Merz y más",
+ "description": "¿Cuánto gana cada líder mientras tú trabajas? Cogemos su sueldo bruto oficial y lo dividimos entre los 31.536.000 segundos de un año (365 días). Son estimaciones: dólares y libras pasados a euros con el tipo de referencia del BCE del 27/11/2026 (1 € = 1,0957 $ = 0,83504 £).\n\nAño · mes · semana · día · hora · minuto · segundo (brutos):\n• Trump (EE. UU.): 365.063 € · 30.422 € · 7.001 € · 1.000 € · 41,67 € · 0,69 € · 1,16 céntimos. Por ley, 400.000 $ al año (más 50.000 $ para gastos, que no contamos). Él dice que dona su sueldo.\n• Merz (Alemania): 331.332 € · 27.611 € · 6.354 € · 908 € · 37,82 € · 0,63 € · 1,05 céntimos. Sueldo de canciller (dato de mayo de 2026), sin otros complementos.\n• Burnham (Reino Unido): 208.420 € · 17.368 € · 3.997 € · 571 € · 23,79 € · 0,40 € · 0,66 céntimos. 174.039 £ en 2026/27: 75.440 £ como primer ministro (le corresponden 83.837 £, pero mantiene la congelación) + 98.599 £ como diputado. Keir Starmer dejó el cargo el 20/07/2026.\n• Macron (Francia): 192.468 € · 16.039 € · 3.691 € · 527 € · 21,97 € · 0,37 € · 0,61 céntimos. Nómina de enero de 2024, la última que se ha publicado.\n• Meloni (Italia): 125.220 € · 10.435 € · 2.401 € · 343 € · 14,29 € · 0,24 € · 0,40 céntimos. Renuncia al sueldo de primera ministra; cobra la indemnización de diputada (más una dieta de 3.503,11 € al mes que no contamos).\n• Sánchez (España): 96.922 € · 8.077 € · 1.859 € · 266 € · 11,06 € · 0,18 € · 0,31 céntimos. Sueldo de 2026.\nMétodo: año ÷ 365 ÷ 24 ÷ 60 ÷ 60; mes = año ÷ 12; semana = día × 7.\nPutin, Zelenski y Xi: no hay sueldo oficial reciente. Rusia no publica las declaraciones de ingresos desde la de 2021, Ucrania publica solo la renta total de la familia del presidente y China no publica el sueldo de Xi. Sueldo no es patrimonio.",
+ "hashtags": [
+  "#Shorts",
+  "#curiosidades",
+  "#sueldos",
+  "#presidentes",
+  "#dinero"
+ ],
+ "tags": [
+  "sueldo presidentes",
+  "cuánto gana Pedro Sánchez",
+  "sueldo Trump",
+  "sueldo Macron",
+  "sueldo Merz",
+  "sueldo Meloni",
+  "Andy Burnham",
+  "sueldo por segundo",
+  "curiosidades",
+  "dinero"
+ ],
+ "sources": [
+  "https://www.telecinco.es/noticias/espana/20261104/elecciones-generales-2026-pedro-sanchez-estudios-formacion-sueldo_18_020573960.html",
+  "https://www.lamoncloa.gob.es/presidente/actividades/Paginas/2026/051026-sanchez-convocatoria-elecciones.aspx",
+  "https://www.law.cornell.edu/uscode/text/3/102",
+  "https://www.washingtonexaminer.com/?p=4562275",
+  "https://correctiv.org/faktencheck/hintergrund/2026/05/12/was-hinter-dem-vorwurf-zu-merz-gehaltserhoehung-steckt/",
+  "https://www.gov.uk/government/publications/ministerial-salary-data/salaries-of-members-of-his-majestys-government-september-2026",
+  "https://www.gov.uk/government/people/andy-burnham",
+  "https://hotnews.ro/?p=910483",
+  "https://www.camera.it/deputati/trattamento-economico",
+  "https://www.open.online/2025/11/27/giorgia-meloni-non-ha-stipendio-284-mila-euro-anno-fc/",
+  "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+  "https://www.president.gov.ua/en/news/prezident-ukrayini-oprilyudniv-deklaraciyu-pro-dohodi-j-vitr-103625",
+  "https://www.pnp.ru/politics/putin-podal-deklaraciyu-o-dokhodakh-i-raskhodakh-za-2024-god.html"
+ ],
+ "hechos": [
+  {
+   "dato": "Sánchez 2026: 96.921 € brutos al año (96.921,84). Cálculo ARVIS: 8.077 €/mes, 1.859 €/semana, 265 o 266 €/día (265,54), 11,06 €/hora, 18 céntimos/minuto (0,18 €), 0,31 céntimos/segundo. En la narración: casi 97.000 € al año, 266 al día, unos 11 €/hora; 0,3 céntimos por segundo",
+   "cita": "Para 2026, según el Ministerio de Hacienda, es de 96.921,84 euros brutos anuales",
+   "url": "https://www.telecinco.es/noticias/espana/20261104/elecciones-generales-2026-pedro-sanchez-estudios-formacion-sueldo_18_020573960.html",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Método: 365 días × 24 h × 60 min × 60 s = 31.536.000 segundos en un año",
+   "cita": "compensation in the aggregate amount of $400,000 a year, to be paid monthly",
+   "url": "https://www.law.cornell.edu/uscode/text/3/102",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Trump: 400.000 $ al año por ley = 365.063 € (BCE 1,0957); 30.422 €/mes, 7.001 €/semana, 1.000 €/día (1.000,17), 41,67 €/hora, 69 céntimos/minuto, 1,16 céntimos/segundo; Trump gana casi 4 veces (3,8) lo de Sánchez; en la narración: unos 365.000 € al año, más de un céntimo por segundo",
+   "cita": "compensation in the aggregate amount of $400,000 a year, to be paid monthly",
+   "url": "https://www.law.cornell.edu/uscode/text/3/102",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Trump dice que dona su sueldo (afirmación suya recogida por la prensa)",
+   "cita": "President Donald Trump said he donates 100% of his presidential salary to preservation projects at the White House.",
+   "url": "https://www.washingtonexaminer.com/?p=4562275",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Merz: 27.611 € al mes de Amtsgehalt (sueldo de canciller) = 331.332 €/año; 908 €/día, 37,82 €/hora. En la narración: más de 331.000 € al año, casi 38 €/hora; 1,05 céntimos/segundo",
+   "cita": "Der Kanzler bekäme laut neuem Gesetzentwurf monatlich statt aktuell 27.611 rund 28.383 Euro Amtsgehalt",
+   "url": "https://correctiv.org/faktencheck/hintergrund/2026/05/12/was-hinter-dem-vorwurf-zu-merz-gehaltserhoehung-steckt/",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Primer ministro británico: cobra 75.440 £ (le corresponden 83.837 £) en 2026/27",
+   "cita": "Prime Minister £83,837 £75,440",
+   "url": "https://www.gov.uk/government/publications/ministerial-salary-data/salaries-of-members-of-his-majestys-government-september-2026",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Sueldo de diputado británico 2026/27: 98.599 £. Total de Burnham: 174.039 £ = 208.420 € (BCE 0,83504); 571 €/día, 23,79 €/hora. En la narración: unos 208.000 € al año; casi 24 €/hora; 0,66 céntimos/segundo",
+   "cita": "For the financial year 2026/27 this is £98,599.",
+   "url": "https://www.gov.uk/government/publications/ministerial-salary-data/salaries-of-members-of-his-majestys-government-september-2026",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Andy Burnham es primer ministro desde el 20/07/2026 (Starmer ya no)",
+   "cita": "Andy Burnham became Prime Minister on 20 July 2026.",
+   "url": "https://www.gov.uk/government/people/andy-burnham",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Macron: 16.039 € brutos al mes (nómina de enero de 2024) = 192.468 €/año; 527 €/día, 21,97 €/hora: casi 22 € por hora. En la narración: unos 16.000 € al mes; en la narración: unos 192.000 € al año; 0,61 céntimos/segundo",
+   "cita": "are un venit brut de 16.039 de euro, ceea ce reprezintă 14.586 euro net pentru luna ianuarie 2024.",
+   "url": "https://hotnews.ro/?p=910483",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Meloni: indemnización de diputada 10.435 € brutos al mes = 125.220 €/año; 343 €/día, 14,29 €/hora. En la narración: 14 €/hora; 0,40 céntimos/segundo",
+   "cita": "sulla base dell'importo lordo di 10.435,00 euro",
+   "url": "https://www.camera.it/deputati/trattamento-economico",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Meloni no cobra el sueldo de primera ministra",
+   "cita": "Meloni non riceve lo stipendio da Premier, ovvero 80.000 € netti all'anno",
+   "url": "https://www.open.online/2025/11/27/giorgia-meloni-non-ha-stipendio-284-mila-euro-anno-fc/",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Tipos de referencia del BCE del 27/11/2026: 1 € = 1,0957 $ y 0,83504 £",
+   "cita": "USD US dollar 1.0957",
+   "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Zelenski: la declaración oficial da la renta total de la familia, sin separar el sueldo",
+   "cita": "the income of the Head of State and his family members amounted to UAH 15,805,828",
+   "url": "https://www.president.gov.ua/en/news/prezident-ukrayini-oprilyudniv-deklaraciyu-pro-dohodi-j-vitr-103625",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Putin: la última renta publicada es la de 2021; las cifras posteriores solo se conocen acumuladas (ante la Comisión Electoral, 2017–2022). China no publica el sueldo de Xi",
+   "cita": "с 2017 по 2022 год он заработал свыше 67,5 млн рублей",
+   "url": "https://www.pnp.ru/politics/putin-podal-deklaraciyu-o-dokhodakh-i-raskhodakh-za-2024-god.html",
+   "leido": "28/11/2026"
+  },
+  {
+   "dato": "Elecciones generales en España el 29 de noviembre de 2026",
+   "cita": "Pedro Sánchez anuncia la convocatoria de elecciones generales para el 29 de noviembre",
+   "url": "https://www.lamoncloa.gob.es/presidente/actividades/Paginas/2026/051026-sanchez-convocatoria-elecciones.aspx",
+   "leido": "28/11/2026"
+  }
+ ],
+ "escenas": [
+  {
+   "beat": "gancho",
+   "say": "¿Cuánto gana Sánchez mientras tú trabajas?",
+   "fondo": "estudio",
+   "variante_fondo": 0,
+   "camara": "empuje",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "titulo": "¿CUÁNTO GANA SÁNCHEZ\nPOR SEGUNDO?",
+   "resaltar": [
+    "SÁNCHEZ",
+    "SEGUNDO?"
+   ],
+   "titulo_en": -0.12,
+   "titulo_y": 0.125,
+   "golpes": [
+    "Sánchez"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "es"
+     },
+     "x": 0.5,
+     "y": 0.45,
+     "tam": 0.44,
+     "en": -0.14,
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Stopwatch",
+     "x": 0.16,
+     "y": 0.37,
+     "tam": 0.15,
+     "en": "gana",
+     "entrada": "pop",
+     "anim": "vibrar"
+    },
+    {
+     "activo": "Euro banknote",
+     "x": 0.84,
+     "y": 0.37,
+     "tam": 0.15,
+     "en": "trabajas",
+     "entrada": "pop",
+     "anim": "flotar"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "Sánchez"
+    ],
+    [
+     "tic",
+     "trabajas"
+    ]
+   ]
+  },
+  {
+   "beat": "problema",
+   "say": "¡Y espera a ver a Trump! Su sueldo, segundo a segundo. De menos a más.",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "LA CUENTA",
+   "titulo": "SUELDO ÷\nSEGUNDOS",
+   "resaltar": [
+    "SEGUNDOS"
+   ],
+   "golpes": [
+    "Trump",
+    "sueldo"
+   ],
+   "elementos": [
+    {
+     "activo": "Stopwatch",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.34,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "us"
+     },
+     "x": 0.85,
+     "y": 0.33,
+     "tam": 0.2,
+     "en": "Trump",
+     "entrada": "der",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Spiral calendar",
+     "x": 0.16,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "sueldo",
+     "entrada": "izq",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 31536000,
+     "miles": true,
+     "formato": "{v} SEGUNDOS/AÑO",
+     "px": 100,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "segundo",
+     "dur": 1.3,
+     "color": "aviso",
+     "sale_en": "menos"
+    },
+    {
+     "tipo": "texto",
+     "texto": "DE MENOS A MÁS",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "menos",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "whoosh",
+     "Trump"
+    ],
+    [
+     "tic",
+     "segundo"
+    ],
+    [
+     "sube",
+     "menos"
+    ]
+   ],
+   "ritmo": 0.9
+  },
+  {
+   "beat": "tutorial",
+   "paso": 1,
+   "say": "Pedro Sánchez: casi 97.000 euros al año. Unos 11 por hora. ¡Y 0,3 céntimos cada segundo!",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "izq",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "ESPAÑA",
+   "titulo": "PEDRO\nSÁNCHEZ",
+   "resaltar": [
+    "SÁNCHEZ"
+   ],
+   "golpes": [
+    "segundo"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "es"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Euro banknote",
+     "x": 0.84,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "euros",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 96921,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "97.000",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "11"
+    },
+    {
+     "tipo": "texto",
+     "texto": "11,06 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "11",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "0,31 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "0,3",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "activo": "Alarm clock",
+     "x": 0.16,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "hora",
+     "entrada": "pop",
+     "anim": "vibrar"
+    }
+   ],
+   "sfx": [
+    [
+     "monedas",
+     "97.000"
+    ],
+    [
+     "pop",
+     "11"
+    ],
+    [
+     "ding",
+     "0,3"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "tutorial",
+   "paso": 2,
+   "say": "Giorgia Meloni renuncia al sueldo de primera ministra y cobra como diputada: 14 euros por hora.",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "der",
+   "transicion": "subir",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "ITALIA",
+   "titulo": "GIORGIA\nMELONI",
+   "resaltar": [
+    "MELONI"
+   ],
+   "golpes": [
+    "renuncia",
+    "ministra"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "it"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "der",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Classical building",
+     "x": 0.84,
+     "y": 0.31,
+     "tam": 0.15,
+     "en": "diputada",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SOLO COBRA DE DIPUTADA",
+     "px": 58,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "renuncia",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "sale_en": "cobra"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 125220,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "cobra",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "14"
+    },
+    {
+     "tipo": "texto",
+     "texto": "14,29 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "14",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "0,40 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "14",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "error",
+     "renuncia"
+    ],
+    [
+     "monedas",
+     "cobra"
+    ],
+    [
+     "ding",
+     "14"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "tutorial",
+   "paso": 3,
+   "say": "Emmanuel Macron: unos 192.000 euros al año. Casi 22 por hora.",
+   "fondo": "estudio",
+   "variante_fondo": 2,
+   "camara": "empuje",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "FRANCIA",
+   "titulo": "EMMANUEL\nMACRON",
+   "resaltar": [
+    "MACRON"
+   ],
+   "golpes": [
+    "22"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "fr"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "subir",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Clipboard",
+     "x": 0.16,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "Macron",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Euro banknote",
+     "x": 0.84,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "euros",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 192468,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "192.000",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "22"
+    },
+    {
+     "tipo": "texto",
+     "texto": "21,97 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "22",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "0,61 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "22",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "monedas",
+     "192.000"
+    ],
+    [
+     "ding",
+     "22"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "tutorial",
+   "paso": 4,
+   "say": "¿Reino Unido? Ya no es Starmer, es Andy Burnham: unos 208.000 euros al año, casi 24 por hora.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "bajar",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "REINO UNIDO",
+   "titulo": "ANDY\nBURNHAM",
+   "resaltar": [
+    "BURNHAM"
+   ],
+   "golpes": [
+    "Burnham"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "gb"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "STARMER YA NO",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "Ya",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco",
+     "sale_en": "es#2"
+    },
+    {
+     "tipo": "texto",
+     "texto": "NUEVO PRIMER MINISTRO",
+     "px": 60,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "Burnham",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "lima",
+     "color": "noche",
+     "sale_en": "208.000"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 208420,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "208.000",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "24"
+    },
+    {
+     "tipo": "texto",
+     "texto": "23,79 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "24",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "0,66 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "24",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "error",
+     "Starmer"
+    ],
+    [
+     "exito",
+     "Burnham"
+    ],
+    [
+     "monedas",
+     "208.000"
+    ],
+    [
+     "ding",
+     "24"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "tutorial",
+   "paso": 5,
+   "say": "Friedrich Merz: más de 331.000 euros al año. ¡Casi 38 por hora!",
+   "fondo": "estudio",
+   "variante_fondo": 0,
+   "camara": "der",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "ALEMANIA",
+   "titulo": "FRIEDRICH\nMERZ",
+   "resaltar": [
+    "MERZ"
+   ],
+   "golpes": [
+    "38"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "de"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "izq",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Euro banknote",
+     "x": 0.16,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "Merz",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 331332,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "331.000",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "38"
+    },
+    {
+     "tipo": "texto",
+     "texto": "37,82 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "38",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "1,05 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "38",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "activo": "Coin",
+     "x": 0.84,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "38",
+     "entrada": "pop",
+     "anim": "girar"
+    }
+   ],
+   "sfx": [
+    [
+     "monedas",
+     "331.000"
+    ],
+    [
+     "sube",
+     "38"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "tutorial",
+   "paso": 6,
+   "say": "Y Donald Trump: 400.000 dólares al año. ¡Más de un céntimo cada segundo! Aunque dice que lo dona.",
+   "fondo": "salon",
+   "variante_fondo": 1,
+   "camara": "empuje",
+   "transicion": "barrido",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "EE. UU. · EL QUE MÁS",
+   "titulo": "DONALD\nTRUMP",
+   "resaltar": [
+    "TRUMP"
+   ],
+   "golpes": [
+    "céntimo",
+    "Aunque",
+    "dona#2"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "us"
+     },
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.44,
+     "en": 0.0,
+     "entrada": "zoom",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "1,16 CÉNT. CADA SEGUNDO",
+     "px": 50,
+     "x": 0.5,
+     "y": 0.625,
+     "en": "céntimo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    },
+    {
+     "tipo": "texto",
+     "texto": "400.000 $ AL AÑO",
+     "px": 70,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "400.000",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche",
+     "sale_en": "año"
+    },
+    {
+     "tipo": "contador",
+     "desde": 0,
+     "hasta": 365063,
+     "miles": true,
+     "formato": "{v} €/AÑO",
+     "px": 120,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "año",
+     "dur": 0.9,
+     "color": "aviso",
+     "sale_en": "segundo"
+    },
+    {
+     "tipo": "texto",
+     "texto": "41,67 € POR HORA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "segundo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "aviso",
+     "color": "noche",
+     "sale_en": "dona#2"
+    },
+    {
+     "tipo": "texto",
+     "texto": "DICE QUE LO DONA",
+     "px": 66,
+     "x": 0.5,
+     "y": 0.57,
+     "en": "dona#2",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "monedas",
+     "400.000"
+    ],
+    [
+     "sube",
+     "céntimo"
+    ],
+    [
+     "pop",
+     "dona#2"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "resultado",
+   "say": "Trump gana casi 4 veces más que Sánchez: más de un céntimo por segundo, frente a 0,3.",
+   "fondo": "estudio",
+   "variante_fondo": 1,
+   "camara": "alejar",
+   "transicion": "destello",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "titulo": "CASI 4 VECES\nMÁS",
+   "resaltar": [
+    "4"
+   ],
+   "golpes": [
+    "4",
+    "Sánchez"
+   ],
+   "elementos": [
+    {
+     "tipo": "barra",
+     "etiqueta": "TRUMP",
+     "valor": 1.0,
+     "texto_valor": "1,16 cént./s",
+     "color": "rojo",
+     "ancho": 0.78,
+     "x": 0.5,
+     "y": 0.39,
+     "en": "Trump",
+     "dur": 1.0
+    },
+    {
+     "tipo": "barra",
+     "etiqueta": "SÁNCHEZ",
+     "valor": 0.265,
+     "texto_valor": "0,31 cént./s",
+     "color": "lima",
+     "ancho": 0.78,
+     "x": 0.5,
+     "y": 0.5,
+     "en": "gana",
+     "dur": 0.8
+    },
+    {
+     "tipo": "texto",
+     "texto": "41,67 €/H VS 11,06 €/H",
+     "px": 64,
+     "x": 0.5,
+     "y": 0.615,
+     "en": "segundo",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "blanco",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "sube",
+     "Trump"
+    ],
+    [
+     "pop",
+     "gana"
+    ],
+    [
+     "ding",
+     "segundo"
+    ]
+   ],
+   "ritmo": 0.9,
+   "pausa": 0.45
+  },
+  {
+   "beat": "resultado",
+   "say": "¿Y Putin, Zelenski y Xi? No hay sueldo oficial reciente publicado.",
+   "fondo": "salon",
+   "variante_fondo": 0,
+   "camara": "subir",
+   "transicion": "zoom",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "titulo": "¿Y PUTIN, ZELENSKI\nY XI?",
+   "resaltar": [
+    "XI?"
+   ],
+   "golpes": [
+    "Zelenski",
+    "publicado"
+   ],
+   "elementos": [
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "ru"
+     },
+     "x": 0.22,
+     "y": 0.42,
+     "tam": 0.3,
+     "en": "Putin",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "ua"
+     },
+     "x": 0.5,
+     "y": 0.42,
+     "tam": 0.3,
+     "en": "Zelenski",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "bandera",
+     "estado": {
+      "pais": "cn"
+     },
+     "x": 0.78,
+     "y": 0.42,
+     "tam": 0.3,
+     "en": "Xi",
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "tipo": "texto",
+     "texto": "SUELDO NO PUBLICADO",
+     "px": 62,
+     "x": 0.5,
+     "y": 0.6,
+     "en": "oficial",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "rojo",
+     "color": "blanco"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "Putin"
+    ],
+    [
+     "pop",
+     "Zelenski"
+    ],
+    [
+     "pop",
+     "Xi"
+    ],
+    [
+     "error",
+     "oficial"
+    ]
+   ],
+   "ritmo": 0.9,
+   "chip": "SIN DATO"
+  },
+  {
+   "beat": "cta",
+   "say": "¿Cobran demasiado o demasiado poco? ¡Te leo en comentarios!",
+   "fondo": "salon",
+   "variante_fondo": 2,
+   "camara": "fija",
+   "transicion": "fundido",
+   "foco": [
+    0.5,
+    0.49
+   ],
+   "chip": "TU OPINIÓN",
+   "titulo": "¿DEMASIADO\nO POCO?",
+   "resaltar": [
+    "POCO?"
+   ],
+   "elementos": [
+    {
+     "activo": "Thinking face",
+     "x": 0.5,
+     "y": 0.43,
+     "tam": 0.4,
+     "en": 0.0,
+     "entrada": "pop",
+     "anim": "balancear"
+    },
+    {
+     "activo": "Money with wings",
+     "x": 0.16,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "demasiado#2",
+     "entrada": "pop",
+     "anim": "flotar"
+    },
+    {
+     "activo": "Speech balloon",
+     "x": 0.84,
+     "y": 0.31,
+     "tam": 0.14,
+     "en": "comentarios",
+     "entrada": "pop",
+     "anim": "latir"
+    },
+    {
+     "tipo": "texto",
+     "texto": "TE LEO EN COMENTARIOS",
+     "px": 62,
+     "x": 0.5,
+     "y": 0.58,
+     "en": "comentarios",
+     "entrada": "pop",
+     "anim": "ninguna",
+     "fondo": "pastilla",
+     "color_fondo": "cian",
+     "color": "noche"
+    }
+   ],
+   "sfx": [
+    [
+     "pop",
+     "comentarios"
+    ]
+   ],
+   "golpes": [
+    "poco",
+    "comentarios"
+   ],
+   "ritmo": 0.9
+  }
+ ]
+}
