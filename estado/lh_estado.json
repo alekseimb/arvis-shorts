@@ -247,7 +247,7 @@
    "publico": "28/11/2026 01:49 (API: public)"
   },
   "SH-039": {
-   "fase": "4. Revisión",
+   "fase": "9. Programado",
    "fila": 40,
    "tema": "T-004",
    "numero": 14,
@@ -258,10 +258,13 @@
    "huella_contenido": "1c6dece02528ae18",
    "huella_motor": "bbea4353fd49bd74",
    "intentos": 2,
-   "aprobado": false,
+   "aprobado": true,
    "preparado": "28/11/2026 09:00",
    "debilidades": "cifra por segundo pequeña bajo el contador anual; gancho sin cifra hasta 12 s; seis escenas de país con la misma plantilla; banderas de RU/UA/CN pequeñas",
-   "nota_estado": "No llega a 85 tras 4 montajes: espera la decisión de Aleksei en el chat (no reintentar sola). No publicar antes de las elecciones del 29/11."
+   "nota_estado": "Aprobado por Aleksei en el chat (28/11 09:05) con CALIDAD 68,5; programado tras las elecciones del 29/11.",
+   "aprobado_por": "Aleksei en el chat (28/11/2026 09:05, «ARVIS, publica SH-039»; franja tras las elecciones del 29/11)",
+   "franja": "30/11/2026 12:00",
+   "yt": "OoXpM2RRK_A"
   }
  },
  "ideas": {
@@ -460,19 +463,13 @@
   },
   "T-004": {
    "fila": 34,
-   "estado": "En producción",
+   "estado": "Publicada",
    "categoria": "cotidiano",
    "tema": "T-004",
    "leido": "28/11/2026"
   }
  },
  "ejecuciones": [
-  {
-   "fecha": "26/11/2026 15:09",
-   "modos": "A+C",
-   "resultado": "Aviso",
-   "resumen": "SH-033 público (API); SH-035 QC 22/22 pero CALIDAD 57,0/65,0 < 85 tras 3 montajes → 4. Revisión, sin subida"
-  },
   {
    "fecha": "26/11/2026 20:47",
    "modos": "chat · ARVIS 5.0",
@@ -520,6 +517,12 @@
    "modos": "C (chat)",
    "resultado": "Aviso",
    "resumen": "Chat 28/11: tema T-004 → SH-039 (56,6 s, QC 22/22) con CALIDAD 68,5 < 85: no subido, espera decisión de Aleksei"
+  },
+  {
+   "fecha": "28/11/2026 09:07",
+   "modos": "C7 (chat)",
+   "resultado": "OK",
+   "resumen": "Chat 28/11 09:10: SH-039 aprobado por Aleksei → subido privado, programado 30/11 12:00 (OoXpM2RRK_A)"
   }
  ],
  "errores": [
@@ -580,8 +583,8 @@
    35
   ]
  },
- "ultimo_sh": "SH-038",
- "ultimo_numero": 13,
+ "ultimo_sh": "SH-039",
+ "ultimo_numero": 14,
  "metricas": {
   "fecha": "28/11/2026 01:49",
   "videos": {
@@ -708,7 +711,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "28/11/2026 09:01",
+ "actualizado": "28/11/2026 09:07",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
@@ -782,7 +785,7 @@
    "texto": "Cuánto ganan los presidentes por segundo, minuto, hora, día, semana, mes y año (España, EE. UU., Francia, Alemania, Reino Unido, Italia, Rusia, Ucrania, China) · 45-60 s · comparación Sánchez-Trump · pregunta final",
    "fecha": "28/11/2026 07:40",
    "origen": "Aleksei",
-   "estado": "En revisión (SH-039, 68,5)",
+   "estado": "Publicada",
    "publicar": false,
    "sh": "SH-039"
   }
