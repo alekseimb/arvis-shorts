@@ -200,7 +200,7 @@
   },
   "SH-037": {
    "fila": 38,
-   "fase": "9. Programado",
+   "fase": "10. Publicado",
    "linea": "vida",
    "tema": "T-002",
    "categoria": "errores",
@@ -219,11 +219,12 @@
    "voz": "sharvard_f_animada",
    "aprobado_por": "Aleksei en el chat 26/11/2026 21:53 («Súbelo»)",
    "franja": "27/11/2026 17:00",
-   "yt": "HhJUYmYpV5s"
+   "yt": "HhJUYmYpV5s",
+   "publico": "28/11/2026 01:49 (API: public)"
   },
   "SH-038": {
    "fila": 39,
-   "fase": "9. Programado",
+   "fase": "10. Publicado",
    "linea": "vida",
    "tema": "T-003",
    "categoria": "cotidiano",
@@ -242,7 +243,8 @@
    "voz": "sharvard_f_animada",
    "aprobado_por": "Aleksei en el chat 26/11/2026 22:16 («Si»)",
    "franja": "27/11/2026 21:00",
-   "yt": "sP8njhIVog0"
+   "yt": "sP8njhIVog0",
+   "publico": "28/11/2026 01:49 (API: public)"
   }
  },
  "ideas": {
@@ -442,12 +444,6 @@
  },
  "ejecuciones": [
   {
-   "fecha": "25/11/2026 09:15",
-   "modos": "A+C (orden ARVIS 3.1, procedimiento v3.0)",
-   "resultado": "Aviso",
-   "resumen": "SH-033 producido (QC 22/22) y no subido: CALIDAD 70,0 < 85; Make no consultado; tarea aún con texto 3.1"
-  },
-  {
    "fecha": "25/11/2026 15:17",
    "modos": "A+C",
    "resultado": "Aviso",
@@ -494,6 +490,12 @@
    "modos": "A",
    "resultado": "OK",
    "resumen": "14:47 supervisión: SH-035 público (API); SH-037 17:00 y SH-038 21:00 programados; Make falló 1 vez por conexión temporal, reintento OK"
+  },
+  {
+   "fecha": "28/11/2026 01:50",
+   "modos": "A+B",
+   "resultado": "OK",
+   "resumen": "01:47: SH-037 y SH-038 públicos (API); métricas de 13 vídeos; Make OK (40 registros); pesos ahorro 1,1→1,0; sin temas de Aleksei"
   }
  ],
  "errores": [
@@ -530,8 +532,7 @@
  ],
  "pendiente": [
   "ARVIS 5.0 (26/11): la tarea ya no elige temas. Producción solo de temas de Aleksei («ARVIS, nuevo Short» en el chat).",
-  "27/11: SH-035 público (API, 14:51). SH-037 17:00 y SH-038 21:00 programados (privados con ID); comprobar público tras cada franja.",
-  "27/11 14:47: 1.ª consulta 8260190 falló (conexión ARVIS YouTube temporalmente no disponible); el reintento a los 2 min fue OK.",
+  "28/11 01:47: SH-037 y SH-038 públicos (API). Sin Shorts programados ni temas de Aleksei en cola.",
   "Revisar con Aleksei quitar de la tarea los conectores que no usa (higgs, videoslash, Figma, Netlify, Notion, Gmail, Calendar, Windsor, Docs, Canva)"
  ],
  "reglas": {
@@ -558,67 +559,85 @@
  "ultimo_sh": "SH-038",
  "ultimo_numero": 13,
  "metricas": {
-  "fecha": "27/11/2026 01:48",
+  "fecha": "28/11/2026 01:49",
   "videos": {
    "SH-024": {
     "vistas": 33,
     "me_gusta": 0,
     "comentarios": 0,
-    "horas": 196.3
+    "horas": 220.4
    },
    "SH-025": {
     "vistas": 208,
     "me_gusta": 0,
     "comentarios": 0,
-    "horas": 174.8
+    "horas": 198.8
    },
    "SH-026": {
-    "vistas": 217,
+    "vistas": 219,
     "me_gusta": 3,
     "comentarios": 0,
-    "horas": 174.8
+    "horas": 198.8
    },
    "SH-027": {
-    "vistas": 928,
+    "vistas": 931,
     "me_gusta": 8,
     "comentarios": 0,
-    "horas": 157.8
+    "horas": 181.8
    },
    "SH-028": {
-    "vistas": 513,
+    "vistas": 516,
     "me_gusta": 7,
     "comentarios": 0,
-    "horas": 152.8
+    "horas": 176.8
    },
    "SH-030": {
     "vistas": 1019,
     "me_gusta": 9,
-    "horas": 133.8,
+    "horas": 157.8,
     "comentarios": 0
    },
    "SH-031": {
-    "vistas": 997,
+    "vistas": 998,
     "me_gusta": 13,
-    "horas": 128.8,
+    "horas": 152.8,
     "comentarios": 0
    },
    "SH-032": {
     "vistas": 862,
     "me_gusta": 13,
     "comentarios": 0,
-    "horas": 109.8
+    "horas": 133.8
    },
    "SH-033": {
-    "vistas": 375,
+    "vistas": 408,
     "me_gusta": 4,
     "comentarios": 0,
-    "horas": 20.6
+    "horas": 44.6
    },
    "SH-036": {
-    "vistas": 255,
-    "me_gusta": 5,
+    "vistas": 313,
+    "me_gusta": 4,
     "comentarios": 0,
-    "horas": 4.2
+    "horas": 28.2
+   },
+   "SH-035": {
+    "vistas": 275,
+    "me_gusta": 3,
+    "comentarios": 0,
+    "horas": 13.8
+   },
+   "SH-037": {
+    "vistas": 114,
+    "me_gusta": 0,
+    "comentarios": 0,
+    "horas": 8.8
+   },
+   "SH-038": {
+    "vistas": 60,
+    "me_gusta": 1,
+    "comentarios": 0,
+    "horas": 4.8
    }
   }
  },
@@ -632,19 +651,20 @@
    "conversacion": 10
   },
   "multiplicador_categoria": {
-   "ahorro": 1.1
+   "ahorro": 1.0
   },
   "duracion_recomendada": [
    30,
    40
-  ]
+  ],
+  "fecha": "28/11/2026 01:49"
  },
  "make": {
-  "ultima_revision": "27/11/2026 01:49",
+  "ultima_revision": "28/11/2026 01:49",
   "estado": "OK",
-  "almacen_registros": 36,
+  "almacen_registros": 40,
   "nota": "scenarios_list: 8260243 y 8260190 activos, válidos, dlq 0. 8260190 no devuelve salidas por MCP: el resultado se lee en el almacén",
-  "ultima_consulta": "27/11/2026 01:48 metricas-lh (10 vídeos, todos public)"
+  "ultima_consulta": "28/11/2026 01:48 estados-lh (2 public) + metricas-lh (13 vídeos, todos public)"
  },
  "filas": {
   "SALUD": {
@@ -664,7 +684,7 @@
   },
   "nota": "si una etiqueta no está en su fila, se buscan las filas otra vez y se corrige aquí"
  },
- "actualizado": "27/11/2026 14:52",
+ "actualizado": "28/11/2026 01:50",
  "titulos_publicados": [
   "Un rayo, 5 veces más caliente que la superficie del Sol ⚡",
   "¿Cuántas Tierras caben dentro del Sol? ☀️ La cifra es ridícula",
